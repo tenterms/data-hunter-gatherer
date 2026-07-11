@@ -1,0 +1,5899 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-11T16:26:46.902Z",
+  "dataSource": "mock",
+  "client": {
+    "client_key": "sentinel-cyber",
+    "client_name": "Sentinel Cyber Security",
+    "domain": "sentinelcyber.co.uk",
+    "gsc_property_url": "sc-domain:sentinelcyber.co.uk",
+    "timezone": "Europe/London",
+    "active": true,
+    "notes": "Demo client (mock data): cybersecurity consultancy."
+  },
+  "period": {
+    "period_key": "2026-06",
+    "client_key": "sentinel-cyber",
+    "label": "June 2026",
+    "start_date": "2026-06-01",
+    "end_date": "2026-06-30",
+    "comparison_start_date": "2026-05-01",
+    "comparison_end_date": "2026-05-31",
+    "status": "ready"
+  },
+  "kpis": [
+    {
+      "key": "clicks",
+      "label": "Total clicks",
+      "value": "587",
+      "changeLabel": "-9.1% vs previous",
+      "sentiment": "negative"
+    },
+    {
+      "key": "impressions",
+      "label": "Total impressions",
+      "value": "107.0K",
+      "changeLabel": "+4.1% vs previous",
+      "sentiment": "positive"
+    },
+    {
+      "key": "ctr",
+      "label": "Click-through rate",
+      "value": "0.55%",
+      "changeLabel": "from 0.63%",
+      "sentiment": "negative"
+    },
+    {
+      "key": "avg_position",
+      "label": "Avg. position (GSC)",
+      "value": "25.4",
+      "changeLabel": "from 25.5",
+      "sentiment": "positive"
+    },
+    {
+      "key": "top10",
+      "label": "Keywords in top 10",
+      "value": "7",
+      "changeLabel": "+2 vs previous",
+      "sentiment": "positive"
+    }
+  ],
+  "metrics": {
+    "site": {
+      "current": {
+        "clicks": 587,
+        "impressions": 106963,
+        "ctr": 0.005487878986191487,
+        "position": 25.4
+      },
+      "previous": {
+        "clicks": 646,
+        "impressions": 102775,
+        "ctr": 0.006285575285818535,
+        "position": 25.5
+      },
+      "comparison": {
+        "clicks": {
+          "current": 587,
+          "previous": 646,
+          "change": -59,
+          "changePct": -0.0913312693498452,
+          "isNew": false
+        },
+        "impressions": {
+          "current": 106963,
+          "previous": 102775,
+          "change": 4188,
+          "changePct": 0.040749209438092925,
+          "isNew": false
+        },
+        "ctr": {
+          "current": 0.005487878986191487,
+          "previous": 0.006285575285818535,
+          "change": -0.0007976962996270485,
+          "changePct": -0.1269090359042878,
+          "isNew": false
+        },
+        "position": {
+          "current": 25.4,
+          "previous": 25.5,
+          "change": -0.10000000000000142
+        }
+      }
+    },
+    "pages": [
+      {
+        "url": "https://sentinelcyber.co.uk/",
+        "label": "Homepage",
+        "pageRole": "primary",
+        "contentType": "commercial",
+        "commercialPriority": "high",
+        "current": {
+          "clicks": 91,
+          "impressions": 701,
+          "ctr": 0.12981455064194009,
+          "position": 24
+        },
+        "previous": {
+          "clicks": 149,
+          "impressions": 553,
+          "ctr": 0.2694394213381555,
+          "position": 13.4
+        },
+        "comparison": {
+          "clicks": {
+            "current": 91,
+            "previous": 149,
+            "change": -58,
+            "changePct": -0.38926174496644295,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 701,
+            "previous": 553,
+            "change": 148,
+            "changePct": 0.26763110307414106,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.12981455064194009,
+            "previous": 0.2694394213381555,
+            "change": -0.13962487069621543,
+            "changePct": -0.5182050570134706,
+            "isNew": false
+          },
+          "position": {
+            "current": 24,
+            "previous": 13.4,
+            "change": 10.6
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "label": "Penetration Testing Services",
+        "pageRole": "primary",
+        "contentType": "commercial",
+        "commercialPriority": "high",
+        "current": {
+          "clicks": 62,
+          "impressions": 20098,
+          "ctr": 0.0030848840680664743,
+          "position": 26.6
+        },
+        "previous": {
+          "clicks": 69,
+          "impressions": 14537,
+          "ctr": 0.004746508908302951,
+          "position": 28.1
+        },
+        "comparison": {
+          "clicks": {
+            "current": 62,
+            "previous": 69,
+            "change": -7,
+            "changePct": -0.10144927536231885,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 20098,
+            "previous": 14537,
+            "change": 5561,
+            "changePct": 0.38254110201554653,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0030848840680664743,
+            "previous": 0.004746508908302951,
+            "change": -0.0016616248402364768,
+            "changePct": -0.3500730478625748,
+            "isNew": false
+          },
+          "position": {
+            "current": 26.6,
+            "previous": 28.1,
+            "change": -1.5
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+        "label": "Cybersecurity Compliance Services",
+        "pageRole": "secondary",
+        "contentType": "commercial",
+        "commercialPriority": "medium",
+        "current": {
+          "clicks": 70,
+          "impressions": 19621,
+          "ctr": 0.0035676061362825543,
+          "position": 24.1
+        },
+        "previous": {
+          "clicks": 63,
+          "impressions": 19341,
+          "ctr": 0.003257328990228013,
+          "position": 24.8
+        },
+        "comparison": {
+          "clicks": {
+            "current": 70,
+            "previous": 63,
+            "change": 7,
+            "changePct": 0.1111111111111111,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 19621,
+            "previous": 19341,
+            "change": 280,
+            "changePct": 0.014477017734346724,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0035676061362825543,
+            "previous": 0.003257328990228013,
+            "change": 0.00031027714605454115,
+            "changePct": 0.09525508383874413,
+            "isNew": false
+          },
+          "position": {
+            "current": 24.1,
+            "previous": 24.8,
+            "change": -0.6999999999999993
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/vciso",
+        "label": "vCISO / Cyber Strategy",
+        "pageRole": "secondary",
+        "contentType": "commercial",
+        "commercialPriority": "high",
+        "current": {
+          "clicks": 37,
+          "impressions": 8503,
+          "ctr": 0.004351405386334235,
+          "position": 22.5
+        },
+        "previous": {
+          "clicks": 47,
+          "impressions": 8741,
+          "ctr": 0.0053769591579910766,
+          "position": 21.2
+        },
+        "comparison": {
+          "clicks": {
+            "current": 37,
+            "previous": 47,
+            "change": -10,
+            "changePct": -0.2127659574468085,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 8503,
+            "previous": 8741,
+            "change": -238,
+            "changePct": -0.027228005948976088,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.004351405386334235,
+            "previous": 0.0053769591579910766,
+            "change": -0.001025553771656842,
+            "changePct": -0.19073118123515861,
+            "isNew": false
+          },
+          "position": {
+            "current": 22.5,
+            "previous": 21.2,
+            "change": 1.3000000000000007
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/cyber-essentials",
+        "label": "Cyber Essentials Services",
+        "pageRole": "secondary",
+        "contentType": "commercial",
+        "commercialPriority": "medium",
+        "current": {
+          "clicks": 14,
+          "impressions": 6071,
+          "ctr": 0.0023060451325975953,
+          "position": 34.9
+        },
+        "previous": {
+          "clicks": 17,
+          "impressions": 5397,
+          "ctr": 0.003149898091532333,
+          "position": 34.6
+        },
+        "comparison": {
+          "clicks": {
+            "current": 14,
+            "previous": 17,
+            "change": -3,
+            "changePct": -0.17647058823529413,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 6071,
+            "previous": 5397,
+            "change": 674,
+            "changePct": 0.12488419492310543,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0023060451325975953,
+            "previous": 0.003149898091532333,
+            "change": -0.0008438529589347376,
+            "changePct": -0.26789849525710463,
+            "isNew": false
+          },
+          "position": {
+            "current": 34.9,
+            "previous": 34.6,
+            "change": 0.29999999999999716
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "label": "DTAC Compliance",
+        "pageRole": "secondary",
+        "contentType": "commercial",
+        "commercialPriority": "medium",
+        "current": {
+          "clicks": 137,
+          "impressions": 31480,
+          "ctr": 0.0043519695044472685,
+          "position": 26
+        },
+        "previous": {
+          "clicks": 144,
+          "impressions": 28732,
+          "ctr": 0.005011833495753864,
+          "position": 25.1
+        },
+        "comparison": {
+          "clicks": {
+            "current": 137,
+            "previous": 144,
+            "change": -7,
+            "changePct": -0.04861111111111111,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 31480,
+            "previous": 28732,
+            "change": 2748,
+            "changePct": 0.09564248921063623,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0043519695044472685,
+            "previous": 0.005011833495753864,
+            "change": -0.0006598639913065951,
+            "changePct": -0.1316611958209798,
+            "isNew": false
+          },
+          "position": {
+            "current": 26,
+            "previous": 25.1,
+            "change": 0.8999999999999986
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/services/cloud-assessment",
+        "label": "Cloud Assessment Services",
+        "pageRole": "secondary",
+        "contentType": "commercial",
+        "commercialPriority": "low",
+        "current": {
+          "clicks": 6,
+          "impressions": 1259,
+          "ctr": 0.004765687053216839,
+          "position": 17.5
+        },
+        "previous": {
+          "clicks": 3,
+          "impressions": 947,
+          "ctr": 0.0031678986272439284,
+          "position": 16.5
+        },
+        "comparison": {
+          "clicks": {
+            "current": 6,
+            "previous": 3,
+            "change": 3,
+            "changePct": 1,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 1259,
+            "previous": 947,
+            "change": 312,
+            "changePct": 0.32946145723336856,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.004765687053216839,
+            "previous": 0.0031678986272439284,
+            "change": 0.0015977884259729108,
+            "changePct": 0.5043685464654488,
+            "isNew": false
+          },
+          "position": {
+            "current": 17.5,
+            "previous": 16.5,
+            "change": 1
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+        "label": "Financial Services Cyber Security",
+        "pageRole": "secondary",
+        "contentType": "sector",
+        "commercialPriority": "high",
+        "current": {
+          "clicks": 18,
+          "impressions": 5310,
+          "ctr": 0.003389830508474576,
+          "position": 21.9
+        },
+        "previous": {
+          "clicks": 31,
+          "impressions": 8818,
+          "ctr": 0.003515536402812429,
+          "position": 21.4
+        },
+        "comparison": {
+          "clicks": {
+            "current": 18,
+            "previous": 31,
+            "change": -13,
+            "changePct": -0.41935483870967744,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 5310,
+            "previous": 8818,
+            "change": -3508,
+            "changePct": -0.3978226355182581,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.003389830508474576,
+            "previous": 0.003515536402812429,
+            "change": -0.00012570589433785273,
+            "changePct": -0.03575724439584469,
+            "isNew": false
+          },
+          "position": {
+            "current": 21.9,
+            "previous": 21.4,
+            "change": 0.5
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "label": "Medical Technology Cyber Security",
+        "pageRole": "secondary",
+        "contentType": "sector",
+        "commercialPriority": "high",
+        "current": {
+          "clicks": 2,
+          "impressions": 3701,
+          "ctr": 0.0005403944879762226,
+          "position": 37.9
+        },
+        "previous": {
+          "clicks": 1,
+          "impressions": 3952,
+          "ctr": 0.00025303643724696357,
+          "position": 40.7
+        },
+        "comparison": {
+          "clicks": {
+            "current": 2,
+            "previous": 1,
+            "change": 1,
+            "changePct": 1,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 3701,
+            "previous": 3952,
+            "change": -251,
+            "changePct": -0.06351214574898785,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0005403944879762226,
+            "previous": 0.00025303643724696357,
+            "change": 0.00028735805072925905,
+            "changePct": 1.1356390164820318,
+            "isNew": false
+          },
+          "position": {
+            "current": 37.9,
+            "previous": 40.7,
+            "change": -2.8000000000000043
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data",
+        "label": "How to Secure Financial Data (blog)",
+        "pageRole": "supporting",
+        "contentType": "blog",
+        "commercialPriority": "low",
+        "current": {
+          "clicks": 4,
+          "impressions": 975,
+          "ctr": 0.0041025641025641026,
+          "position": 11.3
+        },
+        "previous": {
+          "clicks": 8,
+          "impressions": 644,
+          "ctr": 0.012422360248447204,
+          "position": 9.5
+        },
+        "comparison": {
+          "clicks": {
+            "current": 4,
+            "previous": 8,
+            "change": -4,
+            "changePct": -0.5,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 975,
+            "previous": 644,
+            "change": 331,
+            "changePct": 0.5139751552795031,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0041025641025641026,
+            "previous": 0.012422360248447204,
+            "change": -0.008319796145883102,
+            "changePct": -0.6697435897435897,
+            "isNew": false
+          },
+          "position": {
+            "current": 11.3,
+            "previous": 9.5,
+            "change": 1.8000000000000007
+          }
+        }
+      },
+      {
+        "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+        "label": "What is a vCISO (blog)",
+        "pageRole": "supporting",
+        "contentType": "blog",
+        "commercialPriority": "low",
+        "current": {
+          "clicks": 146,
+          "impressions": 9244,
+          "ctr": 0.01579402855906534,
+          "position": 19.4
+        },
+        "previous": {
+          "clicks": 114,
+          "impressions": 11113,
+          "ctr": 0.010258256096463601,
+          "position": 23.7
+        },
+        "comparison": {
+          "clicks": {
+            "current": 146,
+            "previous": 114,
+            "change": 32,
+            "changePct": 0.2807017543859649,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 9244,
+            "previous": 11113,
+            "change": -1869,
+            "changePct": -0.16818140916044272,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.01579402855906534,
+            "previous": 0.010258256096463601,
+            "change": 0.0055357724626017395,
+            "changePct": 0.5396406962885363,
+            "isNew": false
+          },
+          "position": {
+            "current": 19.4,
+            "previous": 23.7,
+            "change": -4.300000000000001
+          }
+        }
+      }
+    ],
+    "restOfSite": {
+      "current": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": null
+      },
+      "previous": {
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": 0,
+        "position": null
+      },
+      "comparison": {
+        "clicks": {
+          "current": 0,
+          "previous": 0,
+          "change": 0,
+          "changePct": 0,
+          "isNew": false
+        },
+        "impressions": {
+          "current": 0,
+          "previous": 0,
+          "change": 0,
+          "changePct": 0,
+          "isNew": false
+        },
+        "ctr": {
+          "current": 0,
+          "previous": 0,
+          "change": 0,
+          "changePct": 0,
+          "isNew": false
+        },
+        "position": {
+          "current": null,
+          "previous": null,
+          "change": null
+        }
+      },
+      "pageCount": 0
+    },
+    "contentGroups": [
+      {
+        "key": "services",
+        "name": "Services",
+        "description": "Commercial service pages",
+        "current": {
+          "clicks": 326,
+          "impressions": 87032,
+          "ctr": 0.003745748690136961,
+          "position": 25.866127401415575
+        },
+        "previous": {
+          "clicks": 343,
+          "impressions": 77695,
+          "ctr": 0.004414698500547011,
+          "position": 25.702948709698177
+        },
+        "comparison": {
+          "clicks": {
+            "current": 326,
+            "previous": 343,
+            "change": -17,
+            "changePct": -0.04956268221574344,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 87032,
+            "previous": 77695,
+            "change": 9337,
+            "changePct": 0.12017504343908875,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.003745748690136961,
+            "previous": 0.004414698500547011,
+            "change": -0.0006689498104100497,
+            "changePct": -0.1515278586583347,
+            "isNew": false
+          },
+          "position": {
+            "current": 25.866127401415575,
+            "previous": 25.702948709698177,
+            "change": 0.1631786917173983
+          }
+        },
+        "status": "flat",
+        "matchedRowCount": 6
+      },
+      {
+        "key": "blog",
+        "name": "Blog",
+        "description": "Blog and supporting content",
+        "current": {
+          "clicks": 150,
+          "impressions": 10219,
+          "ctr": 0.014678539974557198,
+          "position": 18.627174870339562
+        },
+        "previous": {
+          "clicks": 122,
+          "impressions": 11757,
+          "ctr": 0.010376796801905248,
+          "position": 22.922182529556856
+        },
+        "comparison": {
+          "clicks": {
+            "current": 150,
+            "previous": 122,
+            "change": 28,
+            "changePct": 0.22950819672131148,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 10219,
+            "previous": 11757,
+            "change": -1538,
+            "changePct": -0.13081568427319895,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.014678539974557198,
+            "previous": 0.010376796801905248,
+            "change": 0.00430174317265195,
+            "changePct": 0.4145540531218769,
+            "isNew": false
+          },
+          "position": {
+            "current": 18.627174870339562,
+            "previous": 22.922182529556856,
+            "change": -4.295007659217294
+          }
+        },
+        "status": "growing",
+        "matchedRowCount": 2
+      },
+      {
+        "key": "pen-testing",
+        "name": "Penetration Testing",
+        "description": "Pen testing pages",
+        "current": {
+          "clicks": 62,
+          "impressions": 20098,
+          "ctr": 0.0030848840680664743,
+          "position": 26.6
+        },
+        "previous": {
+          "clicks": 69,
+          "impressions": 14537,
+          "ctr": 0.004746508908302951,
+          "position": 28.1
+        },
+        "comparison": {
+          "clicks": {
+            "current": 62,
+            "previous": 69,
+            "change": -7,
+            "changePct": -0.10144927536231885,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 20098,
+            "previous": 14537,
+            "change": 5561,
+            "changePct": 0.38254110201554653,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0030848840680664743,
+            "previous": 0.004746508908302951,
+            "change": -0.0016616248402364768,
+            "changePct": -0.3500730478625748,
+            "isNew": false
+          },
+          "position": {
+            "current": 26.6,
+            "previous": 28.1,
+            "change": -1.5
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 1
+      },
+      {
+        "key": "sectors",
+        "name": "Sectors",
+        "description": "Sector landing pages",
+        "current": {
+          "clicks": 20,
+          "impressions": 9011,
+          "ctr": 0.002219509488403063,
+          "position": 28.471523693263784
+        },
+        "previous": {
+          "clicks": 32,
+          "impressions": 12770,
+          "ctr": 0.0025058731401722788,
+          "position": 27.372873923257632
+        },
+        "comparison": {
+          "clicks": {
+            "current": 20,
+            "previous": 32,
+            "change": -12,
+            "changePct": -0.375,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 9011,
+            "previous": 12770,
+            "change": -3759,
+            "changePct": -0.2943617854346124,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.002219509488403063,
+            "previous": 0.0025058731401722788,
+            "change": -0.00028636365176921584,
+            "changePct": -0.1142769947841527,
+            "isNew": false
+          },
+          "position": {
+            "current": 28.471523693263784,
+            "previous": 27.372873923257632,
+            "change": 1.0986497700061513
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 2
+      }
+    ],
+    "topicClusters": [
+      {
+        "key": "vciso",
+        "name": "vCISO",
+        "description": "Virtual CISO queries",
+        "current": {
+          "clicks": 193,
+          "impressions": 18177,
+          "ctr": 0.010617813720635968,
+          "position": 17.654805523463715
+        },
+        "previous": {
+          "clicks": 166,
+          "impressions": 19785,
+          "ctr": 0.008390194591862523,
+          "position": 18.72661612332575
+        },
+        "comparison": {
+          "clicks": {
+            "current": 193,
+            "previous": 166,
+            "change": 27,
+            "changePct": 0.16265060240963855,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 18177,
+            "previous": 19785,
+            "change": -1608,
+            "changePct": -0.08127369219105383,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.010617813720635968,
+            "previous": 0.008390194591862523,
+            "change": 0.002227619128773445,
+            "changePct": 0.26550267748664225,
+            "isNew": false
+          },
+          "position": {
+            "current": 17.654805523463715,
+            "previous": 18.72661612332575,
+            "change": -1.0718105998620366
+          }
+        },
+        "status": "growing",
+        "matchedRowCount": 12
+      },
+      {
+        "key": "medtech-security",
+        "name": "Medtech Security",
+        "description": "Medical technology security queries",
+        "current": {
+          "clicks": 81,
+          "impressions": 16324,
+          "ctr": 0.004962019112962509,
+          "position": 19.70965449644695
+        },
+        "previous": {
+          "clicks": 74,
+          "impressions": 19660,
+          "ctr": 0.0037639877924720245,
+          "position": 21.694425228891152
+        },
+        "comparison": {
+          "clicks": {
+            "current": 81,
+            "previous": 74,
+            "change": 7,
+            "changePct": 0.0945945945945946,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 16324,
+            "previous": 19660,
+            "change": -3336,
+            "changePct": -0.16968463886063073,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.004962019112962509,
+            "previous": 0.0037639877924720245,
+            "change": 0.0011980313204904844,
+            "changePct": 0.3182877805519314,
+            "isNew": false
+          },
+          "position": {
+            "current": 19.70965449644695,
+            "previous": 21.694425228891152,
+            "change": -1.9847707324442005
+          }
+        },
+        "status": "growing",
+        "matchedRowCount": 12
+      },
+      {
+        "key": "compliance",
+        "name": "Compliance",
+        "description": "Compliance consulting queries",
+        "current": {
+          "clicks": 73,
+          "impressions": 27513,
+          "ctr": 0.0026532911714462256,
+          "position": 30.21207792679824
+        },
+        "previous": {
+          "clicks": 67,
+          "impressions": 21775,
+          "ctr": 0.003076923076923077,
+          "position": 32.68594718714122
+        },
+        "comparison": {
+          "clicks": {
+            "current": 73,
+            "previous": 67,
+            "change": 6,
+            "changePct": 0.08955223880597014,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 27513,
+            "previous": 21775,
+            "change": 5738,
+            "changePct": 0.26351320321469573,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0026532911714462256,
+            "previous": 0.003076923076923077,
+            "change": -0.0004236319054768513,
+            "changePct": -0.13768036927997668,
+            "isNew": false
+          },
+          "position": {
+            "current": 30.21207792679824,
+            "previous": 32.68594718714122,
+            "change": -2.473869260342976
+          }
+        },
+        "status": "growing",
+        "matchedRowCount": 12
+      },
+      {
+        "key": "penetration-testing",
+        "name": "Penetration Testing",
+        "description": "Pen testing queries",
+        "current": {
+          "clicks": 66,
+          "impressions": 21555,
+          "ctr": 0.0030619345859429366,
+          "position": 26.527752261656232
+        },
+        "previous": {
+          "clicks": 72,
+          "impressions": 16313,
+          "ctr": 0.0044136578189174274,
+          "position": 27.186348311162877
+        },
+        "comparison": {
+          "clicks": {
+            "current": 66,
+            "previous": 72,
+            "change": -6,
+            "changePct": -0.08333333333333333,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 21555,
+            "previous": 16313,
+            "change": 5242,
+            "changePct": 0.32133880953840493,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0030619345859429366,
+            "previous": 0.0044136578189174274,
+            "change": -0.0013517232329744908,
+            "changePct": -0.30625918193767876,
+            "isNew": false
+          },
+          "position": {
+            "current": 26.527752261656232,
+            "previous": 27.186348311162877,
+            "change": -0.6585960495066452
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 14
+      },
+      {
+        "key": "dtac",
+        "name": "DTAC",
+        "description": "DTAC assessment/compliance queries",
+        "current": {
+          "clicks": 56,
+          "impressions": 13132,
+          "ctr": 0.0042643923240938165,
+          "position": 26.479416692049952
+        },
+        "previous": {
+          "clicks": 66,
+          "impressions": 13260,
+          "ctr": 0.004977375565610859,
+          "position": 26.93867269984917
+        },
+        "comparison": {
+          "clicks": {
+            "current": 56,
+            "previous": 66,
+            "change": -10,
+            "changePct": -0.15151515151515152,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 13132,
+            "previous": 13260,
+            "change": -128,
+            "changePct": -0.009653092006033183,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.0042643923240938165,
+            "previous": 0.004977375565610859,
+            "change": -0.0007129832415170428,
+            "changePct": -0.1432448148866059,
+            "isNew": false
+          },
+          "position": {
+            "current": 26.479416692049952,
+            "previous": 26.93867269984917,
+            "change": -0.45925600779921893
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 6
+      },
+      {
+        "key": "cyber-essentials",
+        "name": "Cyber Essentials",
+        "description": "Cyber Essentials queries",
+        "current": {
+          "clicks": 30,
+          "impressions": 10080,
+          "ctr": 0.002976190476190476,
+          "position": 31.788253968253965
+        },
+        "previous": {
+          "clicks": 53,
+          "impressions": 11678,
+          "ctr": 0.004538448364445967,
+          "position": 26.79448535708169
+        },
+        "comparison": {
+          "clicks": {
+            "current": 30,
+            "previous": 53,
+            "change": -23,
+            "changePct": -0.4339622641509434,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 10080,
+            "previous": 11678,
+            "change": -1598,
+            "changePct": -0.1368384997431067,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0.002976190476190476,
+            "previous": 0.004538448364445967,
+            "change": -0.001562257888255491,
+            "changePct": -0.34422731356693625,
+            "isNew": false
+          },
+          "position": {
+            "current": 31.788253968253965,
+            "previous": 26.79448535708169,
+            "change": 4.993768611172275
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 6
+      }
+    ],
+    "cannibalisation": [
+      {
+        "query": "penetration testing",
+        "pageCount": 3,
+        "clicks": 0,
+        "impressions": 1277,
+        "ctr": 0,
+        "position": 40.11761942051683,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 0,
+            "impressions": 702,
+            "ctr": 0,
+            "position": 38.6,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/",
+            "clicks": 0,
+            "impressions": 383,
+            "ctr": 0,
+            "position": 39.8,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+            "clicks": 0,
+            "impressions": 192,
+            "ctr": 0,
+            "position": 46.3,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 112.1,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "cybersecurity compliance agency",
+        "pageCount": 3,
+        "clicks": 51,
+        "impressions": 5315,
+        "ctr": 0.009595484477892756,
+        "position": 8.684760112888053,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 44,
+            "impressions": 2923,
+            "ctr": 0.01505302771125556,
+            "position": 4.5,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cyber-essentials",
+            "clicks": 6,
+            "impressions": 1595,
+            "ctr": 0.003761755485893417,
+            "position": 10.2,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cloud-assessment",
+            "clicks": 1,
+            "impressions": 797,
+            "ctr": 0.0012547051442910915,
+            "position": 21,
+            "pageRole": "secondary",
+            "commercialPriority": "low"
+          }
+        ],
+        "priorityScore": 98.3,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "i live in the united kingdom. what pen testing providers have the best reputation?",
+        "pageCount": 2,
+        "clicks": 3,
+        "impressions": 252,
+        "ctr": 0.011904761904761904,
+        "position": 8.22063492063492,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 1,
+            "impressions": 151,
+            "ctr": 0.006622516556291391,
+            "position": 7.9,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/",
+            "clicks": 2,
+            "impressions": 101,
+            "ctr": 0.019801980198019802,
+            "position": 8.7,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 97,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "virtual ciso",
+        "pageCount": 3,
+        "clicks": 10,
+        "impressions": 1427,
+        "ctr": 0.00700770847932726,
+        "position": 10.15459004905396,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+            "clicks": 4,
+            "impressions": 785,
+            "ctr": 0.005095541401273885,
+            "position": 8.4,
+            "pageRole": "supporting",
+            "commercialPriority": "low"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cloud-assessment",
+            "clicks": 5,
+            "impressions": 428,
+            "ctr": 0.011682242990654205,
+            "position": 9.3,
+            "pageRole": "secondary",
+            "commercialPriority": "low"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/vciso",
+            "clicks": 1,
+            "impressions": 214,
+            "ctr": 0.004672897196261682,
+            "position": 18.3,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 92.5,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "best penetration testing",
+        "pageCount": 2,
+        "clicks": 1,
+        "impressions": 2035,
+        "ctr": 0.0004914004914004914,
+        "position": 48.78437346437347,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 1,
+            "impressions": 1323,
+            "ctr": 0.0007558578987150416,
+            "position": 47,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+            "clicks": 0,
+            "impressions": 712,
+            "ctr": 0,
+            "position": 52.1,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 91.1,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "penetration testing agency",
+        "pageCount": 2,
+        "clicks": 26,
+        "impressions": 1807,
+        "ctr": 0.014388489208633094,
+        "position": 9.23840619811843,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 25,
+            "impressions": 1175,
+            "ctr": 0.02127659574468085,
+            "position": 7,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cyber-essentials",
+            "clicks": 1,
+            "impressions": 632,
+            "ctr": 0.0015822784810126582,
+            "position": 13.4,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          }
+        ],
+        "priorityScore": 90.6,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "vciso company",
+        "pageCount": 2,
+        "clicks": 33,
+        "impressions": 2553,
+        "ctr": 0.012925969447708578,
+        "position": 10.360987074030552,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/vciso",
+            "clicks": 31,
+            "impressions": 1659,
+            "ctr": 0.018685955394816153,
+            "position": 8.4,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+            "clicks": 2,
+            "impressions": 894,
+            "ctr": 0.0022371364653243847,
+            "position": 14,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 82.1,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "cyber essentials",
+        "pageCount": 2,
+        "clicks": 2,
+        "impressions": 1997,
+        "ctr": 0.00100150225338007,
+        "position": 26.880170255383074,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+            "clicks": 1,
+            "impressions": 1298,
+            "ctr": 0.0007704160246533128,
+            "position": 24.5,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+            "clicks": 1,
+            "impressions": 699,
+            "ctr": 0.001430615164520744,
+            "position": 31.3,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 76,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "virtual ciso uk",
+        "pageCount": 2,
+        "clicks": 27,
+        "impressions": 1531,
+        "ctr": 0.017635532331809273,
+        "position": 6.980862181580667,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+            "clicks": 23,
+            "impressions": 995,
+            "ctr": 0.023115577889447236,
+            "position": 3.9,
+            "pageRole": "supporting",
+            "commercialPriority": "low"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cyber-essentials",
+            "clicks": 4,
+            "impressions": 536,
+            "ctr": 0.007462686567164179,
+            "position": 12.7,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          }
+        ],
+        "priorityScore": 74.8,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "penetration testing uk",
+        "pageCount": 3,
+        "clicks": 0,
+        "impressions": 226,
+        "ctr": 0,
+        "position": 29.98230088495575,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 0,
+            "impressions": 124,
+            "ctr": 0,
+            "position": 25.8,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+            "clicks": 0,
+            "impressions": 68,
+            "ctr": 0,
+            "position": 32.8,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/cloud-assessment",
+            "clicks": 0,
+            "impressions": 34,
+            "ctr": 0,
+            "position": 39.6,
+            "pageRole": "secondary",
+            "commercialPriority": "low"
+          }
+        ],
+        "priorityScore": 74.5,
+        "priorityFlag": "high"
+      },
+      {
+        "query": "i live in the united kingdom. what penetration testing providers have the best reputation?",
+        "pageCount": 2,
+        "clicks": 2,
+        "impressions": 88,
+        "ctr": 0.022727272727272728,
+        "position": 4.3374999999999995,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+            "clicks": 1,
+            "impressions": 53,
+            "ctr": 0.018867924528301886,
+            "position": 3.9,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/",
+            "clicks": 1,
+            "impressions": 35,
+            "ctr": 0.02857142857142857,
+            "position": 5,
+            "pageRole": "primary",
+            "commercialPriority": "high"
+          }
+        ],
+        "priorityScore": 67.4,
+        "priorityFlag": "medium"
+      },
+      {
+        "query": "dtac services",
+        "pageCount": 2,
+        "clicks": 1,
+        "impressions": 1393,
+        "ctr": 0.0007178750897343862,
+        "position": 56.83632447954056,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 1,
+            "impressions": 905,
+            "ctr": 0.0011049723756906078,
+            "position": 55.4,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+            "clicks": 0,
+            "impressions": 488,
+            "ctr": 0,
+            "position": 59.5,
+            "pageRole": "supporting",
+            "commercialPriority": "low"
+          }
+        ],
+        "priorityScore": 59.4,
+        "priorityFlag": "medium"
+      },
+      {
+        "query": "medtech cyber uk",
+        "pageCount": 2,
+        "clicks": 0,
+        "impressions": 76,
+        "ctr": 0,
+        "position": 11.882894736842106,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+            "clicks": 0,
+            "impressions": 49,
+            "ctr": 0,
+            "position": 10,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 0,
+            "impressions": 27,
+            "ctr": 0,
+            "position": 15.3,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          }
+        ],
+        "priorityScore": 56.8,
+        "priorityFlag": "medium"
+      },
+      {
+        "query": "medical device security",
+        "pageCount": 3,
+        "clicks": 23,
+        "impressions": 317,
+        "ctr": 0.07255520504731862,
+        "position": 5.236908517350157,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+            "clicks": 21,
+            "impressions": 174,
+            "ctr": 0.1206896551724138,
+            "position": 1.2,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+            "clicks": 2,
+            "impressions": 95,
+            "ctr": 0.021052631578947368,
+            "position": 7.9,
+            "pageRole": "secondary",
+            "commercialPriority": "high"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 0,
+            "impressions": 48,
+            "ctr": 0,
+            "position": 14.6,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          }
+        ],
+        "priorityScore": 56,
+        "priorityFlag": "medium"
+      },
+      {
+        "query": "vciso agency",
+        "pageCount": 2,
+        "clicks": 0,
+        "impressions": 29,
+        "ctr": 0,
+        "position": 28.813793103448273,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 25.4,
+            "pageRole": "supporting",
+            "commercialPriority": "low"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 35.3,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          }
+        ],
+        "priorityScore": 22.6,
+        "priorityFlag": "low"
+      },
+      {
+        "query": "cybersecurity compliance services",
+        "pageCount": 2,
+        "clicks": 0,
+        "impressions": 26,
+        "ctr": 0,
+        "position": 52.09615384615385,
+        "pages": [
+          {
+            "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 49.5,
+            "pageRole": "secondary",
+            "commercialPriority": "medium"
+          },
+          {
+            "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 57,
+            "pageRole": "supporting",
+            "commercialPriority": "low"
+          }
+        ],
+        "priorityScore": 22.1,
+        "priorityFlag": "low"
+      }
+    ],
+    "rankings": {
+      "keywordsTracked": 18,
+      "positionsUp": 9,
+      "positionsDown": 6,
+      "entered": 3,
+      "dropped": 0,
+      "top3": {
+        "current": 3,
+        "previous": 1
+      },
+      "top10": {
+        "current": 7,
+        "previous": 5
+      },
+      "top30": {
+        "current": 10,
+        "previous": 11
+      },
+      "averagePosition": {
+        "current": 23.77777777777778,
+        "previous": 18.4
+      },
+      "visibilityScore": 8,
+      "notableGains": [
+        {
+          "keyword": "cyber security partner for financial services",
+          "startPosition": null,
+          "endPosition": 3,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 20,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/financial-services",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/financial-services"
+        },
+        {
+          "keyword": "cybersecurity company for financial services firms",
+          "startPosition": null,
+          "endPosition": 6,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 20,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/financial-services",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/financial-services"
+        },
+        {
+          "keyword": "dtac assessment",
+          "startPosition": 52,
+          "endPosition": 41,
+          "change": 11,
+          "direction": "up",
+          "searchVolume": 70,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "cybersecurity compliance consulting",
+          "startPosition": 10,
+          "endPosition": 5,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 90,
+          "targetUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+        },
+        {
+          "keyword": "penetration testing services",
+          "startPosition": 39,
+          "endPosition": 34,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 720,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "dtac security",
+          "startPosition": 12,
+          "endPosition": 8,
+          "change": 4,
+          "direction": "up",
+          "searchVolume": 30,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "penetration testing services uk",
+          "startPosition": 32,
+          "endPosition": 29,
+          "change": 3,
+          "direction": "up",
+          "searchVolume": 210,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "virtual ciso uk",
+          "startPosition": 31,
+          "endPosition": 29,
+          "change": 2,
+          "direction": "up",
+          "searchVolume": 110,
+          "targetUrl": "https://sentinelcyber.co.uk/services/vciso",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/vciso"
+        }
+      ],
+      "notableDeclines": [
+        {
+          "keyword": "managed cyber security leeds",
+          "startPosition": 11,
+          "endPosition": 46,
+          "change": -35,
+          "direction": "down",
+          "searchVolume": 50,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        },
+        {
+          "keyword": "cyber security consultancy",
+          "startPosition": 5,
+          "endPosition": 31,
+          "change": -26,
+          "direction": "down",
+          "searchVolume": 590,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        },
+        {
+          "keyword": "penetration testing uk",
+          "startPosition": 24,
+          "endPosition": 41,
+          "change": -17,
+          "direction": "down",
+          "searchVolume": 320,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "dtac certification",
+          "startPosition": 15,
+          "endPosition": 31,
+          "change": -16,
+          "direction": "down",
+          "searchVolume": 40,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "medical devices cyber security",
+          "startPosition": 19,
+          "endPosition": 31,
+          "change": -12,
+          "direction": "down",
+          "searchVolume": 60,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/medical-technology"
+        },
+        {
+          "keyword": "cyber security services leeds",
+          "startPosition": 13,
+          "endPosition": 20,
+          "change": -7,
+          "direction": "down",
+          "searchVolume": 80,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        }
+      ],
+      "movements": [
+        {
+          "keyword": "vciso",
+          "startPosition": null,
+          "endPosition": 65,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 260,
+          "targetUrl": "https://sentinelcyber.co.uk/services/vciso",
+          "rankingUrl": "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+        },
+        {
+          "keyword": "dtac assessment",
+          "startPosition": 52,
+          "endPosition": 41,
+          "change": 11,
+          "direction": "up",
+          "searchVolume": 70,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "cybersecurity compliance consulting",
+          "startPosition": 10,
+          "endPosition": 5,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 90,
+          "targetUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+        },
+        {
+          "keyword": "penetration testing services",
+          "startPosition": 39,
+          "endPosition": 34,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 720,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "dtac security",
+          "startPosition": 12,
+          "endPosition": 8,
+          "change": 4,
+          "direction": "up",
+          "searchVolume": 30,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "penetration testing services uk",
+          "startPosition": 32,
+          "endPosition": 29,
+          "change": 3,
+          "direction": "up",
+          "searchVolume": 210,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "virtual ciso uk",
+          "startPosition": 31,
+          "endPosition": 29,
+          "change": 2,
+          "direction": "up",
+          "searchVolume": 110,
+          "targetUrl": "https://sentinelcyber.co.uk/services/vciso",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/vciso"
+        },
+        {
+          "keyword": "medtech cybersecurity",
+          "startPosition": 4,
+          "endPosition": 2,
+          "change": 2,
+          "direction": "up",
+          "searchVolume": 50,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/medical-technology"
+        },
+        {
+          "keyword": "medtech cyber security",
+          "startPosition": 3,
+          "endPosition": 2,
+          "change": 1,
+          "direction": "up",
+          "searchVolume": 40,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/medical-technology"
+        },
+        {
+          "keyword": "penetration testing leeds",
+          "startPosition": 6,
+          "endPosition": 4,
+          "change": 2,
+          "direction": "up",
+          "searchVolume": 90,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "managed cyber security leeds",
+          "startPosition": 11,
+          "endPosition": 46,
+          "change": -35,
+          "direction": "down",
+          "searchVolume": 50,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        },
+        {
+          "keyword": "cyber security consultancy",
+          "startPosition": 5,
+          "endPosition": 31,
+          "change": -26,
+          "direction": "down",
+          "searchVolume": 590,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        },
+        {
+          "keyword": "penetration testing uk",
+          "startPosition": 24,
+          "endPosition": 41,
+          "change": -17,
+          "direction": "down",
+          "searchVolume": 320,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        },
+        {
+          "keyword": "dtac certification",
+          "startPosition": 15,
+          "endPosition": 31,
+          "change": -16,
+          "direction": "down",
+          "searchVolume": 40,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        },
+        {
+          "keyword": "medical devices cyber security",
+          "startPosition": 19,
+          "endPosition": 31,
+          "change": -12,
+          "direction": "down",
+          "searchVolume": 60,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/medical-technology"
+        },
+        {
+          "keyword": "cyber security services leeds",
+          "startPosition": 13,
+          "endPosition": 20,
+          "change": -7,
+          "direction": "down",
+          "searchVolume": 80,
+          "targetUrl": "https://sentinelcyber.co.uk/",
+          "rankingUrl": "https://sentinelcyber.co.uk/"
+        },
+        {
+          "keyword": "cyber security partner for financial services",
+          "startPosition": null,
+          "endPosition": 3,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 20,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/financial-services",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/financial-services"
+        },
+        {
+          "keyword": "cybersecurity company for financial services firms",
+          "startPosition": null,
+          "endPosition": 6,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 20,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/financial-services",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/financial-services"
+        }
+      ],
+      "source": "sheet_import"
+    }
+  },
+  "findings": {
+    "executive_findings": [
+      {
+        "id": "clicks_change_1",
+        "kind": "clicks_change",
+        "sentiment": "negative",
+        "text": "Total clicks fell from 646 to 587 (-9.1%).",
+        "data": {
+          "current": 587,
+          "previous": 646,
+          "changePct": -0.0913312693498452
+        }
+      },
+      {
+        "id": "impressions_change_2",
+        "kind": "impressions_change",
+        "sentiment": "positive",
+        "text": "Total impressions rose from 102.8K to 107.0K (+4.1%).",
+        "data": {
+          "current": 106963,
+          "previous": 102775,
+          "changePct": 0.040749209438092925
+        }
+      },
+      {
+        "id": "ctr_change_3",
+        "kind": "ctr_change",
+        "sentiment": "negative",
+        "text": "Site-wide click-through rate moved from 0.63% to 0.55%.",
+        "data": {
+          "current": 0.005487878986191487,
+          "previous": 0.006285575285818535
+        }
+      },
+      {
+        "id": "position_change_4",
+        "kind": "position_change",
+        "sentiment": "positive",
+        "text": "Average position improved from 25.5 to 25.4. Site-wide average position blends every indexed query, so treat it as context rather than a target.",
+        "data": {
+          "current": 25.4,
+          "previous": 25.5
+        }
+      }
+    ],
+    "traffic_findings": [
+      {
+        "id": "page_clicks_down_5",
+        "kind": "page_clicks_down",
+        "sentiment": "negative",
+        "text": "Homepage lost clicks: 149 → 91 (impressions 553 → 701).",
+        "data": {
+          "url": "https://sentinelcyber.co.uk/",
+          "role": "primary",
+          "clicksChange": -58
+        }
+      },
+      {
+        "id": "page_clicks_up_6",
+        "kind": "page_clicks_up",
+        "sentiment": "positive",
+        "text": "What is a vCISO (blog) gained clicks: 114 → 146 (impressions 11.1K → 9,244).",
+        "data": {
+          "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+          "role": "supporting",
+          "clicksChange": 32
+        }
+      },
+      {
+        "id": "page_clicks_down_7",
+        "kind": "page_clicks_down",
+        "sentiment": "negative",
+        "text": "Financial Services Cyber Security lost clicks: 31 → 18 (impressions 8,818 → 5,310).",
+        "data": {
+          "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+          "role": "secondary",
+          "clicksChange": -13
+        }
+      },
+      {
+        "id": "page_clicks_down_8",
+        "kind": "page_clicks_down",
+        "sentiment": "negative",
+        "text": "vCISO / Cyber Strategy lost clicks: 47 → 37 (impressions 8,741 → 8,503).",
+        "data": {
+          "url": "https://sentinelcyber.co.uk/services/vciso",
+          "role": "secondary",
+          "clicksChange": -10
+        }
+      }
+    ],
+    "content_group_findings": [
+      {
+        "id": "content_group_growing_9",
+        "kind": "content_group_growing",
+        "sentiment": "positive",
+        "text": "Content group \"Blog\" is growing: clicks 122 → 150 (+23.0%).",
+        "data": {
+          "group": "blog",
+          "clicks": 150,
+          "changePct": 0.22950819672131148
+        }
+      },
+      {
+        "id": "content_group_decaying_10",
+        "kind": "content_group_decaying",
+        "sentiment": "negative",
+        "text": "Content group \"Penetration Testing\" is decaying: clicks 69 → 62 (-10.1%).",
+        "data": {
+          "group": "pen-testing",
+          "clicks": 62,
+          "changePct": -0.10144927536231885
+        }
+      },
+      {
+        "id": "content_group_decaying_11",
+        "kind": "content_group_decaying",
+        "sentiment": "negative",
+        "text": "Content group \"Sectors\" is decaying: clicks 32 → 20 (-37.5%).",
+        "data": {
+          "group": "sectors",
+          "clicks": 20,
+          "changePct": -0.375
+        }
+      }
+    ],
+    "topic_cluster_findings": [
+      {
+        "id": "topic_cluster_growing_12",
+        "kind": "topic_cluster_growing",
+        "sentiment": "positive",
+        "text": "Topic cluster \"vCISO\" is growing: clicks 166 → 193, impressions 19.8K → 18.2K.",
+        "data": {
+          "cluster": "vciso",
+          "changePct": 0.16265060240963855
+        }
+      },
+      {
+        "id": "topic_cluster_growing_13",
+        "kind": "topic_cluster_growing",
+        "sentiment": "positive",
+        "text": "Topic cluster \"Medtech Security\" is growing: clicks 74 → 81, impressions 19.7K → 16.3K.",
+        "data": {
+          "cluster": "medtech-security",
+          "changePct": 0.0945945945945946
+        }
+      },
+      {
+        "id": "topic_cluster_growing_14",
+        "kind": "topic_cluster_growing",
+        "sentiment": "positive",
+        "text": "Topic cluster \"Compliance\" is growing: clicks 67 → 73, impressions 21.8K → 27.5K.",
+        "data": {
+          "cluster": "compliance",
+          "changePct": 0.08955223880597014
+        }
+      },
+      {
+        "id": "topic_cluster_decaying_15",
+        "kind": "topic_cluster_decaying",
+        "sentiment": "negative",
+        "text": "Topic cluster \"Penetration Testing\" is decaying: clicks 72 → 66, impressions 16.3K → 21.6K.",
+        "data": {
+          "cluster": "penetration-testing",
+          "changePct": -0.08333333333333333
+        }
+      },
+      {
+        "id": "topic_cluster_decaying_16",
+        "kind": "topic_cluster_decaying",
+        "sentiment": "negative",
+        "text": "Topic cluster \"DTAC\" is decaying: clicks 66 → 56, impressions 13.3K → 13.1K.",
+        "data": {
+          "cluster": "dtac",
+          "changePct": -0.15151515151515152
+        }
+      },
+      {
+        "id": "topic_cluster_decaying_17",
+        "kind": "topic_cluster_decaying",
+        "sentiment": "negative",
+        "text": "Topic cluster \"Cyber Essentials\" is decaying: clicks 53 → 30, impressions 11.7K → 10.1K.",
+        "data": {
+          "cluster": "cyber-essentials",
+          "changePct": -0.4339622641509434
+        }
+      }
+    ],
+    "cannibalisation_findings": [
+      {
+        "id": "cannibalisation_high_priority_18",
+        "kind": "cannibalisation_high_priority",
+        "sentiment": "warning",
+        "text": "10 high-priority cannibalisation issues found where multiple pages compete for the same query.",
+        "data": {
+          "count": 10
+        }
+      },
+      {
+        "id": "cannibalisation_issue_19",
+        "kind": "cannibalisation_issue",
+        "sentiment": "warning",
+        "text": "\"penetration testing\": 3 pages share 1,277 impressions for 0 clicks (CTR 0.00%, avg position 40.1).",
+        "data": {
+          "query": "penetration testing",
+          "pages": 3,
+          "score": 112.1
+        }
+      },
+      {
+        "id": "cannibalisation_issue_20",
+        "kind": "cannibalisation_issue",
+        "sentiment": "warning",
+        "text": "\"cybersecurity compliance agency\": 3 pages share 5,315 impressions for 51 clicks (CTR 0.96%, avg position 8.7).",
+        "data": {
+          "query": "cybersecurity compliance agency",
+          "pages": 3,
+          "score": 98.3
+        }
+      },
+      {
+        "id": "cannibalisation_issue_21",
+        "kind": "cannibalisation_issue",
+        "sentiment": "warning",
+        "text": "\"i live in the united kingdom. what pen testing providers have the best reputation?\": 2 pages share 252 impressions for 3 clicks (CTR 1.19%, avg position 8.2).",
+        "data": {
+          "query": "i live in the united kingdom. what pen testing providers have the best reputation?",
+          "pages": 2,
+          "score": 97
+        }
+      }
+    ],
+    "ranking_findings": [
+      {
+        "id": "rankings_balance_22",
+        "kind": "rankings_balance",
+        "sentiment": "positive",
+        "text": "9 tracked keyword positions improved and 6 declined, with 3 new entries.",
+        "data": {
+          "up": 9,
+          "down": 6,
+          "entered": 3,
+          "dropped": 0
+        }
+      },
+      {
+        "id": "rankings_top_buckets_23",
+        "kind": "rankings_top_buckets",
+        "sentiment": "positive",
+        "text": "Keywords in the top 3: 1 → 3; top 10: 5 → 7; top 30: 11 → 10.",
+        "data": {
+          "top3": 3,
+          "top10": 7,
+          "top30": 10
+        }
+      },
+      {
+        "id": "ranking_gain_24",
+        "kind": "ranking_gain",
+        "sentiment": "positive",
+        "text": "\"cyber security partner for financial services\" entered the tracked set at position 3.",
+        "data": {
+          "keyword": "cyber security partner for financial services",
+          "end": 3
+        }
+      },
+      {
+        "id": "ranking_gain_25",
+        "kind": "ranking_gain",
+        "sentiment": "positive",
+        "text": "\"cybersecurity company for financial services firms\" entered the tracked set at position 6.",
+        "data": {
+          "keyword": "cybersecurity company for financial services firms",
+          "end": 6
+        }
+      },
+      {
+        "id": "ranking_gain_26",
+        "kind": "ranking_gain",
+        "sentiment": "positive",
+        "text": "\"dtac assessment\" improved 11 places to position 41.",
+        "data": {
+          "keyword": "dtac assessment",
+          "end": 41
+        }
+      },
+      {
+        "id": "ranking_decline_27",
+        "kind": "ranking_decline",
+        "sentiment": "negative",
+        "text": "\"managed cyber security leeds\" slipped 35 places to position 46.",
+        "data": {
+          "keyword": "managed cyber security leeds",
+          "end": 46
+        }
+      },
+      {
+        "id": "ranking_decline_28",
+        "kind": "ranking_decline",
+        "sentiment": "negative",
+        "text": "\"cyber security consultancy\" slipped 26 places to position 31.",
+        "data": {
+          "keyword": "cyber security consultancy",
+          "end": 31
+        }
+      },
+      {
+        "id": "ranking_decline_29",
+        "kind": "ranking_decline",
+        "sentiment": "negative",
+        "text": "\"penetration testing uk\" slipped 17 places to position 41.",
+        "data": {
+          "keyword": "penetration testing uk",
+          "end": 41
+        }
+      },
+      {
+        "id": "visibility_score_30",
+        "kind": "visibility_score",
+        "sentiment": "neutral",
+        "text": "Tracked-set visibility score: 8%.",
+        "data": {
+          "visibility": 8
+        }
+      }
+    ],
+    "strategic_priority_candidates": [
+      {
+        "id": "priority_decaying_groups_31",
+        "kind": "priority_decaying_groups",
+        "sentiment": "warning",
+        "text": "Review the \"Penetration Testing\", \"Sectors\" content groups — clicks declined this period.",
+        "data": {
+          "groups": "pen-testing,sectors"
+        }
+      },
+      {
+        "id": "priority_cannibalisation_32",
+        "kind": "priority_cannibalisation",
+        "sentiment": "warning",
+        "text": "Resolve the high-priority cannibalisation issues (starting with \"penetration testing\") by consolidating or differentiating the competing pages.",
+        "data": {
+          "query": "penetration testing"
+        }
+      },
+      {
+        "id": "priority_build_on_growth_33",
+        "kind": "priority_build_on_growth",
+        "sentiment": "positive",
+        "text": "Build on the momentum in \"vCISO\", \"Medtech Security\", \"Compliance\" with supporting content.",
+        "data": {
+          "clusters": "vciso,medtech-security,compliance"
+        }
+      },
+      {
+        "id": "priority_ranking_declines_34",
+        "kind": "priority_ranking_declines",
+        "sentiment": "warning",
+        "text": "Monitor the declining tracked keywords (e.g. \"managed cyber security leeds\") and confirm whether the movement settles before making page changes.",
+        "data": {
+          "keyword": "managed cyber security leeds"
+        }
+      }
+    ]
+  },
+  "commentary": [
+    {
+      "section": "executive_summary",
+      "suggestedText": "Total clicks fell from 646 to 587 (-9.1%). Total impressions rose from 102.8K to 107.0K (+4.1%). Site-wide click-through rate moved from 0.63% to 0.55%. Average position improved from 25.5 to 25.4. Site-wide average position blends every indexed query, so treat it as context rather than a target. On balance this was a positive month. Suggested focus: Review the \"Penetration Testing\", \"Sectors\" content groups — clicks declined this period.",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "Total clicks fell from 646 to 587 (-9.1%). Total impressions rose from 102.8K to 107.0K (+4.1%). Site-wide click-through rate moved from 0.63% to 0.55%. Average position improved from 25.5 to 25.4. Site-wide average position blends every indexed query, so treat it as context rather than a target. On balance this was a positive month. Suggested focus: Review the \"Penetration Testing\", \"Sectors\" content groups — clicks declined this period.",
+      "mode": "rules_only"
+    },
+    {
+      "section": "traffic",
+      "suggestedText": "Homepage lost clicks: 149 → 91 (impressions 553 → 701). What is a vCISO (blog) gained clicks: 114 → 146 (impressions 11.1K → 9,244). Financial Services Cyber Security lost clicks: 31 → 18 (impressions 8,818 → 5,310). vCISO / Cyber Strategy lost clicks: 47 → 37 (impressions 8,741 → 8,503).",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "Homepage lost clicks: 149 → 91 (impressions 553 → 701). What is a vCISO (blog) gained clicks: 114 → 146 (impressions 11.1K → 9,244). Financial Services Cyber Security lost clicks: 31 → 18 (impressions 8,818 → 5,310). vCISO / Cyber Strategy lost clicks: 47 → 37 (impressions 8,741 → 8,503).",
+      "mode": "rules_only"
+    },
+    {
+      "section": "content_groups",
+      "suggestedText": "Content group \"Blog\" is growing: clicks 122 → 150 (+23.0%). Content group \"Penetration Testing\" is decaying: clicks 69 → 62 (-10.1%). Content group \"Sectors\" is decaying: clicks 32 → 20 (-37.5%).",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "Content group \"Blog\" is growing: clicks 122 → 150 (+23.0%). Content group \"Penetration Testing\" is decaying: clicks 69 → 62 (-10.1%). Content group \"Sectors\" is decaying: clicks 32 → 20 (-37.5%).",
+      "mode": "rules_only"
+    },
+    {
+      "section": "topic_clusters",
+      "suggestedText": "Topic cluster \"vCISO\" is growing: clicks 166 → 193, impressions 19.8K → 18.2K. Topic cluster \"Medtech Security\" is growing: clicks 74 → 81, impressions 19.7K → 16.3K. Topic cluster \"Compliance\" is growing: clicks 67 → 73, impressions 21.8K → 27.5K. Topic cluster \"Penetration Testing\" is decaying: clicks 72 → 66, impressions 16.3K → 21.6K. Topic cluster \"DTAC\" is decaying: clicks 66 → 56, impressions 13.3K → 13.1K.",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "Topic cluster \"vCISO\" is growing: clicks 166 → 193, impressions 19.8K → 18.2K. Topic cluster \"Medtech Security\" is growing: clicks 74 → 81, impressions 19.7K → 16.3K. Topic cluster \"Compliance\" is growing: clicks 67 → 73, impressions 21.8K → 27.5K. Topic cluster \"Penetration Testing\" is decaying: clicks 72 → 66, impressions 16.3K → 21.6K. Topic cluster \"DTAC\" is decaying: clicks 66 → 56, impressions 13.3K → 13.1K.",
+      "mode": "rules_only"
+    },
+    {
+      "section": "cannibalisation",
+      "suggestedText": "10 high-priority cannibalisation issues found where multiple pages compete for the same query. \"penetration testing\": 3 pages share 1,277 impressions for 0 clicks (CTR 0.00%, avg position 40.1). \"cybersecurity compliance agency\": 3 pages share 5,315 impressions for 51 clicks (CTR 0.96%, avg position 8.7). \"i live in the united kingdom. what pen testing providers have the best reputation?\": 2 pages share 252 impressions for 3 clicks (CTR 1.19%, avg position 8.2).",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "10 high-priority cannibalisation issues found where multiple pages compete for the same query. \"penetration testing\": 3 pages share 1,277 impressions for 0 clicks (CTR 0.00%, avg position 40.1). \"cybersecurity compliance agency\": 3 pages share 5,315 impressions for 51 clicks (CTR 0.96%, avg position 8.7). \"i live in the united kingdom. what pen testing providers have the best reputation?\": 2 pages share 252 impressions for 3 clicks (CTR 1.19%, avg position 8.2).",
+      "mode": "rules_only"
+    },
+    {
+      "section": "rankings",
+      "suggestedText": "9 tracked keyword positions improved and 6 declined, with 3 new entries. Keywords in the top 3: 1 → 3; top 10: 5 → 7; top 30: 11 → 10. \"cyber security partner for financial services\" entered the tracked set at position 3. \"cybersecurity company for financial services firms\" entered the tracked set at position 6. \"dtac assessment\" improved 11 places to position 41. \"managed cyber security leeds\" slipped 35 places to position 46.",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "9 tracked keyword positions improved and 6 declined, with 3 new entries. Keywords in the top 3: 1 → 3; top 10: 5 → 7; top 30: 11 → 10. \"cyber security partner for financial services\" entered the tracked set at position 3. \"cybersecurity company for financial services firms\" entered the tracked set at position 6. \"dtac assessment\" improved 11 places to position 41. \"managed cyber security leeds\" slipped 35 places to position 46.",
+      "mode": "rules_only"
+    },
+    {
+      "section": "strategic_priorities",
+      "suggestedText": "1. Review the \"Penetration Testing\", \"Sectors\" content groups — clicks declined this period.\n2. Resolve the high-priority cannibalisation issues (starting with \"penetration testing\") by consolidating or differentiating the competing pages.\n3. Build on the momentum in \"vCISO\", \"Medtech Security\", \"Compliance\" with supporting content.\n4. Monitor the declining tracked keywords (e.g. \"managed cyber security leeds\") and confirm whether the movement settles before making page changes.",
+      "suggestedSource": "rules_only",
+      "overrideText": null,
+      "finalText": "1. Review the \"Penetration Testing\", \"Sectors\" content groups — clicks declined this period.\n2. Resolve the high-priority cannibalisation issues (starting with \"penetration testing\") by consolidating or differentiating the competing pages.\n3. Build on the momentum in \"vCISO\", \"Medtech Security\", \"Compliance\" with supporting content.\n4. Monitor the declining tracked keywords (e.g. \"managed cyber security leeds\") and confirm whether the movement settles before making page changes.",
+      "mode": "rules_only"
+    }
+  ],
+  "drawTasks": [
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "design_dev",
+      "title": "Staff page amendments",
+      "description": "Updated team bios and structured data.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "reactive_seo",
+      "title": "Key page reactive review",
+      "description": "Reviewed key commercial pages for reactive improvements.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "writing",
+      "title": "Medical device evidence pack blog",
+      "description": "Published the medical device evidence pack blog.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "writing",
+      "title": "What is a vCISO blog",
+      "description": "Published the vCISO explainer.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "design_dev",
+      "title": "New email / CRM set-up",
+      "description": "Implementing the new email and CRM stack.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "reactive_seo",
+      "title": "Implement June reactive suggestions",
+      "description": "Apply the improvements identified in June's reactive review.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "writing",
+      "title": "vCISO cost and signs-you-need-one posts",
+      "description": "Two vCISO follow-up posts drafted and sent for sign-off.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "anything_else",
+      "title": "Discuss NHS security page",
+      "description": "Scope a potential NHS-focused service page with the client.",
+      "status": "planned"
+    }
+  ],
+  "strategicNotes": [
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "note_type": "priority",
+      "title": "Publish the medtech content",
+      "body": "The medtech blog is written and ready for review. The medical technology page holds strong visibility on its core tracked terms but converts little of it into clicks; getting this content live is the most direct way to close that gap.",
+      "priority": "high",
+      "active": true
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "note_type": "watch",
+      "title": "Financial services long-tail momentum",
+      "body": "Several new financial services long-tail terms entered the tracked set for the first time this month. Early days, but worth reinforcing as the sector page beds in.",
+      "priority": "medium",
+      "active": true
+    }
+  ],
+  "raw": {
+    "gsc": {
+      "current": {
+        "summary": {
+          "keys": [],
+          "clicks": 587,
+          "impressions": 106963,
+          "ctr": 0.005487878986191487,
+          "position": 25.4
+        },
+        "pages": [
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 137,
+            "impressions": 31480,
+            "ctr": 0.0043519695044472685,
+            "position": 26
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 62,
+            "impressions": 20098,
+            "ctr": 0.0030848840680664743,
+            "position": 26.6
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 70,
+            "impressions": 19621,
+            "ctr": 0.0035676061362825543,
+            "position": 24.1
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 146,
+            "impressions": 9244,
+            "ctr": 0.01579402855906534,
+            "position": 19.4
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 37,
+            "impressions": 8503,
+            "ctr": 0.004351405386334235,
+            "position": 22.5
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 14,
+            "impressions": 6071,
+            "ctr": 0.0023060451325975953,
+            "position": 34.9
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 18,
+            "impressions": 5310,
+            "ctr": 0.003389830508474576,
+            "position": 21.9
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 2,
+            "impressions": 3701,
+            "ctr": 0.0005403944879762226,
+            "position": 37.9
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 6,
+            "impressions": 1259,
+            "ctr": 0.004765687053216839,
+            "position": 17.5
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data"
+            ],
+            "clicks": 4,
+            "impressions": 975,
+            "ctr": 0.0041025641025641026,
+            "position": 11.3
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 91,
+            "impressions": 701,
+            "ctr": 0.12981455064194009,
+            "position": 24
+          }
+        ],
+        "queries": [
+          {
+            "keys": [
+              "cybersecurity compliance agency"
+            ],
+            "clicks": 51,
+            "impressions": 5315,
+            "ctr": 0.009595484477892756,
+            "position": 8.7
+          },
+          {
+            "keys": [
+              "cybersecurity compliance uk"
+            ],
+            "clicks": 5,
+            "impressions": 5022,
+            "ctr": 0.0009956192751891676,
+            "position": 33.9
+          },
+          {
+            "keys": [
+              "best dtac"
+            ],
+            "clicks": 24,
+            "impressions": 4819,
+            "ctr": 0.0049802863664660715,
+            "position": 16.2
+          },
+          {
+            "keys": [
+              "pen testing uk"
+            ],
+            "clicks": 5,
+            "impressions": 4732,
+            "ctr": 0.0010566356720202875,
+            "position": 31.7
+          },
+          {
+            "keys": [
+              "cybersecurity compliance"
+            ],
+            "clicks": 4,
+            "impressions": 4179,
+            "ctr": 0.000957166786312515,
+            "position": 28.6
+          },
+          {
+            "keys": [
+              "best pen testing"
+            ],
+            "clicks": 13,
+            "impressions": 3778,
+            "ctr": 0.003440974060349391,
+            "position": 11.9
+          },
+          {
+            "keys": [
+              "best medical device security"
+            ],
+            "clicks": 8,
+            "impressions": 3762,
+            "ctr": 0.002126528442317916,
+            "position": 15.6
+          },
+          {
+            "keys": [
+              "best cybersecurity compliance"
+            ],
+            "clicks": 3,
+            "impressions": 3615,
+            "ctr": 0.0008298755186721991,
+            "position": 20.6
+          },
+          {
+            "keys": [
+              "medtech cyber"
+            ],
+            "clicks": 28,
+            "impressions": 3483,
+            "ctr": 0.008039046798736722,
+            "position": 6.3
+          },
+          {
+            "keys": [
+              "penetration testing services"
+            ],
+            "clicks": 4,
+            "impressions": 3478,
+            "ctr": 0.0011500862564692352,
+            "position": 29.7
+          },
+          {
+            "keys": [
+              "dtac agency"
+            ],
+            "clicks": 0,
+            "impressions": 3380,
+            "ctr": 0,
+            "position": 42.6
+          },
+          {
+            "keys": [
+              "virtual ciso company"
+            ],
+            "clicks": 1,
+            "impressions": 3322,
+            "ctr": 0.00030102347983142685,
+            "position": 28.6
+          },
+          {
+            "keys": [
+              "virtual ciso services"
+            ],
+            "clicks": 4,
+            "impressions": 3308,
+            "ctr": 0.0012091898428053204,
+            "position": 23.7
+          },
+          {
+            "keys": [
+              "cyber essentials uk"
+            ],
+            "clicks": 3,
+            "impressions": 3308,
+            "ctr": 0.0009068923821039903,
+            "position": 54.6
+          },
+          {
+            "keys": [
+              "compliance consulting services"
+            ],
+            "clicks": 4,
+            "impressions": 3121,
+            "ctr": 0.001281640499839795,
+            "position": 48.1
+          },
+          {
+            "keys": [
+              "medical device security company"
+            ],
+            "clicks": 13,
+            "impressions": 2840,
+            "ctr": 0.004577464788732394,
+            "position": 15.2
+          },
+          {
+            "keys": [
+              "dtac company"
+            ],
+            "clicks": 31,
+            "impressions": 2596,
+            "ctr": 0.011941448382126348,
+            "position": 4
+          },
+          {
+            "keys": [
+              "vciso company"
+            ],
+            "clicks": 33,
+            "impressions": 2553,
+            "ctr": 0.012925969447708578,
+            "position": 10.4
+          },
+          {
+            "keys": [
+              "best virtual ciso"
+            ],
+            "clicks": 98,
+            "impressions": 2380,
+            "ctr": 0.041176470588235294,
+            "position": 2.5
+          },
+          {
+            "keys": [
+              "vciso uk"
+            ],
+            "clicks": 14,
+            "impressions": 2209,
+            "ctr": 0.006337709370755998,
+            "position": 11.7
+          },
+          {
+            "keys": [
+              "compliance consulting"
+            ],
+            "clicks": 1,
+            "impressions": 2172,
+            "ctr": 0.00046040515653775324,
+            "position": 57.3
+          },
+          {
+            "keys": [
+              "best penetration testing"
+            ],
+            "clicks": 1,
+            "impressions": 2035,
+            "ctr": 0.0004914004914004914,
+            "position": 48.8
+          },
+          {
+            "keys": [
+              "cyber essentials"
+            ],
+            "clicks": 2,
+            "impressions": 1997,
+            "ctr": 0.00100150225338007,
+            "position": 26.9
+          },
+          {
+            "keys": [
+              "medical device security uk"
+            ],
+            "clicks": 1,
+            "impressions": 1963,
+            "ctr": 0.0005094243504839531,
+            "position": 32.3
+          },
+          {
+            "keys": [
+              "cyber essentials agency"
+            ],
+            "clicks": 20,
+            "impressions": 1811,
+            "ctr": 0.011043622308117063,
+            "position": 4.9
+          },
+          {
+            "keys": [
+              "penetration testing agency"
+            ],
+            "clicks": 26,
+            "impressions": 1807,
+            "ctr": 0.014388489208633094,
+            "position": 9.2
+          },
+          {
+            "keys": [
+              "pen testing company"
+            ],
+            "clicks": 8,
+            "impressions": 1784,
+            "ctr": 0.004484304932735426,
+            "position": 14.2
+          },
+          {
+            "keys": [
+              "compliance consulting agency"
+            ],
+            "clicks": 0,
+            "impressions": 1592,
+            "ctr": 0,
+            "position": 49.7
+          },
+          {
+            "keys": [
+              "virtual ciso uk"
+            ],
+            "clicks": 27,
+            "impressions": 1531,
+            "ctr": 0.017635532331809273,
+            "position": 7
+          },
+          {
+            "keys": [
+              "virtual ciso"
+            ],
+            "clicks": 10,
+            "impressions": 1427,
+            "ctr": 0.00700770847932726,
+            "position": 10.2
+          },
+          {
+            "keys": [
+              "dtac services"
+            ],
+            "clicks": 1,
+            "impressions": 1393,
+            "ctr": 0.0007178750897343862,
+            "position": 56.8
+          },
+          {
+            "keys": [
+              "medtech cyber services"
+            ],
+            "clicks": 6,
+            "impressions": 1326,
+            "ctr": 0.004524886877828055,
+            "position": 14.8
+          },
+          {
+            "keys": [
+              "cyber essentials services"
+            ],
+            "clicks": 1,
+            "impressions": 1289,
+            "ctr": 0.0007757951900698216,
+            "position": 22.9
+          },
+          {
+            "keys": [
+              "penetration testing"
+            ],
+            "clicks": 0,
+            "impressions": 1277,
+            "ctr": 0,
+            "position": 40.1
+          },
+          {
+            "keys": [
+              "compliance consulting company"
+            ],
+            "clicks": 2,
+            "impressions": 1185,
+            "ctr": 0.0016877637130801688,
+            "position": 23.7
+          },
+          {
+            "keys": [
+              "pen testing agency"
+            ],
+            "clicks": 1,
+            "impressions": 1178,
+            "ctr": 0.0008488964346349745,
+            "position": 46.4
+          },
+          {
+            "keys": [
+              "virtual ciso agency"
+            ],
+            "clicks": 0,
+            "impressions": 990,
+            "ctr": 0,
+            "position": 51.8
+          },
+          {
+            "keys": [
+              "best cyber essentials"
+            ],
+            "clicks": 4,
+            "impressions": 975,
+            "ctr": 0.0041025641025641026,
+            "position": 11.3
+          },
+          {
+            "keys": [
+              "medtech cyber company"
+            ],
+            "clicks": 1,
+            "impressions": 941,
+            "ctr": 0.0010626992561105207,
+            "position": 46.6
+          },
+          {
+            "keys": [
+              "penetration testing company"
+            ],
+            "clicks": 3,
+            "impressions": 834,
+            "ctr": 0.0035971223021582736,
+            "position": 15.5
+          },
+          {
+            "keys": [
+              "medtech cyber agency"
+            ],
+            "clicks": 0,
+            "impressions": 750,
+            "ctr": 0,
+            "position": 49
+          },
+          {
+            "keys": [
+              "best compliance consulting"
+            ],
+            "clicks": 0,
+            "impressions": 719,
+            "ctr": 0,
+            "position": 40.8
+          },
+          {
+            "keys": [
+              "cyber essentials company"
+            ],
+            "clicks": 0,
+            "impressions": 700,
+            "ctr": 0,
+            "position": 52.4
+          },
+          {
+            "keys": [
+              "dtac uk"
+            ],
+            "clicks": 0,
+            "impressions": 689,
+            "ctr": 0,
+            "position": 38.5
+          },
+          {
+            "keys": [
+              "best medtech cyber"
+            ],
+            "clicks": 1,
+            "impressions": 532,
+            "ctr": 0.0018796992481203006,
+            "position": 33.8
+          },
+          {
+            "keys": [
+              "compliance consulting uk"
+            ],
+            "clicks": 2,
+            "impressions": 493,
+            "ctr": 0.004056795131845842,
+            "position": 15.8
+          },
+          {
+            "keys": [
+              "medical device security"
+            ],
+            "clicks": 23,
+            "impressions": 317,
+            "ctr": 0.07255520504731862,
+            "position": 5.2
+          },
+          {
+            "keys": [
+              "medical device security services"
+            ],
+            "clicks": 0,
+            "impressions": 302,
+            "ctr": 0,
+            "position": 42.4
+          },
+          {
+            "keys": [
+              "vciso"
+            ],
+            "clicks": 0,
+            "impressions": 291,
+            "ctr": 0,
+            "position": 38.3
+          },
+          {
+            "keys": [
+              "dtac"
+            ],
+            "clicks": 0,
+            "impressions": 255,
+            "ctr": 0,
+            "position": 37.8
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?"
+            ],
+            "clicks": 3,
+            "impressions": 252,
+            "ctr": 0.011904761904761904,
+            "position": 8.2
+          },
+          {
+            "keys": [
+              "penetration testing uk"
+            ],
+            "clicks": 0,
+            "impressions": 226,
+            "ctr": 0,
+            "position": 30
+          },
+          {
+            "keys": [
+              "sentinel cyber security"
+            ],
+            "clicks": 88,
+            "impressions": 182,
+            "ctr": 0.4835164835164835,
+            "position": 3
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?"
+            ],
+            "clicks": 2,
+            "impressions": 88,
+            "ctr": 0.022727272727272728,
+            "position": 4.3
+          },
+          {
+            "keys": [
+              "best vciso"
+            ],
+            "clicks": 5,
+            "impressions": 81,
+            "ctr": 0.06172839506172839,
+            "position": 2
+          },
+          {
+            "keys": [
+              "medtech cyber uk"
+            ],
+            "clicks": 0,
+            "impressions": 76,
+            "ctr": 0,
+            "position": 11.9
+          },
+          {
+            "keys": [
+              "cybersecurity compliance company"
+            ],
+            "clicks": 1,
+            "impressions": 74,
+            "ctr": 0.013513513513513514,
+            "position": 6.6
+          },
+          {
+            "keys": [
+              "pen testing"
+            ],
+            "clicks": 0,
+            "impressions": 73,
+            "ctr": 0,
+            "position": 55.4
+          },
+          {
+            "keys": [
+              "vciso services"
+            ],
+            "clicks": 1,
+            "impressions": 56,
+            "ctr": 0.017857142857142856,
+            "position": 8.2
+          },
+          {
+            "keys": [
+              "medical device security agency"
+            ],
+            "clicks": 0,
+            "impressions": 32,
+            "ctr": 0,
+            "position": 30.4
+          },
+          {
+            "keys": [
+              "vciso agency"
+            ],
+            "clicks": 0,
+            "impressions": 29,
+            "ctr": 0,
+            "position": 28.8
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services"
+            ],
+            "clicks": 0,
+            "impressions": 26,
+            "ctr": 0,
+            "position": 52.1
+          },
+          {
+            "keys": [
+              "pen testing services"
+            ],
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 16.8
+          }
+        ],
+        "queryPages": [
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 702,
+            "ctr": 0,
+            "position": 38.6
+          },
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 0,
+            "impressions": 383,
+            "ctr": 0,
+            "position": 39.8
+          },
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 192,
+            "ctr": 0,
+            "position": 46.3
+          },
+          {
+            "keys": [
+              "penetration testing services",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 4,
+            "impressions": 3478,
+            "ctr": 0.0011500862564692352,
+            "position": 29.7
+          },
+          {
+            "keys": [
+              "penetration testing company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 3,
+            "impressions": 834,
+            "ctr": 0.0035971223021582736,
+            "position": 15.5
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 124,
+            "ctr": 0,
+            "position": 25.8
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 68,
+            "ctr": 0,
+            "position": 32.8
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 0,
+            "impressions": 34,
+            "ctr": 0,
+            "position": 39.6
+          },
+          {
+            "keys": [
+              "best penetration testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 1323,
+            "ctr": 0.0007558578987150416,
+            "position": 47
+          },
+          {
+            "keys": [
+              "best penetration testing",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 712,
+            "ctr": 0,
+            "position": 52.1
+          },
+          {
+            "keys": [
+              "penetration testing agency",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 25,
+            "impressions": 1175,
+            "ctr": 0.02127659574468085,
+            "position": 7
+          },
+          {
+            "keys": [
+              "penetration testing agency",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 1,
+            "impressions": 632,
+            "ctr": 0.0015822784810126582,
+            "position": 13.4
+          },
+          {
+            "keys": [
+              "pen testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 73,
+            "ctr": 0,
+            "position": 55.4
+          },
+          {
+            "keys": [
+              "pen testing services",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 13,
+            "ctr": 0,
+            "position": 16.8
+          },
+          {
+            "keys": [
+              "pen testing company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 8,
+            "impressions": 1784,
+            "ctr": 0.004484304932735426,
+            "position": 14.2
+          },
+          {
+            "keys": [
+              "pen testing uk",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 5,
+            "impressions": 4732,
+            "ctr": 0.0010566356720202875,
+            "position": 31.7
+          },
+          {
+            "keys": [
+              "best pen testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 13,
+            "impressions": 3778,
+            "ctr": 0.003440974060349391,
+            "position": 11.9
+          },
+          {
+            "keys": [
+              "pen testing agency",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 1178,
+            "ctr": 0.0008488964346349745,
+            "position": 46.4
+          },
+          {
+            "keys": [
+              "vciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 291,
+            "ctr": 0,
+            "position": 38.3
+          },
+          {
+            "keys": [
+              "vciso services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 1,
+            "impressions": 56,
+            "ctr": 0.017857142857142856,
+            "position": 8.2
+          },
+          {
+            "keys": [
+              "vciso company",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 31,
+            "impressions": 1659,
+            "ctr": 0.018685955394816153,
+            "position": 8.4
+          },
+          {
+            "keys": [
+              "vciso company",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 2,
+            "impressions": 894,
+            "ctr": 0.0022371364653243847,
+            "position": 14
+          },
+          {
+            "keys": [
+              "vciso uk",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 14,
+            "impressions": 2209,
+            "ctr": 0.006337709370755998,
+            "position": 11.7
+          },
+          {
+            "keys": [
+              "best vciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 5,
+            "impressions": 81,
+            "ctr": 0.06172839506172839,
+            "position": 2
+          },
+          {
+            "keys": [
+              "vciso agency",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 25.4
+          },
+          {
+            "keys": [
+              "vciso agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 35.3
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 4,
+            "impressions": 785,
+            "ctr": 0.005095541401273885,
+            "position": 8.4
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 5,
+            "impressions": 428,
+            "ctr": 0.011682242990654205,
+            "position": 9.3
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 1,
+            "impressions": 214,
+            "ctr": 0.004672897196261682,
+            "position": 18.3
+          },
+          {
+            "keys": [
+              "virtual ciso services",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 4,
+            "impressions": 3308,
+            "ctr": 0.0012091898428053204,
+            "position": 23.7
+          },
+          {
+            "keys": [
+              "virtual ciso company",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 1,
+            "impressions": 3322,
+            "ctr": 0.00030102347983142685,
+            "position": 28.6
+          },
+          {
+            "keys": [
+              "virtual ciso uk",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 23,
+            "impressions": 995,
+            "ctr": 0.023115577889447236,
+            "position": 3.9
+          },
+          {
+            "keys": [
+              "virtual ciso uk",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 4,
+            "impressions": 536,
+            "ctr": 0.007462686567164179,
+            "position": 12.7
+          },
+          {
+            "keys": [
+              "best virtual ciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 98,
+            "impressions": 2380,
+            "ctr": 0.041176470588235294,
+            "position": 2.5
+          },
+          {
+            "keys": [
+              "virtual ciso agency",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 990,
+            "ctr": 0,
+            "position": 51.8
+          },
+          {
+            "keys": [
+              "dtac",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 255,
+            "ctr": 0,
+            "position": 37.8
+          },
+          {
+            "keys": [
+              "dtac services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 905,
+            "ctr": 0.0011049723756906078,
+            "position": 55.4
+          },
+          {
+            "keys": [
+              "dtac services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 488,
+            "ctr": 0,
+            "position": 59.5
+          },
+          {
+            "keys": [
+              "dtac company",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 31,
+            "impressions": 2596,
+            "ctr": 0.011941448382126348,
+            "position": 4
+          },
+          {
+            "keys": [
+              "dtac uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 689,
+            "ctr": 0,
+            "position": 38.5
+          },
+          {
+            "keys": [
+              "best dtac",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 24,
+            "impressions": 4819,
+            "ctr": 0.0049802863664660715,
+            "position": 16.2
+          },
+          {
+            "keys": [
+              "dtac agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 3380,
+            "ctr": 0,
+            "position": 42.6
+          },
+          {
+            "keys": [
+              "cyber essentials",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1298,
+            "ctr": 0.0007704160246533128,
+            "position": 24.5
+          },
+          {
+            "keys": [
+              "cyber essentials",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 1,
+            "impressions": 699,
+            "ctr": 0.001430615164520744,
+            "position": 31.3
+          },
+          {
+            "keys": [
+              "cyber essentials services",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1289,
+            "ctr": 0.0007757951900698216,
+            "position": 22.9
+          },
+          {
+            "keys": [
+              "cyber essentials company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 700,
+            "ctr": 0,
+            "position": 52.4
+          },
+          {
+            "keys": [
+              "cyber essentials uk",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 3,
+            "impressions": 3308,
+            "ctr": 0.0009068923821039903,
+            "position": 54.6
+          },
+          {
+            "keys": [
+              "best cyber essentials",
+              "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data"
+            ],
+            "clicks": 4,
+            "impressions": 975,
+            "ctr": 0.0041025641025641026,
+            "position": 11.3
+          },
+          {
+            "keys": [
+              "cyber essentials agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 20,
+            "impressions": 1811,
+            "ctr": 0.011043622308117063,
+            "position": 4.9
+          },
+          {
+            "keys": [
+              "cybersecurity compliance",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 4,
+            "impressions": 4179,
+            "ctr": 0.000957166786312515,
+            "position": 28.6
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 17,
+            "ctr": 0,
+            "position": 49.5
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 9,
+            "ctr": 0,
+            "position": 57
+          },
+          {
+            "keys": [
+              "cybersecurity compliance company",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 74,
+            "ctr": 0.013513513513513514,
+            "position": 6.6
+          },
+          {
+            "keys": [
+              "cybersecurity compliance uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 5,
+            "impressions": 5022,
+            "ctr": 0.0009956192751891676,
+            "position": 33.9
+          },
+          {
+            "keys": [
+              "best cybersecurity compliance",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 3,
+            "impressions": 3615,
+            "ctr": 0.0008298755186721991,
+            "position": 20.6
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 44,
+            "impressions": 2923,
+            "ctr": 0.01505302771125556,
+            "position": 4.5
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 6,
+            "impressions": 1595,
+            "ctr": 0.003761755485893417,
+            "position": 10.2
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 1,
+            "impressions": 797,
+            "ctr": 0.0012547051442910915,
+            "position": 21
+          },
+          {
+            "keys": [
+              "compliance consulting",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 2172,
+            "ctr": 0.00046040515653775324,
+            "position": 57.3
+          },
+          {
+            "keys": [
+              "compliance consulting services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 4,
+            "impressions": 3121,
+            "ctr": 0.001281640499839795,
+            "position": 48.1
+          },
+          {
+            "keys": [
+              "compliance consulting company",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 2,
+            "impressions": 1185,
+            "ctr": 0.0016877637130801688,
+            "position": 23.7
+          },
+          {
+            "keys": [
+              "compliance consulting uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 2,
+            "impressions": 493,
+            "ctr": 0.004056795131845842,
+            "position": 15.8
+          },
+          {
+            "keys": [
+              "best compliance consulting",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 719,
+            "ctr": 0,
+            "position": 40.8
+          },
+          {
+            "keys": [
+              "compliance consulting agency",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 1592,
+            "ctr": 0,
+            "position": 49.7
+          },
+          {
+            "keys": [
+              "medtech cyber",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 28,
+            "impressions": 3483,
+            "ctr": 0.008039046798736722,
+            "position": 6.3
+          },
+          {
+            "keys": [
+              "medtech cyber services",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 6,
+            "impressions": 1326,
+            "ctr": 0.004524886877828055,
+            "position": 14.8
+          },
+          {
+            "keys": [
+              "medtech cyber company",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 1,
+            "impressions": 941,
+            "ctr": 0.0010626992561105207,
+            "position": 46.6
+          },
+          {
+            "keys": [
+              "medtech cyber uk",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 49,
+            "ctr": 0,
+            "position": 10
+          },
+          {
+            "keys": [
+              "medtech cyber uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 27,
+            "ctr": 0,
+            "position": 15.3
+          },
+          {
+            "keys": [
+              "best medtech cyber",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 1,
+            "impressions": 532,
+            "ctr": 0.0018796992481203006,
+            "position": 33.8
+          },
+          {
+            "keys": [
+              "medtech cyber agency",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 0,
+            "impressions": 750,
+            "ctr": 0,
+            "position": 49
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 21,
+            "impressions": 174,
+            "ctr": 0.1206896551724138,
+            "position": 1.2
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 2,
+            "impressions": 95,
+            "ctr": 0.021052631578947368,
+            "position": 7.9
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 48,
+            "ctr": 0,
+            "position": 14.6
+          },
+          {
+            "keys": [
+              "medical device security services",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 302,
+            "ctr": 0,
+            "position": 42.4
+          },
+          {
+            "keys": [
+              "medical device security company",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 13,
+            "impressions": 2840,
+            "ctr": 0.004577464788732394,
+            "position": 15.2
+          },
+          {
+            "keys": [
+              "medical device security uk",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 1,
+            "impressions": 1963,
+            "ctr": 0.0005094243504839531,
+            "position": 32.3
+          },
+          {
+            "keys": [
+              "best medical device security",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 8,
+            "impressions": 3762,
+            "ctr": 0.002126528442317916,
+            "position": 15.6
+          },
+          {
+            "keys": [
+              "medical device security agency",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 0,
+            "impressions": 32,
+            "ctr": 0,
+            "position": 30.4
+          },
+          {
+            "keys": [
+              "sentinel cyber security",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 88,
+            "impressions": 182,
+            "ctr": 0.4835164835164835,
+            "position": 3
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 53,
+            "ctr": 0.018867924528301886,
+            "position": 3.9
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 1,
+            "impressions": 35,
+            "ctr": 0.02857142857142857,
+            "position": 5
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 151,
+            "ctr": 0.006622516556291391,
+            "position": 7.9
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 2,
+            "impressions": 101,
+            "ctr": 0.019801980198019802,
+            "position": 8.7
+          }
+        ]
+      },
+      "comparison": {
+        "summary": {
+          "keys": [],
+          "clicks": 646,
+          "impressions": 102775,
+          "ctr": 0.006285575285818535,
+          "position": 25.5
+        },
+        "pages": [
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 144,
+            "impressions": 28732,
+            "ctr": 0.005011833495753864,
+            "position": 25.1
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 63,
+            "impressions": 19341,
+            "ctr": 0.003257328990228013,
+            "position": 24.8
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 69,
+            "impressions": 14537,
+            "ctr": 0.004746508908302951,
+            "position": 28.1
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 114,
+            "impressions": 11113,
+            "ctr": 0.010258256096463601,
+            "position": 23.7
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 31,
+            "impressions": 8818,
+            "ctr": 0.003515536402812429,
+            "position": 21.4
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 47,
+            "impressions": 8741,
+            "ctr": 0.0053769591579910766,
+            "position": 21.2
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 17,
+            "impressions": 5397,
+            "ctr": 0.003149898091532333,
+            "position": 34.6
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 1,
+            "impressions": 3952,
+            "ctr": 0.00025303643724696357,
+            "position": 40.7
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 3,
+            "impressions": 947,
+            "ctr": 0.0031678986272439284,
+            "position": 16.5
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data"
+            ],
+            "clicks": 8,
+            "impressions": 644,
+            "ctr": 0.012422360248447204,
+            "position": 9.5
+          },
+          {
+            "keys": [
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 149,
+            "impressions": 553,
+            "ctr": 0.2694394213381555,
+            "position": 13.4
+          }
+        ],
+        "queries": [
+          {
+            "keys": [
+              "medical device security company"
+            ],
+            "clicks": 24,
+            "impressions": 5317,
+            "ctr": 0.00451382358472823,
+            "position": 14.8
+          },
+          {
+            "keys": [
+              "virtual ciso company"
+            ],
+            "clicks": 1,
+            "impressions": 4613,
+            "ctr": 0.00021677866897897247,
+            "position": 25.7
+          },
+          {
+            "keys": [
+              "dtac company"
+            ],
+            "clicks": 51,
+            "impressions": 4312,
+            "ctr": 0.011827458256029684,
+            "position": 5.5
+          },
+          {
+            "keys": [
+              "vciso uk"
+            ],
+            "clicks": 23,
+            "impressions": 3621,
+            "ctr": 0.0063518365092515875,
+            "position": 11.3
+          },
+          {
+            "keys": [
+              "cyber essentials agency"
+            ],
+            "clicks": 39,
+            "impressions": 3607,
+            "ctr": 0.010812309398392015,
+            "position": 3.8
+          },
+          {
+            "keys": [
+              "penetration testing agency"
+            ],
+            "clicks": 49,
+            "impressions": 3463,
+            "ctr": 0.014149581287900665,
+            "position": 10.6
+          },
+          {
+            "keys": [
+              "vciso company"
+            ],
+            "clicks": 45,
+            "impressions": 3456,
+            "ctr": 0.013020833333333334,
+            "position": 10.2
+          },
+          {
+            "keys": [
+              "compliance consulting services"
+            ],
+            "clicks": 5,
+            "impressions": 3443,
+            "ctr": 0.0014522218995062445,
+            "position": 49
+          },
+          {
+            "keys": [
+              "best medical device security"
+            ],
+            "clicks": 7,
+            "impressions": 3256,
+            "ctr": 0.00214987714987715,
+            "position": 12.2
+          },
+          {
+            "keys": [
+              "dtac agency"
+            ],
+            "clicks": 0,
+            "impressions": 3142,
+            "ctr": 0,
+            "position": 42.5
+          },
+          {
+            "keys": [
+              "cybersecurity compliance"
+            ],
+            "clicks": 3,
+            "impressions": 3101,
+            "ctr": 0.0009674298613350532,
+            "position": 27.6
+          },
+          {
+            "keys": [
+              "pen testing uk"
+            ],
+            "clicks": 3,
+            "impressions": 3049,
+            "ctr": 0.0009839291571006887,
+            "position": 28.8
+          },
+          {
+            "keys": [
+              "medtech cyber"
+            ],
+            "clicks": 24,
+            "impressions": 3036,
+            "ctr": 0.007905138339920948,
+            "position": 8.3
+          },
+          {
+            "keys": [
+              "cyber essentials uk"
+            ],
+            "clicks": 3,
+            "impressions": 3020,
+            "ctr": 0.0009933774834437086,
+            "position": 52.4
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency"
+            ],
+            "clicks": 35,
+            "impressions": 2978,
+            "ctr": 0.01175285426460712,
+            "position": 8.7
+          },
+          {
+            "keys": [
+              "best cybersecurity compliance"
+            ],
+            "clicks": 14,
+            "impressions": 2841,
+            "ctr": 0.004927842309046111,
+            "position": 19.7
+          },
+          {
+            "keys": [
+              "best dtac"
+            ],
+            "clicks": 14,
+            "impressions": 2803,
+            "ctr": 0.0049946485907955765,
+            "position": 19.9
+          },
+          {
+            "keys": [
+              "cybersecurity compliance uk"
+            ],
+            "clicks": 3,
+            "impressions": 2662,
+            "ctr": 0.0011269722013523666,
+            "position": 34
+          },
+          {
+            "keys": [
+              "cyber essentials"
+            ],
+            "clicks": 2,
+            "impressions": 2621,
+            "ctr": 0.0007630675314765357,
+            "position": 27
+          },
+          {
+            "keys": [
+              "best penetration testing"
+            ],
+            "clicks": 1,
+            "impressions": 2573,
+            "ctr": 0.000388651379712398,
+            "position": 50.2
+          },
+          {
+            "keys": [
+              "compliance consulting agency"
+            ],
+            "clicks": 0,
+            "impressions": 2372,
+            "ctr": 0,
+            "position": 48.4
+          },
+          {
+            "keys": [
+              "best pen testing"
+            ],
+            "clicks": 7,
+            "impressions": 2105,
+            "ctr": 0.00332541567695962,
+            "position": 15.9
+          },
+          {
+            "keys": [
+              "penetration testing services"
+            ],
+            "clicks": 2,
+            "impressions": 1982,
+            "ctr": 0.0010090817356205853,
+            "position": 32.5
+          },
+          {
+            "keys": [
+              "medtech cyber services"
+            ],
+            "clicks": 9,
+            "impressions": 1904,
+            "ctr": 0.004726890756302521,
+            "position": 16.7
+          },
+          {
+            "keys": [
+              "compliance consulting"
+            ],
+            "clicks": 1,
+            "impressions": 1731,
+            "ctr": 0.0005777007510109763,
+            "position": 54.6
+          },
+          {
+            "keys": [
+              "virtual ciso agency"
+            ],
+            "clicks": 1,
+            "impressions": 1694,
+            "ctr": 0.0005903187721369539,
+            "position": 48.9
+          },
+          {
+            "keys": [
+              "virtual ciso services"
+            ],
+            "clicks": 2,
+            "impressions": 1640,
+            "ctr": 0.0012195121951219512,
+            "position": 26.2
+          },
+          {
+            "keys": [
+              "virtual ciso"
+            ],
+            "clicks": 9,
+            "impressions": 1616,
+            "ctr": 0.005569306930693069,
+            "position": 10.4
+          },
+          {
+            "keys": [
+              "medical device security uk"
+            ],
+            "clicks": 0,
+            "impressions": 1607,
+            "ctr": 0,
+            "position": 34.4
+          },
+          {
+            "keys": [
+              "medtech cyber company"
+            ],
+            "clicks": 2,
+            "impressions": 1521,
+            "ctr": 0.0013149243918474688,
+            "position": 47.1
+          },
+          {
+            "keys": [
+              "best virtual ciso"
+            ],
+            "clicks": 62,
+            "impressions": 1502,
+            "ctr": 0.041278295605858856,
+            "position": 2.4
+          },
+          {
+            "keys": [
+              "dtac services"
+            ],
+            "clicks": 1,
+            "impressions": 1465,
+            "ctr": 0.0006825938566552901,
+            "position": 55.2
+          },
+          {
+            "keys": [
+              "medtech cyber agency"
+            ],
+            "clicks": 1,
+            "impressions": 1243,
+            "ctr": 0.0008045052292839903,
+            "position": 52.7
+          },
+          {
+            "keys": [
+              "best compliance consulting"
+            ],
+            "clicks": 1,
+            "impressions": 1122,
+            "ctr": 0.00089126559714795,
+            "position": 42.3
+          },
+          {
+            "keys": [
+              "cyber essentials services"
+            ],
+            "clicks": 1,
+            "impressions": 1070,
+            "ctr": 0.0009345794392523365,
+            "position": 21.8
+          },
+          {
+            "keys": [
+              "dtac uk"
+            ],
+            "clicks": 0,
+            "impressions": 1031,
+            "ctr": 0,
+            "position": 40.8
+          },
+          {
+            "keys": [
+              "pen testing agency"
+            ],
+            "clicks": 1,
+            "impressions": 856,
+            "ctr": 0.0011682242990654205,
+            "position": 45.2
+          },
+          {
+            "keys": [
+              "pen testing company"
+            ],
+            "clicks": 4,
+            "impressions": 786,
+            "ctr": 0.005089058524173028,
+            "position": 15.5
+          },
+          {
+            "keys": [
+              "virtual ciso uk"
+            ],
+            "clicks": 14,
+            "impressions": 778,
+            "ctr": 0.017994858611825194,
+            "position": 6.6
+          },
+          {
+            "keys": [
+              "compliance consulting uk"
+            ],
+            "clicks": 3,
+            "impressions": 769,
+            "ctr": 0.0039011703511053317,
+            "position": 13.9
+          },
+          {
+            "keys": [
+              "cyber essentials company"
+            ],
+            "clicks": 0,
+            "impressions": 716,
+            "ctr": 0,
+            "position": 56.9
+          },
+          {
+            "keys": [
+              "medical device security services"
+            ],
+            "clicks": 0,
+            "impressions": 691,
+            "ctr": 0,
+            "position": 45.2
+          },
+          {
+            "keys": [
+              "best medtech cyber"
+            ],
+            "clicks": 1,
+            "impressions": 668,
+            "ctr": 0.0014970059880239522,
+            "position": 35.2
+          },
+          {
+            "keys": [
+              "compliance consulting company"
+            ],
+            "clicks": 1,
+            "impressions": 666,
+            "ctr": 0.0015015015015015015,
+            "position": 23.2
+          },
+          {
+            "keys": [
+              "vciso"
+            ],
+            "clicks": 0,
+            "impressions": 658,
+            "ctr": 0,
+            "position": 35.2
+          },
+          {
+            "keys": [
+              "best cyber essentials"
+            ],
+            "clicks": 8,
+            "impressions": 644,
+            "ctr": 0.012422360248447204,
+            "position": 9.5
+          },
+          {
+            "keys": [
+              "penetration testing"
+            ],
+            "clicks": 0,
+            "impressions": 567,
+            "ctr": 0,
+            "position": 40.6
+          },
+          {
+            "keys": [
+              "penetration testing company"
+            ],
+            "clicks": 2,
+            "impressions": 547,
+            "ctr": 0.003656307129798903,
+            "position": 18
+          },
+          {
+            "keys": [
+              "dtac"
+            ],
+            "clicks": 0,
+            "impressions": 507,
+            "ctr": 0,
+            "position": 41.9
+          },
+          {
+            "keys": [
+              "medical device security"
+            ],
+            "clicks": 6,
+            "impressions": 334,
+            "ctr": 0.017964071856287425,
+            "position": 7.1
+          },
+          {
+            "keys": [
+              "sentinel cyber security"
+            ],
+            "clicks": 148,
+            "impressions": 304,
+            "ctr": 0.4868421052631579,
+            "position": 1
+          },
+          {
+            "keys": [
+              "best vciso"
+            ],
+            "clicks": 9,
+            "impressions": 153,
+            "ctr": 0.058823529411764705,
+            "position": 1.8
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?"
+            ],
+            "clicks": 2,
+            "impressions": 137,
+            "ctr": 0.014598540145985401,
+            "position": 7.4
+          },
+          {
+            "keys": [
+              "penetration testing uk"
+            ],
+            "clicks": 0,
+            "impressions": 101,
+            "ctr": 0,
+            "position": 30.4
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?"
+            ],
+            "clicks": 1,
+            "impressions": 61,
+            "ctr": 0.01639344262295082,
+            "position": 6.1
+          },
+          {
+            "keys": [
+              "pen testing"
+            ],
+            "clicks": 0,
+            "impressions": 59,
+            "ctr": 0,
+            "position": 55.1
+          },
+          {
+            "keys": [
+              "cybersecurity compliance company"
+            ],
+            "clicks": 1,
+            "impressions": 57,
+            "ctr": 0.017543859649122806,
+            "position": 6.5
+          },
+          {
+            "keys": [
+              "medtech cyber uk"
+            ],
+            "clicks": 0,
+            "impressions": 52,
+            "ctr": 0,
+            "position": 14.1
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services"
+            ],
+            "clicks": 0,
+            "impressions": 33,
+            "ctr": 0,
+            "position": 53.6
+          },
+          {
+            "keys": [
+              "medical device security agency"
+            ],
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 26.6
+          },
+          {
+            "keys": [
+              "vciso agency"
+            ],
+            "clicks": 0,
+            "impressions": 29,
+            "ctr": 0,
+            "position": 27.1
+          },
+          {
+            "keys": [
+              "pen testing services"
+            ],
+            "clicks": 0,
+            "impressions": 27,
+            "ctr": 0,
+            "position": 17.6
+          },
+          {
+            "keys": [
+              "vciso services"
+            ],
+            "clicks": 0,
+            "impressions": 25,
+            "ctr": 0,
+            "position": 8.4
+          }
+        ],
+        "queryPages": [
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 312,
+            "ctr": 0,
+            "position": 39.4
+          },
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 0,
+            "impressions": 170,
+            "ctr": 0,
+            "position": 38.9
+          },
+          {
+            "keys": [
+              "penetration testing",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 85,
+            "ctr": 0,
+            "position": 48.7
+          },
+          {
+            "keys": [
+              "penetration testing services",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 2,
+            "impressions": 1982,
+            "ctr": 0.0010090817356205853,
+            "position": 32.5
+          },
+          {
+            "keys": [
+              "penetration testing company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 2,
+            "impressions": 547,
+            "ctr": 0.003656307129798903,
+            "position": 18
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 56,
+            "ctr": 0,
+            "position": 26.7
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 30,
+            "ctr": 0,
+            "position": 31.8
+          },
+          {
+            "keys": [
+              "penetration testing uk",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 0,
+            "impressions": 15,
+            "ctr": 0,
+            "position": 41.7
+          },
+          {
+            "keys": [
+              "best penetration testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 1672,
+            "ctr": 0.0005980861244019139,
+            "position": 49.2
+          },
+          {
+            "keys": [
+              "best penetration testing",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 901,
+            "ctr": 0,
+            "position": 52
+          },
+          {
+            "keys": [
+              "penetration testing agency",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 47,
+            "impressions": 2251,
+            "ctr": 0.02087960906263883,
+            "position": 8.9
+          },
+          {
+            "keys": [
+              "penetration testing agency",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 2,
+            "impressions": 1212,
+            "ctr": 0.0016501650165016502,
+            "position": 13.8
+          },
+          {
+            "keys": [
+              "pen testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 59,
+            "ctr": 0,
+            "position": 55.1
+          },
+          {
+            "keys": [
+              "pen testing services",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 27,
+            "ctr": 0,
+            "position": 17.6
+          },
+          {
+            "keys": [
+              "pen testing company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 4,
+            "impressions": 786,
+            "ctr": 0.005089058524173028,
+            "position": 15.5
+          },
+          {
+            "keys": [
+              "pen testing uk",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 3,
+            "impressions": 3049,
+            "ctr": 0.0009839291571006887,
+            "position": 28.8
+          },
+          {
+            "keys": [
+              "best pen testing",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 7,
+            "impressions": 2105,
+            "ctr": 0.00332541567695962,
+            "position": 15.9
+          },
+          {
+            "keys": [
+              "pen testing agency",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 856,
+            "ctr": 0.0011682242990654205,
+            "position": 45.2
+          },
+          {
+            "keys": [
+              "vciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 658,
+            "ctr": 0,
+            "position": 35.2
+          },
+          {
+            "keys": [
+              "vciso services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 25,
+            "ctr": 0,
+            "position": 8.4
+          },
+          {
+            "keys": [
+              "vciso company",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 42,
+            "impressions": 2246,
+            "ctr": 0.018699910952804988,
+            "position": 8.4
+          },
+          {
+            "keys": [
+              "vciso company",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 3,
+            "impressions": 1210,
+            "ctr": 0.0024793388429752068,
+            "position": 13.5
+          },
+          {
+            "keys": [
+              "vciso uk",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 23,
+            "impressions": 3621,
+            "ctr": 0.0063518365092515875,
+            "position": 11.3
+          },
+          {
+            "keys": [
+              "best vciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 9,
+            "impressions": 153,
+            "ctr": 0.058823529411764705,
+            "position": 1.8
+          },
+          {
+            "keys": [
+              "vciso agency",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 19,
+            "ctr": 0,
+            "position": 24.5
+          },
+          {
+            "keys": [
+              "vciso agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0,
+            "position": 32.1
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 5,
+            "impressions": 889,
+            "ctr": 0.00562429696287964,
+            "position": 7
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 2,
+            "impressions": 485,
+            "ctr": 0.004123711340206186,
+            "position": 11.8
+          },
+          {
+            "keys": [
+              "virtual ciso",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 2,
+            "impressions": 242,
+            "ctr": 0.008264462809917356,
+            "position": 19.9
+          },
+          {
+            "keys": [
+              "virtual ciso services",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 2,
+            "impressions": 1640,
+            "ctr": 0.0012195121951219512,
+            "position": 26.2
+          },
+          {
+            "keys": [
+              "virtual ciso company",
+              "https://sentinelcyber.co.uk/services/vciso"
+            ],
+            "clicks": 1,
+            "impressions": 4613,
+            "ctr": 0.00021677866897897247,
+            "position": 25.7
+          },
+          {
+            "keys": [
+              "virtual ciso uk",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 12,
+            "impressions": 506,
+            "ctr": 0.023715415019762844,
+            "position": 4.4
+          },
+          {
+            "keys": [
+              "virtual ciso uk",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 2,
+            "impressions": 272,
+            "ctr": 0.007352941176470588,
+            "position": 10.6
+          },
+          {
+            "keys": [
+              "best virtual ciso",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 62,
+            "impressions": 1502,
+            "ctr": 0.041278295605858856,
+            "position": 2.4
+          },
+          {
+            "keys": [
+              "virtual ciso agency",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 1,
+            "impressions": 1694,
+            "ctr": 0.0005903187721369539,
+            "position": 48.9
+          },
+          {
+            "keys": [
+              "dtac",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 507,
+            "ctr": 0,
+            "position": 41.9
+          },
+          {
+            "keys": [
+              "dtac services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 952,
+            "ctr": 0.0010504201680672268,
+            "position": 52.7
+          },
+          {
+            "keys": [
+              "dtac services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 513,
+            "ctr": 0,
+            "position": 59.9
+          },
+          {
+            "keys": [
+              "dtac company",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 51,
+            "impressions": 4312,
+            "ctr": 0.011827458256029684,
+            "position": 5.5
+          },
+          {
+            "keys": [
+              "dtac uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 1031,
+            "ctr": 0,
+            "position": 40.8
+          },
+          {
+            "keys": [
+              "best dtac",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 14,
+            "impressions": 2803,
+            "ctr": 0.0049946485907955765,
+            "position": 19.9
+          },
+          {
+            "keys": [
+              "dtac agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 3142,
+            "ctr": 0,
+            "position": 42.5
+          },
+          {
+            "keys": [
+              "cyber essentials",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1704,
+            "ctr": 0.0005868544600938967,
+            "position": 25.8
+          },
+          {
+            "keys": [
+              "cyber essentials",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 1,
+            "impressions": 917,
+            "ctr": 0.0010905125408942203,
+            "position": 29.1
+          },
+          {
+            "keys": [
+              "cyber essentials services",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1070,
+            "ctr": 0.0009345794392523365,
+            "position": 21.8
+          },
+          {
+            "keys": [
+              "cyber essentials company",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 0,
+            "impressions": 716,
+            "ctr": 0,
+            "position": 56.9
+          },
+          {
+            "keys": [
+              "cyber essentials uk",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 3,
+            "impressions": 3020,
+            "ctr": 0.0009933774834437086,
+            "position": 52.4
+          },
+          {
+            "keys": [
+              "best cyber essentials",
+              "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data"
+            ],
+            "clicks": 8,
+            "impressions": 644,
+            "ctr": 0.012422360248447204,
+            "position": 9.5
+          },
+          {
+            "keys": [
+              "cyber essentials agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 39,
+            "impressions": 3607,
+            "ctr": 0.010812309398392015,
+            "position": 3.8
+          },
+          {
+            "keys": [
+              "cybersecurity compliance",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 3,
+            "impressions": 3101,
+            "ctr": 0.0009674298613350532,
+            "position": 27.6
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 21,
+            "ctr": 0,
+            "position": 51.9
+          },
+          {
+            "keys": [
+              "cybersecurity compliance services",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 0,
+            "impressions": 12,
+            "ctr": 0,
+            "position": 56.6
+          },
+          {
+            "keys": [
+              "cybersecurity compliance company",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 57,
+            "ctr": 0.017543859649122806,
+            "position": 6.5
+          },
+          {
+            "keys": [
+              "cybersecurity compliance uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 3,
+            "impressions": 2662,
+            "ctr": 0.0011269722013523666,
+            "position": 34
+          },
+          {
+            "keys": [
+              "best cybersecurity compliance",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 14,
+            "impressions": 2841,
+            "ctr": 0.004927842309046111,
+            "position": 19.7
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 24,
+            "impressions": 1638,
+            "ctr": 0.014652014652014652,
+            "position": 4.8
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/cyber-essentials"
+            ],
+            "clicks": 10,
+            "impressions": 893,
+            "ctr": 0.011198208286674132,
+            "position": 9.7
+          },
+          {
+            "keys": [
+              "cybersecurity compliance agency",
+              "https://sentinelcyber.co.uk/services/cloud-assessment"
+            ],
+            "clicks": 1,
+            "impressions": 447,
+            "ctr": 0.0022371364653243847,
+            "position": 20.8
+          },
+          {
+            "keys": [
+              "compliance consulting",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1731,
+            "ctr": 0.0005777007510109763,
+            "position": 54.6
+          },
+          {
+            "keys": [
+              "compliance consulting services",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 5,
+            "impressions": 3443,
+            "ctr": 0.0014522218995062445,
+            "position": 49
+          },
+          {
+            "keys": [
+              "compliance consulting company",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 666,
+            "ctr": 0.0015015015015015015,
+            "position": 23.2
+          },
+          {
+            "keys": [
+              "compliance consulting uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 3,
+            "impressions": 769,
+            "ctr": 0.0039011703511053317,
+            "position": 13.9
+          },
+          {
+            "keys": [
+              "best compliance consulting",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 1,
+            "impressions": 1122,
+            "ctr": 0.00089126559714795,
+            "position": 42.3
+          },
+          {
+            "keys": [
+              "compliance consulting agency",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 2372,
+            "ctr": 0,
+            "position": 48.4
+          },
+          {
+            "keys": [
+              "medtech cyber",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 24,
+            "impressions": 3036,
+            "ctr": 0.007905138339920948,
+            "position": 8.3
+          },
+          {
+            "keys": [
+              "medtech cyber services",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 9,
+            "impressions": 1904,
+            "ctr": 0.004726890756302521,
+            "position": 16.7
+          },
+          {
+            "keys": [
+              "medtech cyber company",
+              "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+            ],
+            "clicks": 2,
+            "impressions": 1521,
+            "ctr": 0.0013149243918474688,
+            "position": 47.1
+          },
+          {
+            "keys": [
+              "medtech cyber uk",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 34,
+            "ctr": 0,
+            "position": 11.8
+          },
+          {
+            "keys": [
+              "medtech cyber uk",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 18,
+            "ctr": 0,
+            "position": 18.5
+          },
+          {
+            "keys": [
+              "best medtech cyber",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 1,
+            "impressions": 668,
+            "ctr": 0.0014970059880239522,
+            "position": 35.2
+          },
+          {
+            "keys": [
+              "medtech cyber agency",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 1,
+            "impressions": 1243,
+            "ctr": 0.0008045052292839903,
+            "position": 52.7
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 4,
+            "impressions": 184,
+            "ctr": 0.021739130434782608,
+            "position": 4.6
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 2,
+            "impressions": 100,
+            "ctr": 0.02,
+            "position": 7
+          },
+          {
+            "keys": [
+              "medical device security",
+              "https://sentinelcyber.co.uk/services/dtac-compliance"
+            ],
+            "clicks": 0,
+            "impressions": 50,
+            "ctr": 0,
+            "position": 16.2
+          },
+          {
+            "keys": [
+              "medical device security services",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 691,
+            "ctr": 0,
+            "position": 45.2
+          },
+          {
+            "keys": [
+              "medical device security company",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 24,
+            "impressions": 5317,
+            "ctr": 0.00451382358472823,
+            "position": 14.8
+          },
+          {
+            "keys": [
+              "medical device security uk",
+              "https://sentinelcyber.co.uk/sectors/medical-technology"
+            ],
+            "clicks": 0,
+            "impressions": 1607,
+            "ctr": 0,
+            "position": 34.4
+          },
+          {
+            "keys": [
+              "best medical device security",
+              "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+            ],
+            "clicks": 7,
+            "impressions": 3256,
+            "ctr": 0.00214987714987715,
+            "position": 12.2
+          },
+          {
+            "keys": [
+              "medical device security agency",
+              "https://sentinelcyber.co.uk/sectors/financial-services"
+            ],
+            "clicks": 0,
+            "impressions": 31,
+            "ctr": 0,
+            "position": 26.6
+          },
+          {
+            "keys": [
+              "sentinel cyber security",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 148,
+            "impressions": 304,
+            "ctr": 0.4868421052631579,
+            "position": 1
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 37,
+            "ctr": 0.02702702702702703,
+            "position": 6.3
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what penetration testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 0,
+            "impressions": 24,
+            "ctr": 0,
+            "position": 5.7
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/services/penetration-testing"
+            ],
+            "clicks": 1,
+            "impressions": 82,
+            "ctr": 0.012195121951219513,
+            "position": 7.8
+          },
+          {
+            "keys": [
+              "i live in the united kingdom. what pen testing providers have the best reputation?",
+              "https://sentinelcyber.co.uk/"
+            ],
+            "clicks": 1,
+            "impressions": 55,
+            "ctr": 0.01818181818181818,
+            "position": 6.7
+          }
+        ]
+      }
+    },
+    "rankingImports": [
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "vciso",
+        "start_position": null,
+        "end_position": 65,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/vciso",
+        "search_volume": 260,
+        "ranking_url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+        "visibility_score": 8
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "dtac assessment",
+        "start_position": 52,
+        "end_position": 41,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "search_volume": 70,
+        "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "cybersecurity compliance consulting",
+        "start_position": 10,
+        "end_position": 5,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+        "search_volume": 90,
+        "ranking_url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "penetration testing services",
+        "start_position": 39,
+        "end_position": 34,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "search_volume": 720,
+        "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "dtac security",
+        "start_position": 12,
+        "end_position": 8,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "search_volume": 30,
+        "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "penetration testing services uk",
+        "start_position": 32,
+        "end_position": 29,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "search_volume": 210,
+        "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "virtual ciso uk",
+        "start_position": 31,
+        "end_position": 29,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/vciso",
+        "search_volume": 110,
+        "ranking_url": "https://sentinelcyber.co.uk/services/vciso",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "medtech cybersecurity",
+        "start_position": 4,
+        "end_position": 2,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "search_volume": 50,
+        "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "medtech cyber security",
+        "start_position": 3,
+        "end_position": 2,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "search_volume": 40,
+        "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "penetration testing leeds",
+        "start_position": 6,
+        "end_position": 4,
+        "search_engine": "google.co.uk",
+        "location": "Leeds",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "search_volume": 90,
+        "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "managed cyber security leeds",
+        "start_position": 11,
+        "end_position": 46,
+        "search_engine": "google.co.uk",
+        "location": "Leeds",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/",
+        "search_volume": 50,
+        "ranking_url": "https://sentinelcyber.co.uk/",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "cyber security consultancy",
+        "start_position": 5,
+        "end_position": 31,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/",
+        "search_volume": 590,
+        "ranking_url": "https://sentinelcyber.co.uk/",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "penetration testing uk",
+        "start_position": 24,
+        "end_position": 41,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "search_volume": 320,
+        "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "dtac certification",
+        "start_position": 15,
+        "end_position": 31,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "search_volume": 40,
+        "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "medical devices cyber security",
+        "start_position": 19,
+        "end_position": 31,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "search_volume": 60,
+        "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "cyber security services leeds",
+        "start_position": 13,
+        "end_position": 20,
+        "search_engine": "google.co.uk",
+        "location": "Leeds",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/",
+        "search_volume": 80,
+        "ranking_url": "https://sentinelcyber.co.uk/",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "cyber security partner for financial services",
+        "start_position": null,
+        "end_position": 3,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+        "search_volume": 20,
+        "ranking_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+        "visibility_score": null
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "period_key": "2026-06",
+        "keyword": "cybersecurity company for financial services firms",
+        "start_position": null,
+        "end_position": 6,
+        "search_engine": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+        "search_volume": 20,
+        "ranking_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+        "visibility_score": null
+      }
+    ],
+    "rankingKeywords": [
+      {
+        "client_key": "sentinel-cyber",
+        "keyword": "penetration testing services",
+        "market": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+        "priority": "high",
+        "active": true
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "keyword": "vciso",
+        "market": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/vciso",
+        "priority": "high",
+        "active": true
+      },
+      {
+        "client_key": "sentinel-cyber",
+        "keyword": "dtac assessment",
+        "market": "google.co.uk",
+        "location": "United Kingdom",
+        "device": "desktop",
+        "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+        "priority": "medium",
+        "active": true
+      }
+    ]
+  },
+  "future": {
+    "conversions": null,
+    "ga4": null,
+    "aiSearch": {
+      "prompts": [
+        {
+          "client_key": "sentinel-cyber",
+          "prompt_key": "pen-testing-uk",
+          "prompt": "Who are the most trusted penetration testing providers in the UK?",
+          "engine": "chatgpt",
+          "market": "UK",
+          "expected_brand": "Sentinel Cyber Security",
+          "expected_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "priority": "high",
+          "active": true
+        },
+        {
+          "client_key": "sentinel-cyber",
+          "prompt_key": "medtech-security",
+          "prompt": "Which companies help medical device manufacturers with cybersecurity compliance?",
+          "engine": "perplexity",
+          "market": "UK",
+          "expected_brand": "Sentinel Cyber Security",
+          "expected_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "priority": "high",
+          "active": true
+        }
+      ],
+      "results": null
+    }
+  }
+}
