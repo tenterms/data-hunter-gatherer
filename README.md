@@ -32,6 +32,25 @@ priority-scored) · tracked-keyword rankings (ups/downs/entered/dropped, top
 strategic priorities. Conversions/GA4 and AI-search visibility are **schema
 placeholders only** in V1 (see "Deferred" below).
 
+## Day-to-day use: the Admin page (no commands)
+
+Once the app is running, everything the team does day-to-day happens at
+**`/admin`** in the dashboard:
+
+- **Add a new client** — name + website; the tool creates the client with a
+  homepage entry and its first reporting month.
+- **Add a reporting month** — pick a month; the comparison month is set
+  automatically.
+- **Upload a rankings CSV** — drop in an SE Ranking export for a month.
+- **Generate / regenerate a report** — one button per month; view it instantly.
+- **Create / check sheet tabs** — sets up or validates the Google Sheet.
+
+The Google Sheet remains the place for *detailed* configuration — key pages,
+content groups, topic clusters, DRAW tasks, strategic notes and commentary
+overrides — with a direct link from each client's admin card. The CLI commands
+below do the same jobs and exist for automation (e.g. a monthly cron), not
+because anyone needs a terminal.
+
 ## Quick start (mock mode — no credentials needed)
 
 ```bash

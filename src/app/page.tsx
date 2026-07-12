@@ -25,8 +25,8 @@ export default async function HomePage() {
     <>
       <h1>Monthly SEO reports</h1>
       <p className="subtitle">
-        Generated report snapshots. Configure clients in Google Sheets, then run{" "}
-        <code>npm run generate-report -- --client=… --period=…</code>.
+        Generated report snapshots. Add clients, months and rankings — and generate reports — from the{" "}
+        <Link href="/admin">Admin page</Link>.
       </p>
 
       {!app.hasSheets && (

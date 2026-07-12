@@ -17,6 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               SEO Reporting
             </Link>
             <span className="sub">internal monthly reports</span>
+            <nav className="header-nav">
+              <Link href="/">Reports</Link>
+              <Link href="/admin">Admin</Link>
+            </nav>
           </div>
         </header>
         <main className="container">{children}</main>

@@ -427,25 +427,33 @@ export async function recordGeneratedReport(row: GeneratedReportRow): Promise<bo
   return true;
 }
 
-/** Append RankingImports rows (used by the CSV importer when Sheets is configured). */
-export async function appendRankingImports(rows: RankingImportRow[]): Promise<boolean> {
+/**
+ * Append rows to any schema tab (column order taken from SHEET_SCHEMA).
+ * Returns false when Sheets isn't configured so callers can fall back to mock.
+ */
+export async function appendRows(tab: keyof typeof SHEET_SCHEMA, rows: Array<Record<string, unknown>>): Promise<boolean> {
   const app = getAppConfig();
   if (!app.hasSheets || !app.googleSheetId || rows.length === 0) return false;
   const sheets = getSheetsClient();
-  const headers = SHEET_SCHEMA.RankingImports;
+  const headers = SHEET_SCHEMA[tab];
   const values = rows.map((row) =>
     headers.map((h) => {
-      const v = row[h as keyof RankingImportRow];
+      const v = row[h];
       return v === null || v === undefined ? "" : String(v);
     }),
   );
   await sheets.spreadsheets.values.append({
     spreadsheetId: app.googleSheetId,
-    range: "RankingImports!A1",
+    range: `${tab}!A1`,
     valueInputOption: "RAW",
     requestBody: { values },
   });
   return true;
+}
+
+/** Append RankingImports rows (used by the CSV importer when Sheets is configured). */
+export async function appendRankingImports(rows: RankingImportRow[]): Promise<boolean> {
+  return appendRows("RankingImports", rows as unknown as Array<Record<string, unknown>>);
 }
 
 // ---------------------------------------------------------------------------
