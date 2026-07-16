@@ -39,20 +39,29 @@ Once the app is running, everything the team does day-to-day happens at
 
 - **Add a new client** — name + website; the tool creates the client with a
   homepage entry and its first reporting month.
-- **Build content groups & topic clusters** — SEOGets-style editors per client:
-  name + "contains" chips + "doesn't contain" chips, with a live list of the
-  real GSC queries/pages that match as you type (from the latest report data).
+- **Key pages** — assign labels/roles to the client's real GSC pages (offered
+  as one-click additions, sorted by impressions).
+- **Content groups & topic clusters** — SEOGets-style editors: name +
+  "contains" chips + "doesn't contain" chips, with a live list of the real
+  GSC queries/pages that match as you type.
+- **Work grid** — per-month editor for completed/planned DRAW tasks.
 - **Add a reporting month** — pick a month; the comparison month is set
   automatically.
 - **Upload a rankings CSV** — drop in an SE Ranking export for a month.
 - **Generate / regenerate a report** — one button per month; view it instantly.
+- **Edit commentary** — every section of the report page has an Edit button;
+  edits are saved as overrides that survive regeneration (clear the box to
+  revert to the suggestion).
+- **Publish to a client link** — freezes the current report to an unguessable
+  `/share/{token}` URL (read-only, no internals, noindex). Draft edits stay
+  private until "Publish update" is clicked; "Unpublish" kills the link.
 - **Create / check sheet tabs** — sets up or validates the Google Sheet.
 
-The Google Sheet remains the place for *detailed* configuration — key pages,
-content groups, topic clusters, DRAW tasks, strategic notes and commentary
-overrides — with a direct link from each client's admin card. The CLI commands
-below do the same jobs and exist for automation (e.g. a monthly cron), not
-because anyone needs a terminal.
+Team access: set `APP_PASSWORD` and the whole backend sits behind a shared
+sign-in (30-day cookie); client share links stay public but unguessable. The
+Google Sheet remains the storage layer underneath and can still be edited
+directly (strategic notes, advanced match rules). CLI commands below exist for
+automation, not because anyone needs a terminal.
 
 ## Quick start (mock mode — no credentials needed)
 

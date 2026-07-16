@@ -1,12 +1,20 @@
 import type { SectionCommentary } from "@/lib/types";
 
 /**
- * Shows the final commentary used in the report, its source mode, and — when a
- * human override is in effect — the original suggestion collapsed underneath.
- * Overrides are managed in the NarrativeOverrides tab of the Google Sheet.
+ * Read-only commentary block. Used in the client share view (no badges, no
+ * internals — just the final text). The team view uses EditableCommentary.
  */
-export default function CommentaryBlock({ commentary }: { commentary: SectionCommentary | undefined }) {
-  if (!commentary) return null;
+export default function CommentaryBlock({
+  commentary,
+  readOnly = false,
+}: {
+  commentary: SectionCommentary | undefined;
+  readOnly?: boolean;
+}) {
+  if (!commentary || commentary.finalText.trim() === "") return null;
+  if (readOnly) {
+    return <div className="commentary clean">{commentary.finalText}</div>;
+  }
   const modeLabel =
     commentary.mode === "human_override"
       ? "human override"
@@ -17,17 +25,8 @@ export default function CommentaryBlock({ commentary }: { commentary: SectionCom
     <div className={`commentary${commentary.mode === "human_override" ? " overridden" : ""}`}>
       <div className="meta">
         <span className="badge">{modeLabel}</span>
-        {commentary.mode !== "human_override" && (
-          <span>Override via the NarrativeOverrides sheet (section: {commentary.section})</span>
-        )}
       </div>
       {commentary.finalText}
-      {commentary.overrideText && (
-        <details className="suggested-collapsed">
-          <summary>Show original {commentary.suggestedSource === "llm_draft" ? "LLM" : "rules-based"} suggestion</summary>
-          <p>{commentary.suggestedText}</p>
-        </details>
-      )}
     </div>
   );
 }

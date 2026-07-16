@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { DATA_DIR, getAppConfig, MOCK_DIR } from "./config";
-import { loadAdminConfig, replaceTabRows, SHEET_SCHEMA } from "./sheets";
+import { DATA_DIR, getAppConfig } from "./config";
+import { loadAdminConfig } from "./sheets";
+import { replaceRowsAnywhere } from "./rowStore";
 import { LiveGscAdapter, MockGscAdapter } from "./gsc";
 import { clusterMatchesQuery } from "./topicClusters";
 import { groupMatchesUrl } from "./contentGroups";
@@ -47,39 +48,8 @@ export interface EditorData {
   previewPeriodLabel: string | null;
 }
 
-// ---------------------------------------------------------------------------
-// Mock-file row replacement (same semantics as sheets.replaceTabRows)
-// ---------------------------------------------------------------------------
-
-function replaceMockRows(
-  tab: keyof typeof SHEET_SCHEMA,
-  shouldRemove: (row: Record<string, unknown>) => boolean,
-  newRows: Array<Record<string, unknown>>,
-): void {
-  const file = path.join(MOCK_DIR, "sheet.json");
-  const raw = fs.existsSync(file)
-    ? (JSON.parse(fs.readFileSync(file, "utf8")) as Record<string, Array<Record<string, unknown>>>)
-    : {};
-  const list = Array.isArray(raw[tab]) ? raw[tab] : [];
-  const kept = list.filter((r) => !shouldRemove(r));
-  const appended = newRows.map((row) =>
-    Object.fromEntries(
-      SHEET_SCHEMA[tab].map((h) => [h, row[h] === null || row[h] === undefined ? "" : String(row[h])]),
-    ),
-  );
-  raw[tab] = [...kept, ...appended];
-  fs.writeFileSync(file, JSON.stringify(raw, null, 2));
-}
-
-async function replaceRows(
-  tab: keyof typeof SHEET_SCHEMA,
-  shouldRemove: (row: Record<string, unknown>) => boolean,
-  newRows: Array<Record<string, unknown>>,
-): Promise<void> {
-  const wroteToSheet = await replaceTabRows(tab, shouldRemove, newRows);
-  if (!wroteToSheet) replaceMockRows(tab, shouldRemove, newRows);
-}
-
+// Row replacement (sheet or mock) is shared via rowStore.ts.
+const replaceRows = replaceRowsAnywhere;
 const str = (v: unknown) => String(v ?? "").trim();
 
 // ---------------------------------------------------------------------------

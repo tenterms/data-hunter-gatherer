@@ -22,7 +22,7 @@ export function listSnapshots(): SnapshotListing[] {
     const clientDir = path.join(REPORTS_DIR, clientKey);
     if (!fs.statSync(clientDir).isDirectory()) continue;
     for (const file of fs.readdirSync(clientDir)) {
-      if (!file.endsWith(".json")) continue;
+      if (!file.endsWith(".json") || file.endsWith(".published.json")) continue;
       try {
         const snapshot = JSON.parse(fs.readFileSync(path.join(clientDir, file), "utf8")) as ReportSnapshot;
         listings.push({

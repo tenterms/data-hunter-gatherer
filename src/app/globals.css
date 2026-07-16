@@ -643,6 +643,91 @@ details.debug pre {
   color: var(--ink-secondary);
 }
 
+/* Publish bar, share view, editors */
+.publish-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+.commentary.clean {
+  background: transparent;
+  border: 0;
+  padding: 0 0 8px;
+  font-size: 15px;
+}
+.commentary-textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.5;
+  resize: vertical;
+  background: var(--surface);
+  color: var(--ink);
+}
+.share-view .share-header {
+  margin-bottom: 8px;
+}
+.share-footer {
+  color: var(--ink-muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
+.login-card {
+  margin-top: 20px;
+}
+.login-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 15px;
+  margin-top: 4px;
+}
+.pages-editor input,
+.pages-editor select,
+.draw-edit-row input,
+.draw-edit-row select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 13.5px;
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+}
+.page-url {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: ui-monospace, monospace;
+  font-size: 12.5px;
+}
+.draw-edit-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1.4fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+@media (max-width: 700px) {
+  .draw-edit-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .notice {
   background: #fff8e6;
   border: 1px solid #f1dfb2;

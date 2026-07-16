@@ -394,10 +394,17 @@ export interface KpiCardData {
   sentiment: FindingSentiment;
 }
 
+export interface PublishState {
+  token: string;
+  publishedAt: string;
+}
+
 export interface ReportSnapshot {
   schemaVersion: 1;
   generatedAt: string;
   dataSource: "mock" | "live";
+  /** set when a frozen copy of this report has been shared with the client */
+  published?: PublishState | null;
   client: ClientRow;
   period: ReportPeriodRow;
   kpis: KpiCardData[];

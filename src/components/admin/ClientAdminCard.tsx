@@ -51,6 +51,9 @@ export default function ClientAdminCard({
         <span className="badge">{client.domain}</span>
       </div>
       <div className="btn-row" style={{ marginBottom: 10 }}>
+        <Link className="btn" href={`/admin/${client.client_key}/pages`}>
+          Key pages ({counts.pages})
+        </Link>
         <Link className="btn" href={`/admin/${client.client_key}/content-groups`}>
           Content groups ({counts.contentGroups})
         </Link>
@@ -59,15 +62,13 @@ export default function ClientAdminCard({
         </Link>
         {sheetUrl && (
           <a className="btn" href={sheetUrl} target="_blank" rel="noreferrer">
-            Open config sheet ↗
+            Config sheet ↗
           </a>
         )}
       </div>
       <p className="section-desc">
-        {counts.pages} key pages · {counts.drawTasks} DRAW tasks · {counts.rankingImports} ranking rows —
-        pages, DRAW tasks and commentary overrides are edited in the sheet (filter by{" "}
-        <code>client_key = {client.client_key}</code>); content groups and topic clusters are edited here
-        with a live match preview.
+        {counts.rankingImports} ranking rows imported. Commentary is edited on each report page; the work
+        grid is edited per month below.
       </p>
 
       <h3>Monthly reports</h3>
@@ -84,6 +85,9 @@ export default function ClientAdminCard({
                 </span>
               </div>
               <div className="btn-row">
+                <Link className="btn" href={`/admin/${client.client_key}/draw/${p.period_key}`}>
+                  Work grid
+                </Link>
                 {p.hasSnapshot && (
                   <Link className="btn" href={`/reports/${client.client_key}/${p.period_key}`}>
                     View report

@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { getAppConfig, MOCK_DIR, RANKINGS_DIR } from "./config";
-import { appendRows, loadAdminConfig, setupSheet, SHEET_SCHEMA } from "./sheets";
+import { getAppConfig, RANKINGS_DIR } from "./config";
+import { appendRows, loadAdminConfig, setupSheet } from "./sheets";
+import { appendRowsAnywhere } from "./rowStore";
 import { mapCsvToImports } from "./rankingsCsv";
 import { listSnapshots } from "./snapshots";
 import type { AdminConfig, ClientRow, ReportPeriodRow } from "./types";
@@ -21,36 +22,9 @@ export interface ActionResult {
   message: string;
 }
 
-// ---------------------------------------------------------------------------
-// Row writing (sheet or mock file)
-// ---------------------------------------------------------------------------
-
-function mockFile(): string {
-  return path.join(MOCK_DIR, "sheet.json");
-}
-
-function appendMockRows(tab: keyof typeof SHEET_SCHEMA, rows: Array<Record<string, unknown>>): void {
-  const file = mockFile();
-  const raw = fs.existsSync(file)
-    ? (JSON.parse(fs.readFileSync(file, "utf8")) as Record<string, unknown[]>)
-    : {};
-  const list = Array.isArray(raw[tab]) ? (raw[tab] as unknown[]) : [];
-  // Mock rows keep everything as strings, mirroring what Sheets returns.
-  const stringified = rows.map((row) =>
-    Object.fromEntries(
-      SHEET_SCHEMA[tab].map((h) => [h, row[h] === null || row[h] === undefined ? "" : String(row[h])]),
-    ),
-  );
-  raw[tab] = [...list, ...stringified];
-  fs.writeFileSync(file, JSON.stringify(raw, null, 2));
-}
-
-async function writeRows(tab: keyof typeof SHEET_SCHEMA, rows: Array<Record<string, unknown>>): Promise<"sheet" | "mock"> {
-  const wroteToSheet = await appendRows(tab, rows);
-  if (wroteToSheet) return "sheet";
-  appendMockRows(tab, rows);
-  return "mock";
-}
+// Row writing (sheet or mock file) lives in rowStore.ts and is shared with
+// the in-app editors.
+const writeRows = appendRowsAnywhere;
 
 // ---------------------------------------------------------------------------
 // Overview data for the Admin page
