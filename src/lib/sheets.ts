@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { google, type sheets_v4 } from "googleapis";
-import { getAppConfig, MOCK_DIR } from "./config";
+import { DB_FILE, getAppConfig, MOCK_DIR } from "./config";
 import type {
   AdminConfig,
   AiSearchPromptRow,
@@ -362,8 +362,13 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
   };
 }
 
-export function loadAdminConfigFromMock(): AdminConfig {
-  const file = path.join(MOCK_DIR, "sheet.json");
+/**
+ * Load config from the app's built-in database (data/db/config.json).
+ * Falls back to the bundled demo data (data/mock/sheet.json) when the
+ * database doesn't exist yet, so a fresh clone works out of the box.
+ */
+export function loadAdminConfigFromLocal(): AdminConfig {
+  const file = fs.existsSync(DB_FILE) ? DB_FILE : path.join(MOCK_DIR, "sheet.json");
   const raw = JSON.parse(fs.readFileSync(file, "utf8")) as Record<string, RawRow[]>;
   return {
     clients: (raw.Clients ?? []).map(parsers.Clients),
@@ -382,13 +387,16 @@ export function loadAdminConfigFromMock(): AdminConfig {
   };
 }
 
-/** Load admin config from Sheets when configured, otherwise from mock data. */
-export async function loadAdminConfig(): Promise<{ config: AdminConfig; source: "sheets" | "mock" }> {
+/**
+ * Load admin config from the active backend: the app's built-in database by
+ * default, or Google Sheets when CONFIG_BACKEND=sheets is set.
+ */
+export async function loadAdminConfig(): Promise<{ config: AdminConfig; source: "sheets" | "local" }> {
   const app = getAppConfig();
-  if (app.hasSheets) {
+  if (app.configBackend === "sheets") {
     return { config: await loadAdminConfigFromSheets(), source: "sheets" };
   }
-  return { config: loadAdminConfigFromMock(), source: "mock" };
+  return { config: loadAdminConfigFromLocal(), source: "local" };
 }
 
 // ---------------------------------------------------------------------------
@@ -398,7 +406,7 @@ export async function loadAdminConfig(): Promise<{ config: AdminConfig; source: 
 /** Upsert a row in GeneratedReports keyed on client_key+period_key. */
 export async function recordGeneratedReport(row: GeneratedReportRow): Promise<boolean> {
   const app = getAppConfig();
-  if (!app.hasSheets || !app.googleSheetId) return false;
+  if (app.configBackend !== "sheets" || !app.googleSheetId) return false;
   const sheets = getSheetsClient();
   const existing = await readTab(sheets, app.googleSheetId, "GeneratedReports");
   const headers = SHEET_SCHEMA.GeneratedReports;
@@ -433,7 +441,7 @@ export async function recordGeneratedReport(row: GeneratedReportRow): Promise<bo
  */
 export async function appendRows(tab: keyof typeof SHEET_SCHEMA, rows: Array<Record<string, unknown>>): Promise<boolean> {
   const app = getAppConfig();
-  if (!app.hasSheets || !app.googleSheetId || rows.length === 0) return false;
+  if (app.configBackend !== "sheets" || !app.googleSheetId || rows.length === 0) return false;
   const sheets = getSheetsClient();
   const headers = SHEET_SCHEMA[tab];
   const values = rows.map((row) =>
@@ -462,7 +470,7 @@ export async function replaceTabRows(
   newRows: Array<Record<string, unknown>>,
 ): Promise<boolean> {
   const app = getAppConfig();
-  if (!app.hasSheets || !app.googleSheetId) return false;
+  if (app.configBackend !== "sheets" || !app.googleSheetId) return false;
   const sheets = getSheetsClient();
   const res = await sheets.spreadsheets.values.get({
     spreadsheetId: app.googleSheetId,

@@ -1,16 +1,17 @@
 # SEO Reporting Dashboard
 
 Internal tool for producing consistent monthly SEO reports. The team configures
-each client in a **Google Sheet**, scripts fetch **Google Search Console** and
-**rank-tracking** data, all analysis is calculated **deterministically in code**,
-commentary is suggested (rules-based by default, optionally polished by an LLM,
-always overridable by a human), and every report is frozen as a **JSON snapshot**
-viewable in a **Next.js dashboard**.
+each client **inside the app** (built-in config database; a Google Sheet backend
+is optional), data comes from **Google Search Console** and **rank-tracking**
+imports, all analysis is calculated **deterministically in code**, commentary is
+suggested (rules-based by default, optionally polished by an LLM, always
+editable by a human), and every report is frozen as a **JSON snapshot** —
+editable in the team backend, publishable to a read-only client share link.
 
 ```
-Google Sheets (config)      GSC API / mock          SE Ranking CSV / sheet
+app config (built-in DB)    GSC API / mock          SE Ranking CSV import
         │                        │                          │
-        └───────────► npm run generate-report ◄─────────────┘
+        └───────────► generate report (button/CLI) ◄────────┘
                                  │
              deterministic metrics + findings engine
                                  │
@@ -55,13 +56,15 @@ Once the app is running, everything the team does day-to-day happens at
 - **Publish to a client link** — freezes the current report to an unguessable
   `/share/{token}` URL (read-only, no internals, noindex). Draft edits stay
   private until "Publish update" is clicked; "Unpublish" kills the link.
-- **Create / check sheet tabs** — sets up or validates the Google Sheet.
 
 Team access: set `APP_PASSWORD` and the whole backend sits behind a shared
-sign-in (30-day cookie); client share links stay public but unguessable. The
-Google Sheet remains the storage layer underneath and can still be edited
-directly (strategic notes, advanced match rules). CLI commands below exist for
-automation, not because anyone needs a terminal.
+sign-in (30-day cookie); client share links stay public but unguessable.
+
+Storage: the app keeps all configuration in its own database file
+(`data/db/config.json`) — nothing to set up. Teams who want spreadsheet-style
+bulk editing can set `CONFIG_BACKEND=sheets` to use a Google Sheet instead
+(same columns; `npm run setup-sheet` creates the tabs). CLI commands below
+exist for automation, not because anyone needs a terminal.
 
 ## Quick start (mock mode — no credentials needed)
 
@@ -72,10 +75,11 @@ npm run generate-all-reports # builds demo reports for two mock clients
 npm run dev                  # dashboard at http://localhost:3000
 ```
 
-Mock mode is automatic whenever Google credentials are absent: config comes
-from `data/mock/sheet.json` (which mirrors the sheet tabs exactly) and GSC data
-is generated deterministically, so reports are reproducible run-to-run. The
-dashboard labels every report **mock data** or **live data**.
+With no Google credentials, GSC data is simulated deterministically (reports
+are reproducible run-to-run) and the config database is seeded from the bundled
+demo data on first edit. The dashboard labels every report **mock data** or
+**live data** — and if the service account can't see a particular property,
+that client's report falls back to simulated data instead of failing.
 
 ## Going live
 
@@ -86,7 +90,9 @@ missing pieces degrade gracefully to mock/fallback behaviour.
 
 | Variable | Purpose |
 |---|---|
-| `GOOGLE_SHEET_ID` | The admin spreadsheet ID (from its URL) |
+| `APP_PASSWORD` | Team sign-in password (protects everything except share links) |
+| `CONFIG_BACKEND` | `local` (default, built-in DB) or `sheets` |
+| `GOOGLE_SHEET_ID` | Only for `CONFIG_BACKEND=sheets` |
 | `GOOGLE_APPLICATION_CREDENTIALS` | Path to a service-account key file (preferred) |
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | Same key pasted inline (alternative) |
 | `GOOGLE_OAUTH_CLIENT_ID/SECRET/REFRESH_TOKEN` | OAuth fallback for Search Console |
@@ -98,17 +104,20 @@ missing pieces degrade gracefully to mock/fallback behaviour.
 
 ### 2. Google auth
 
-Create a service account in Google Cloud (enable the **Sheets API** and
-**Search Console API**), download its JSON key, then:
+Create a service account in Google Cloud (enable the **Search Console API**;
+also the **Sheets API** if using the optional sheets backend), download its
+JSON key, then:
 
-- **Sheets**: share the spreadsheet with the service account's email
-  (`…@…iam.gserviceaccount.com`) as an editor.
-- **Search Console**: add the same email as a user on each GSC property
+- **Search Console**: add the service account's email
+  (`…@…iam.gserviceaccount.com`) as a user on each GSC property
   (Settings → Users and permissions). If a property owner can't add it, use the
   OAuth variables instead — create an OAuth client, complete the consent flow
   once, and store the refresh token.
 
-### 3. Create/validate the sheet
+### 3. (Optional) The Google Sheets backend
+
+Only relevant with `CONFIG_BACKEND=sheets` — skip this entirely when using the
+default built-in database.
 
 ```bash
 npm run setup-sheet
@@ -129,7 +138,8 @@ which doubles as a filled-in example of every tab.
 
 ### 4. Configure a client
 
-All team configuration happens in the sheet — nobody edits JSON:
+Everything is done in the app's Admin section (see "Day-to-day use" above).
+With the sheets backend, the same data can also be edited as rows:
 
 1. **Clients**: one row per client (`client_key` is the stable slug used in URLs).
 2. **ReportPeriods**: one row per month, with current + comparison date ranges

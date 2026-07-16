@@ -1,0 +1,1569 @@
+{
+  "_comment": "Built-in config database. Edited by the app (Admin pages); seeded from the demo data plus the original Google Sheet.",
+  "Clients": [
+    {
+      "client_key": "apex-design",
+      "client_name": "Apex Product Design",
+      "domain": "apexproductdesign.co.uk",
+      "gsc_property_url": "sc-domain:apexproductdesign.co.uk",
+      "timezone": "Europe/London",
+      "active": "true",
+      "notes": "Demo client (mock data): product design agency."
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "client_name": "Sentinel Cyber Security",
+      "domain": "sentinelcyber.co.uk",
+      "gsc_property_url": "sc-domain:sentinelcyber.co.uk",
+      "timezone": "Europe/London",
+      "active": "true",
+      "notes": "Demo client (mock data): cybersecurity consultancy."
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "client_name": "Cyber Alchemy",
+      "domain": "cyberalchemy.co.uk",
+      "gsc_property_url": "sc-domain:cyberalchemy.co.uk",
+      "timezone": "Europe/London",
+      "active": "true",
+      "notes": ""
+    }
+  ],
+  "ReportPeriods": [
+    {
+      "period_key": "2026-06",
+      "client_key": "apex-design",
+      "label": "June 2026",
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-30",
+      "comparison_start_date": "2026-05-01",
+      "comparison_end_date": "2026-05-31",
+      "status": "ready"
+    },
+    {
+      "period_key": "2026-06",
+      "client_key": "sentinel-cyber",
+      "label": "June 2026",
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-30",
+      "comparison_start_date": "2026-05-01",
+      "comparison_end_date": "2026-05-31",
+      "status": "ready"
+    },
+    {
+      "period_key": "2026-06",
+      "client_key": "cyber-alchemy",
+      "label": "June 2026",
+      "start_date": "2026-06-01",
+      "end_date": "2026-06-30",
+      "comparison_start_date": "2026-05-01",
+      "comparison_end_date": "2026-05-31",
+      "status": "ready"
+    }
+  ],
+  "ClientPages": [
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/",
+      "label": "Homepage",
+      "page_role": "primary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/product-design",
+      "label": "Product Design Services",
+      "page_role": "primary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/electronics-product-design",
+      "label": "Electronics Product Design",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/prototyping",
+      "label": "Prototyping Services",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "label": "CAD Product Design",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/invention-services",
+      "label": "Invention Services",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "label": "Concept Product Design",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/services/mechanical-product-design",
+      "label": "Mechanical Product Design",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/tools/product-design-process",
+      "label": "Product Design Process (tool)",
+      "page_role": "supporting",
+      "content_type": "tool",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/sectors/consumer-products",
+      "label": "Consumer Products Sector",
+      "page_role": "secondary",
+      "content_type": "sector",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/blog/how-to-prototype-a-product",
+      "label": "How to Prototype a Product (blog)",
+      "page_role": "supporting",
+      "content_type": "blog",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "apex-design",
+      "url": "https://apexproductdesign.co.uk/blog/product-design-cost-guide",
+      "label": "Product Design Cost Guide (blog)",
+      "page_role": "supporting",
+      "content_type": "guide",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/",
+      "label": "Homepage",
+      "page_role": "primary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "label": "Penetration Testing Services",
+      "page_role": "primary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+      "label": "Cybersecurity Compliance Services",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/vciso",
+      "label": "vCISO / Cyber Strategy",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/cyber-essentials",
+      "label": "Cyber Essentials Services",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "label": "DTAC Compliance",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "medium",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/services/cloud-assessment",
+      "label": "Cloud Assessment Services",
+      "page_role": "secondary",
+      "content_type": "commercial",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/sectors/financial-services",
+      "label": "Financial Services Cyber Security",
+      "page_role": "secondary",
+      "content_type": "sector",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "label": "Medical Technology Cyber Security",
+      "page_role": "secondary",
+      "content_type": "sector",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/blog/how-to-secure-financial-data",
+      "label": "How to Secure Financial Data (blog)",
+      "page_role": "supporting",
+      "content_type": "blog",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+      "label": "What is a vCISO (blog)",
+      "page_role": "supporting",
+      "content_type": "blog",
+      "commercial_priority": "low",
+      "active": "true",
+      "notes": ""
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "url": "https://cyberalchemy.co.uk/",
+      "label": "Homepage",
+      "page_role": "primary",
+      "content_type": "commercial",
+      "commercial_priority": "high",
+      "active": "true",
+      "notes": "Added automatically — edit in the sheet."
+    }
+  ],
+  "ContentGroups": [
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "group_name": "Product Design",
+      "description": "Core product design service pages",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "sectors",
+      "group_name": "Sectors",
+      "description": "Sector landing pages",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "blog",
+      "group_name": "Blog",
+      "description": "Blog and guide content",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "invention",
+      "group_name": "Invention",
+      "description": "Invention services pages",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "prototyping",
+      "group_name": "Prototyping",
+      "description": "Prototyping pages",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "services",
+      "group_name": "Services",
+      "description": "Commercial service pages",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "sectors",
+      "group_name": "Sectors",
+      "description": "Sector landing pages",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "blog",
+      "group_name": "Blog",
+      "description": "Blog and supporting content",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "pen-testing",
+      "group_name": "Penetration Testing",
+      "description": "Pen testing pages",
+      "active": "true"
+    }
+  ],
+  "ContentGroupUrls": [
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "url": "/services/product-design",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "url": "/services/cad-product-design",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "url": "/services/concept-product-design",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "url": "/services/mechanical-product-design",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "product-design",
+      "url": "/services/electronics-product-design",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "sectors",
+      "url": "https://apexproductdesign.co.uk/sectors/",
+      "match_type": "starts_with",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "blog",
+      "url": "https://apexproductdesign.co.uk/blog/",
+      "match_type": "starts_with",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "invention",
+      "url": "invention",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "group_key": "prototyping",
+      "url": "prototyp",
+      "match_type": "contains",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "services",
+      "url": "https://sentinelcyber.co.uk/services/",
+      "match_type": "starts_with",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "sectors",
+      "url": "https://sentinelcyber.co.uk/sectors/",
+      "match_type": "starts_with",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "blog",
+      "url": "https://sentinelcyber.co.uk/blog/",
+      "match_type": "starts_with",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "group_key": "pen-testing",
+      "url": "penetration-testing",
+      "match_type": "contains",
+      "active": "true"
+    }
+  ],
+  "TopicClusters": [
+    {
+      "client_key": "apex-design",
+      "topic_key": "product-design-services",
+      "topic_name": "Product Design Services",
+      "description": "Core product design queries",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "invention-services",
+      "topic_name": "Invention Services",
+      "description": "Invention help queries",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "cad-design",
+      "topic_name": "CAD Design Services",
+      "description": "CAD design queries",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "prototyping",
+      "topic_name": "Prototyping",
+      "description": "Prototyping queries",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "electronic-product-design",
+      "topic_name": "Electronic Product Design",
+      "description": "Electronics design queries",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "concept-product-design",
+      "topic_name": "Concept Product Design",
+      "description": "Concept design queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "penetration-testing",
+      "topic_name": "Penetration Testing",
+      "description": "Pen testing queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "vciso",
+      "topic_name": "vCISO",
+      "description": "Virtual CISO queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "dtac",
+      "topic_name": "DTAC",
+      "description": "DTAC assessment/compliance queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "cyber-essentials",
+      "topic_name": "Cyber Essentials",
+      "description": "Cyber Essentials queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "compliance",
+      "topic_name": "Compliance",
+      "description": "Compliance consulting queries",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "medtech-security",
+      "topic_name": "Medtech Security",
+      "description": "Medical technology security queries",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "penetration-testing",
+      "topic_name": "Penetration Testing",
+      "description": "",
+      "active": "true"
+    }
+  ],
+  "TopicClusterRules": [
+    {
+      "client_key": "apex-design",
+      "topic_key": "product-design-services",
+      "match_type": "contains",
+      "query_text": "product design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "invention-services",
+      "match_type": "contains",
+      "query_text": "invention",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "cad-design",
+      "match_type": "contains",
+      "query_text": "cad design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "cad-design",
+      "match_type": "contains",
+      "query_text": "cad product design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "prototyping",
+      "match_type": "contains",
+      "query_text": "prototyping",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "prototyping",
+      "match_type": "contains",
+      "query_text": "prototype",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "electronic-product-design",
+      "match_type": "contains",
+      "query_text": "electronics product design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "electronic-product-design",
+      "match_type": "contains",
+      "query_text": "electronic product design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "topic_key": "concept-product-design",
+      "match_type": "contains",
+      "query_text": "concept product design",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "penetration-testing",
+      "match_type": "contains",
+      "query_text": "penetration testing",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "penetration-testing",
+      "match_type": "contains",
+      "query_text": "pen testing",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "vciso",
+      "match_type": "contains",
+      "query_text": "vciso",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "vciso",
+      "match_type": "contains",
+      "query_text": "virtual ciso",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "dtac",
+      "match_type": "contains",
+      "query_text": "dtac",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "cyber-essentials",
+      "match_type": "contains",
+      "query_text": "cyber essentials",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "compliance",
+      "match_type": "contains",
+      "query_text": "cybersecurity compliance",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "compliance",
+      "match_type": "contains",
+      "query_text": "compliance consulting",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "medtech-security",
+      "match_type": "contains",
+      "query_text": "medtech cyber",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "topic_key": "medtech-security",
+      "match_type": "contains",
+      "query_text": "medical device security",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "penetration-testing",
+      "match_type": "contains",
+      "query_text": "penetration testing",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "penetration-testing",
+      "match_type": "contains",
+      "query_text": "pen testing",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "penetration-testing",
+      "match_type": "contains",
+      "query_text": "pen test",
+      "case_sensitive": "false",
+      "active": "true"
+    }
+  ],
+  "DrawTasks": [
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "design_dev",
+      "title": "Email platform integration",
+      "description": "Connected the enquiry forms to the new email platform with an autoresponder.",
+      "status": "done"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "reactive_seo",
+      "title": "Sitewide redirect fixes",
+      "description": "Cleaned up legacy redirect chains flagged in the crawl.",
+      "status": "done"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "reactive_seo",
+      "title": "Sitewide 404 fixes",
+      "description": "Resolved broken internal links to removed portfolio pages.",
+      "status": "done"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "writing",
+      "title": "Content research for sector pages",
+      "description": "Research completed for the upcoming sector landing pages.",
+      "status": "done"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "design_dev",
+      "title": "Homepage layout revisions",
+      "description": "Brainstorm and scope changes to the homepage hero and proof sections.",
+      "status": "planned"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "reactive_seo",
+      "title": "Partner link reciprocation",
+      "description": "Set up reciprocal links with the IT support partner.",
+      "status": "planned"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "writing",
+      "title": "Who we serve / where we serve posts",
+      "description": "Two posts drafted and ready for review; publish after sign-off.",
+      "status": "planned"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "anything_else",
+      "title": "Portfolio imagery refresh",
+      "description": "Client to supply new project photography (out of scope).",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "design_dev",
+      "title": "Staff page amendments",
+      "description": "Updated team bios and structured data.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "reactive_seo",
+      "title": "Key page reactive review",
+      "description": "Reviewed key commercial pages for reactive improvements.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "writing",
+      "title": "Medical device evidence pack blog",
+      "description": "Published the medical device evidence pack blog.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "completed_this_month",
+      "category": "writing",
+      "title": "What is a vCISO blog",
+      "description": "Published the vCISO explainer.",
+      "status": "done"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "design_dev",
+      "title": "New email / CRM set-up",
+      "description": "Implementing the new email and CRM stack.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "reactive_seo",
+      "title": "Implement June reactive suggestions",
+      "description": "Apply the improvements identified in June's reactive review.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "writing",
+      "title": "vCISO cost and signs-you-need-one posts",
+      "description": "Two vCISO follow-up posts drafted and sent for sign-off.",
+      "status": "planned"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "anything_else",
+      "title": "Discuss NHS security page",
+      "description": "Scope a potential NHS-focused service page with the client.",
+      "status": "planned"
+    }
+  ],
+  "RankingKeywords": [
+    {
+      "client_key": "apex-design",
+      "keyword": "product design services",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/product-design",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "keyword": "cad product design agency",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "keyword": "invention services",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "keyword": "product prototyping agency",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "keyword": "penetration testing services",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "keyword": "vciso",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/vciso",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "keyword": "dtac assessment",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "priority": "medium",
+      "active": "true"
+    }
+  ],
+  "RankingImports": [
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "cad product design agency",
+      "start_position": "12",
+      "end_position": "1",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "search_volume": "90",
+      "ranking_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "visibility_score": "6"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "cad product design firm",
+      "start_position": "11",
+      "end_position": "1",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "search_volume": "40",
+      "ranking_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "product prototyping agency",
+      "start_position": "43",
+      "end_position": "18",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "search_volume": "110",
+      "ranking_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "3d prototyping agency",
+      "start_position": "54",
+      "end_position": "30",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "search_volume": "70",
+      "ranking_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "product prototyping services",
+      "start_position": "27",
+      "end_position": "9",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "search_volume": "170",
+      "ranking_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "invention services",
+      "start_position": "8",
+      "end_position": "2",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "search_volume": "260",
+      "ranking_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "invention services agency",
+      "start_position": "8",
+      "end_position": "3",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "search_volume": "50",
+      "ranking_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "cad product design services",
+      "start_position": "14",
+      "end_position": "10",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "search_volume": "70",
+      "ranking_url": "https://apexproductdesign.co.uk/services/cad-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "product design services",
+      "start_position": "15",
+      "end_position": "15",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/product-design",
+      "search_volume": "480",
+      "ranking_url": "https://apexproductdesign.co.uk/services/product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "product design studio london",
+      "start_position": "",
+      "end_position": "7",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/",
+      "search_volume": "140",
+      "ranking_url": "https://apexproductdesign.co.uk/",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "prototype to manufacturing agency",
+      "start_position": "28",
+      "end_position": "78",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "search_volume": "30",
+      "ranking_url": "https://apexproductdesign.co.uk/services/prototyping",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "concept product design consultancy",
+      "start_position": "3",
+      "end_position": "38",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "search_volume": "40",
+      "ranking_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "concept product design firm",
+      "start_position": "1",
+      "end_position": "19",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "search_volume": "30",
+      "ranking_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "concept product design company",
+      "start_position": "3",
+      "end_position": "12",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "search_volume": "50",
+      "ranking_url": "https://apexproductdesign.co.uk/services/concept-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "invention firm",
+      "start_position": "14",
+      "end_position": "29",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "search_volume": "60",
+      "ranking_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "invention company",
+      "start_position": "19",
+      "end_position": "25",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "search_volume": "90",
+      "ranking_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "mechanical product design consultancy",
+      "start_position": "1",
+      "end_position": "15",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/mechanical-product-design",
+      "search_volume": "20",
+      "ranking_url": "https://apexproductdesign.co.uk/services/mechanical-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "electronics prototyping consultancy",
+      "start_position": "28",
+      "end_position": "41",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/electronics-product-design",
+      "search_volume": "20",
+      "ranking_url": "https://apexproductdesign.co.uk/services/electronics-product-design",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "keyword": "bespoke invention help",
+      "start_position": "42",
+      "end_position": "",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "search_volume": "10",
+      "ranking_url": "",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "vciso",
+      "start_position": "",
+      "end_position": "65",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/vciso",
+      "search_volume": "260",
+      "ranking_url": "https://sentinelcyber.co.uk/blog/what-is-a-vciso",
+      "visibility_score": "8"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "dtac assessment",
+      "start_position": "52",
+      "end_position": "41",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "search_volume": "70",
+      "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "cybersecurity compliance consulting",
+      "start_position": "10",
+      "end_position": "5",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+      "search_volume": "90",
+      "ranking_url": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "penetration testing services",
+      "start_position": "39",
+      "end_position": "34",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "search_volume": "720",
+      "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "dtac security",
+      "start_position": "12",
+      "end_position": "8",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "search_volume": "30",
+      "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "penetration testing services uk",
+      "start_position": "32",
+      "end_position": "29",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "search_volume": "210",
+      "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "virtual ciso uk",
+      "start_position": "31",
+      "end_position": "29",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/vciso",
+      "search_volume": "110",
+      "ranking_url": "https://sentinelcyber.co.uk/services/vciso",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "medtech cybersecurity",
+      "start_position": "4",
+      "end_position": "2",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "search_volume": "50",
+      "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "medtech cyber security",
+      "start_position": "3",
+      "end_position": "2",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "search_volume": "40",
+      "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "penetration testing leeds",
+      "start_position": "6",
+      "end_position": "4",
+      "search_engine": "google.co.uk",
+      "location": "Leeds",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "search_volume": "90",
+      "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "managed cyber security leeds",
+      "start_position": "11",
+      "end_position": "46",
+      "search_engine": "google.co.uk",
+      "location": "Leeds",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/",
+      "search_volume": "50",
+      "ranking_url": "https://sentinelcyber.co.uk/",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "cyber security consultancy",
+      "start_position": "5",
+      "end_position": "31",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/",
+      "search_volume": "590",
+      "ranking_url": "https://sentinelcyber.co.uk/",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "penetration testing uk",
+      "start_position": "24",
+      "end_position": "41",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "search_volume": "320",
+      "ranking_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "dtac certification",
+      "start_position": "15",
+      "end_position": "31",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "search_volume": "40",
+      "ranking_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "medical devices cyber security",
+      "start_position": "19",
+      "end_position": "31",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "search_volume": "60",
+      "ranking_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "cyber security services leeds",
+      "start_position": "13",
+      "end_position": "20",
+      "search_engine": "google.co.uk",
+      "location": "Leeds",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/",
+      "search_volume": "80",
+      "ranking_url": "https://sentinelcyber.co.uk/",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "cyber security partner for financial services",
+      "start_position": "",
+      "end_position": "3",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+      "search_volume": "20",
+      "ranking_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+      "visibility_score": ""
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "keyword": "cybersecurity company for financial services firms",
+      "start_position": "",
+      "end_position": "6",
+      "search_engine": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+      "search_volume": "20",
+      "ranking_url": "https://sentinelcyber.co.uk/sectors/financial-services",
+      "visibility_score": ""
+    }
+  ],
+  "AiSearchPrompts": [
+    {
+      "client_key": "apex-design",
+      "prompt_key": "best-product-design-uk",
+      "prompt": "What are the best product design agencies in the UK?",
+      "engine": "chatgpt",
+      "market": "UK",
+      "expected_brand": "Apex Product Design",
+      "expected_url": "https://apexproductdesign.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "prompt_key": "invention-validation",
+      "prompt": "Which invention idea validation services have the best reputation?",
+      "engine": "google_ai_overviews",
+      "market": "UK",
+      "expected_brand": "Apex Product Design",
+      "expected_url": "https://apexproductdesign.co.uk/services/invention-services",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "prompt_key": "pen-testing-uk",
+      "prompt": "Who are the most trusted penetration testing providers in the UK?",
+      "engine": "chatgpt",
+      "market": "UK",
+      "expected_brand": "Sentinel Cyber Security",
+      "expected_url": "https://sentinelcyber.co.uk/services/penetration-testing",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "prompt_key": "medtech-security",
+      "prompt": "Which companies help medical device manufacturers with cybersecurity compliance?",
+      "engine": "perplexity",
+      "market": "UK",
+      "expected_brand": "Sentinel Cyber Security",
+      "expected_url": "https://sentinelcyber.co.uk/sectors/medical-technology",
+      "priority": "high",
+      "active": "true"
+    }
+  ],
+  "NarrativeOverrides": [
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "section": "strategic_priorities",
+      "suggested_text": "",
+      "override_text": "1. Publish the two sector landing pages that are ready for review — these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
+      "final_text": "",
+      "approved_by": "demo strategist",
+      "approved_at": "2026-07-08"
+    }
+  ],
+  "StrategicNotes": [
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "note_type": "priority",
+      "title": "Confirm the CAD cluster gains hold",
+      "body": "CAD product design terms moved to position 1 this month. No page changes recommended while these gains are being confirmed.",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "note_type": "watch",
+      "title": "Concept product design declines",
+      "body": "Concept design terms lost significant ground within the month. Most likely settling-related; review once rankings have had a full month to stabilise.",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "note_type": "priority",
+      "title": "Publish the medtech content",
+      "body": "The medtech blog is written and ready for review. The medical technology page holds strong visibility on its core tracked terms but converts little of it into clicks; getting this content live is the most direct way to close that gap.",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "sentinel-cyber",
+      "period_key": "2026-06",
+      "note_type": "watch",
+      "title": "Financial services long-tail momentum",
+      "body": "Several new financial services long-tail terms entered the tracked set for the first time this month. Early days, but worth reinforcing as the sector page beds in.",
+      "priority": "medium",
+      "active": "true"
+    }
+  ]
+}

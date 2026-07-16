@@ -14,11 +14,21 @@ export const DATA_DIR = path.join(ROOT_DIR, "data");
 export const MOCK_DIR = path.join(DATA_DIR, "mock");
 export const REPORTS_DIR = path.join(DATA_DIR, "reports");
 export const RANKINGS_DIR = path.join(DATA_DIR, "rankings");
+/** The app's built-in config database (default storage backend). */
+export const DB_FILE = path.join(DATA_DIR, "db", "config.json");
 
 export interface AppConfig {
   googleSheetId: string | null;
   hasGoogleCredentials: boolean;
   hasSheets: boolean;
+  /**
+   * Where client/report configuration lives. "local" (default): the app's
+   * own JSON database at data/db/config.json. "sheets": a Google Sheet
+   * (opt-in via CONFIG_BACKEND=sheets, for teams who want bulk spreadsheet
+   * editing). GSC credentials are independent of this — they're the data
+   * source either way.
+   */
+  configBackend: "local" | "sheets";
   seRankingApiKey: string | null;
   anthropicApiKey: string | null;
   anthropicModel: string;
@@ -58,10 +68,12 @@ export function getAppConfig(): AppConfig {
     commentaryMode = requestedMode === "rules_only" ? "rules_only" : "llm_draft";
   }
 
+  const hasSheets = Boolean(googleSheetId && hasCreds);
   return {
     googleSheetId,
     hasGoogleCredentials: hasCreds,
-    hasSheets: Boolean(googleSheetId && hasCreds),
+    hasSheets,
+    configBackend: readEnv("CONFIG_BACKEND") === "sheets" && hasSheets ? "sheets" : "local",
     seRankingApiKey: readEnv("SERANKING_API_KEY"),
     anthropicApiKey,
     anthropicModel: readEnv("ANTHROPIC_MODEL") ?? "claude-opus-4-8",

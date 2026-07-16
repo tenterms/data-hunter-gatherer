@@ -1,23 +1,18 @@
 import Link from "next/link";
 import { listSnapshots } from "@/lib/snapshots";
-import { loadAdminConfigFromMock } from "@/lib/sheets";
-import { getAppConfig } from "@/lib/config";
+import { loadAdminConfig } from "@/lib/sheets";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const snapshots = listSnapshots();
-  const app = getAppConfig();
 
-  // Show configured clients even before any report has been generated.
   let clientNames: Array<{ key: string; name: string }> = [];
   try {
-    if (!app.hasSheets) {
-      const mock = loadAdminConfigFromMock();
-      clientNames = mock.clients.filter((c) => c.active).map((c) => ({ key: c.client_key, name: c.client_name }));
-    }
+    const { config } = await loadAdminConfig();
+    clientNames = config.clients.filter((c) => c.active).map((c) => ({ key: c.client_key, name: c.client_name }));
   } catch {
-    // no mock file — fine
+    // config unavailable — still show any generated snapshots
   }
   const clientsWithReports = new Set(snapshots.map((s) => s.clientKey));
 
@@ -25,22 +20,15 @@ export default async function HomePage() {
     <>
       <h1>Monthly SEO reports</h1>
       <p className="subtitle">
-        Generated report snapshots. Add clients, months and rankings — and generate reports — from the{" "}
+        Generated report snapshots. Add clients, build report elements and generate reports from the{" "}
         <Link href="/admin">Admin page</Link>.
       </p>
-
-      {!app.hasSheets && (
-        <div className="notice">
-          Running in <strong>mock mode</strong> — Google credentials are not configured, so config comes from{" "}
-          <code>data/mock/sheet.json</code> and GSC data is simulated. See the README for going live.
-        </div>
-      )}
 
       <div className="card">
         <h2>Generated reports</h2>
         {snapshots.length === 0 ? (
           <p className="section-desc">
-            No reports yet. Run <code>npm run generate-all-reports</code> to build the demo reports.
+            No reports yet — head to the <Link href="/admin">Admin page</Link> to generate one.
           </p>
         ) : (
           <ul className="report-list">
@@ -64,7 +52,7 @@ export default async function HomePage() {
 
       {clientNames.filter((c) => !clientsWithReports.has(c.key)).length > 0 && (
         <div className="card">
-          <h2>Configured clients without reports</h2>
+          <h2>Clients without reports yet</h2>
           <ul className="report-list">
             {clientNames
               .filter((c) => !clientsWithReports.has(c.key))
@@ -73,7 +61,7 @@ export default async function HomePage() {
                   <div>
                     <strong>{c.name}</strong>
                     <div className="meta">
-                      Run <code>npm run generate-report -- --client={c.key} --period=PERIOD_KEY</code>
+                      Generate their first report from the <Link href="/admin">Admin page</Link>.
                     </div>
                   </div>
                 </li>

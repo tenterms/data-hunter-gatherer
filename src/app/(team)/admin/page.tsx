@@ -21,29 +21,27 @@ export default async function AdminPage() {
         <h2>Connection status</h2>
         <ul className="status-list">
           <li>
-            <span className={`badge ${overview.configSource === "sheets" ? "live" : "mock"}`}>
-              {overview.configSource === "sheets" ? "Google Sheet connected" : "Mock mode"}
+            <span className="badge live">
+              {overview.configSource === "sheets" ? "Storage: Google Sheet" : "Storage: built-in database"}
             </span>{" "}
             {overview.configSource === "sheets" ? (
               <>
-                Config is read from{" "}
+                Config is read from and written to{" "}
                 <a href={overview.sheetUrl!} target="_blank" rel="noreferrer">
                   the admin sheet
                 </a>
                 .
               </>
             ) : (
-              <>
-                No Google credentials yet, so everything works against local demo config and simulated GSC
-                data. Once the one-time credential setup is done (see the README), this switches to live
-                automatically.
-              </>
+              <>All config is stored by the app itself — nothing to set up.</>
             )}
           </li>
           <li>
             <span className={`badge ${overview.hasGoogleCredentials ? "live" : "mock"}`}>
               {overview.hasGoogleCredentials ? "Search Console: live" : "Search Console: simulated"}
-            </span>
+            </span>{" "}
+            {!overview.hasGoogleCredentials &&
+              "No Google credentials yet, so report data is demo data. Add the service-account key (see README) to go live."}
           </li>
           <li>
             <span className={`badge ${overview.llmEnabled ? "live" : ""}`}>
@@ -51,7 +49,7 @@ export default async function AdminPage() {
             </span>
           </li>
         </ul>
-        <SetupSheetButton />
+        {overview.configSource === "sheets" && <SetupSheetButton />}
       </div>
 
       <div className="card">

@@ -11,10 +11,8 @@ import type { AdminConfig, ClientRow, ReportPeriodRow } from "./types";
  * Actions behind the Admin page. Day-to-day use of the tool is entirely
  * button-driven from the dashboard; these functions do the work.
  *
- * Storage rule: when Google Sheets is configured, new rows are appended to the
- * sheet (which stays the single source of truth the team edits). When it
- * isn't, rows are appended to data/mock/sheet.json so the whole workflow can
- * be exercised before any credentials exist.
+ * Storage: the app's built-in database by default (data/db/config.json), or
+ * Google Sheets when CONFIG_BACKEND=sheets is set — see rowStore.ts.
  */
 
 export interface ActionResult {
@@ -37,7 +35,7 @@ export interface ClientOverview {
 }
 
 export interface AdminOverview {
-  configSource: "sheets" | "mock";
+  configSource: "sheets" | "local";
   sheetUrl: string | null;
   hasGoogleCredentials: boolean;
   llmEnabled: boolean;
@@ -67,7 +65,10 @@ export async function getAdminOverview(): Promise<AdminOverview> {
 
   return {
     configSource: source,
-    sheetUrl: app.googleSheetId ? `https://docs.google.com/spreadsheets/d/${app.googleSheetId}` : null,
+    sheetUrl:
+      source === "sheets" && app.googleSheetId
+        ? `https://docs.google.com/spreadsheets/d/${app.googleSheetId}`
+        : null,
     hasGoogleCredentials: app.hasGoogleCredentials,
     llmEnabled: app.enableLlmCommentary && Boolean(app.anthropicApiKey),
     clients,
@@ -163,7 +164,7 @@ export async function createClient(input: {
       content_type: "commercial",
       commercial_priority: "high",
       active: "true",
-      notes: "Added automatically — edit in the sheet.",
+      notes: "Added automatically when the client was created.",
     },
   ]);
 
@@ -189,7 +190,7 @@ export async function createClient(input: {
     clientKey,
     message:
       `Created "${clientName}" (key: ${clientKey}) with a homepage entry and its first reporting month` +
-      (where === "sheet" ? " in the Google Sheet." : " in the local mock config."),
+      (where === "sheet" ? " (synced to the Google Sheet)." : "."),
   };
 }
 
@@ -222,7 +223,7 @@ export async function addPeriod(input: { clientKey: string; month: string }): Pr
   ]);
   return {
     ok: true,
-    message: `Added ${month.label} for ${client.client_name} (compared against the previous month)${where === "mock" ? " in the local mock config" : ""}.`,
+    message: `Added ${month.label} for ${client.client_name} (compared against the previous month)${where === "sheet" ? " (synced to the Google Sheet)" : ""}.`,
   };
 }
 

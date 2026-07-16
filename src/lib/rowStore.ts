@@ -1,21 +1,28 @@
 import fs from "fs";
 import path from "path";
-import { MOCK_DIR } from "./config";
+import { DB_FILE, MOCK_DIR } from "./config";
 import { appendRows, replaceTabRows, SHEET_SCHEMA } from "./sheets";
 
 /**
- * Row storage that works in both modes: writes go to the Google Sheet when
- * configured, otherwise to data/mock/sheet.json. All in-app editors write
- * through here so the sheet stays the single source of truth.
+ * Row storage for all in-app editors. Writes go to the app's built-in
+ * database (data/db/config.json) by default, or to the Google Sheet when
+ * CONFIG_BACKEND=sheets is set (the appendRows/replaceTabRows calls return
+ * false unless the sheets backend is active).
+ *
+ * On the first local write, the database is seeded from the bundled demo
+ * config so a fresh install isn't empty.
  */
 
-function mockFile(): string {
-  return path.join(MOCK_DIR, "sheet.json");
+function readLocal(): Record<string, Array<Record<string, unknown>>> {
+  if (fs.existsSync(DB_FILE)) return JSON.parse(fs.readFileSync(DB_FILE, "utf8"));
+  const demo = path.join(MOCK_DIR, "sheet.json");
+  if (fs.existsSync(demo)) return JSON.parse(fs.readFileSync(demo, "utf8"));
+  return {};
 }
 
-function readMock(): Record<string, Array<Record<string, unknown>>> {
-  const file = mockFile();
-  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {};
+function writeLocal(raw: Record<string, Array<Record<string, unknown>>>): void {
+  fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
+  fs.writeFileSync(DB_FILE, JSON.stringify(raw, null, 2));
 }
 
 function stringifyRows(
@@ -32,25 +39,25 @@ function stringifyRows(
 export async function appendRowsAnywhere(
   tab: keyof typeof SHEET_SCHEMA,
   rows: Array<Record<string, unknown>>,
-): Promise<"sheet" | "mock"> {
+): Promise<"sheet" | "local"> {
   if (await appendRows(tab, rows)) return "sheet";
-  const raw = readMock();
+  const raw = readLocal();
   raw[tab] = [...(Array.isArray(raw[tab]) ? raw[tab] : []), ...stringifyRows(tab, rows)];
-  fs.writeFileSync(mockFile(), JSON.stringify(raw, null, 2));
-  return "mock";
+  writeLocal(raw);
+  return "local";
 }
 
 export async function replaceRowsAnywhere(
   tab: keyof typeof SHEET_SCHEMA,
   shouldRemove: (row: Record<string, unknown>) => boolean,
   newRows: Array<Record<string, unknown>>,
-): Promise<"sheet" | "mock"> {
+): Promise<"sheet" | "local"> {
   if (await replaceTabRows(tab, shouldRemove, newRows)) return "sheet";
-  const raw = readMock();
+  const raw = readLocal();
   const list = Array.isArray(raw[tab]) ? raw[tab] : [];
   raw[tab] = [...list.filter((r) => !shouldRemove(r)), ...stringifyRows(tab, newRows)];
-  fs.writeFileSync(mockFile(), JSON.stringify(raw, null, 2));
-  return "mock";
+  writeLocal(raw);
+  return "local";
 }
 
 export const cell = (v: unknown) => String(v ?? "").trim();

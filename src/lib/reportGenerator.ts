@@ -130,7 +130,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
 
   // --- Fetch GSC data (live or mock) ---------------------------------------
   const useLive = app.hasGoogleCredentials && !options.forceMock;
-  const gsc: GscAdapter = useLive ? new LiveGscAdapter() : new MockGscAdapter(config);
+  let gsc: GscAdapter = useLive ? new LiveGscAdapter() : new MockGscAdapter(config);
   log(`Fetching GSC data via ${gsc.source} adapter…`);
 
   const currentRange = { startDate: period.start_date, endDate: period.end_date };
@@ -138,10 +138,26 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
     startDate: period.comparison_start_date,
     endDate: period.comparison_end_date,
   };
-  const [current, comparison] = await Promise.all([
-    gsc.fetchDataset(client, currentRange),
-    gsc.fetchDataset(client, comparisonRange),
-  ]);
+  let current;
+  let comparison;
+  try {
+    [current, comparison] = await Promise.all([
+      gsc.fetchDataset(client, currentRange),
+      gsc.fetchDataset(client, comparisonRange),
+    ]);
+  } catch (error) {
+    if (gsc.source !== "live") throw error;
+    // The service account can't see this property (e.g. a demo client, or a
+    // GSC user not added yet) — fall back to simulated data rather than fail.
+    log(
+      `Live GSC fetch failed for ${client.gsc_property_url} (${error instanceof Error ? error.message : error}); using simulated data for this client.`,
+    );
+    gsc = new MockGscAdapter(config);
+    [current, comparison] = await Promise.all([
+      gsc.fetchDataset(client, currentRange),
+      gsc.fetchDataset(client, comparisonRange),
+    ]);
+  }
   log(
     `Current period: ${current.pages.length} pages, ${current.queries.length} queries. Comparison: ${comparison.pages.length} pages, ${comparison.queries.length} queries.`,
   );

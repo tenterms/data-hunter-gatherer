@@ -97,6 +97,6 @@ export async function savePages(input: { clientKey: string; pages: EditablePage[
   );
   return {
     ok: true,
-    message: `Saved ${rows.length} key page${rows.length === 1 ? "" : "s"}${where === "mock" ? " (local mock config)" : ""}. Regenerate the report to apply.`,
+    message: `Saved ${rows.length} key page${rows.length === 1 ? "" : "s"}${where === "sheet" ? " (synced to the Google Sheet)" : ""}. Regenerate the report to apply.`,
   };
 }
