@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateTopicClusters, queryMatchesRule } from "../src/lib/topicClusters";
+import { calculateTopicClusters, clusterMatchesQuery, queryMatchesRule } from "../src/lib/topicClusters";
 import type { GscRow, TopicClusterRow, TopicClusterRuleRow } from "../src/lib/types";
 
 const query = (q: string, clicks: number, impressions: number): GscRow => ({
@@ -22,6 +22,38 @@ describe("queryMatchesRule", () => {
   it("regex matches patterns and survives invalid patterns", () => {
     expect(queryMatchesRule("prototype my idea", "^proto", "regex", false)).toBe(true);
     expect(queryMatchesRule("anything", "([unclosed", "regex", false)).toBe(false);
+  });
+});
+
+describe("clusterMatchesQuery (contains / doesn't contain)", () => {
+  const rule = (match_type: "contains" | "not_contains", query_text: string) => ({
+    client_key: "c",
+    topic_key: "t",
+    match_type,
+    query_text,
+    case_sensitive: false,
+    active: true,
+  });
+
+  it("matches when any include chip matches", () => {
+    const rules = [rule("contains", "baby product"), rule("contains", "baby design")];
+    expect(clusterMatchesQuery("baby product designers", rules)).toBe(true);
+    expect(clusterMatchesQuery("garden furniture", rules)).toBe(false);
+  });
+
+  it("excludes queries hit by any doesn't-contain chip", () => {
+    const rules = [rule("contains", "sport"), rule("not_contains", "outdoor")];
+    expect(clusterMatchesQuery("sports product design", rules)).toBe(true);
+    expect(clusterMatchesQuery("outdoor sports equipment", rules)).toBe(false);
+  });
+
+  it("never matches with only exclusions", () => {
+    expect(clusterMatchesQuery("anything", [rule("not_contains", "x")])).toBe(false);
+  });
+
+  it("ignores inactive rules", () => {
+    const rules = [rule("contains", "sport"), { ...rule("not_contains", "outdoor"), active: false }];
+    expect(clusterMatchesQuery("outdoor sport", rules)).toBe(true);
   });
 });
 

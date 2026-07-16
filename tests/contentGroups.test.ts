@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateContentGroups, urlMatches } from "../src/lib/contentGroups";
+import { calculateContentGroups, groupMatchesUrl, urlMatches } from "../src/lib/contentGroups";
 import type { ContentGroupRow, ContentGroupUrlRow, GscRow } from "../src/lib/types";
 
 const page = (url: string, clicks: number, impressions: number, position = 10): GscRow => ({
@@ -22,6 +22,33 @@ describe("urlMatches", () => {
   it("starts_with matches prefixes", () => {
     expect(urlMatches("https://x.com/blog/post-1", "https://x.com/blog/", "starts_with")).toBe(true);
     expect(urlMatches("https://x.com/services", "https://x.com/blog/", "starts_with")).toBe(false);
+  });
+});
+
+describe("groupMatchesUrl (contains / doesn't contain)", () => {
+  const rule = (match_type: "contains" | "not_contains" | "starts_with", url: string) => ({
+    client_key: "c",
+    group_key: "g",
+    url,
+    match_type,
+    active: true,
+  });
+
+  it("matches any include and respects exclusions", () => {
+    const rules = [rule("contains", "/services/"), rule("not_contains", "archive")];
+    expect(groupMatchesUrl("https://x.com/services/design", rules)).toBe(true);
+    expect(groupMatchesUrl("https://x.com/services/archive/old", rules)).toBe(false);
+    expect(groupMatchesUrl("https://x.com/blog/post", rules)).toBe(false);
+  });
+
+  it("mixes starts_with includes with exclusions", () => {
+    const rules = [rule("starts_with", "https://x.com/blog/"), rule("not_contains", "draft")];
+    expect(groupMatchesUrl("https://x.com/blog/a", rules)).toBe(true);
+    expect(groupMatchesUrl("https://x.com/blog/draft-post", rules)).toBe(false);
+  });
+
+  it("never matches with only exclusions", () => {
+    expect(groupMatchesUrl("https://x.com/a", [rule("not_contains", "b")])).toBe(false);
   });
 });
 

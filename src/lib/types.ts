@@ -56,7 +56,7 @@ export interface ContentGroupRow {
   active: boolean;
 }
 
-export type UrlMatchType = "exact" | "contains" | "starts_with";
+export type UrlMatchType = "exact" | "contains" | "starts_with" | "not_contains";
 
 export interface ContentGroupUrlRow {
   client_key: string;
@@ -74,7 +74,7 @@ export interface TopicClusterRow {
   active: boolean;
 }
 
-export type QueryMatchType = "contains" | "exact" | "regex";
+export type QueryMatchType = "contains" | "exact" | "regex" | "not_contains";
 
 export interface TopicClusterRuleRow {
   client_key: string;

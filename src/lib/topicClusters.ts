@@ -19,6 +19,7 @@ export function queryMatchesRule(
   const rule = caseSensitive ? ruleText : ruleText.toLowerCase();
   switch (matchType) {
     case "contains":
+    case "not_contains": // negation is applied at cluster level, in clusterMatchesQuery
       return q.includes(rule);
     case "exact":
       return q === rule;
@@ -30,6 +31,21 @@ export function queryMatchesRule(
         return false;
       }
   }
+}
+
+/**
+ * SEOGets-style semantics: a query belongs to a cluster when it matches ANY
+ * include rule (contains/exact/regex) and NONE of the "doesn't contain" rules.
+ */
+export function clusterMatchesQuery(query: string, rules: TopicClusterRuleRow[]): boolean {
+  const active = rules.filter((r) => r.active);
+  const includes = active.filter((r) => r.match_type !== "not_contains");
+  const excludes = active.filter((r) => r.match_type === "not_contains");
+  if (includes.length === 0) return false;
+  if (!includes.some((r) => queryMatchesRule(query, r.query_text, r.match_type, r.case_sensitive))) {
+    return false;
+  }
+  return !excludes.some((r) => queryMatchesRule(query, r.query_text, "contains", r.case_sensitive));
 }
 
 /**
@@ -50,12 +66,9 @@ export function calculateTopicClusters(
     const clusterRules = rules.filter(
       (r) => r.active && r.topic_key === cluster.topic_key && r.client_key === cluster.client_key,
     );
-    if (clusterRules.length === 0) continue;
+    if (clusterRules.filter((r) => r.match_type !== "not_contains").length === 0) continue;
 
-    const matchRow = (row: GscRow) =>
-      clusterRules.some((rule) =>
-        queryMatchesRule(row.keys[0] ?? "", rule.query_text, rule.match_type, rule.case_sensitive),
-      );
+    const matchRow = (row: GscRow) => clusterMatchesQuery(row.keys[0] ?? "", clusterRules);
 
     const currentRows = currentQueries.filter(matchRow);
     const previousRows = previousQueries.filter(matchRow);

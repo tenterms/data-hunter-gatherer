@@ -21,10 +21,25 @@ export function urlMatches(pageUrl: string, ruleUrl: string, matchType: UrlMatch
     case "exact":
       return page === rule;
     case "contains":
+    case "not_contains": // negation applied at group level, in groupMatchesUrl
       return page.includes(rule);
     case "starts_with":
       return page.startsWith(rule);
   }
+}
+
+/**
+ * SEOGets-style semantics: a URL belongs to a group when it matches ANY
+ * include rule (exact/contains/starts_with) and NONE of the "doesn't contain"
+ * rules.
+ */
+export function groupMatchesUrl(url: string, rules: ContentGroupUrlRow[]): boolean {
+  const active = rules.filter((r) => r.active);
+  const includes = active.filter((r) => r.match_type !== "not_contains");
+  const excludes = active.filter((r) => r.match_type === "not_contains");
+  if (includes.length === 0) return false;
+  if (!includes.some((r) => urlMatches(url, r.url, r.match_type))) return false;
+  return !excludes.some((r) => urlMatches(url, r.url, "contains"));
 }
 
 /**
@@ -45,10 +60,9 @@ export function calculateContentGroups(
     const rules = groupUrls.filter(
       (r) => r.active && r.group_key === group.group_key && r.client_key === group.client_key,
     );
-    if (rules.length === 0) continue;
+    if (rules.filter((r) => r.match_type !== "not_contains").length === 0) continue;
 
-    const matchRow = (row: GscRow) =>
-      rules.some((rule) => urlMatches(row.keys[0] ?? "", rule.url, rule.match_type));
+    const matchRow = (row: GscRow) => groupMatchesUrl(row.keys[0] ?? "", rules);
 
     const currentRows = currentPages.filter(matchRow);
     const previousRows = previousPages.filter(matchRow);

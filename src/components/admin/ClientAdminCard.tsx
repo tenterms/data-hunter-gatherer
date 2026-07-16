@@ -50,17 +50,24 @@ export default function ClientAdminCard({
         <h2>{client.client_name}</h2>
         <span className="badge">{client.domain}</span>
       </div>
-      <p className="section-desc">
-        {counts.pages} key pages · {counts.contentGroups} content groups · {counts.topicClusters} topic
-        clusters · {counts.drawTasks} DRAW tasks · {counts.rankingImports} ranking rows —{" "}
-        {sheetUrl ? (
-          <a href={sheetUrl} target="_blank" rel="noreferrer">
-            edit these in the Google Sheet
+      <div className="btn-row" style={{ marginBottom: 10 }}>
+        <Link className="btn" href={`/admin/${client.client_key}/content-groups`}>
+          Content groups ({counts.contentGroups})
+        </Link>
+        <Link className="btn" href={`/admin/${client.client_key}/topic-clusters`}>
+          Topic clusters ({counts.topicClusters})
+        </Link>
+        {sheetUrl && (
+          <a className="btn" href={sheetUrl} target="_blank" rel="noreferrer">
+            Open config sheet ↗
           </a>
-        ) : (
-          <>edit these in the config sheet (currently the local mock file)</>
         )}
-        . Filter every tab by <code>client_key = {client.client_key}</code>.
+      </div>
+      <p className="section-desc">
+        {counts.pages} key pages · {counts.drawTasks} DRAW tasks · {counts.rankingImports} ranking rows —
+        pages, DRAW tasks and commentary overrides are edited in the sheet (filter by{" "}
+        <code>client_key = {client.client_key}</code>); content groups and topic clusters are edited here
+        with a live match preview.
       </p>
 
       <h3>Monthly reports</h3>

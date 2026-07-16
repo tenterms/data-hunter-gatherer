@@ -39,6 +39,9 @@ Once the app is running, everything the team does day-to-day happens at
 
 - **Add a new client** — name + website; the tool creates the client with a
   homepage entry and its first reporting month.
+- **Build content groups & topic clusters** — SEOGets-style editors per client:
+  name + "contains" chips + "doesn't contain" chips, with a live list of the
+  real GSC queries/pages that match as you type (from the latest report data).
 - **Add a reporting month** — pick a month; the comparison month is set
   automatically.
 - **Upload a rankings CSV** — drop in an SE Ranking export for a month.

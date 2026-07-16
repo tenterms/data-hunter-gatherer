@@ -530,6 +530,108 @@ details.debug pre {
 .action-msg.error {
   color: var(--negative);
 }
+/* SEOGets-style group editor */
+.editor-panel {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 14px;
+  background: var(--bg);
+}
+.chips-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  margin: 12px 0 4px;
+}
+.chips-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: var(--surface);
+  cursor: text;
+  margin-top: 4px;
+}
+.chips-input input {
+  border: 0;
+  outline: none;
+  flex: 1;
+  min-width: 140px;
+  font-size: 14px;
+  padding: 4px 2px;
+  background: transparent;
+  color: var(--ink);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 3px 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.chip button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--ink-muted);
+  padding: 0;
+}
+.chip button:hover {
+  color: var(--negative);
+}
+.btn.danger {
+  color: var(--negative);
+  border-color: #f3c4c7;
+}
+.preview-panel {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.preview-count {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  margin: 4px 0 8px;
+}
+.preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 380px;
+  overflow-y: auto;
+}
+.preview-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  font-size: 13.5px;
+  border-bottom: 1px dashed var(--border);
+}
+.preview-list li:last-child {
+  border-bottom: 0;
+}
+.preview-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.preview-nums {
+  color: var(--ink-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
 .status-list {
   list-style: none;
   margin: 0 0 14px;

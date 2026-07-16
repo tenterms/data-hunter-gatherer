@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-15T15:44:36.013Z",
+  "generatedAt": "2026-07-16T05:05:45.842Z",
   "dataSource": "live",
   "client": {
     "client_key": "cyber-alchemy",
@@ -187,7 +187,55 @@
       "pageCount": 140
     },
     "contentGroups": [],
-    "topicClusters": [],
+    "topicClusters": [
+      {
+        "key": "penetration-testing",
+        "name": "Penetration Testing",
+        "description": "",
+        "current": {
+          "clicks": 0,
+          "impressions": 7643,
+          "ctr": 0,
+          "position": 29.67643595446814
+        },
+        "previous": {
+          "clicks": 3,
+          "impressions": 8837,
+          "ctr": 0.0003394817245671608,
+          "position": 32.87518388593414
+        },
+        "comparison": {
+          "clicks": {
+            "current": 0,
+            "previous": 3,
+            "change": -3,
+            "changePct": -1,
+            "isNew": false
+          },
+          "impressions": {
+            "current": 7643,
+            "previous": 8837,
+            "change": -1194,
+            "changePct": -0.13511372637773,
+            "isNew": false
+          },
+          "ctr": {
+            "current": 0,
+            "previous": 0.0003394817245671608,
+            "change": -0.0003394817245671608,
+            "changePct": -1,
+            "isNew": false
+          },
+          "position": {
+            "current": 29.67643595446814,
+            "previous": 32.87518388593414,
+            "change": -3.198747931466002
+          }
+        },
+        "status": "decaying",
+        "matchedRowCount": 186
+      }
+    ],
     "cannibalisation": [
       {
         "query": "cyber security services sheffield",
@@ -1244,10 +1292,21 @@
       }
     ],
     "content_group_findings": [],
-    "topic_cluster_findings": [],
+    "topic_cluster_findings": [
+      {
+        "id": "topic_cluster_decaying_6",
+        "kind": "topic_cluster_decaying",
+        "sentiment": "negative",
+        "text": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
+        "data": {
+          "cluster": "penetration-testing",
+          "changePct": -1
+        }
+      }
+    ],
     "cannibalisation_findings": [
       {
-        "id": "cannibalisation_high_priority_6",
+        "id": "cannibalisation_high_priority_7",
         "kind": "cannibalisation_high_priority",
         "sentiment": "warning",
         "text": "13 high-priority cannibalisation issues found where multiple pages compete for the same query.",
@@ -1256,7 +1315,7 @@
         }
       },
       {
-        "id": "cannibalisation_issue_7",
+        "id": "cannibalisation_issue_8",
         "kind": "cannibalisation_issue",
         "sentiment": "warning",
         "text": "\"cyber security services sheffield\": 2 pages share 543 impressions for 1 clicks (CTR 0.18%, avg position 7.6).",
@@ -1267,7 +1326,7 @@
         }
       },
       {
-        "id": "cannibalisation_issue_8",
+        "id": "cannibalisation_issue_9",
         "kind": "cannibalisation_issue",
         "sentiment": "warning",
         "text": "\"penetration testing sheffield\": 5 pages share 324 impressions for 0 clicks (CTR 0.00%, avg position 48.2).",
@@ -1278,7 +1337,7 @@
         }
       },
       {
-        "id": "cannibalisation_issue_9",
+        "id": "cannibalisation_issue_10",
         "kind": "cannibalisation_issue",
         "sentiment": "warning",
         "text": "\"pen testing sheffield\": 5 pages share 274 impressions for 0 clicks (CTR 0.00%, avg position 50.4).",
@@ -1291,7 +1350,7 @@
     ],
     "ranking_findings": [
       {
-        "id": "rankings_unavailable_10",
+        "id": "rankings_unavailable_11",
         "kind": "rankings_unavailable",
         "sentiment": "neutral",
         "text": "No tracked-keyword ranking data was available for this period.",
@@ -1300,7 +1359,7 @@
     ],
     "strategic_priority_candidates": [
       {
-        "id": "priority_cannibalisation_11",
+        "id": "priority_cannibalisation_12",
         "kind": "priority_cannibalisation",
         "sentiment": "warning",
         "text": "Resolve the high-priority cannibalisation issues (starting with \"cyber security services sheffield\") by consolidating or differentiating the competing pages.",
@@ -1337,10 +1396,10 @@
     },
     {
       "section": "topic_clusters",
-      "suggestedText": "Topic cluster performance was broadly flat month on month.",
+      "suggestedText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Topic cluster performance was broadly flat month on month.",
+      "finalText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
       "mode": "rules_only"
     },
     {

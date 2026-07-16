@@ -451,6 +451,55 @@ export async function appendRows(tab: keyof typeof SHEET_SCHEMA, rows: Array<Rec
   return true;
 }
 
+/**
+ * Replace rows in a schema tab: removes rows matching `shouldRemove` and
+ * appends `newRows`, preserving all other rows. Used by the in-app editors.
+ * Returns false when Sheets isn't configured so callers can fall back to mock.
+ */
+export async function replaceTabRows(
+  tab: keyof typeof SHEET_SCHEMA,
+  shouldRemove: (row: Record<string, unknown>) => boolean,
+  newRows: Array<Record<string, unknown>>,
+): Promise<boolean> {
+  const app = getAppConfig();
+  if (!app.hasSheets || !app.googleSheetId) return false;
+  const sheets = getSheetsClient();
+  const res = await sheets.spreadsheets.values.get({
+    spreadsheetId: app.googleSheetId,
+    range: `${tab}!A1:Z10000`,
+  });
+  const values = (res.data.values ?? []) as unknown[][];
+  const headers = values.length > 0 ? values[0].map((h) => String(h ?? "").trim()) : SHEET_SCHEMA[tab];
+
+  const keptRows = values.slice(1).filter((rowArr) => {
+    const obj: Record<string, unknown> = {};
+    headers.forEach((h, i) => (obj[h] = rowArr[i]));
+    return !shouldRemove(obj);
+  });
+
+  const appendedRows = newRows.map((row) =>
+    headers.map((h) => {
+      const v = row[h];
+      return v === null || v === undefined ? "" : String(v);
+    }),
+  );
+
+  await sheets.spreadsheets.values.clear({
+    spreadsheetId: app.googleSheetId,
+    range: `${tab}!A2:Z10000`,
+  });
+  const all = [...keptRows, ...appendedRows];
+  if (all.length > 0) {
+    await sheets.spreadsheets.values.update({
+      spreadsheetId: app.googleSheetId,
+      range: `${tab}!A2`,
+      valueInputOption: "RAW",
+      requestBody: { values: all as string[][] },
+    });
+  }
+  return true;
+}
+
 /** Append RankingImports rows (used by the CSV importer when Sheets is configured). */
 export async function appendRankingImports(rows: RankingImportRow[]): Promise<boolean> {
   return appendRows("RankingImports", rows as unknown as Array<Record<string, unknown>>);
