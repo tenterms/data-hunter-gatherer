@@ -10,7 +10,15 @@ import fs from "fs";
  */
 
 export const ROOT_DIR = process.cwd();
-export const DATA_DIR = path.join(ROOT_DIR, "data");
+/**
+ * Where the app keeps everything it saves (config database, report snapshots,
+ * published copies, ranking imports). Defaults to ./data in the repo; on a
+ * host, set DATA_DIR to the mounted persistent volume (the start script seeds
+ * it from the bundled ./data on first boot).
+ */
+export const DATA_DIR = process.env.DATA_DIR
+  ? path.resolve(process.env.DATA_DIR)
+  : path.join(ROOT_DIR, "data");
 export const MOCK_DIR = path.join(DATA_DIR, "mock");
 export const REPORTS_DIR = path.join(DATA_DIR, "reports");
 export const RANKINGS_DIR = path.join(DATA_DIR, "rankings");

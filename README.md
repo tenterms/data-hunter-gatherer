@@ -81,6 +81,25 @@ demo data on first edit. The dashboard labels every report **mock data** or
 **live data** — and if the service account can't see a particular property,
 that client's report falls back to simulated data instead of failing.
 
+## Hosting (Railway)
+
+The app saves files (config database, report snapshots, published client
+copies), so it needs a host with a persistent volume — Railway's Hobby plan
+works well. `railway.json` is included; deploy steps:
+
+1. Sign up at railway.com with the GitHub account that can see this repo.
+2. New Project → **Deploy from GitHub repo** → pick this repo and branch.
+3. In the service settings, add a **Volume** mounted at `/data`.
+4. Add variables: `DATA_DIR=/data`, `APP_PASSWORD=<team password>`, and
+   `GOOGLE_SERVICE_ACCOUNT_JSON=<the key file contents, pasted as one line>`.
+   (Optionally `ANTHROPIC_API_KEY` + `ENABLE_LLM_COMMENTARY=true`.)
+5. Deploy, then Settings → Networking → **Generate Domain**. Set
+   `NEXT_PUBLIC_APP_URL=https://<that domain>` and redeploy.
+
+On first boot the volume is seeded from the bundled data (demo clients plus
+any committed snapshots); after that, everything the team saves lives on the
+volume and survives deploys.
+
 ## Going live
 
 ### 1. Environment variables
@@ -100,7 +119,8 @@ missing pieces degrade gracefully to mock/fallback behaviour.
 | `ANTHROPIC_API_KEY`, `ANTHROPIC_MODEL` | Optional LLM commentary |
 | `ENABLE_LLM_COMMENTARY` | `true` to allow LLM drafting (default `false`) |
 | `COMMENTARY_MODE` | `rules_only` or `llm_draft` |
-| `NEXT_PUBLIC_APP_URL` | Used for the dashboard links written to GeneratedReports |
+| `NEXT_PUBLIC_APP_URL` | The app's public address (used in share links) |
+| `DATA_DIR` | Persistent storage directory on a host (e.g. `/data` on Railway) |
 
 ### 2. Google auth
 
