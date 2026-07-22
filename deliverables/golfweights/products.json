@@ -1,0 +1,2232 @@
+[
+ {
+  "url": "/products/callaway-mavrik-sub-zero-max-driver-fairway-woods-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Mavrik Sub Zero Max Driver Fairway Woods weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/callaway-paradym-driver-and-fairway-wood-aftermarket-golf-weights-4g-18g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Paradym Driver Fairway Wood weights (4g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-callaway-epic-speed-max-drivers-fairway-woods-and-apex-utility-hybrids",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Epic Speed Max Drivers Fairway Woods Apex Utility Hybrids weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-callaway-mavrik-sub-zero-max-driver-fairway-woods",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Mavrik Sub Zero Max Driver Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/wefd-aftermarket-golf-weights-and-wrench-for-callaway-epic-flash-sub-zero-and-epic-max-drivers-6g-23g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Wefd Callaway Epic Flash Sub Zero Epic Max Drivers weights (6g\u201323g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/cobra-aerojet-max-ls-golf-club-driver-fairway-woods-hybrids-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra Aerojet Max LS Driver Fairway Woods Hybrids weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/cobra-aerojet-max-ls-golf-club-driver-fairway-woods-hybrids-aftermarket-golf-weights-4g-16g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cobra Aerojet Max LS Driver Fairway Woods Hybrids weights (4g\u201316g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/cobra-king-vintage-series-putter-aftermarket-golf-weights-5g-25g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Cobra King Vintage Putter weights (5g\u201325g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/copy-of-crf-aftermarket-golf-weights-wrench-for-cobra-king-radspeed-xb-xd-drivers-4g-14g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Copy Crf Cobra King Radspeed XB XD Drivers weights (4g\u201314g)",
+  "edits": "DUPLICATE-style slug ('copy') \u2014 keep URL (no redirects!) but ensure title/canonical distinct from its sibling. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-driver-weight-for-cobra-king-radspeed-xb-xd-drivers",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Driver Cobra King Radspeed XB XD Drivers weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/cszd-cszf-aftermarket-golf-weights-wrench-for-cobta-sz-speedzone-drivers-fairway-woods-hybrids-4g-14g",
+  "brand": "Multi/Other",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cszd Cszf Cobta Sz Speedzone Drivers Fairway Woods Hybrids weights (4g\u201314g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/scfb",
+  "brand": "Multi/Other",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "Scfb weights",
+  "edits": "Cryptic slug \u2014 keep URL; title must carry 'Scotty Cameron Fastback/Squareback Weights' (ranks 7-8 for those models). Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/odyssey-black-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Black Stroke LAB Golf White Hot Og Ten O Works Putters weight kit",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/odyssey-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Stroke LAB Golf White Hot Og Ten O Works Putters weight kit",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/odyssey-ai-one-ai-crusier-series-putter-aftermarket-golf-weights-5g-35g",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Ai One Ai Crusier Putter weights (5g\u201335g)",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/odyssey-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-copy",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Stroke LAB Golf White Hot Og Ten O Works Putters Copy weights",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-odyssey-stroke-lab-series-and-white-hot-series-putters",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Stroke LAB Golf White Hot Putters weights",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/ping-g400-lst-sft-max-aftermarket-driver-fairway-hybrid-golf-weights-10-21g",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Ping G400 LSt SFT Max Driver Fairway Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/png410-aftermarket-weights-for-ping-g410-driver-fairway-hybrid-woods",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Png410 Ping G410 Driver Fairway Hybrid Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/png425f-aftermarket-weight-for-ping-g425-fairway-woods-and-hybrid",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Png425F Ping G425 Fairway Woods Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-sliding-head-weight-for-ping-g425-driver",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Ping G425 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/sc-aftermarket-weights-for-scotty-cameron-putters",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Sc Scotty Cameron Cameron Putters weights",
+  "edits": "De-optimise for generic 'putter weights' (type hub owns it). Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway",
+  "brand": "TaylorMade",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "TaylorMade Sleeve Adapter Rh Driver Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "TaylorMade",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "TaylorMade Sleeve Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-qi-10-aftermarket-max-ls-hl-golf-club-driver-fairway-hybrid-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade Qi Max LS Hl Driver Fairway Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-r7-quad-mini-driver-1-2-pcs-aftermarket-golf-club-weight-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade R7 Quad Mini Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-heel-weight-for-talyormade-sim2-sim2-max-and-sim2-max-d-drivers",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Sim2 Sim2 Max Sim2 Max D Drivers weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/quality-aftermarket-sliding-head-weight-for-taylormade-m5-driver",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade M5 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-2016-m2-driver-aftermarket-golf-weights",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade M2 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-brnr-mini-driver-1-2-aftermarket-golf-club-weights-2g-17g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Brnr Mini Driver weights (2g\u201317g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-m1-driver-2016-2017-aftermarket-golf-club-head-weights-5g-22g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade M1 Driver weights (5g\u201322g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-m2-d-type-driver-aftermarket-golf-weights",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade M2 D Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-qi-10-aftermarket-max-ls-hl-golf-club-driver-fairway-hybrid-weights-2-17g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Qi Max LS Hl Driver Fairway Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-r7-quad-mini-driver-1-2-pcs-aftermarket-golf-club-weights",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade R7 Quad Mini Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/taylormade-tp-reserve-spider-gtx-max-putters-aftermarket-golf-weights-5g-20g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "TaylorMade Tp Reserve Spider Gtx Max Putters weights (5g\u201320g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/tms-aftermarket-weight-for-taylormade-stealth-stealth-hd-and-stealth-plus-driver-fairway-woods-and-hybrids",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tms TaylorMade Stealth Stealth HD Stealth Plus Driver Fairway Woods Hybrids weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/tmst2-taylormade-stealth-2-plus-drivers-and-hybrid-aftermarket-golf-weights-2g-15g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tmst2 TaylorMade Stealth Plus Drivers Hybrid weights (2g\u201315g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/t20-torque-wrench-for-taylormade-callaway-pxg",
+  "brand": "TaylorMade",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "T20 Torque TaylorMade Callaway PXG torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/t25-universal-torque-wrench-for-taylormade-titleist-callaway-ping-cobra-odyssey-pxg-mizuno-honma",
+  "brand": "TaylorMade",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "T25 Universal Torque TaylorMade Titleist Callaway Ping Cobra Odyssey PXG Mizuno Honma torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/titleist-aftermarket-surefit-golf-sleeve-adapter-0-335-rh-lh-driver",
+  "brand": "Titleist",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Titleist Surefit Sleeve Adapter Rh Lh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/titleistts3-driver-aftermarket-magnetic-surefit-golf-weights-7g-19g",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleistts3 Driver Magnetic Surefit weights (7g\u201319g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "HIGH"
+ },
+ {
+  "url": "/products/callaway-elyte-paradym-rogue-epic-aftermarket-golf-shaft-adapter-0-335-lh-driver",
+  "brand": "Callaway",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Callaway Elyte Paradym Rogue Epic Shaft Adapter Lh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-elyte-paradym-rogue-epic-aftermarket-golf-shaft-adapter-0-335-lh-fairway",
+  "brand": "Callaway",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Callaway Elyte Paradym Rogue Epic Shaft Adapter Lh Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-quantum-aftermarket-golf-shaft-adapter-0-335-0-370-rh-fairway-hybrid",
+  "brand": "Callaway",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Callaway Quantum Shaft Adapter Rh Fairway Hybrid shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-elyte-x-max-fast-driver-fairway-wood-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Elyte X Max Fast Driver Fairway Wood weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-quantum-driver-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Quantum Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-elyte-x-max-fast-driver-fairway-wood-aftermarket-golf-weights",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Elyte X Max Fast Driver Fairway Wood weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-paradym-ai-smoke-max-d-fast-triple-diamond-driver-aftermarket-golf-weights-2g-18g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Paradym Ai Smoke Max D Fast Triple Diamond Driver weights (2g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-paradym-ai-smoke-max-d-fast-triple-diamond-driver-fairway-wood-aftermarket-golf-weights-copy",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Paradym Ai Smoke Max D Fast Triple Diamond Driver Fairway Wood Copy weights",
+  "edits": "DUPLICATE-style slug ('copy') \u2014 keep URL (no redirects!) but ensure title/canonical distinct from its sibling. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-quantum-driver-aftermarket-golf-weights",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Quantum Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-quantum-hybrid-aftermarket-golf-weights",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "hybrid",
+  "kw": "Callaway Quantum Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-lh-driver",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra Darkspeed Aerojet LTDx Radspeed Shaft Adapter Lh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-lh-fairway",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Cobra Darkspeed Aerojet LTDx Radspeed Shaft Adapter Lh Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-rh-fairway",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Cobra Darkspeed Aerojet LTDx Radspeed Shaft Adapter Rh Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-aerojet-tldx-radspeed-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra Darkspeed Aerojet Tldx Radspeed Sleeve Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-lh-driver",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra DS Adapt Shaft Adapter Lh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-rh-driver",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra DS Adapt Shaft Adapter Rh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-rh-fairways",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Cobra DS Adapt Shaft Adapter Rh Fairways shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-ls-max-x-ls-driver-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra Darkspeed LS Max X LS Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-driver-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra DS Adapt Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-fairway-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "fairway",
+  "kw": "Cobra DS Adapt Fairway weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-darkspeed-ls-max-x-ls-golf-club-driver-aftermarket-golf-weights-6g-12g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cobra Darkspeed LS Max X LS Driver weights (6g\u201312g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/cobra-ds-adapt-golf-club-driver-fairway-hybrid-aftermarket-golf-weights",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cobra DS Adapt Driver Fairway Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/srizon-zxi-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Multi/Other",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Srizon Zxi Shaft Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/pxg-black-ops-gen-6-gen-5-gen-4-0811-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods",
+  "brand": "PXG",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "PXG Black Ops Gen Gen Gen Shaft Adapter Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/pxg-black-ops-gen-6-gen-5-gen-4-0811-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "PXG",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "PXG Black Ops Gen Gen Gen Sleeve Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/pxg-black-ops-gen6-0311-gen5-0311-gen4-0811-0317-0211-drivers-fairway-woods-hybrids-aftermarket-golf-weights-kit",
+  "brand": "PXG",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "PXG Black Ops Gen6 Gen5 Gen4 Drivers Fairway Woods Hybrids weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G440 Shaft Adapter Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G440 Shaft Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-driver-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Ping G440 Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-fairway-woods-hybrids-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "fairway",
+  "kw": "Ping G440 Fairway Woods Hybrids weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-driver-aftermarket-golf-weights",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Ping G440 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/ping-g440-fairway-woods-aftermarket-golf-weights",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Ping G440 Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/srixon-zxi-zxi-ls-zxi-max-driver-aftermarket-golf-weights-kit",
+  "brand": "Srixon",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Srixon Zxi Zxi LS Zxi Max Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/srixon-zxi-zxi-ls-zxi-max-driver-aftermarket-golf-weights",
+  "brand": "Srixon",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Srixon Zxi Zxi LS Zxi Max Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/taylormade-qi35-stealth-sim-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods",
+  "brand": "TaylorMade",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "TaylorMade Qi35 Stealth Sim Shaft Adapter Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt2-gt4-driver-fairway-wood-hybrid-aftermarket-golf-weights-kit",
+  "brand": "Titleist",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Titleist Gt2 Gt4 Driver Fairway Wood Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt3-driver-aftermarket-golf-weights-kit",
+  "brand": "Titleist",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Titleist Gt3 Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt2-gt4-driver-fairway-wood-hybrid-aftermarket-golf-weights-19g-23g",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Gt2 Gt4 Driver Fairway Wood Hybrid weights (19g\u201323g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt2-gt4-hybrid-aftermarket-golf-weights",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "hybrid",
+  "kw": "Titleist Gt2 Gt4 Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt3-driver-fairway-wood-hybrid-aftermarket-golf-weights",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Gt3 Driver Fairway Wood Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/titleist-gt3-fairway-aftermarket-golf-weights",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Titleist Gt3 Fairway weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Med"
+ },
+ {
+  "url": "/products/callaway-aftermarket-golf-sleeve-adapter-0-350-rh-driver",
+  "brand": "Callaway",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Callaway Sleeve Adapter Rh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-aftermarket-golf-sleeve-adapter-0-350-rh-driver-1",
+  "brand": "Callaway",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Callaway Sleeve Adapter Rh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-big-bertha-b21-reva-drivers-fairway-woods-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Big Bertha B21 Reva Drivers Fairway Woods weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-epic-speed-driver-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Epic Speed Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-great-big-bertha-alpha-xr16-drivers-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Great Big Bertha Alpha XR16 Drivers weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-rogue-drivers-fairway-woods-aftermarket-golf-weights-kit",
+  "brand": "Callaway",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Callaway Rogue Drivers Fairway Woods weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/aftermarket-golf-weights-and-wrench-for-callaway-epic-flash-rogue-st-sub-zero-drivers-fairway-woods-2g-18g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Epic Flash Rogue St Sub Zero Drivers Fairway Woods weights (2g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-apex-utility-wood-2025-aftermarket-golf-club-weights",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "Callaway Apex Utility Wood weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-apex-utility-wood-24-aftermarket-golf-club-weights-4g-16g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "Callaway Apex Utility Wood weights (4g\u201316g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-paradym-x-triple-diamond-driver-aftermarket-golf-weights-copy",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Paradym X Triple Diamond Driver Copy weights",
+  "edits": "DUPLICATE-style slug ('copy') \u2014 keep URL (no redirects!) but ensure title/canonical distinct from its sibling. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-paradym-x-triple-diamond-fairway-woods-aftermarket-golf-weights-6g-14g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Callaway Paradym X Triple Diamond Fairway Woods weights (6g\u201314g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/callaway-paradym-x-triple-diamond-hybrid-aftermarket-golf-weights-4g-12g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "hybrid",
+  "kw": "Callaway Paradym X Triple Diamond Hybrid weights (4g\u201312g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cwap-aftermarket-golf-weights-and-wrench-for-callaway-apex-hybrid-6g-18g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "hybrid",
+  "kw": "Cwap Callaway Apex Hybrid weights (6g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cwemd-aftermarket-golf-weights-wrench-for-callaway-epic-max-and-max-ls-drivers-5g-22g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cwemd Callaway Epic Max Max LS Drivers weights (5g\u201322g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cwesz-aftermarket-golf-weights-and-wrench-for-callaway-epic-sub-zero-fairway-woods-alpha-815-range-6g-16g",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Cwesz Callaway Epic Sub Zero Fairway Woods Alpha Range weights (6g\u201316g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-callaway-big-bertha-b21-reva-driver-and-fairway-woods",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Big Bertha B21 Reva Driver Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-callaway-great-big-bertha-alpha-and-xr16-drivers-and-fairway-woods",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Great Big Bertha Alpha XR16 Drivers Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weights-for-callaway-rogue-drivers-and-fairway-woods",
+  "brand": "Callaway",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Callaway Rogue Drivers Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-lh-driver",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra Optm Shaft Adapter Lh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-rh-driver",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Cobra Optm Shaft Adapter Rh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-rh-fairway",
+  "brand": "Cobra",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Cobra Optm Shaft Adapter Rh Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-king-radspeed-xb-xd-driver-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra King Radspeed XB XD Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-king-vintage-3d-printed-series-putter-aftermarket-golf-weight-kits",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Cobra King Vintage 3D Printed Putter Kits weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-ltdx-driver-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra LTDx Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-optm-driver-fairway-hybrid-aftermarket-golf-weights-kit",
+  "brand": "Cobra",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Cobra Optm Driver Fairway Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cbl-aftermarket-golf-weights-wrench-for-cobra-ltdx-drivers-fairway-woods-hybrids-4g-18g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cbl Cobra LTDx Drivers Fairway Woods Hybrids weights (4g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-ltdx-fairway-woods-hybrids-aftermarket-golf-weights-4g-10g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Cobra LTDx Fairway Woods Hybrids weights (4g\u201310g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-optm-driver-fairway-hybrid-aftermarket-golf-weights",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Cobra Optm Driver Fairway Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/cobra-sz-speedzone-fairway-woods-hybrids-aftermarket-golf-weights-4g-8g",
+  "brand": "Cobra",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Cobra Sz Speedzone Fairway Woods Hybrids weights (4g\u20138g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/hnm-aftermarket-weights-for-honma-golf-t-world-tr20-gs-driver-fairway-woods",
+  "brand": "Honma",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Hnm Honma T World Tr20 Gs Driver Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/lab-golf-club-putter-head-aftermarket-weights",
+  "brand": "LAB Golf",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "LAB Golf Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/mizuno-stg-stx-stz-aftermarket-golf-sleeve-adapter-0-335-rh-driver",
+  "brand": "Mizuno",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Mizuno Stg Stx Stz Sleeve Adapter Rh Driver shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/mz-aftermarket-weights-for-mizuno-st-range-drivers",
+  "brand": "Mizuno",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Mz Mizuno St Range Drivers weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/0-335-universal-fit-shaft-sleeve-adapter",
+  "brand": "Multi/Other",
+  "kind": "adapter",
+  "club": "\u2013",
+  "kw": "Universal Fit Shaft Sleeve Adapter shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/lead-tape-self-adhesive-swing-weight-tape",
+  "brand": "Multi/Other",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "Lead Tape Self Adhesive Swing Tape weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/t15-aftermarket-wrench-very-small",
+  "brand": "Multi/Other",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "T15 Very Small torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/t20-aftermarket-wrench-small",
+  "brand": "Multi/Other",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "T20 Small torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/t25-aftermarket-wrench-large",
+  "brand": "Multi/Other",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "T25 Large torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-ai-one-ai-cruiser-series-putter-aftermarket-golf-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Ai One Ai Cruiser Putter weight kit",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-ai-one-milled-series-toulon-ai-golf-club-putter-head-aftermarket-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Ai One Milled Toulon Design Ai Putter weight kit",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-toulon-2025-collection-golf-club-putter-head-aftermarket-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Toulon Design Collection Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-tri-hot-5k-eleven-white-hot-versa-series-putter-aftermarket-golf-weights-kit",
+  "brand": "Odyssey",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Odyssey Tri Hot 5K Eleven White Hot Versa Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-ai-dual-square-2-square-series-putter-aftermarket-golf-weights",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Ai Dual Square Square Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-ai-one-milled-series-toulon-ai-golf-club-putter-head-aftermarket-weights-5-22g",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Ai One Milled Toulon Design Ai Putter weights",
+  "edits": "De-optimise for 'odyssey putter weights' (collection owns it); target model term only. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-toulon-2022-series-golf-club-putter-head-aftermarket-weights",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Toulon Design Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-toulon-2025-series-golf-club-putter-head-aftermarket-weights",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Toulon Design Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-tri-hot-2-square-series-putter-aftermarket-golf-weights",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Tri Hot Square Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-tri-hot-5k-series-putter-aftermarket-golf-weights",
+  "brand": "Odyssey",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Odyssey Tri Hot 5K Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/odyssey-tri-hot-5k-series-aftermarket-golf-wrench",
+  "brand": "Odyssey",
+  "kind": "wrench",
+  "club": "putter",
+  "kw": "Odyssey Tri Hot 5K torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/pxg-aftermarket-golf-shaft-adapter-0-370-lh-hybrids",
+  "brand": "PXG",
+  "kind": "adapter",
+  "club": "hybrid",
+  "kw": "PXG Shaft Adapter Lh Hybrids shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/pxg-battle-ready-ii-battle-ready-collection-gen-2-collection-putters-aftermarket-golf-weights-kit",
+  "brand": "PXG",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "PXG Battle Ready Ii Battle Ready Collection Gen Collection Putters weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/pxg-gen-8-irons-aftermarket-golf-weights",
+  "brand": "PXG",
+  "kind": "weights",
+  "club": "iron",
+  "kw": "PXG Gen Irons weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/pxgg-aftermarket-weights-for-pxg-gen-5-gen-4-0211-0317-0311-irons-set",
+  "brand": "PXG",
+  "kind": "weights",
+  "club": "iron",
+  "kw": "PXGg PXG Gen Gen Irons Set weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-putter-weight-for-for-pxg-battle-ready-gen-2-putters",
+  "brand": "PXG",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Putter PXG Battle Ready Gen Putters weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-pxg-gen4-0811-0341-xgen4-0211-drivers-and-fairway-woods",
+  "brand": "PXG",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "PXG Gen4 Xgen4 Drivers Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g400-g30-g-series-aftermarket-golf-sleeve-adapter-0-335-rh-lh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G400 G30 G Sleeve Adapter Rh Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-g425-g410-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G430 G425 G410 Shaft Adapter Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-g425-g410-aftermarket-golf-shaft-adapter-0-370-rh-hybrid",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "hybrid",
+  "kw": "Ping G430 G425 G410 Shaft Adapter Rh Hybrid shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-g425-g410-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G430 G425 G410 Sleeve Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-g425-g410-aftermarket-golf-sleeve-adapter-0-350-rh-driver-fairway-woods",
+  "brand": "Ping",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Ping G430 G425 G410 Sleeve Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g425-max-lst-fairway-woods-hybrid-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "fairway",
+  "kw": "Ping G425 Max LSt Fairway Woods Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g425-max-lst-sft-drivers-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Ping G425 Max LSt SFT Drivers weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-driver-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Ping G430 Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-fairway-woods-hybrid-aftermarket-golf-weights-kit",
+  "brand": "Ping",
+  "kind": "kit",
+  "club": "fairway",
+  "kw": "Ping G430 Fairway Woods Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g30-ls-sf-tec-golf-club-driver-fairway-hybrid-aftermarket-head-weights-14-20g-uk-stock",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Ping G30 LS Sf Tec Driver Fairway Hybrid Uk Stock weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/ping-g430-driver-aftermarket-golf-weights-5g-34g",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Ping G430 Driver weights (5g\u201334g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/png430-aftermarket-weights-for-ping-g430-driver-fairway-woods-hybrids",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Png430 Ping G430 Driver Fairway Woods Hybrids weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/pngirn-aftermarket-weights-for-ping-irons",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "iron",
+  "kw": "Pngirn Ping Irons weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-putter-weight-for-ping-vault-2-0-putters-dale-answer-voss-b60-zb-piper-craz-e-h-stealth-ketsch",
+  "brand": "Ping",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Putter Ping Vault Putters Dale Answer Voss B60 Zb Piper Craz E H Stealth Ketsch weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/png-aftermarket-golf-club-wrench-for-ping-vault-2-0-putters",
+  "brand": "Ping",
+  "kind": "wrench",
+  "club": "putter",
+  "kw": "Png Ping Vault Putters torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-black-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Black Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-blue-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Blue Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-captain-america-blue-star-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Captain America Blue Star Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Circle T Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-circle-t-red-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Circle T Red Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-copper-putter-aftermarket-golf-weights-kit-limited-edition",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Copper Putter Limited Edition weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-gold-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Gold Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-green-clover-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Green Clover Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-putter-aftermarket-golf-weights-kit-1",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-putter-aftermarket-golf-weights-xx-piece-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Putter Xx Piece weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-rose-gold-putter-aftermarket-golf-weights-kit-limited-edition",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Rose Gold Putter Limited Edition weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-superman-insert-putter-aftermarket-golf-weights-kit",
+  "brand": "Scotty Cameron",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Superman Insert Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/aftermarket-golf-weights-wrench-for-scotty-cameron-v2",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron V2 weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-blue-insert-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Blue Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-captain-america-blue-star-insert-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Captain America Blue Star Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Circle T Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights-1",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Circle T Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-copper-putter-aftermarket-golf-weights-limited-edition",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Copper Putter Limited Edition weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-four-leaf-clover-insert-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Four Leaf Clover Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-gold-putter-aftermarket-golf-weights-limited-edition",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Gold Putter Limited Edition weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-putter-aftermarket-golf-weights-5g-45g-copy",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Putter Copy weights (5g\u201345g)",
+  "edits": "DUPLICATE-style slug ('copy') \u2014 keep URL (no redirects!) but ensure title/canonical distinct from its sibling. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-putter-aftermarket-golf-weights-5g-45g-copy-1",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Putter Copy weights (5g\u201345g)",
+  "edits": "DUPLICATE-style slug ('copy') \u2014 keep URL (no redirects!) but ensure title/canonical distinct from its sibling. Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-red-insert-fastback-squareback-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Red Insert Fastback Squareback Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-red-insert-phantom-x-newport-series-golo-series-futura-series-phantom-series-california-series-button-series-special-select-my-girl-putter-aftermarket-golf-weights-5g-45g",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Red Insert Phantom X Newport Golo Futura Phantom California Button Special Select My Girl Putter weights (5g\u201345g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-rose-gold-putter-aftermarket-golf-weights-limited-edition",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Rose Gold Putter Limited Edition weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-superman-insert-putter-aftermarket-golf-weights",
+  "brand": "Scotty Cameron",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron Superman Insert Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/red-scotty-cameron-aftermarket-golf-club-wrench",
+  "brand": "Scotty Cameron",
+  "kind": "wrench",
+  "club": "putter",
+  "kw": "Red Scotty Cameron Cameron torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-aftermarket-golf-club-wrench-in-black",
+  "brand": "Scotty Cameron",
+  "kind": "wrench",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron In Black torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/scotty-cameron-aftermarket-golf-club-wrench-in-green",
+  "brand": "Scotty Cameron",
+  "kind": "wrench",
+  "club": "putter",
+  "kw": "Scotty Cameron Cameron In Green torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/srixon-zx5-zx7-z-series-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Srixon",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Srixon Zx5 Zx7 Z Shaft Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/srixon-zx5-zx7-mki-mkii-driver-aftermarket-golf-weights-kit",
+  "brand": "Srixon",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Srixon Zx5 Zx7 Mki Mkii Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/srixon-zx-golf-weights",
+  "brand": "Srixon",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "Srixon Zx weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-hybrid-aftermarket-golf-shaft-adapter-0-370-rh",
+  "brand": "TaylorMade",
+  "kind": "adapter",
+  "club": "hybrid",
+  "kw": "TaylorMade Hybrid Shaft Adapter Rh shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-burner-mini-driver-1-2-pcs-aftermarket-golf-club-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade Burner Mini Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-putter-tp-collection-tp-silver-tp-patina-tp-black-copper-tp-red-tp-white-spider-mini-fcg-truss-putter-aftermarket-golf-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "TaylorMade Putter Tp Collection Tp Silver Tp Patina Tp Black Copper Tp Red Tp White Spider Mini Fcg Truss Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi-35-driver-aftermarket-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade Qi Driver weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi-35-fairway-hybrid-aftermarket-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "fairway",
+  "kw": "TaylorMade Qi Fairway Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi4d-driver-fairway-hybrid-aftermarket-golf-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade Qi4D Driver Fairway Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-spider-tour-putter-2023-aftermarket-golf-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "TaylorMade Spider Tour Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-stealth-2-stealth-2-plus-stealth-2-hd-driver-hybrid-aftermarket-golf-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "TaylorMade Stealth Stealth Plus Stealth HD Driver Hybrid weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-tp-hydroblast-truss-putter-aftermarket-golf-head-weights-kit",
+  "brand": "TaylorMade",
+  "kind": "kit",
+  "club": "putter",
+  "kw": "TaylorMade Tp Hydroblast Truss Putter weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/putter-weights-for-taylormade-tp-collection-spider-mini-fsg-and-truss-putters-5g-10g-15g-20g-and-wrench",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Putter TaylorMade Tp Collection Spider Mini Fsg Truss Putters weights (5g\u201310g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-sliding-head-weight-for-taylormade-m3-driver",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade M3 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi-35-aftermarket-weights",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "TaylorMade Qi weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi-35-fairway-hybrid-aftermarket-weights",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "TaylorMade Qi Fairway Hybrid weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-qi4d",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "\u2013",
+  "kw": "TaylorMade Qi4D weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-sim-driver-aftermarket-golf-back-slider-weights-4g-21g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Sim Driver Back Slider weights (4g\u201321g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-sim-max-d-driver-aftermarket-golf-weights-13g-20g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Sim Max D Driver weights (13g\u201320g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-sim-max-driver-aftermarket-golf-weights-7g-17g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "TaylorMade Sim Max Driver weights (7g\u201317g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-spider-tour-putter-aftermarket-golf-weights-2g-17g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "TaylorMade Spider Tour Putter weights (2g\u201317g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/taylormade-tp-hydroblast-truss-putter-aftermarket-golf-head-weights-5g-20g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "TaylorMade Tp Hydroblast Truss Putter weights (5g\u201320g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmex-aftermarket-golf-weights-wrench-for-taylormade-spider-ex-putter-series-4g-18g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Tmex TaylorMade Spider Ex Putter weights (4g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmm4-aftermarket-head-weight-for-taylormade-m4-driver-m4-tour-fairway-woods",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tmm4 TaylorMade M4 Driver M4 Tour Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmm6-aftermarket-head-weight-for-taylormade-m6-driver",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tmm6 TaylorMade M6 Driver weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmr-aftermarket-golf-weights-wrench-for-taylormade-r1-r5-r7-r9-r11-driver-fairway-woods-1g-20g",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tmr TaylorMade R1 R5 R7 R9 R11 Driver Fairway Woods weights (1g\u201320g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmsf-aftermarket-head-weight-for-taylormade-sim-titanium-fairway-wood-and-sim-udi-utility-iron",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "fairway",
+  "kw": "Tmsf TaylorMade Sim Titanium Fairway Wood Sim Udi Utility Iron weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmsx-aftermarket-weight-for-taylormade-spider-x-and-myspider-x-putter-series",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Tmsx TaylorMade Spider X Myspider X Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tmts-aftermarket-weights-for-taylormade-spider-tour-putter",
+  "brand": "TaylorMade",
+  "kind": "weights",
+  "club": "putter",
+  "kw": "Tmts TaylorMade Spider Tour Putter weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/aftermarket-wrench-for-taylormade-tp-collection",
+  "brand": "TaylorMade",
+  "kind": "wrench",
+  "club": "\u2013",
+  "kw": "TaylorMade Tp Collection torque wrench",
+  "edits": "Retitle to '[T-size] Torque Wrench for [brands]'. T25 universal = primary target for '[brand] torque wrench' cluster; keep its rankings.",
+  "links": "Up: wrenches collection; cross: every adapter collection",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/titleist-aftermarket-golf-shaft-adapter-0-335-rh-lh-fairway",
+  "brand": "Titleist",
+  "kind": "adapter",
+  "club": "fairway",
+  "kw": "Titleist Shaft Adapter Rh Lh Fairway shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/titleist-gts2-gts3-gts4-driver-fairway-wood-aftermarket-golf-weights-kit",
+  "brand": "Titleist",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Titleist Gts2 Gts3 Gts4 Driver Fairway Wood weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/titleist-tsr1-tsr2-tsr4-driver-fairway-wood-aftermarket-golf-weights-kit",
+  "brand": "Titleist",
+  "kind": "kit",
+  "club": "driver",
+  "kw": "Titleist Tsr1 Tsr2 Tsr4 Driver Fairway Wood weight kit",
+  "edits": "Retitle to '[Model] Weight Kit' \u2014 differentiate from the single-weights twin (kit = multi-weight set + wrench). Cross-link the pair both ways with distinct anchors.",
+  "links": "Up: kits collection + brand collection; pair: the matching weights product; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/aftermarket-golf-weights-wrench-for-titleist-tsi2-tsi4-drivers-and-fairway-woods-5g-21g",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Tsi2 Tsi4 Drivers Fairway Woods weights (5g\u201321g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-titleist-ts2-ts4-driver-and-fairway-woods",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Ts2 Ts4 Driver Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/quality-aftermarket-weight-for-titleist-tsi2-tsi4-drivers-and-fairway-woods",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Tsi2 Tsi4 Drivers Fairway Woods weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/titleist-gts2-gts3-gts4-driver-fairway-wood-aftermarket-golf-weights",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Titleist Gts2 Gts3 Gts4 Driver Fairway Wood weights",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tti3-aftermarket-golf-weights-wrench-for-titleist-tsi3-drivers-2-5g-18g",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tti3 Titleist Tsi3 Drivers weights (5g\u201318g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/tts1-aftermarket-head-screw-golf-weights-wrench-for-titleist-ts1-drivers-5g-20g",
+  "brand": "Titleist",
+  "kind": "weights",
+  "club": "driver",
+  "kw": "Tts1 Screw Titleist Ts1 Drivers weights (5g\u201320g)",
+  "edits": "Retitle to '[Model] Weights ({grams})' \u2014 model + 'weights' FIRST, never the bare club name. Add: fitment list (exact heads/variants), gram options table, short 'how to change' steps, wrench cross-sell. Product schema + FAQ.",
+  "links": "Up: brand collection (anchor '[Brand] [type] weights') + type hub ('[type] head weights'); pair-link its Weight Kit twin if one exists; wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/wilson-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods",
+  "brand": "Wilson",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Wilson Shaft Adapter Rh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ },
+ {
+  "url": "/products/wilson-dynapower-series-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods",
+  "brand": "Wilson",
+  "kind": "adapter",
+  "club": "driver",
+  "kw": "Wilson Dynapower Shaft Adapter Lh Driver Fairway Woods shaft adapter",
+  "edits": "Retitle to '[Brand] Shaft Adapter \u2014 [tip size / RH-LH if in title]'. Add settings snippet + link to the brand adapter collection's chart (chart lives at collection level).",
+  "links": "Up: brand adapter collection (anchor '[brand] shaft adapters') + adapters hub; cross: wrench",
+  "prio": "Low"
+ }
+]
