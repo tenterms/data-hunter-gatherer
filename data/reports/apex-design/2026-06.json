@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T08:55:30.342Z",
+  "generatedAt": "2026-07-27T11:27:27.781Z",
   "dataSource": "mock",
   "client": {
     "client_key": "apex-design",
@@ -2194,7 +2194,8 @@
         },
         "bestMove": null
       }
-    ]
+    ],
+    "keywordClustersSource": "topic_clusters"
   },
   "findings": {
     "executive_findings": [

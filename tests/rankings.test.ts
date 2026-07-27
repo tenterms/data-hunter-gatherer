@@ -81,3 +81,24 @@ describe("summariseRankings", () => {
     expect(empty.keywordsTracked).toBe(0);
   });
 });
+
+describe("dedupeMovements", () => {
+  it("keeps the first engine's entry for a repeated keyword", async () => {
+    const { dedupeMovements } = await import("../src/lib/rankings");
+    const engines = [
+      {
+        id: "1",
+        label: "Google UK",
+        movements: [movementFromImportRow(row("shared", 5, 3)), movementFromImportRow(row("only uk", 9, 9))],
+      },
+      {
+        id: "2",
+        label: "Google US",
+        movements: [movementFromImportRow(row("shared", 40, 50)), movementFromImportRow(row("only us", 2, 2))],
+      },
+    ];
+    const combined = dedupeMovements(engines);
+    expect(combined.map((m) => m.keyword).sort()).toEqual(["only uk", "only us", "shared"]);
+    expect(combined.find((m) => m.keyword === "shared")?.endPosition).toBe(3);
+  });
+});

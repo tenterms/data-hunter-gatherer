@@ -97,3 +97,37 @@ describe("calculateTopicClusters", () => {
     expect(proto.comparison.clicks.isNew).toBe(true);
   });
 });
+
+describe("calculateKeywordClustersFromGroups", () => {
+  it("groups movements by SE Ranking group name, ignoring ungrouped keywords", async () => {
+    const { calculateKeywordClustersFromGroups } = await import("../src/lib/topicClusters");
+    const mv = (keyword: string, groupName: string | null, start: number | null, end: number | null) => {
+      const change = start !== null && end !== null ? start - end : null;
+      return {
+        keyword,
+        groupName,
+        startPosition: start,
+        endPosition: end,
+        change,
+        direction: (change === null ? "entered" : change > 0 ? "up" : change < 0 ? "down" : "flat") as
+          | "up"
+          | "down"
+          | "flat"
+          | "entered",
+        searchVolume: null,
+        targetUrl: "",
+        rankingUrl: "",
+      };
+    };
+    const clusters = calculateKeywordClustersFromGroups([
+      mv("pen testing", "Security", 12, 4),
+      mv("penetration test", "Security", 8, 8),
+      mv("cyber essentials", "Compliance", null, 6),
+      mv("stray keyword", null, 3, 3),
+    ]);
+    expect(clusters.map((c) => c.name)).toEqual(["Security", "Compliance"]);
+    expect(clusters[0].tracked).toBe(2);
+    expect(clusters[0].up).toBe(1);
+    expect(clusters[1].entered).toBe(1);
+  });
+});

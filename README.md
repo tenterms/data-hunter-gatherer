@@ -45,7 +45,11 @@ Once the app is running, everything the team does day-to-day happens at
 - **Content groups & topic clusters** — SEOGets-style editors: name +
   "contains" chips + "doesn't contain" chips, with a live list of the real
   GSC queries/pages that match as you type.
-- **Work grid** — per-month editor for completed/planned DRAW tasks.
+- **Work grid** — this month and last month side by side, with a one-click
+  "→ last month" to roll tasks over when a new month starts.
+- **Report settings** — set the order/labels/visibility of the SE Ranking
+  search engine panels, and hide individual cannibalisation rows from the
+  client's report.
 - **Add a reporting month** — pick a month; the comparison month is set
   automatically.
 - **Upload a rankings CSV** — drop in an SE Ranking export for a month.

@@ -7,12 +7,19 @@ import {
   LocalCsvRankingProvider,
   SERankingProvider,
   SheetImportRankingProvider,
+  dedupeMovements,
   resolveRankings,
+  summariseRankings,
+  type EngineMovements,
   type RankingProvider,
 } from "./rankings";
 import { aggregateRows, compareMetricSets, EMPTY_METRICS, formatChangePct, formatNumber, formatPct, formatPosition } from "./metrics";
 import { calculateContentGroups, urlMatches } from "./contentGroups";
-import { calculateKeywordClusters, calculateTopicClusters } from "./topicClusters";
+import {
+  calculateKeywordClusters,
+  calculateKeywordClustersFromGroups,
+  calculateTopicClusters,
+} from "./topicClusters";
 import { findCannibalisation } from "./cannibalisation";
 import { buildFindings } from "./findingsEngine";
 import { buildCommentary } from "./commentary";
@@ -24,6 +31,7 @@ import type {
   KpiCardData,
   MetricSet,
   PagePerformance,
+  RankingEngineData,
   ReportPeriodRow,
   ReportSnapshot,
 } from "./types";
@@ -218,15 +226,61 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
     minImpressionsPerPage: 5,
     maxIssues: 40,
   });
+  // The team can curate the cannibalisation list from the admin panel: excluded
+  // queries stay in the snapshot (so they can be un-hidden) but are flagged.
+  const excludedQueries = new Set(
+    config.cannibalisationExclusions
+      .filter((e) => e.client_key === client.client_key)
+      .map((e) => e.query.toLowerCase()),
+  );
+  for (const issue of cannibalisation) {
+    if (excludedQueries.has(issue.query.toLowerCase())) issue.hidden = true;
+  }
 
   // --- Rankings -----------------------------------------------------------------
-  const rankingProviders: RankingProvider[] = [];
-  if (app.seRankingApiKey) rankingProviders.push(new SERankingProvider(app.seRankingApiKey, log));
-  rankingProviders.push(new LocalCsvRankingProvider());
-  rankingProviders.push(new SheetImportRankingProvider(config.rankingImports));
-  const rankings = await resolveRankings(rankingProviders, client, period);
+  // SE Ranking is asked for the full per-search-engine breakdown first; the
+  // report shows one panel per engine (order/visibility set in the admin panel).
+  let engineData: EngineMovements[] | null = null;
+  if (app.seRankingApiKey) {
+    engineData = await new SERankingProvider(app.seRankingApiKey, log).getEngineData(client, period);
+  }
+
+  let rankings;
+  let rankingEngines: RankingEngineData[] | undefined;
+  if (engineData && engineData.length > 0) {
+    const engineConfig = config.rankingEngines.filter((e) => e.client_key === client.client_key);
+    const configFor = (id: string) => engineConfig.find((e) => e.engine_id === id);
+    // All engines stay in the snapshot (hidden ones are just flagged) so the
+    // admin panel can re-show an engine without a full regenerate.
+    const ordered = [...engineData].sort((a, b) => {
+      const orderA = configFor(a.id)?.sort_order ?? Number.MAX_SAFE_INTEGER;
+      const orderB = configFor(b.id)?.sort_order ?? Number.MAX_SAFE_INTEGER;
+      return orderA - orderB;
+    });
+    rankingEngines = ordered.map((e) => ({
+      id: e.id,
+      label: configFor(e.id)?.label || e.label,
+      hidden: configFor(e.id)?.active === false ? true : undefined,
+      summary: summariseRankings(e.movements, "se_ranking_api"),
+    }));
+    const visible = ordered.filter((e) => configFor(e.id)?.active !== false);
+    rankings = summariseRankings(dedupeMovements(visible.length > 0 ? visible : ordered), "se_ranking_api");
+  } else {
+    const rankingProviders: RankingProvider[] = [];
+    rankingProviders.push(new LocalCsvRankingProvider());
+    rankingProviders.push(new SheetImportRankingProvider(config.rankingImports));
+    rankings = await resolveRankings(rankingProviders, client, period);
+  }
   log(`Rankings: ${rankings.keywordsTracked} tracked keywords via ${rankings.source}.`);
-  const keywordClusters = calculateKeywordClusters(clientClusters, clientClusterRules, rankings.movements);
+
+  // Topical performance (by keyword): prefer SE Ranking's own keyword groups
+  // when the project has them; otherwise fall back to the topic cluster rules.
+  const groupClusters = calculateKeywordClustersFromGroups(rankings.movements);
+  const keywordClusters =
+    groupClusters.length > 0
+      ? groupClusters
+      : calculateKeywordClusters(clientClusters, clientClusterRules, rankings.movements);
+  const keywordClustersSource = groupClusters.length > 0 ? ("se_ranking_groups" as const) : ("topic_clusters" as const);
 
   // --- Findings (deterministic, always first) --------------------------------------
   const computation = {
@@ -237,7 +291,8 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
     restOfSite,
     contentGroups,
     topicClusters,
-    cannibalisation,
+    // findings/commentary only see the curated list, so drafts never cite hidden rows
+    cannibalisation: cannibalisation.filter((i) => !i.hidden),
     rankings,
   };
   const findings = buildFindings(computation);
@@ -289,6 +344,8 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       cannibalisation,
       rankings,
       keywordClusters,
+      keywordClustersSource,
+      rankingEngines,
     },
     findings,
     commentary,

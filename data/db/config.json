@@ -1565,5 +1565,7 @@
       "priority": "medium",
       "active": "true"
     }
-  ]
+  ],
+  "CannibalisationExclusions": [],
+  "RankingEngines": []
 }

@@ -777,3 +777,75 @@ code {
   padding: 1px 5px;
   font-size: 13px;
 }
+
+/* Rankings: per-search-engine switcher + fixed-height keyword list */
+.engine-switcher {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.engine-switcher .engine-label {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+.scroll-box {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.scroll-box .table-wrap {
+  border: none;
+  border-radius: 0;
+}
+.scroll-box thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  z-index: 1;
+}
+.row-toggle.off {
+  color: var(--ink-muted);
+}
+.row-toggle:disabled {
+  color: var(--ink-muted);
+  cursor: default;
+  opacity: 0.5;
+}
+
+/* Report settings: search engine order rows */
+.engine-setting-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.engine-setting-row:last-of-type {
+  border-bottom: 0;
+}
+.engine-setting-row .order-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+/* Two-month work grid editor */
+.draw-month-row {
+  display: grid;
+  grid-template-columns: 130px 180px 1fr 1.2fr auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.draw-month-row .draw-month-actions {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+}
+@media (max-width: 800px) {
+  .draw-month-row {
+    grid-template-columns: 1fr;
+  }
+}

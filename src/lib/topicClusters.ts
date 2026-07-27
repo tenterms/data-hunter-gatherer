@@ -117,27 +117,57 @@ export function calculateKeywordClusters(
     const matched = movements.filter((m) => clusterMatchesQuery(m.keyword, clusterRules));
     if (matched.length === 0) continue;
 
-    const starts = matched.map((m) => m.startPosition).filter((p): p is number => p !== null && p > 0);
-    const ends = matched.map((m) => m.endPosition).filter((p): p is number => p !== null && p > 0);
-    const avg = (values: number[]) => (values.length ? values.reduce((a, b) => a + b, 0) / values.length : null);
-
-    const movers = matched.filter((m) => m.direction === "up" || m.direction === "entered");
-    movers.sort((a, b) => (b.change ?? 100 - (b.endPosition ?? 100)) - (a.change ?? 100 - (a.endPosition ?? 100)));
-
-    results.push({
-      key: cluster.topic_key,
-      name: cluster.topic_name,
-      tracked: matched.length,
-      up: matched.filter((m) => m.direction === "up").length,
-      down: matched.filter((m) => m.direction === "down").length,
-      entered: matched.filter((m) => m.direction === "entered").length,
-      dropped: matched.filter((m) => m.direction === "dropped").length,
-      flat: matched.filter((m) => m.direction === "flat").length,
-      averagePosition: { start: avg(starts), end: avg(ends) },
-      bestMove: movers[0] ?? null,
-    });
+    results.push(keywordClusterStats(cluster.topic_key, cluster.topic_name, matched));
   }
 
+  results.sort((a, b) => b.tracked - a.tracked);
+  return results;
+}
+
+function keywordClusterStats(
+  key: string,
+  name: string,
+  matched: RankingMovement[],
+): KeywordClusterPerformance {
+  const starts = matched.map((m) => m.startPosition).filter((p): p is number => p !== null && p > 0);
+  const ends = matched.map((m) => m.endPosition).filter((p): p is number => p !== null && p > 0);
+  const avg = (values: number[]) => (values.length ? values.reduce((a, b) => a + b, 0) / values.length : null);
+
+  const movers = matched.filter((m) => m.direction === "up" || m.direction === "entered");
+  movers.sort((a, b) => (b.change ?? 100 - (b.endPosition ?? 100)) - (a.change ?? 100 - (a.endPosition ?? 100)));
+
+  return {
+    key,
+    name,
+    tracked: matched.length,
+    up: matched.filter((m) => m.direction === "up").length,
+    down: matched.filter((m) => m.direction === "down").length,
+    entered: matched.filter((m) => m.direction === "entered").length,
+    dropped: matched.filter((m) => m.direction === "dropped").length,
+    flat: matched.filter((m) => m.direction === "flat").length,
+    averagePosition: { start: avg(starts), end: avg(ends) },
+    bestMove: movers[0] ?? null,
+  };
+}
+
+/**
+ * Topical performance (by keyword) using SE Ranking's own keyword groups
+ * instead of the topic cluster rules — used when the client's SE Ranking
+ * project has groups set up, so the report mirrors how the account is
+ * organised there. Movements without a group are ignored.
+ */
+export function calculateKeywordClustersFromGroups(movements: RankingMovement[]): KeywordClusterPerformance[] {
+  const byGroup = new Map<string, RankingMovement[]>();
+  for (const m of movements) {
+    const groupName = (m.groupName ?? "").trim();
+    if (!groupName) continue;
+    const list = byGroup.get(groupName);
+    if (list) list.push(m);
+    else byGroup.set(groupName, [m]);
+  }
+  const results = [...byGroup.entries()].map(([name, matched]) =>
+    keywordClusterStats(name.toLowerCase().replace(/[^a-z0-9]+/g, "_"), name, matched),
+  );
   results.sort((a, b) => b.tracked - a.tracked);
   return results;
 }

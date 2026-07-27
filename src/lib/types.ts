@@ -157,6 +157,21 @@ export interface StrategicNoteRow {
   active: boolean;
 }
 
+/** Per-client display config for SE Ranking search engines (order + visibility). */
+export interface RankingEngineRow {
+  client_key: string;
+  engine_id: string;
+  label: string;
+  sort_order: number | null;
+  active: boolean;
+}
+
+/** Cannibalisation queries the team has chosen to hide from the report. */
+export interface CannibalisationExclusionRow {
+  client_key: string;
+  query: string;
+}
+
 export interface GeneratedReportRow {
   client_key: string;
   period_key: string;
@@ -181,6 +196,8 @@ export interface AdminConfig {
   aiSearchPrompts: AiSearchPromptRow[];
   narrativeOverrides: NarrativeOverrideRow[];
   strategicNotes: StrategicNoteRow[];
+  rankingEngines: RankingEngineRow[];
+  cannibalisationExclusions: CannibalisationExclusionRow[];
 }
 
 // ---------------------------------------------------------------------------
@@ -285,6 +302,8 @@ export type PriorityFlag = "high" | "medium" | "low";
 
 export interface CannibalisationIssue {
   query: string;
+  /** curated out by the team (hidden from the client view) */
+  hidden?: boolean;
   pageCount: number;
   clicks: number;
   impressions: number;
@@ -311,6 +330,17 @@ export interface RankingMovement {
   searchVolume: number | null;
   targetUrl: string;
   rankingUrl: string;
+  /** SE Ranking keyword group name, when the provider supplies one */
+  groupName?: string | null;
+}
+
+/** One search engine's tracked-keyword performance (SE Ranking supports several per project). */
+export interface RankingEngineData {
+  id: string;
+  label: string;
+  /** hidden from the report by the team (admin panel toggle) */
+  hidden?: boolean;
+  summary: RankingSummary;
 }
 
 /** Tracked-keyword movements grouped by the client's topic clusters. */
@@ -433,6 +463,10 @@ export interface ReportSnapshot {
     rankings: RankingSummary;
     /** topical performance (by tracked keyword); absent in pre-v2 snapshots */
     keywordClusters?: KeywordClusterPerformance[];
+    /** where keywordClusters came from: SE Ranking's own groups, or the topic cluster rules */
+    keywordClustersSource?: "se_ranking_groups" | "topic_clusters";
+    /** per-search-engine rankings (SE Ranking); absent when only one source exists */
+    rankingEngines?: RankingEngineData[];
   };
   findings: Findings;
   commentary: SectionCommentary[];

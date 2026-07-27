@@ -212,6 +212,7 @@ interface SerKeyword {
   name?: string;
   keyword?: string;
   volume?: number | string | null;
+  group_id?: number | string | null;
   positions?: SerPositionEntry[];
   landing_pages?: Array<{ url?: string }>;
 }
@@ -219,6 +220,36 @@ interface SerKeyword {
 interface SerEngineBlock {
   site_engine_id?: number;
   keywords?: SerKeyword[];
+}
+
+interface SerSearchEngine {
+  site_engine_id?: number | string;
+  id?: number | string;
+  name?: string;
+  title?: string;
+  region_name?: string;
+  region?: string;
+  lang?: string;
+}
+
+interface SerGroup {
+  id?: number | string;
+  name?: string;
+  title?: string;
+}
+
+interface SerKeywordInfo {
+  id?: number | string;
+  name?: string;
+  keyword?: string;
+  group_id?: number | string | null;
+}
+
+/** One SE Ranking search engine's tracked keywords, before summarising. */
+export interface EngineMovements {
+  id: string;
+  label: string;
+  movements: RankingMovement[];
 }
 
 export class SERankingProvider implements RankingProvider {
@@ -249,7 +280,47 @@ export class SERankingProvider implements RankingProvider {
     return match?.id ?? null;
   }
 
-  async getKeywordMovements(client: ClientRow, period: ReportPeriodRow): Promise<RankingMovement[] | null> {
+  private movementsFromBlock(
+    block: SerEngineBlock,
+    groupNameForKeyword: (kw: SerKeyword) => string | null,
+  ): RankingMovement[] {
+    const toPos = (value: number | string | null | undefined): number | null => {
+      const n = Number(value);
+      return Number.isFinite(n) && n > 0 && n <= 200 ? n : null;
+    };
+    const movements: RankingMovement[] = [];
+    for (const kw of block.keywords ?? []) {
+      const keyword = (kw.name ?? kw.keyword ?? String(kw.id ?? "")).trim();
+      if (!keyword) continue;
+      const entries = (kw.positions ?? [])
+        .filter((p) => p.date)
+        .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      if (entries.length === 0) continue;
+      const startPosition = toPos(entries[0].pos);
+      const endPosition = toPos(entries[entries.length - 1].pos);
+      const { change, direction } = classifyMovement(startPosition, endPosition);
+      movements.push({
+        keyword,
+        startPosition,
+        endPosition,
+        change,
+        direction,
+        searchVolume: Number.isFinite(Number(kw.volume)) ? Number(kw.volume) : null,
+        targetUrl: "",
+        rankingUrl: kw.landing_pages?.[0]?.url ?? "",
+        groupName: groupNameForKeyword(kw),
+      });
+    }
+    return movements;
+  }
+
+  /**
+   * Full per-search-engine pull: one positions call returns a block per
+   * search engine configured in the SE Ranking project. Engine labels and
+   * keyword group names are fetched best-effort — if those endpoints fail
+   * the positions still come through with generic labels / no groups.
+   */
+  async getEngineData(client: ClientRow, period: ReportPeriodRow): Promise<EngineMovements[] | null> {
     try {
       const siteId = await this.findSiteId(client);
       if (siteId === null) {
@@ -259,43 +330,66 @@ export class SERankingProvider implements RankingProvider {
       const blocks = await this.get<SerEngineBlock[]>(
         `/sites/positions?site_id=${siteId}&date_from=${period.start_date}&date_to=${period.end_date}`,
       );
-      if (!Array.isArray(blocks)) return null;
+      if (!Array.isArray(blocks) || blocks.length === 0) return null;
 
-      const toPos = (value: number | string | null | undefined): number | null => {
-        const n = Number(value);
-        return Number.isFinite(n) && n > 0 && n <= 200 ? n : null;
+      const [engines, groups, keywordInfos] = await Promise.all([
+        this.get<SerSearchEngine[]>(`/sites/${siteId}/search-engines`).catch(() => [] as SerSearchEngine[]),
+        this.get<SerGroup[]>(`/sites/${siteId}/groups`).catch(() => [] as SerGroup[]),
+        this.get<SerKeywordInfo[]>(`/sites/${siteId}/keywords`).catch(() => [] as SerKeywordInfo[]),
+      ]);
+
+      const engineLabels = new Map<string, string>();
+      (Array.isArray(engines) ? engines : []).forEach((e, i) => {
+        const id = String(e.site_engine_id ?? e.id ?? "");
+        if (!id) return;
+        const parts = [e.name ?? e.title ?? "", e.region_name ?? e.region ?? ""]
+          .map((v) => String(v).trim())
+          .filter(Boolean);
+        engineLabels.set(id, parts.length > 0 ? parts.join(" — ") : `Search engine ${i + 1}`);
+      });
+
+      const groupNames = new Map<string, string>();
+      (Array.isArray(groups) ? groups : []).forEach((g) => {
+        const id = String(g.id ?? "");
+        const name = String(g.name ?? g.title ?? "").trim();
+        if (id && name) groupNames.set(id, name);
+      });
+      const keywordGroupIds = new Map<string, string>();
+      (Array.isArray(keywordInfos) ? keywordInfos : []).forEach((k) => {
+        const id = String(k.id ?? "");
+        if (id && k.group_id !== null && k.group_id !== undefined) {
+          keywordGroupIds.set(id, String(k.group_id));
+        }
+      });
+      const groupNameForKeyword = (kw: SerKeyword): string | null => {
+        const groupId =
+          kw.group_id !== null && kw.group_id !== undefined
+            ? String(kw.group_id)
+            : keywordGroupIds.get(String(kw.id ?? ""));
+        return groupId ? (groupNames.get(groupId) ?? null) : null;
       };
 
-      const movements = new Map<string, RankingMovement>();
-      for (const block of blocks) {
-        for (const kw of block.keywords ?? []) {
-          const keyword = (kw.name ?? kw.keyword ?? String(kw.id ?? "")).trim();
-          if (!keyword || movements.has(keyword)) continue;
-          const entries = (kw.positions ?? [])
-            .filter((p) => p.date)
-            .sort((a, b) => String(a.date).localeCompare(String(b.date)));
-          if (entries.length === 0) continue;
-          const startPosition = toPos(entries[0].pos);
-          const endPosition = toPos(entries[entries.length - 1].pos);
-          const { change, direction } = classifyMovement(startPosition, endPosition);
-          movements.set(keyword, {
-            keyword,
-            startPosition,
-            endPosition,
-            change,
-            direction,
-            searchVolume: Number.isFinite(Number(kw.volume)) ? Number(kw.volume) : null,
-            targetUrl: "",
-            rankingUrl: kw.landing_pages?.[0]?.url ?? "",
-          });
-        }
-      }
-      if (movements.size === 0) {
+      const results: EngineMovements[] = [];
+      blocks.forEach((block, i) => {
+        const movements = this.movementsFromBlock(block, groupNameForKeyword);
+        if (movements.length === 0) return;
+        const id = String(block.site_engine_id ?? i);
+        results.push({
+          id,
+          label: engineLabels.get(id) ?? `Search engine ${results.length + 1}`,
+          movements,
+        });
+      });
+
+      if (results.length === 0) {
         this.log("SE Ranking: project found but no keyword positions in the period.");
         return null;
       }
-      this.log(`SE Ranking: pulled ${movements.size} tracked keywords for ${client.domain}.`);
-      return [...movements.values()];
+      const total = results.reduce((sum, e) => sum + e.movements.length, 0);
+      this.log(
+        `SE Ranking: pulled ${total} keyword positions across ${results.length} search engine${results.length === 1 ? "" : "s"} for ${client.domain}.`,
+      );
+      return results;
     } catch (error) {
       this.log(
         `SE Ranking API failed (${error instanceof Error ? error.message : error}) — falling back to imports.`,
@@ -303,6 +397,23 @@ export class SERankingProvider implements RankingProvider {
       return null;
     }
   }
+
+  async getKeywordMovements(client: ClientRow, period: ReportPeriodRow): Promise<RankingMovement[] | null> {
+    const engines = await this.getEngineData(client, period);
+    if (!engines) return null;
+    return dedupeMovements(engines);
+  }
+}
+
+/** Combined view across engines: first engine's entry wins for a repeated keyword. */
+export function dedupeMovements(engines: EngineMovements[]): RankingMovement[] {
+  const seen = new Map<string, RankingMovement>();
+  for (const engine of engines) {
+    for (const m of engine.movements) {
+      if (!seen.has(m.keyword)) seen.set(m.keyword, m);
+    }
+  }
+  return [...seen.values()];
 }
 
 export async function resolveRankings(

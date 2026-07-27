@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T08:55:30.703Z",
+  "generatedAt": "2026-07-27T11:27:28.156Z",
   "dataSource": "mock",
   "client": {
     "client_key": "sentinel-cyber",
@@ -2136,7 +2136,8 @@
           "rankingUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
         }
       }
-    ]
+    ],
+    "keywordClustersSource": "topic_clusters"
   },
   "findings": {
     "executive_findings": [

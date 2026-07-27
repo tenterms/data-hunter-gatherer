@@ -17,8 +17,9 @@ import ChangeBadge from "@/components/ChangeBadge";
  *  - client mode: read-only, clean, no internals
  *
  * Section order (agreed with the team): executive summary → KPI cards →
- * work grid → traffic (GSC) → visibility (rankings) → topical by keyword →
- * topical by query → cannibalisation → strategic priorities.
+ * work grid → strategic priorities → traffic (GSC, incl. content & keyword
+ * group performance) → visibility (rankings, per search engine) →
+ * cannibalisation.
  */
 export default function ReportView({
   snapshot,
@@ -68,7 +69,27 @@ export default function ReportView({
         <DrawGrid tasks={snapshot.drawTasks} />
       </ReportSection>
 
-      {/* 4. Traffic changes (GSC) */}
+      {/* 4. Strategic priorities */}
+      <ReportSection title="Strategic priorities">
+        <Commentary section="strategic_priorities" />
+        {snapshot.strategicNotes.length > 0 && (
+          <ul>
+            {snapshot.strategicNotes.map((note, i) => (
+              <li key={`${note.title}-${i}`} style={{ marginBottom: 8 }}>
+                <strong>{note.title}</strong>
+                {note.priority && (
+                  <span className={`badge flag-${note.priority}`} style={{ marginLeft: 8 }}>
+                    {note.priority}
+                  </span>
+                )}
+                <div style={{ color: "var(--ink-secondary)", fontSize: 14 }}>{note.body}</div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </ReportSection>
+
+      {/* 5. Traffic changes (GSC) */}
       <ReportSection
         title="Traffic changes (Google Search Console)"
         description="Clicks, impressions, CTR and average position for the key pages, current period vs comparison period."
@@ -107,64 +128,55 @@ export default function ReportView({
             <PerformanceBars groups={metrics.contentGroups} />
           </>
         )}
+        {metrics.topicClusters.length > 0 && (
+          <>
+            <h3>Keyword group performance</h3>
+            <p className="section-desc">
+              Search demand by topic: groups of related queries from Search Console, current period vs
+              comparison period.
+            </p>
+            <Commentary section="topic_clusters" />
+            <PerformanceBars groups={metrics.topicClusters} />
+          </>
+        )}
       </ReportSection>
 
-      {/* 5. Visibility changes (rankings) */}
+      {/* 6. Visibility changes (rankings) */}
       <ReportSection
         title="Visibility changes (tracked rankings)"
         description="Tracked keyword positions, start vs end of the period."
       >
         <Commentary section="rankings" />
-        <RankingsSection summary={metrics.rankings} />
+        <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
+        {(metrics.keywordClusters ?? []).length > 0 && (
+          <>
+            <h3>Keyword groups</h3>
+            <p className="section-desc">
+              {metrics.keywordClustersSource === "se_ranking_groups"
+                ? "Tracked-keyword movements grouped by the SE Ranking keyword groups set up for this client."
+                : "Tracked-keyword movements grouped by the topic clusters set up for this client."}
+            </p>
+            <KeywordClustersTable clusters={metrics.keywordClusters ?? []} />
+          </>
+        )}
       </ReportSection>
 
-      {/* 6. Topical performance (by keyword) */}
-      <ReportSection
-        title="Topical performance (by keyword)"
-        description="Tracked-keyword ranking movements grouped by topic cluster."
-      >
-        <KeywordClustersTable clusters={metrics.keywordClusters ?? []} />
-      </ReportSection>
-
-      {/* 7. Topical performance (by query) */}
-      <ReportSection
-        title="Topical performance (by query)"
-        description="Search demand by topic: groups of related queries from Search Console, current period vs comparison period."
-      >
-        <Commentary section="topic_clusters" />
-        <PerformanceBars groups={metrics.topicClusters} />
-      </ReportSection>
-
-      {/* 8. Cannibalisation catcher */}
+      {/* 7. Cannibalisation catcher */}
       <ReportSection
         title="Cannibalisation catcher"
         description="Queries where more than one page competes in the search results. Click ▸ to see the competing URLs."
       >
         <Commentary section="cannibalisation" />
-        <CannibalisationTable issues={metrics.cannibalisation} />
-      </ReportSection>
-
-      {/* 9. Strategic priorities */}
-      <ReportSection title="Strategic priorities">
-        <Commentary section="strategic_priorities" />
-        {snapshot.strategicNotes.length > 0 && (
-          <ul>
-            {snapshot.strategicNotes.map((note, i) => (
-              <li key={`${note.title}-${i}`} style={{ marginBottom: 8 }}>
-                <strong>{note.title}</strong>
-                {note.priority && (
-                  <span className={`badge flag-${note.priority}`} style={{ marginLeft: 8 }}>
-                    {note.priority}
-                  </span>
-                )}
-                <div style={{ color: "var(--ink-secondary)", fontSize: 14 }}>{note.body}</div>
-              </li>
-            ))}
-          </ul>
+        <CannibalisationTable issues={metrics.cannibalisation.filter((i) => !i.hidden)} />
+        {mode === "team" && metrics.cannibalisation.some((i) => i.hidden) && (
+          <p className="section-desc">
+            {metrics.cannibalisation.filter((i) => i.hidden).length} row(s) hidden by the team — manage
+            these from the client&apos;s admin page.
+          </p>
         )}
       </ReportSection>
 
-      {/* 10. Raw data / debug — team only */}
+      {/* 8. Raw data / debug — team only */}
       {mode === "team" && (
         <details className="debug">
           <summary>Raw data &amp; debug (snapshot contents)</summary>

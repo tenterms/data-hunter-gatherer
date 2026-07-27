@@ -5,6 +5,7 @@ import { DB_FILE, getAppConfig, MOCK_DIR } from "./config";
 import type {
   AdminConfig,
   AiSearchPromptRow,
+  CannibalisationExclusionRow,
   ClientPageRow,
   ClientRow,
   ContentGroupRow,
@@ -12,6 +13,7 @@ import type {
   DrawTaskRow,
   GeneratedReportRow,
   NarrativeOverrideRow,
+  RankingEngineRow,
   RankingImportRow,
   RankingKeywordRow,
   ReportPeriodRow,
@@ -100,6 +102,8 @@ export const SHEET_SCHEMA: Record<string, string[]> = {
     "approved_at",
   ],
   StrategicNotes: ["client_key", "period_key", "note_type", "title", "body", "priority", "active"],
+  RankingEngines: ["client_key", "engine_id", "label", "sort_order", "active"],
+  CannibalisationExclusions: ["client_key", "query"],
   GeneratedReports: ["client_key", "period_key", "generated_at", "snapshot_path", "dashboard_url", "status"],
 };
 
@@ -296,6 +300,17 @@ const parsers = {
     priority: str(r.priority),
     active: parseBool(r.active),
   }),
+  RankingEngines: (r: RawRow): RankingEngineRow => ({
+    client_key: str(r.client_key),
+    engine_id: str(r.engine_id),
+    label: str(r.label),
+    sort_order: parseNum(r.sort_order) ?? 0,
+    active: parseBool(r.active),
+  }),
+  CannibalisationExclusions: (r: RawRow): CannibalisationExclusionRow => ({
+    client_key: str(r.client_key),
+    query: str(r.query),
+  }),
 };
 
 // ---------------------------------------------------------------------------
@@ -329,6 +344,8 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     aiSearchPrompts,
     narrativeOverrides,
     strategicNotes,
+    rankingEngines,
+    cannibalisationExclusions,
   ] = await Promise.all([
     readTab(sheets, googleSheetId, "Clients"),
     readTab(sheets, googleSheetId, "ReportPeriods"),
@@ -343,6 +360,8 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     readTab(sheets, googleSheetId, "AiSearchPrompts"),
     readTab(sheets, googleSheetId, "NarrativeOverrides"),
     readTab(sheets, googleSheetId, "StrategicNotes"),
+    readTab(sheets, googleSheetId, "RankingEngines").catch(() => [] as RawRow[]),
+    readTab(sheets, googleSheetId, "CannibalisationExclusions").catch(() => [] as RawRow[]),
   ]);
 
   return {
@@ -359,6 +378,8 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     aiSearchPrompts: aiSearchPrompts.map(parsers.AiSearchPrompts),
     narrativeOverrides: narrativeOverrides.map(parsers.NarrativeOverrides),
     strategicNotes: strategicNotes.map(parsers.StrategicNotes),
+    rankingEngines: rankingEngines.map(parsers.RankingEngines),
+    cannibalisationExclusions: cannibalisationExclusions.map(parsers.CannibalisationExclusions),
   };
 }
 
@@ -384,6 +405,8 @@ export function loadAdminConfigFromLocal(): AdminConfig {
     aiSearchPrompts: (raw.AiSearchPrompts ?? []).map(parsers.AiSearchPrompts),
     narrativeOverrides: (raw.NarrativeOverrides ?? []).map(parsers.NarrativeOverrides),
     strategicNotes: (raw.StrategicNotes ?? []).map(parsers.StrategicNotes),
+    rankingEngines: (raw.RankingEngines ?? []).map(parsers.RankingEngines),
+    cannibalisationExclusions: (raw.CannibalisationExclusions ?? []).map(parsers.CannibalisationExclusions),
   };
 }
 

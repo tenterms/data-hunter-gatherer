@@ -1,6 +1,7 @@
 "use client";
 
-import type { RankingMovement, RankingSummary } from "@/lib/types";
+import { useState } from "react";
+import type { RankingEngineData, RankingMovement, RankingSummary } from "@/lib/types";
 import DataTable, { type Column } from "./DataTable";
 
 function MovementLabel({ m }: { m: RankingMovement }) {
@@ -62,15 +63,7 @@ function Stat({ label, value, tone }: { label: string; value: string; tone?: "po
   );
 }
 
-export default function RankingsSection({ summary }: { summary: RankingSummary }) {
-  if (summary.source === "unavailable" || summary.keywordsTracked === 0) {
-    return (
-      <p className="bars-empty">
-        No ranking data for this period. Import an SE Ranking CSV with{" "}
-        <code>npm run import-rankings-csv</code> or add rows to the RankingImports sheet tab.
-      </p>
-    );
-  }
+function SummaryPanel({ summary }: { summary: RankingSummary }) {
   return (
     <div>
       <div className="kpi-grid">
@@ -87,7 +80,65 @@ export default function RankingsSection({ summary }: { summary: RankingSummary }
         {summary.entered > 0 && ` · ${summary.entered} entered`}
         {summary.dropped > 0 && ` · ${summary.dropped} dropped`}
       </p>
-      <DataTable columns={columns} rows={summary.movements} rowKey={(m) => m.keyword} defaultSortKey="change" />
+      <div className="scroll-box">
+        <DataTable columns={columns} rows={summary.movements} rowKey={(m) => m.keyword} defaultSortKey="change" />
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Visibility section. When SE Ranking supplies several search engines
+ * (e.g. one per target location), each gets its own panel behind
+ * prev/next controls; the order and labels come from the admin panel.
+ */
+export default function RankingsSection({
+  summary,
+  engines,
+}: {
+  summary: RankingSummary;
+  engines?: RankingEngineData[];
+}) {
+  const visibleEngines = (engines ?? []).filter((e) => !e.hidden);
+  const list = visibleEngines.length > 0 ? visibleEngines : null;
+  const [index, setIndex] = useState(0);
+
+  if (!list) {
+    if (summary.source === "unavailable" || summary.keywordsTracked === 0) {
+      return (
+        <p className="bars-empty">
+          No ranking data for this period. Connect SE Ranking (SERANKING_API_KEY) or import a rankings
+          CSV from the client&apos;s admin page.
+        </p>
+      );
+    }
+    return <SummaryPanel summary={summary} />;
+  }
+
+  const safeIndex = Math.min(index, list.length - 1);
+  const current = list[safeIndex];
+  return (
+    <div>
+      {list.length > 1 ? (
+        <div className="engine-switcher">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setIndex((safeIndex - 1 + list.length) % list.length)}
+          >
+            ‹ Prev
+          </button>
+          <span className="engine-label">
+            <strong>{current.label}</strong> · {safeIndex + 1} of {list.length}
+          </span>
+          <button type="button" className="btn" onClick={() => setIndex((safeIndex + 1) % list.length)}>
+            Next ›
+          </button>
+        </div>
+      ) : (
+        <p className="section-desc">{current.label}</p>
+      )}
+      <SummaryPanel summary={current.summary} />
     </div>
   );
 }

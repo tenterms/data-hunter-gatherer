@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-27T08:55:35.127Z",
+  "generatedAt": "2026-07-27T11:27:30.043Z",
   "dataSource": "live",
   "client": {
     "client_key": "cyber-alchemy",
@@ -1232,7 +1232,8 @@
       "movements": [],
       "source": "unavailable"
     },
-    "keywordClusters": []
+    "keywordClusters": [],
+    "keywordClustersSource": "topic_clusters"
   },
   "findings": {
     "executive_findings": [
