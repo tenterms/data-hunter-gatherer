@@ -50,8 +50,8 @@ export default function NewClientForm() {
       </div>
       <p className="section-desc" style={{ marginTop: 8 }}>
         This sets up the client with their homepage and first reporting month. Leave the month blank to use
-        the most recent full month. Add their key pages, content groups and topic clusters in the Google
-        Sheet afterwards.
+        the most recent full month. Then open the client to add their key pages, content groups and topic
+        clusters.
       </p>
       <ActionMessage state={state} />
     </form>

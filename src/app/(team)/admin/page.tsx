@@ -1,6 +1,6 @@
+import Link from "next/link";
 import { getAdminOverview } from "@/lib/adminActions";
 import NewClientForm from "@/components/admin/NewClientForm";
-import ClientAdminCard from "@/components/admin/ClientAdminCard";
 import SetupSheetButton from "@/components/admin/SetupSheetButton";
 
 export const dynamic = "force-dynamic";
@@ -10,12 +10,39 @@ export default async function AdminPage() {
 
   return (
     <>
-      <h1>Admin</h1>
-      <p className="subtitle">
-        Run everything from here: create clients, add reporting months, import rankings, and generate
-        reports. Detailed configuration (key pages, content groups, topic clusters, DRAW tasks, commentary
-        overrides) lives in the Google Sheet.
-      </p>
+      <h1>Clients</h1>
+      <p className="subtitle">Pick a client to manage their reports, pages, groups and clusters.</p>
+
+      <div className="card">
+        {overview.clients.length === 0 ? (
+          <p className="bars-empty">No clients yet — add the first one below.</p>
+        ) : (
+          <ul className="report-list client-menu">
+            {overview.clients.map(({ client, periods, counts }) => (
+              <li key={client.client_key}>
+                <div>
+                  <Link href={`/admin/${client.client_key}`} className="client-link">
+                    {client.client_name}
+                  </Link>
+                  <div className="meta">
+                    {client.domain} · {periods.length} report month{periods.length === 1 ? "" : "s"} ·{" "}
+                    {counts.pages} key pages · {counts.contentGroups} content groups ·{" "}
+                    {counts.topicClusters} topic clusters
+                  </div>
+                </div>
+                <Link className="btn" href={`/admin/${client.client_key}`}>
+                  Open →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      <div className="card">
+        <h2>Add a new client</h2>
+        <NewClientForm />
+      </div>
 
       <div className="card">
         <h2>Connection status</h2>
@@ -24,16 +51,10 @@ export default async function AdminPage() {
             <span className="badge live">
               {overview.configSource === "sheets" ? "Storage: Google Sheet" : "Storage: built-in database"}
             </span>{" "}
-            {overview.configSource === "sheets" ? (
-              <>
-                Config is read from and written to{" "}
-                <a href={overview.sheetUrl!} target="_blank" rel="noreferrer">
-                  the admin sheet
-                </a>
-                .
-              </>
-            ) : (
-              <>All config is stored by the app itself — nothing to set up.</>
+            {overview.configSource === "sheets" && overview.sheetUrl && (
+              <a href={overview.sheetUrl} target="_blank" rel="noreferrer">
+                open the admin sheet
+              </a>
             )}
           </li>
           <li>
@@ -51,21 +72,6 @@ export default async function AdminPage() {
         </ul>
         {overview.configSource === "sheets" && <SetupSheetButton />}
       </div>
-
-      <div className="card">
-        <h2>Add a new client</h2>
-        <NewClientForm />
-      </div>
-
-      {overview.clients.length === 0 ? (
-        <div className="card">
-          <p className="bars-empty">No clients yet — add the first one above.</p>
-        </div>
-      ) : (
-        overview.clients.map((c) => (
-          <ClientAdminCard key={c.client.client_key} overview={c} sheetUrl={overview.sheetUrl} />
-        ))
-      )}
     </>
   );
 }

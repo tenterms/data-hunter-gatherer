@@ -16,13 +16,9 @@ export default async function DrawEditorPage({
 
   return (
     <>
-      <p style={{ margin: "0 0 4px" }}>
-        <Link href="/admin">← Admin</Link>
-      </p>
-      <h1>
-        {data.client.client_name}: Work grid — {data.period.label}
-      </h1>
+      <h2 style={{ margin: "12px 0 4px" }}>Work grid — {data.period.label}</h2>
       <p className="subtitle">
+        <Link href={`/admin/${clientKey}`}>← Back to months</Link> ·{" "}
         What was completed this month and what&apos;s planned next month, shown in the report&apos;s
         &ldquo;Work completed &amp; planned&rdquo; section.
       </p>

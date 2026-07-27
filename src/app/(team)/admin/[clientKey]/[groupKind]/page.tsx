@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getEditorData } from "@/lib/groupEditor";
 import GroupEditor from "@/components/admin/GroupEditor";
@@ -24,12 +23,7 @@ export default async function GroupEditorPage({
 
   return (
     <>
-      <p style={{ margin: "0 0 4px" }}>
-        <Link href="/admin">← Admin</Link>
-      </p>
-      <h1>
-        {data.client.client_name}: {title}
-      </h1>
+      <h2 style={{ margin: "12px 0 4px" }}>{title}</h2>
       <p className="subtitle">{explainer}</p>
       {data.previewPeriodLabel && (
         <p className="section-desc">Match previews use {data.previewPeriodLabel}.</p>
@@ -37,12 +31,6 @@ export default async function GroupEditorPage({
       <div className="card">
         <GroupEditor clientKey={clientKey} kind={kind} items={data.items} />
       </div>
-      <p className="section-desc">
-        Also see:{" "}
-        <Link href={`/admin/${clientKey}/${kind === "topic" ? "content-groups" : "topic-clusters"}`}>
-          {kind === "topic" ? "Content groups" : "Topic clusters"}
-        </Link>
-      </p>
     </>
   );
 }

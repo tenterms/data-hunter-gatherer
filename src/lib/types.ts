@@ -313,6 +313,21 @@ export interface RankingMovement {
   rankingUrl: string;
 }
 
+/** Tracked-keyword movements grouped by the client's topic clusters. */
+export interface KeywordClusterPerformance {
+  key: string;
+  name: string;
+  tracked: number;
+  up: number;
+  down: number;
+  entered: number;
+  dropped: number;
+  flat: number;
+  averagePosition: { start: number | null; end: number | null };
+  /** biggest single mover in the cluster, for the report table */
+  bestMove: RankingMovement | null;
+}
+
 export interface RankingSummary {
   keywordsTracked: number;
   positionsUp: number;
@@ -416,6 +431,8 @@ export interface ReportSnapshot {
     topicClusters: GroupPerformance[];
     cannibalisation: CannibalisationIssue[];
     rankings: RankingSummary;
+    /** topical performance (by tracked keyword); absent in pre-v2 snapshots */
+    keywordClusters?: KeywordClusterPerformance[];
   };
   findings: Findings;
   commentary: SectionCommentary[];

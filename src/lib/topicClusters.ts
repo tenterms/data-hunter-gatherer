@@ -2,7 +2,9 @@ import type {
   GroupPerformance,
   GrowthMetric,
   GscRow,
+  KeywordClusterPerformance,
   QueryMatchType,
+  RankingMovement,
   TopicClusterRow,
   TopicClusterRuleRow,
 } from "./types";
@@ -90,5 +92,52 @@ export function calculateTopicClusters(
   }
 
   results.sort((a, b) => b.current.clicks - a.current.clicks || b.current.impressions - a.current.impressions);
+  return results;
+}
+
+/**
+ * Topical performance (by keyword): the same cluster rules applied to the
+ * tracked-keyword movements, so rankings can be read topic-by-topic with no
+ * extra configuration.
+ */
+export function calculateKeywordClusters(
+  clusters: TopicClusterRow[],
+  rules: TopicClusterRuleRow[],
+  movements: RankingMovement[],
+): KeywordClusterPerformance[] {
+  const results: KeywordClusterPerformance[] = [];
+
+  for (const cluster of clusters) {
+    if (!cluster.active) continue;
+    const clusterRules = rules.filter(
+      (r) => r.active && r.topic_key === cluster.topic_key && r.client_key === cluster.client_key,
+    );
+    if (clusterRules.filter((r) => r.match_type !== "not_contains").length === 0) continue;
+
+    const matched = movements.filter((m) => clusterMatchesQuery(m.keyword, clusterRules));
+    if (matched.length === 0) continue;
+
+    const starts = matched.map((m) => m.startPosition).filter((p): p is number => p !== null && p > 0);
+    const ends = matched.map((m) => m.endPosition).filter((p): p is number => p !== null && p > 0);
+    const avg = (values: number[]) => (values.length ? values.reduce((a, b) => a + b, 0) / values.length : null);
+
+    const movers = matched.filter((m) => m.direction === "up" || m.direction === "entered");
+    movers.sort((a, b) => (b.change ?? 100 - (b.endPosition ?? 100)) - (a.change ?? 100 - (a.endPosition ?? 100)));
+
+    results.push({
+      key: cluster.topic_key,
+      name: cluster.topic_name,
+      tracked: matched.length,
+      up: matched.filter((m) => m.direction === "up").length,
+      down: matched.filter((m) => m.direction === "down").length,
+      entered: matched.filter((m) => m.direction === "entered").length,
+      dropped: matched.filter((m) => m.direction === "dropped").length,
+      flat: matched.filter((m) => m.direction === "flat").length,
+      averagePosition: { start: avg(starts), end: avg(ends) },
+      bestMove: movers[0] ?? null,
+    });
+  }
+
+  results.sort((a, b) => b.tracked - a.tracked);
   return results;
 }

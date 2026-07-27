@@ -632,6 +632,39 @@ details.debug pre {
   font-variant-numeric: tabular-nums;
 }
 
+/* Client admin area */
+.client-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin: 10px 0 20px;
+  flex-wrap: wrap;
+}
+.client-tabs a {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+.client-tabs a:hover {
+  color: var(--ink);
+  text-decoration: none;
+}
+.client-tabs a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.client-menu .client-link {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.client-menu .client-link:hover {
+  color: var(--accent);
+}
+
 .status-list {
   list-style: none;
   margin: 0 0 14px;

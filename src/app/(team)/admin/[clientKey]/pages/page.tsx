@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPagesEditorData } from "@/lib/pagesEditor";
 import PagesEditor from "@/components/admin/PagesEditor";
@@ -16,10 +15,6 @@ export default async function PagesEditorPage({
 
   return (
     <>
-      <p style={{ margin: "0 0 4px" }}>
-        <Link href="/admin">← Admin</Link>
-      </p>
-      <h1>{data.client.client_name}: Key pages</h1>
       <p className="subtitle">
         The pages you actively work on. Their role decides where they appear in the report&apos;s traffic
         tables, and primary/high-priority pages weight the cannibalisation checker.

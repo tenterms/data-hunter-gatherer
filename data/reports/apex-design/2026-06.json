@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-11T16:26:46.896Z",
+  "generatedAt": "2026-07-27T08:55:30.342Z",
   "dataSource": "mock",
   "client": {
     "client_key": "apex-design",
@@ -2081,7 +2081,120 @@
         }
       ],
       "source": "sheet_import"
-    }
+    },
+    "keywordClusters": [
+      {
+        "key": "product-design-services",
+        "name": "Product Design Services",
+        "tracked": 9,
+        "up": 3,
+        "down": 4,
+        "entered": 1,
+        "dropped": 0,
+        "flat": 1,
+        "averagePosition": {
+          "start": 7.5,
+          "end": 13.11111111111111
+        },
+        "bestMove": {
+          "keyword": "product design studio london",
+          "startPosition": null,
+          "endPosition": 7,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 140,
+          "targetUrl": "https://apexproductdesign.co.uk/",
+          "rankingUrl": "https://apexproductdesign.co.uk/"
+        }
+      },
+      {
+        "key": "invention-services",
+        "name": "Invention Services",
+        "tracked": 5,
+        "up": 2,
+        "down": 2,
+        "entered": 0,
+        "dropped": 1,
+        "flat": 0,
+        "averagePosition": {
+          "start": 18.2,
+          "end": 14.75
+        },
+        "bestMove": {
+          "keyword": "invention services",
+          "startPosition": 8,
+          "endPosition": 2,
+          "change": 6,
+          "direction": "up",
+          "searchVolume": 260,
+          "targetUrl": "https://apexproductdesign.co.uk/services/invention-services",
+          "rankingUrl": "https://apexproductdesign.co.uk/services/invention-services"
+        }
+      },
+      {
+        "key": "prototyping",
+        "name": "Prototyping",
+        "tracked": 5,
+        "up": 3,
+        "down": 2,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 36,
+          "end": 35.2
+        },
+        "bestMove": {
+          "keyword": "product prototyping agency",
+          "startPosition": 43,
+          "endPosition": 18,
+          "change": 25,
+          "direction": "up",
+          "searchVolume": 110,
+          "targetUrl": "https://apexproductdesign.co.uk/services/prototyping",
+          "rankingUrl": "https://apexproductdesign.co.uk/services/prototyping"
+        }
+      },
+      {
+        "key": "cad-design",
+        "name": "CAD Design Services",
+        "tracked": 3,
+        "up": 3,
+        "down": 0,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 12.333333333333334,
+          "end": 4
+        },
+        "bestMove": {
+          "keyword": "cad product design agency",
+          "startPosition": 12,
+          "endPosition": 1,
+          "change": 11,
+          "direction": "up",
+          "searchVolume": 90,
+          "targetUrl": "https://apexproductdesign.co.uk/services/cad-product-design",
+          "rankingUrl": "https://apexproductdesign.co.uk/services/cad-product-design"
+        }
+      },
+      {
+        "key": "concept-product-design",
+        "name": "Concept Product Design",
+        "tracked": 3,
+        "up": 0,
+        "down": 3,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 2.3333333333333335,
+          "end": 23
+        },
+        "bestMove": null
+      }
+    ]
   },
   "findings": {
     "executive_findings": [

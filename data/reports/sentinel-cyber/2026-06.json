@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-11T16:26:46.902Z",
+  "generatedAt": "2026-07-27T08:55:30.703Z",
   "dataSource": "mock",
   "client": {
     "client_key": "sentinel-cyber",
@@ -2014,7 +2014,129 @@
         }
       ],
       "source": "sheet_import"
-    }
+    },
+    "keywordClusters": [
+      {
+        "key": "penetration-testing",
+        "name": "Penetration Testing",
+        "tracked": 4,
+        "up": 3,
+        "down": 1,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 25.25,
+          "end": 27
+        },
+        "bestMove": {
+          "keyword": "penetration testing services",
+          "startPosition": 39,
+          "endPosition": 34,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 720,
+          "targetUrl": "https://sentinelcyber.co.uk/services/penetration-testing",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/penetration-testing"
+        }
+      },
+      {
+        "key": "dtac",
+        "name": "DTAC",
+        "tracked": 3,
+        "up": 2,
+        "down": 1,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 26.333333333333332,
+          "end": 26.666666666666668
+        },
+        "bestMove": {
+          "keyword": "dtac assessment",
+          "startPosition": 52,
+          "endPosition": 41,
+          "change": 11,
+          "direction": "up",
+          "searchVolume": 70,
+          "targetUrl": "https://sentinelcyber.co.uk/services/dtac-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/dtac-compliance"
+        }
+      },
+      {
+        "key": "vciso",
+        "name": "vCISO",
+        "tracked": 2,
+        "up": 1,
+        "down": 0,
+        "entered": 1,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 31,
+          "end": 47
+        },
+        "bestMove": {
+          "keyword": "vciso",
+          "startPosition": null,
+          "endPosition": 65,
+          "change": null,
+          "direction": "entered",
+          "searchVolume": 260,
+          "targetUrl": "https://sentinelcyber.co.uk/services/vciso",
+          "rankingUrl": "https://sentinelcyber.co.uk/blog/what-is-a-vciso"
+        }
+      },
+      {
+        "key": "medtech-security",
+        "name": "Medtech Security",
+        "tracked": 2,
+        "up": 2,
+        "down": 0,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 3.5,
+          "end": 2
+        },
+        "bestMove": {
+          "keyword": "medtech cybersecurity",
+          "startPosition": 4,
+          "endPosition": 2,
+          "change": 2,
+          "direction": "up",
+          "searchVolume": 50,
+          "targetUrl": "https://sentinelcyber.co.uk/sectors/medical-technology",
+          "rankingUrl": "https://sentinelcyber.co.uk/sectors/medical-technology"
+        }
+      },
+      {
+        "key": "compliance",
+        "name": "Compliance",
+        "tracked": 1,
+        "up": 1,
+        "down": 0,
+        "entered": 0,
+        "dropped": 0,
+        "flat": 0,
+        "averagePosition": {
+          "start": 10,
+          "end": 5
+        },
+        "bestMove": {
+          "keyword": "cybersecurity compliance consulting",
+          "startPosition": 10,
+          "endPosition": 5,
+          "change": 5,
+          "direction": "up",
+          "searchVolume": 90,
+          "targetUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance",
+          "rankingUrl": "https://sentinelcyber.co.uk/services/cybersecurity-compliance"
+        }
+      }
+    ]
   },
   "findings": {
     "executive_findings": [

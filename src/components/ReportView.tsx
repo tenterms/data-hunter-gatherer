@@ -7,6 +7,7 @@ import PerformanceBars from "@/components/PerformanceBars";
 import PagesTable from "@/components/PagesTable";
 import CannibalisationTable from "@/components/CannibalisationTable";
 import RankingsSection from "@/components/RankingsSection";
+import KeywordClustersTable from "@/components/KeywordClustersTable";
 import DrawGrid from "@/components/DrawGrid";
 import ChangeBadge from "@/components/ChangeBadge";
 
@@ -14,6 +15,10 @@ import ChangeBadge from "@/components/ChangeBadge";
  * The report itself, shared by two routes:
  *  - team mode: editable commentary, raw-data panel, internal badges
  *  - client mode: read-only, clean, no internals
+ *
+ * Section order (agreed with the team): executive summary → KPI cards →
+ * work grid → traffic (GSC) → visibility (rankings) → topical by keyword →
+ * topical by query → cannibalisation → strategic priorities.
  */
 export default function ReportView({
   snapshot,
@@ -44,18 +49,28 @@ export default function ReportView({
   return (
     <>
       {/* 1. Executive summary */}
+      <ReportSection title="Executive summary">
+        <Commentary section="executive_summary" />
+      </ReportSection>
+
+      {/* 2. Top-level data cards */}
       <div className="kpi-grid">
         {snapshot.kpis.map((kpi) => (
           <KpiCard key={kpi.key} kpi={kpi} />
         ))}
       </div>
-      <ReportSection title="Executive summary">
-        <Commentary section="executive_summary" />
+
+      {/* 3. Work grid (DRAW) */}
+      <ReportSection
+        title="Work completed &amp; planned"
+        description="Design/Development · Reactive SEO · Anything else · Writing"
+      >
+        <DrawGrid tasks={snapshot.drawTasks} />
       </ReportSection>
 
-      {/* 2. Traffic performance */}
+      {/* 4. Traffic changes (GSC) */}
       <ReportSection
-        title="Traffic performance (Google Search Console)"
+        title="Traffic changes (Google Search Console)"
         description="Clicks, impressions, CTR and average position for the key pages, current period vs comparison period."
       >
         <Commentary section="traffic" />
@@ -85,27 +100,42 @@ export default function ReportView({
           {rest.current.impressions.toLocaleString("en-GB")} impressions{" "}
           <ChangeBadge comparison={rest.comparison.impressions} />.
         </p>
+        {metrics.contentGroups.length > 0 && (
+          <>
+            <h3>Content group performance</h3>
+            <Commentary section="content_groups" />
+            <PerformanceBars groups={metrics.contentGroups} />
+          </>
+        )}
       </ReportSection>
 
-      {/* 3. Content groups */}
+      {/* 5. Visibility changes (rankings) */}
       <ReportSection
-        title="Content groups"
-        description="Groups of pages, current period vs comparison period."
+        title="Visibility changes (tracked rankings)"
+        description="Tracked keyword positions, start vs end of the period."
       >
-        <Commentary section="content_groups" />
-        <PerformanceBars groups={metrics.contentGroups} />
+        <Commentary section="rankings" />
+        <RankingsSection summary={metrics.rankings} />
       </ReportSection>
 
-      {/* 4. Topic clusters */}
+      {/* 6. Topical performance (by keyword) */}
       <ReportSection
-        title="Topic clusters"
-        description="Groups of related search queries, current period vs comparison period."
+        title="Topical performance (by keyword)"
+        description="Tracked-keyword ranking movements grouped by topic cluster."
+      >
+        <KeywordClustersTable clusters={metrics.keywordClusters ?? []} />
+      </ReportSection>
+
+      {/* 7. Topical performance (by query) */}
+      <ReportSection
+        title="Topical performance (by query)"
+        description="Search demand by topic: groups of related queries from Search Console, current period vs comparison period."
       >
         <Commentary section="topic_clusters" />
         <PerformanceBars groups={metrics.topicClusters} />
       </ReportSection>
 
-      {/* 5. Cannibalisation catcher */}
+      {/* 8. Cannibalisation catcher */}
       <ReportSection
         title="Cannibalisation catcher"
         description="Queries where more than one page competes in the search results. Click ▸ to see the competing URLs."
@@ -114,24 +144,7 @@ export default function ReportView({
         <CannibalisationTable issues={metrics.cannibalisation} />
       </ReportSection>
 
-      {/* 6. Rankings / visibility */}
-      <ReportSection
-        title="Visibility &amp; rankings"
-        description="Tracked keyword positions, start vs end of the period."
-      >
-        <Commentary section="rankings" />
-        <RankingsSection summary={metrics.rankings} />
-      </ReportSection>
-
-      {/* 7. DRAW tasks */}
-      <ReportSection
-        title="Work completed &amp; planned"
-        description="Design/Development · Reactive SEO · Anything else · Writing"
-      >
-        <DrawGrid tasks={snapshot.drawTasks} />
-      </ReportSection>
-
-      {/* 8. Strategic priorities */}
+      {/* 9. Strategic priorities */}
       <ReportSection title="Strategic priorities">
         <Commentary section="strategic_priorities" />
         {snapshot.strategicNotes.length > 0 && (
@@ -151,7 +164,7 @@ export default function ReportView({
         )}
       </ReportSection>
 
-      {/* 9. Raw data / debug — team only */}
+      {/* 10. Raw data / debug — team only */}
       {mode === "team" && (
         <details className="debug">
           <summary>Raw data &amp; debug (snapshot contents)</summary>

@@ -185,23 +185,123 @@ export class LocalCsvRankingProvider implements RankingProvider {
 }
 
 /**
- * SE Ranking adapter stub.
+ * Live SE Ranking adapter (Project Management API).
  *
- * The runtime app never depends on Claude-only tooling; this adapter is the
- * place to wire the SE Ranking REST API (https://seranking.com/api.html) once
- * an API key is available. Until implemented it returns null so the provider
- * chain falls through to CSV/sheet imports.
+ * Auth: `Authorization: Token <key>`. The client's SE Ranking project is
+ * matched automatically by domain, keyword positions are pulled for the
+ * report period, and start/end positions come from the first/last ranked
+ * dates in the range. Any error returns null so the provider chain falls
+ * through to CSV/sheet imports — a missing project or expired key can never
+ * break report generation.
  */
+const SERANKING_BASE = "https://api.seranking.com/v1/project-management";
+
+interface SerSite {
+  id: number | string;
+  title?: string;
+  name?: string;
+}
+
+interface SerPositionEntry {
+  date?: string;
+  pos?: number | string | null;
+}
+
+interface SerKeyword {
+  id?: number | string;
+  name?: string;
+  keyword?: string;
+  volume?: number | string | null;
+  positions?: SerPositionEntry[];
+  landing_pages?: Array<{ url?: string }>;
+}
+
+interface SerEngineBlock {
+  site_engine_id?: number;
+  keywords?: SerKeyword[];
+}
+
 export class SERankingProvider implements RankingProvider {
   readonly source = "se_ranking_api" as const;
 
-  constructor(private apiKey: string) {}
+  constructor(
+    private apiKey: string,
+    private log: (message: string) => void = () => {},
+  ) {}
 
-  async getKeywordMovements(_client: ClientRow, _period: ReportPeriodRow): Promise<RankingMovement[] | null> {
-    // TODO: implement against SE Ranking's /sites/{id}/positions endpoint.
-    // Requires mapping client_key -> SE Ranking site id (add a column to the
-    // Clients tab when this lands). Returning null keeps the fallback chain alive.
-    return null;
+  private async get<T>(path: string): Promise<T> {
+    const res = await fetch(`${SERANKING_BASE}${path}`, {
+      headers: { Authorization: `Token ${this.apiKey}` },
+    });
+    if (!res.ok) {
+      throw new Error(`SE Ranking API ${res.status} for ${path}`);
+    }
+    return (await res.json()) as T;
+  }
+
+  private async findSiteId(client: ClientRow): Promise<number | string | null> {
+    const sites = await this.get<SerSite[]>("/sites");
+    if (!Array.isArray(sites)) return null;
+    const domain = client.domain.toLowerCase().replace(/^www\./, "");
+    const match = sites.find((s) =>
+      [s.name, s.title].some((v) => (v ?? "").toLowerCase().includes(domain)),
+    );
+    return match?.id ?? null;
+  }
+
+  async getKeywordMovements(client: ClientRow, period: ReportPeriodRow): Promise<RankingMovement[] | null> {
+    try {
+      const siteId = await this.findSiteId(client);
+      if (siteId === null) {
+        this.log(`SE Ranking: no project matching "${client.domain}" — falling back to imports.`);
+        return null;
+      }
+      const blocks = await this.get<SerEngineBlock[]>(
+        `/sites/positions?site_id=${siteId}&date_from=${period.start_date}&date_to=${period.end_date}`,
+      );
+      if (!Array.isArray(blocks)) return null;
+
+      const toPos = (value: number | string | null | undefined): number | null => {
+        const n = Number(value);
+        return Number.isFinite(n) && n > 0 && n <= 200 ? n : null;
+      };
+
+      const movements = new Map<string, RankingMovement>();
+      for (const block of blocks) {
+        for (const kw of block.keywords ?? []) {
+          const keyword = (kw.name ?? kw.keyword ?? String(kw.id ?? "")).trim();
+          if (!keyword || movements.has(keyword)) continue;
+          const entries = (kw.positions ?? [])
+            .filter((p) => p.date)
+            .sort((a, b) => String(a.date).localeCompare(String(b.date)));
+          if (entries.length === 0) continue;
+          const startPosition = toPos(entries[0].pos);
+          const endPosition = toPos(entries[entries.length - 1].pos);
+          const { change, direction } = classifyMovement(startPosition, endPosition);
+          movements.set(keyword, {
+            keyword,
+            startPosition,
+            endPosition,
+            change,
+            direction,
+            searchVolume: Number.isFinite(Number(kw.volume)) ? Number(kw.volume) : null,
+            targetUrl: "",
+            rankingUrl: kw.landing_pages?.[0]?.url ?? "",
+          });
+        }
+      }
+      if (movements.size === 0) {
+        this.log("SE Ranking: project found but no keyword positions in the period.");
+        return null;
+      }
+      this.log(`SE Ranking: pulled ${movements.size} tracked keywords for ${client.domain}.`);
+      return [...movements.values()];
+    } catch (error) {
+      this.log(
+        `SE Ranking API failed (${error instanceof Error ? error.message : error}) — falling back to imports.`,
+      );
+      return null;
+    }
   }
 }
 

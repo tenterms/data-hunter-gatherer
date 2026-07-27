@@ -12,7 +12,7 @@ import {
 } from "./rankings";
 import { aggregateRows, compareMetricSets, EMPTY_METRICS, formatChangePct, formatNumber, formatPct, formatPosition } from "./metrics";
 import { calculateContentGroups, urlMatches } from "./contentGroups";
-import { calculateTopicClusters } from "./topicClusters";
+import { calculateKeywordClusters, calculateTopicClusters } from "./topicClusters";
 import { findCannibalisation } from "./cannibalisation";
 import { buildFindings } from "./findingsEngine";
 import { buildCommentary } from "./commentary";
@@ -221,11 +221,12 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
 
   // --- Rankings -----------------------------------------------------------------
   const rankingProviders: RankingProvider[] = [];
-  if (app.seRankingApiKey) rankingProviders.push(new SERankingProvider(app.seRankingApiKey));
+  if (app.seRankingApiKey) rankingProviders.push(new SERankingProvider(app.seRankingApiKey, log));
   rankingProviders.push(new LocalCsvRankingProvider());
   rankingProviders.push(new SheetImportRankingProvider(config.rankingImports));
   const rankings = await resolveRankings(rankingProviders, client, period);
   log(`Rankings: ${rankings.keywordsTracked} tracked keywords via ${rankings.source}.`);
+  const keywordClusters = calculateKeywordClusters(clientClusters, clientClusterRules, rankings.movements);
 
   // --- Findings (deterministic, always first) --------------------------------------
   const computation = {
@@ -287,6 +288,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       topicClusters,
       cannibalisation,
       rankings,
+      keywordClusters,
     },
     findings,
     commentary,
