@@ -849,3 +849,13 @@ code {
     grid-template-columns: 1fr;
   }
 }
+.test-output {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 0 12px;
+}

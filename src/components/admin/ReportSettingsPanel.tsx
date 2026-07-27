@@ -35,6 +35,26 @@ function EnginesCard({
 }) {
   const { state, run } = useAction();
   const [engines, setEngines] = useState<EngineSetting[]>(initialEngines);
+  const [testing, setTesting] = useState(false);
+  const [testLines, setTestLines] = useState<string[] | null>(null);
+
+  async function testConnection() {
+    setTesting(true);
+    setTestLines(null);
+    try {
+      const res = await fetch("/api/admin/seranking-test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ clientKey }),
+      });
+      const data = (await res.json()) as { message: string; lines: string[] };
+      setTestLines([...(data.lines ?? []), ...(data.lines?.length ? [] : [data.message])]);
+    } catch (error) {
+      setTestLines([`Test failed: ${error instanceof Error ? error.message : "unknown error"}`]);
+    } finally {
+      setTesting(false);
+    }
+  }
 
   function move(index: number, delta: number) {
     const target = index + delta;
@@ -63,10 +83,18 @@ function EnginesCard({
         location) with next/previous controls. Drag the order with the arrows, rename the labels, and
         hide any engine the client shouldn&apos;t see.
       </p>
+      <div className="btn-row" style={{ marginBottom: 12 }}>
+        <button className="btn" onClick={testConnection} disabled={testing}>
+          {testing ? "Testing…" : "Test SE Ranking connection"}
+        </button>
+      </div>
+      {testLines && (
+        <pre className="test-output">{testLines.join("\n")}</pre>
+      )}
       {engines.length === 0 ? (
         <p className="bars-empty">
-          No search engines found yet — generate a report with SE Ranking connected and they&apos;ll
-          appear here.
+          No search engines found yet — run the connection test above, then generate a report and
+          they&apos;ll appear here.
         </p>
       ) : (
         <>
