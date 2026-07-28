@@ -552,6 +552,20 @@
       "topic_name": "Penetration Testing",
       "description": "",
       "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "topic_name": "Healthcare Cyber Security",
+      "description": "Healthcare-sector cyber security queries (all phrasing variants)",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "topic_name": "NHS Compliance (DTAC & DSP Toolkit)",
+      "description": "NHS DTAC, DSP Toolkit / DSPT and NHS cyber security queries",
+      "active": "true"
     }
   ],
   "TopicClusterRules": [
@@ -728,6 +742,118 @@
       "topic_key": "penetration-testing",
       "match_type": "contains",
       "query_text": "pen test",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "healthcare cyber",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "cybersecurity healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "security healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "cybersecurity in healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "cyber security in healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "cybersecurity for healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "cyber security for healthcare",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "healthcare-cyber-security",
+      "match_type": "contains",
+      "query_text": "medical device cyber",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "dtac",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "dsp toolkit",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "dspt",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "data security and protection toolkit",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "nhs cyber",
+      "case_sensitive": "false",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "topic_key": "nhs-compliance",
+      "match_type": "contains",
+      "query_text": "nhs data security",
       "case_sensitive": "false",
       "active": "true"
     }
@@ -946,6 +1072,106 @@
       "location": "United Kingdom",
       "device": "desktop",
       "target_url": "https://sentinelcyber.co.uk/services/dtac-compliance",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "nhs dtac",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "dtac compliance",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "dtac assessment",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "dsp toolkit",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "dsp toolkit consultancy",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "nhs data security and protection toolkit",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "medium",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "nhs cyber security",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "healthcare cybersecurity",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "cyber security in healthcare",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
+      "priority": "high",
+      "active": "true"
+    },
+    {
+      "client_key": "cyber-alchemy",
+      "keyword": "medical device cybersecurity",
+      "market": "google.co.uk",
+      "location": "United Kingdom",
+      "device": "desktop",
+      "target_url": "https://cyberalchemy.co.uk/",
       "priority": "medium",
       "active": "true"
     }
