@@ -7,9 +7,9 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
       <header className="site-header">
         <div className="inner">
           <Link href="/" className="brand">
-            SEO Reporting
+            TenTerms<span className="tm">™</span>
           </Link>
-          <span className="sub">internal monthly reports</span>
+          <span className="sub">SEO reporting</span>
           <nav className="header-nav">
             <Link href="/">Reports</Link>
             <Link href="/admin">Admin</Link>

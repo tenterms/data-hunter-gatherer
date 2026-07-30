@@ -18,6 +18,9 @@ export default async function SharedReportPage({ params }: { params: Promise<{ t
   return (
     <main className="container share-view">
       <header className="share-header">
+        <div className="share-brand">
+          TenTerms<span className="tm">™</span>
+        </div>
         <h1>
           {snapshot.client.client_name} — {snapshot.period.label}
         </h1>

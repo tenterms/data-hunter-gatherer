@@ -1,18 +1,44 @@
+/*
+ * TenTerms brand (Brand Book v1.0):
+ *   Core primary  — Slate        #192832
+ *   Accent 1      — Blue Bolt    #46faff
+ *   Accent 2      — Violet Volt  #b496ff
+ *   Accent 3      — Electric Orange #ff8c55
+ *   Typeface      — Inter (all weights; wordmark font Cera is logo-only)
+ *   Tints of the accents (25% / 50%) and slate (80/60/40/20) are permitted.
+ */
 :root {
-  --bg: #fafafa;
+  /* brand palette */
+  --slate: #192832;
+  --slate-80: #47535b;
+  --slate-60: #757e84;
+  --slate-40: #a3a9ad;
+  --slate-20: #d1d4d6;
+  --blue-bolt: #46faff;
+  --blue-bolt-50: #a2fcff;
+  --blue-bolt-25: #d1feff;
+  --violet-volt: #b496ff;
+  --violet-volt-50: #d9caff;
+  --violet-volt-25: #ece5ff;
+  --electric-orange: #ff8c55;
+  --electric-orange-50: #ffc5aa;
+  --electric-orange-25: #ffe2d4;
+
+  /* applied tokens */
+  --bg: #f2f4f5;
   --surface: #ffffff;
-  --ink: #17181c;
-  --ink-secondary: #4b5563;
-  --ink-muted: #8b93a1;
-  --border: #e6e8ee;
-  --bar-fill: #e8edfb;
-  --bar-fill-strong: #d5defa;
-  --accent: #2f5fde;
+  --ink: var(--slate);
+  --ink-secondary: var(--slate-80);
+  --ink-muted: var(--slate-60);
+  --border: #dfe3e6;
+  --bar-fill: var(--blue-bolt-25);
+  --bar-fill-strong: var(--blue-bolt-50);
+  --accent: var(--slate);
   --positive: #1a7f37;
   --negative: #d1242f;
-  --warning: #9a6700;
-  --neutral: #6b7280;
-  --radius: 10px;
+  --warning: #a04f1d;
+  --neutral: var(--slate-60);
+  --radius: 12px;
 }
 
 * {
@@ -25,17 +51,21 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Inter Variable", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   font-size: 15px;
   line-height: 1.5;
 }
 
 a {
   color: var(--accent);
+  font-weight: 600;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
+  text-decoration-color: var(--blue-bolt);
+  text-decoration-thickness: 2px;
 }
 
 .container {
@@ -44,10 +74,10 @@ a:hover {
   padding: 24px 20px 80px;
 }
 
+/* Slate header with the negative (Blue Bolt on slate) brand treatment. */
 .site-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
+  background: var(--slate);
+  padding: 16px 20px;
 }
 .site-header .inner {
   max-width: 1100px;
@@ -57,22 +87,45 @@ a:hover {
   gap: 12px;
 }
 .site-header .brand {
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 16px;
+  font-weight: 800;
+  color: var(--blue-bolt);
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.site-header .brand:hover {
+  text-decoration: none;
+}
+.site-header .brand .tm {
+  font-size: 9px;
+  vertical-align: super;
+  font-weight: 600;
 }
 .site-header .sub {
-  color: var(--ink-muted);
+  color: var(--slate-40);
   font-size: 13px;
+}
+.site-header .header-nav a {
+  color: #ffffff;
+}
+.site-header .header-nav a:hover {
+  color: var(--blue-bolt);
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 26px;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   margin: 18px 0 4px;
 }
 h2 {
   font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   margin: 0 0 4px;
+}
+h3 {
+  font-weight: 700;
 }
 .subtitle {
   color: var(--ink-secondary);
@@ -106,23 +159,23 @@ h2 {
 }
 .badge.mock {
   color: var(--warning);
-  border-color: #f1dfb2;
-  background: #fff8e6;
+  border-color: var(--electric-orange-50);
+  background: var(--electric-orange-25);
 }
 .badge.live {
-  color: var(--positive);
-  border-color: #c3e6cd;
-  background: #f0faf3;
+  color: var(--slate);
+  border-color: var(--blue-bolt-50);
+  background: var(--blue-bolt-25);
 }
 .badge.flag-high {
-  color: var(--negative);
-  border-color: #f3c4c7;
-  background: #fdf2f3;
+  color: #b34a13;
+  border-color: var(--electric-orange-50);
+  background: var(--electric-orange-25);
 }
 .badge.flag-medium {
-  color: var(--warning);
-  border-color: #f1dfb2;
-  background: #fff8e6;
+  color: #5d3ba8;
+  border-color: var(--violet-volt-50);
+  background: var(--violet-volt-25);
 }
 .badge.flag-low {
   color: var(--neutral);
@@ -139,6 +192,7 @@ h2 {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  border-top: 3px solid var(--blue-bolt);
   padding: 16px 18px;
 }
 .kpi-card .label {
@@ -150,7 +204,8 @@ h2 {
 }
 .kpi-card .value {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   margin: 4px 0 2px;
   font-variant-numeric: tabular-nums;
 }
@@ -221,8 +276,10 @@ h2 {
   padding: 2px 6px;
 }
 .metric-toggle button.active {
-  color: var(--accent);
+  color: var(--ink);
   text-decoration: underline;
+  text-decoration-color: var(--blue-bolt);
+  text-decoration-thickness: 2px;
 }
 
 .bar-row {
@@ -370,9 +427,9 @@ table.data tr:last-child td {
 
 /* Commentary */
 .commentary {
-  background: #f6f8ff;
-  border: 1px solid #dfe6fb;
-  border-radius: 8px;
+  background: #eafeff;
+  border: 1px solid var(--blue-bolt-50);
+  border-radius: 10px;
   padding: 14px 16px;
   margin-bottom: 12px;
   white-space: pre-line;
@@ -386,8 +443,8 @@ table.data tr:last-child td {
   color: var(--ink-muted);
 }
 .commentary.overridden {
-  background: #f3faf4;
-  border-color: #cdeed4;
+  background: var(--violet-volt-25);
+  border-color: var(--violet-volt-50);
 }
 .suggested-collapsed summary {
   cursor: pointer;
@@ -405,7 +462,7 @@ details.debug summary {
   color: var(--ink-muted);
 }
 details.debug pre {
-  background: #14161a;
+  background: var(--slate);
   color: #d7dce3;
   border-radius: 8px;
   padding: 14px;
@@ -450,27 +507,30 @@ details.debug pre {
 /* Admin forms & buttons */
 .btn {
   display: inline-block;
-  border: 1px solid var(--border);
+  border: 1px solid var(--slate-20);
   background: var(--surface);
   color: var(--ink);
-  border-radius: 8px;
-  padding: 7px 14px;
+  border-radius: 999px;
+  padding: 7px 16px;
   font-size: 14px;
   font-weight: 600;
+  font-family: inherit;
   cursor: pointer;
   text-decoration: none;
 }
 .btn:hover {
-  background: var(--bg);
+  background: var(--blue-bolt-25);
+  border-color: var(--blue-bolt-50);
   text-decoration: none;
 }
 .btn.primary {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--slate);
+  border-color: var(--slate);
   color: #fff;
 }
 .btn.primary:hover {
-  background: #274fc0;
+  background: #2b3d4a;
+  border-color: #2b3d4a;
 }
 .btn:disabled {
   opacity: 0.55;
@@ -591,8 +651,11 @@ details.debug pre {
   color: var(--negative);
 }
 .btn.danger {
-  color: var(--negative);
-  border-color: #f3c4c7;
+  color: #b34a13;
+  border-color: var(--electric-orange-50);
+}
+.btn.danger:hover {
+  background: var(--electric-orange-25);
 }
 .preview-panel {
   border-top: 1px solid var(--border);
@@ -653,8 +716,8 @@ details.debug pre {
   text-decoration: none;
 }
 .client-tabs a.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+  color: var(--ink);
+  border-bottom: 3px solid var(--blue-bolt);
 }
 .client-menu .client-link {
   font-size: 17px;
@@ -762,10 +825,10 @@ details.debug pre {
 }
 
 .notice {
-  background: #fff8e6;
-  border: 1px solid #f1dfb2;
+  background: var(--electric-orange-25);
+  border: 1px solid var(--electric-orange-50);
   color: var(--warning);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 12px 16px;
   font-size: 14px;
   margin-bottom: 20px;
@@ -878,15 +941,19 @@ code {
   min-width: 150px;
 }
 .draw-matrix thead th {
-  background: var(--bg);
-  font-size: 13px;
+  background: var(--slate);
+  border-color: var(--slate);
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--ink-secondary);
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+.draw-matrix thead th:first-child {
+  background: var(--slate);
 }
 .draw-matrix .draw-row-label {
   background: var(--bg);
-  font-weight: 600;
+  font-weight: 700;
   width: 170px;
   min-width: 140px;
 }
@@ -952,4 +1019,39 @@ code {
 /* Dimmed (hidden-from-client) rows in team tables */
 tr.row-dimmed td {
   opacity: 0.45;
+}
+
+/* TenTerms brand touches */
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+.card > h2 {
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.card > h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 36px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--blue-bolt);
+}
+.share-brand {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--slate);
+  margin: 4px 0 2px;
+}
+.share-brand .tm {
+  font-size: 8px;
+  vertical-align: super;
+  font-weight: 600;
 }
