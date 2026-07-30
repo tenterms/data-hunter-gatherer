@@ -101,10 +101,17 @@ beforeAll(async () => {
       res.writeHead(401).end(JSON.stringify({ message: "unauthorised" }));
       return;
     }
-    const body = fixtures[url.pathname];
+    let body = fixtures[url.pathname];
     if (!body) {
       res.writeHead(404).end("{}");
       return;
+    }
+    // Like the real API, a site_engine_id filter narrows positions to one engine.
+    const engineFilter = url.searchParams.get("site_engine_id");
+    if (url.pathname === "/sites/positions" && engineFilter) {
+      body = (body as Array<{ site_engine_id: number }>).filter(
+        (b) => String(b.site_engine_id) === engineFilter,
+      );
     }
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify(body));

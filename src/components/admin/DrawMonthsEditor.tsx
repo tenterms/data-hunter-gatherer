@@ -25,8 +25,8 @@ const CATEGORY_LABELS: Record<DrawCategory, string> = {
 };
 
 const TIMING_LABELS: Record<DrawTiming, string> = {
-  completed_this_month: "Completed",
-  planned_next_month: "Planned next",
+  planned_next_month: "Priority task",
+  completed_this_month: "What we did",
 };
 
 /**

@@ -309,11 +309,13 @@ export class SERankingProvider implements RankingProvider {
       return Number.isFinite(n) && n > 0 && n <= 200 ? n : null;
     };
     const movements: RankingMovement[] = [];
+    const seen = new Set<string>();
     for (const kw of block.keywords ?? []) {
       // The positions endpoint only carries keyword IDs; names come from /keywords.
       const info = keywordInfoById.get(String(kw.id ?? ""));
       const keyword = (kw.name ?? kw.keyword ?? info?.name ?? "").trim();
-      if (!keyword) continue;
+      if (!keyword || seen.has(keyword)) continue;
+      seen.add(keyword);
       const entries = (kw.positions ?? [])
         .filter((p) => p.date)
         .sort((a, b) => String(a.date).localeCompare(String(b.date)));
@@ -404,11 +406,53 @@ export class SERankingProvider implements RankingProvider {
   }
 
   /**
-   * Full per-search-engine pull: one positions call returns a block per
-   * search engine configured in the SE Ranking project. Keyword names,
-   * group names and engine labels are joined in from the lookup endpoints
-   * (best-effort — missing lookups degrade to generic labels, never to a
-   * failed pull).
+   * Positions, one call per configured search engine. A single combined call
+   * can come back with only the project's default engine, so when the engine
+   * list is known each engine is queried explicitly with site_engine_id and
+   * the blocks are merged (falling back to one combined call otherwise).
+   */
+  private async fetchEngineBlocks(
+    siteId: number | string,
+    period: ReportPeriodRow,
+    engines: SerSiteEngine[],
+  ): Promise<SerEngineBlock[]> {
+    const posPath = (extra: string) =>
+      `/sites/positions?site_id=${siteId}&date_from=${period.start_date}&date_to=${period.end_date}${extra}`;
+
+    const merged = new Map<string, SerEngineBlock>();
+    const addBlocks = (list: SerEngineBlock[], fallbackEngineId?: number | string) => {
+      for (const block of Array.isArray(list) ? list : []) {
+        const id = String(block.site_engine_id ?? fallbackEngineId ?? merged.size);
+        const existing = merged.get(id);
+        if (existing) {
+          existing.keywords = [...(existing.keywords ?? []), ...(block.keywords ?? [])];
+        } else {
+          merged.set(id, { site_engine_id: id, keywords: [...(block.keywords ?? [])] });
+        }
+      }
+    };
+
+    if (engines.length > 0) {
+      const perEngine = await Promise.all(
+        engines.map((e) =>
+          this.get<SerEngineBlock[]>(posPath(`&site_engine_id=${e.site_engine_id}`)).catch(
+            () => [] as SerEngineBlock[],
+          ),
+        ),
+      );
+      engines.forEach((e, i) => addBlocks(perEngine[i], e.site_engine_id));
+    }
+    if (merged.size === 0) {
+      const combined = await this.get<SerEngineBlock[]>(posPath("")).catch(() => [] as SerEngineBlock[]);
+      addBlocks(combined);
+    }
+    return [...merged.values()];
+  }
+
+  /**
+   * Full per-search-engine pull. Keyword names, group names and engine
+   * labels are joined in from the lookup endpoints (best-effort — missing
+   * lookups degrade to generic labels, never to a failed pull).
    */
   async getEngineData(client: ClientRow, period: ReportPeriodRow): Promise<EngineMovements[] | null> {
     try {
@@ -417,13 +461,9 @@ export class SERankingProvider implements RankingProvider {
         this.log(`SE Ranking: no project matching "${client.domain}" — falling back to imports.`);
         return null;
       }
-      const [blocks, lookups] = await Promise.all([
-        this.get<SerEngineBlock[]>(
-          `/sites/positions?site_id=${siteId}&date_from=${period.start_date}&date_to=${period.end_date}`,
-        ),
-        this.fetchLookups(siteId),
-      ]);
-      if (!Array.isArray(blocks) || blocks.length === 0) {
+      const lookups = await this.fetchLookups(siteId);
+      const blocks = await this.fetchEngineBlocks(siteId, period, lookups.engines);
+      if (blocks.length === 0) {
         this.log("SE Ranking: positions response was empty — falling back to imports.");
         return null;
       }
@@ -504,10 +544,8 @@ export class SERankingProvider implements RankingProvider {
         `${lookups.keywordInfoById.size > 0 ? "✓" : "✗"} ${lookups.keywordInfoById.size} keywords, ${lookups.groupNames.size} keyword group${lookups.groupNames.size === 1 ? "" : "s"}${lookups.groupNames.size > 0 ? ` (${[...lookups.groupNames.values()].slice(0, 8).join(", ")})` : ""}.`,
       );
 
-      const blocks = await this.get<SerEngineBlock[]>(
-        `/sites/positions?site_id=${match.id}&date_from=${period.start_date}&date_to=${period.end_date}`,
-      );
-      if (!Array.isArray(blocks) || blocks.length === 0) {
+      const blocks = await this.fetchEngineBlocks(match.id, period, lookups.engines);
+      if (blocks.length === 0) {
         lines.push(`✗ No position data between ${period.start_date} and ${period.end_date}.`);
         return lines;
       }

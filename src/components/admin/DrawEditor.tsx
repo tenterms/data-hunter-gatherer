@@ -19,8 +19,8 @@ const CATEGORY_LABELS: Record<DrawCategory, string> = {
 };
 
 const TIMING_LABELS: Record<DrawTiming, string> = {
-  completed_this_month: "Completed this month",
-  planned_next_month: "Planned next month",
+  planned_next_month: "Priority tasks this month",
+  completed_this_month: "What we did last month",
 };
 
 /** Editor for the month's DRAW work grid. */
@@ -103,9 +103,9 @@ export default function DrawEditor({
 
   return (
     <div>
-      {section("completed_this_month")}
-      <div style={{ height: 18 }} />
       {section("planned_next_month")}
+      <div style={{ height: 18 }} />
+      {section("completed_this_month")}
       <div className="btn-row" style={{ marginTop: 16 }}>
         <button className="btn primary" onClick={save} disabled={busy}>
           {busy ? "Saving…" : "Save tasks"}

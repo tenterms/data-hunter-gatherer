@@ -7,7 +7,6 @@ import PerformanceBars from "@/components/PerformanceBars";
 import PagesTable from "@/components/PagesTable";
 import CannibalisationTable from "@/components/CannibalisationTable";
 import RankingsSection from "@/components/RankingsSection";
-import KeywordClustersTable from "@/components/KeywordClustersTable";
 import DrawGrid from "@/components/DrawGrid";
 import ChangeBadge from "@/components/ChangeBadge";
 
@@ -64,9 +63,12 @@ export default function ReportView({
       {/* 3. Work grid (DRAW) */}
       <ReportSection
         title="Work completed &amp; planned"
-        description="Design/Development · Reactive SEO · Anything else · Writing"
+        description="Priority tasks this month and what we did last month, across the four DRAW workstreams."
       >
-        <DrawGrid tasks={snapshot.drawTasks} />
+        <DrawGrid
+          tasks={snapshot.drawTasks}
+          editable={mode === "team" ? { clientKey, periodKey } : undefined}
+        />
       </ReportSection>
 
       {/* 4. Strategic priorities */}
@@ -113,23 +115,42 @@ export default function ReportView({
             <PagesTable pages={supportingPages} />
           </>
         )}
-        <h3>Rest of site</h3>
-        <p className="section-desc">
-          Everything not tracked as a key page ({rest.pageCount} URLs):{" "}
-          {rest.current.clicks.toLocaleString("en-GB")} clicks{" "}
-          <ChangeBadge comparison={rest.comparison.clicks} />,{" "}
-          {rest.current.impressions.toLocaleString("en-GB")} impressions{" "}
-          <ChangeBadge comparison={rest.comparison.impressions} />.
-        </p>
+        <div className="nested-box">
+          <h3>Rest of site</h3>
+          <p className="section-desc">
+            Everything beyond the tracked key pages — {rest.pageCount.toLocaleString("en-GB")} URLs
+            picking up search traffic across the wider site.
+          </p>
+          <div className="mini-stats">
+            <div>
+              <div className="label">Clicks</div>
+              <div className="value">
+                {rest.current.clicks.toLocaleString("en-GB")}{" "}
+                <ChangeBadge comparison={rest.comparison.clicks} />
+              </div>
+            </div>
+            <div>
+              <div className="label">Impressions</div>
+              <div className="value">
+                {rest.current.impressions.toLocaleString("en-GB")}{" "}
+                <ChangeBadge comparison={rest.comparison.impressions} />
+              </div>
+            </div>
+            <div>
+              <div className="label">Click-through rate</div>
+              <div className="value">{(rest.current.ctr * 100).toFixed(2)}%</div>
+            </div>
+          </div>
+        </div>
         {metrics.contentGroups.length > 0 && (
-          <>
+          <div className="nested-box">
             <h3>Content group performance</h3>
             <Commentary section="content_groups" />
             <PerformanceBars groups={metrics.contentGroups} />
-          </>
+          </div>
         )}
         {metrics.topicClusters.length > 0 && (
-          <>
+          <div className="nested-box">
             <h3>Keyword group performance</h3>
             <p className="section-desc">
               Search demand by topic: groups of related queries from Search Console, current period vs
@@ -137,7 +158,7 @@ export default function ReportView({
             </p>
             <Commentary section="topic_clusters" />
             <PerformanceBars groups={metrics.topicClusters} />
-          </>
+          </div>
         )}
       </ReportSection>
 
@@ -148,17 +169,6 @@ export default function ReportView({
       >
         <Commentary section="rankings" />
         <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
-        {(metrics.keywordClusters ?? []).length > 0 && (
-          <>
-            <h3>Keyword groups</h3>
-            <p className="section-desc">
-              {metrics.keywordClustersSource === "se_ranking_groups"
-                ? "Tracked-keyword movements grouped by the SE Ranking keyword groups set up for this client."
-                : "Tracked-keyword movements grouped by the topic clusters set up for this client."}
-            </p>
-            <KeywordClustersTable clusters={metrics.keywordClusters ?? []} />
-          </>
-        )}
       </ReportSection>
 
       {/* 7. Cannibalisation catcher */}
@@ -167,12 +177,16 @@ export default function ReportView({
         description="Queries where more than one page competes in the search results. Click ▸ to see the competing URLs."
       >
         <Commentary section="cannibalisation" />
-        <CannibalisationTable issues={metrics.cannibalisation.filter((i) => !i.hidden)} />
-        {mode === "team" && metrics.cannibalisation.some((i) => i.hidden) && (
-          <p className="section-desc">
-            {metrics.cannibalisation.filter((i) => i.hidden).length} row(s) hidden by the team — manage
-            these from the client&apos;s admin page.
-          </p>
+        {mode === "team" ? (
+          <>
+            <p className="section-desc">
+              Use the &ldquo;In report?&rdquo; toggle to curate what the client sees — hidden rows are
+              dimmed here and left out of the published report.
+            </p>
+            <CannibalisationTable issues={metrics.cannibalisation} curation={{ clientKey }} />
+          </>
+        ) : (
+          <CannibalisationTable issues={metrics.cannibalisation.filter((i) => !i.hidden)} />
         )}
       </ReportSection>
 

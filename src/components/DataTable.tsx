@@ -22,6 +22,7 @@ export default function DataTable<T>({
   expandable,
   defaultSortKey,
   defaultDescending = true,
+  rowClassName,
 }: {
   columns: Column<T>[];
   rows: T[];
@@ -29,6 +30,7 @@ export default function DataTable<T>({
   expandable?: (row: T) => ReactNode;
   defaultSortKey?: string;
   defaultDescending?: boolean;
+  rowClassName?: (row: T) => string;
 }) {
   const [sortKey, setSortKey] = useState<string | null>(defaultSortKey ?? null);
   const [descending, setDescending] = useState(defaultDescending);
@@ -96,6 +98,7 @@ export default function DataTable<T>({
                 expandable={expandable}
                 isOpen={isOpen}
                 onToggle={() => toggleExpand(key)}
+                className={rowClassName?.(row)}
               />
             );
           })}
@@ -111,16 +114,18 @@ function FragmentRow<T>({
   expandable,
   isOpen,
   onToggle,
+  className,
 }: {
   row: T;
   columns: Column<T>[];
   expandable?: (row: T) => ReactNode;
   isOpen: boolean;
   onToggle: () => void;
+  className?: string;
 }) {
   return (
     <>
-      <tr>
+      <tr className={className || undefined}>
         {expandable && (
           <td style={{ width: 28 }}>
             <button className="row-toggle" onClick={onToggle} aria-expanded={isOpen}>

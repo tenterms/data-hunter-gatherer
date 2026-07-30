@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import type { CannibalisationIssue } from "@/lib/types";
 import DataTable, { type Column } from "./DataTable";
 
@@ -7,7 +9,7 @@ function fmt(n: number): string {
   return n.toLocaleString("en-GB");
 }
 
-const columns: Column<CannibalisationIssue>[] = [
+const baseColumns: Column<CannibalisationIssue>[] = [
   { key: "query", header: "Query", sortValue: (i) => i.query, render: (i) => i.query },
   { key: "pages", header: "Pages", numeric: true, sortValue: (i) => i.pageCount, render: (i) => i.pageCount },
   { key: "clicks", header: "Clicks", numeric: true, sortValue: (i) => i.clicks, render: (i) => fmt(i.clicks) },
@@ -41,16 +43,78 @@ const columns: Column<CannibalisationIssue>[] = [
   },
 ];
 
-export default function CannibalisationTable({ issues }: { issues: CannibalisationIssue[] }) {
+/**
+ * Cannibalisation table. With `curation` set (team report view), every row —
+ * including hidden ones, shown dimmed — gets a shown/hidden toggle that saves
+ * immediately; the client view only ever receives the visible rows.
+ */
+export default function CannibalisationTable({
+  issues,
+  curation,
+}: {
+  issues: CannibalisationIssue[];
+  curation?: { clientKey: string };
+}) {
+  const router = useRouter();
+  const [hiddenOverride, setHiddenOverride] = useState<Record<string, boolean>>({});
+  const [savingQuery, setSavingQuery] = useState<string | null>(null);
+
   if (issues.length === 0) {
     return <p className="bars-empty">No queries with more than one page receiving impressions — nothing to fix here.</p>;
   }
+
+  const isHidden = (issue: CannibalisationIssue) => hiddenOverride[issue.query] ?? !!issue.hidden;
+
+  async function toggle(issue: CannibalisationIssue) {
+    if (!curation) return;
+    const nextHiddenList = issues
+      .filter((i) => (i.query === issue.query ? !isHidden(i) : isHidden(i)))
+      .map((i) => i.query);
+    setHiddenOverride((prev) => ({ ...prev, [issue.query]: !isHidden(issue) }));
+    setSavingQuery(issue.query);
+    try {
+      await fetch("/api/admin/cannibalisation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ clientKey: curation.clientKey, hiddenQueries: nextHiddenList }),
+      });
+      router.refresh();
+    } finally {
+      setSavingQuery(null);
+    }
+  }
+
+  const columns: Column<CannibalisationIssue>[] = curation
+    ? [
+        ...baseColumns,
+        {
+          key: "visible",
+          header: "In report?",
+          numeric: true,
+          sortValue: (i) => (isHidden(i) ? 0 : 1),
+          render: (i) => (
+            <button
+              className={`row-toggle ${isHidden(i) ? "off" : ""}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggle(i);
+              }}
+              disabled={savingQuery === i.query}
+            >
+              {savingQuery === i.query ? "…" : isHidden(i) ? "hidden" : "shown"}
+            </button>
+          ),
+        },
+      ]
+    : baseColumns;
+
   return (
     <DataTable
       columns={columns}
       rows={issues}
       rowKey={(i) => i.query}
       defaultSortKey="priority"
+      rowClassName={curation ? (i) => (isHidden(i) ? "row-dimmed" : "") : undefined}
       expandable={(issue) => (
         <table className="sub-table">
           <tbody>

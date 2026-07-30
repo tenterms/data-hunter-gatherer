@@ -791,15 +791,6 @@
       "client_key": "apex-design",
       "period_key": "2026-06",
       "timing": "planned_next_month",
-      "category": "writing",
-      "title": "Who we serve / where we serve posts",
-      "description": "Two posts drafted and ready for review; publish after sign-off.",
-      "status": "planned"
-    },
-    {
-      "client_key": "apex-design",
-      "period_key": "2026-06",
-      "timing": "planned_next_month",
       "category": "anything_else",
       "title": "Portfolio imagery refresh",
       "description": "Client to supply new project photography (out of scope).",
@@ -876,6 +867,15 @@
       "title": "Discuss NHS security page",
       "description": "Scope a potential NHS-focused service page with the client.",
       "status": "planned"
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "writing",
+      "title": "Who we serve / where we serve posts",
+      "description": "",
+      "status": ""
     }
   ],
   "RankingKeywords": [

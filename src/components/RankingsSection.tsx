@@ -81,7 +81,13 @@ function SummaryPanel({ summary }: { summary: RankingSummary }) {
         {summary.dropped > 0 && ` · ${summary.dropped} dropped`}
       </p>
       <div className="scroll-box">
-        <DataTable columns={columns} rows={summary.movements} rowKey={(m) => m.keyword} defaultSortKey="change" />
+        <DataTable
+          columns={columns}
+          rows={summary.movements}
+          rowKey={(m) => m.keyword}
+          defaultSortKey="end"
+          defaultDescending={false}
+        />
       </div>
     </div>
   );

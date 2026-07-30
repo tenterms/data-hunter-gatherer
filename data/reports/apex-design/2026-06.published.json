@@ -2702,7 +2702,16 @@
       "period_key": "2026-06",
       "timing": "planned_next_month",
       "category": "writing",
-      "title": "Who we serve / where we serve posts",
+      "title": "Draft two new service pages",
+      "description": "",
+      "status": ""
+    },
+    {
+      "client_key": "apex-design",
+      "period_key": "2026-06",
+      "timing": "planned_next_month",
+      "category": "writing",
+      "title": "Refresh the prototyping guide",
       "description": "",
       "status": ""
     }
