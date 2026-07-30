@@ -373,7 +373,7 @@
           "ctr": {
             "current": 0.0013129513270186627,
             "previous": 0.0014035667107001322,
-            "change": -0.00009061538368146946,
+            "change": -9.061538368146946e-05,
             "changePct": -0.06456079571470341,
             "isNew": false
           },
@@ -933,7 +933,7 @@
           "ctr": {
             "current": 0.0013129513270186627,
             "previous": 0.0014035667107001322,
-            "change": -0.00009061538368146946,
+            "change": -9.061538368146946e-05,
             "changePct": -0.06456079571470341,
             "isNew": false
           },
@@ -2247,7 +2247,7 @@
         "id": "page_clicks_down_5",
         "kind": "page_clicks_down",
         "sentiment": "negative",
-        "text": "Mechanical Product Design lost clicks: 81 → 30 (impressions 8,061 → 10.1K).",
+        "text": "Mechanical Product Design lost clicks: 81 \u2192 30 (impressions 8,061 \u2192 10.1K).",
         "data": {
           "url": "https://apexproductdesign.co.uk/services/mechanical-product-design",
           "role": "secondary",
@@ -2258,7 +2258,7 @@
         "id": "page_clicks_down_6",
         "kind": "page_clicks_down",
         "sentiment": "negative",
-        "text": "Consumer Products Sector lost clicks: 62 → 16 (impressions 4,028 → 4,091).",
+        "text": "Consumer Products Sector lost clicks: 62 \u2192 16 (impressions 4,028 \u2192 4,091).",
         "data": {
           "url": "https://apexproductdesign.co.uk/sectors/consumer-products",
           "role": "secondary",
@@ -2269,7 +2269,7 @@
         "id": "page_clicks_up_7",
         "kind": "page_clicks_up",
         "sentiment": "positive",
-        "text": "Homepage gained clicks: 100 → 141 (impressions 2,759 → 2,379).",
+        "text": "Homepage gained clicks: 100 \u2192 141 (impressions 2,759 \u2192 2,379).",
         "data": {
           "url": "https://apexproductdesign.co.uk/",
           "role": "primary",
@@ -2280,7 +2280,7 @@
         "id": "page_clicks_down_8",
         "kind": "page_clicks_down",
         "sentiment": "negative",
-        "text": "Electronics Product Design lost clicks: 68 → 27 (impressions 8,559 → 7,216).",
+        "text": "Electronics Product Design lost clicks: 68 \u2192 27 (impressions 8,559 \u2192 7,216).",
         "data": {
           "url": "https://apexproductdesign.co.uk/services/electronics-product-design",
           "role": "secondary",
@@ -2293,7 +2293,7 @@
         "id": "content_group_decaying_9",
         "kind": "content_group_decaying",
         "sentiment": "negative",
-        "text": "Content group \"Prototyping\" is decaying: clicks 264 → 229 (-13.3%).",
+        "text": "Content group \"Prototyping\" is decaying: clicks 264 \u2192 229 (-13.3%).",
         "data": {
           "group": "prototyping",
           "clicks": 229,
@@ -2304,7 +2304,7 @@
         "id": "content_group_decaying_10",
         "kind": "content_group_decaying",
         "sentiment": "negative",
-        "text": "Content group \"Product Design\" is decaying: clicks 238 → 109 (-54.2%).",
+        "text": "Content group \"Product Design\" is decaying: clicks 238 \u2192 109 (-54.2%).",
         "data": {
           "group": "product-design",
           "clicks": 109,
@@ -2315,7 +2315,7 @@
         "id": "content_group_growing_11",
         "kind": "content_group_growing",
         "sentiment": "positive",
-        "text": "Content group \"Blog\" is growing: clicks 20 → 25 (+25.0%).",
+        "text": "Content group \"Blog\" is growing: clicks 20 \u2192 25 (+25.0%).",
         "data": {
           "group": "blog",
           "clicks": 25,
@@ -2326,7 +2326,7 @@
         "id": "content_group_decaying_12",
         "kind": "content_group_decaying",
         "sentiment": "negative",
-        "text": "Content group \"Sectors\" is decaying: clicks 62 → 16 (-74.2%).",
+        "text": "Content group \"Sectors\" is decaying: clicks 62 \u2192 16 (-74.2%).",
         "data": {
           "group": "sectors",
           "clicks": 16,
@@ -2337,7 +2337,7 @@
         "id": "content_group_decaying_13",
         "kind": "content_group_decaying",
         "sentiment": "negative",
-        "text": "Content group \"Invention\" is decaying: clicks 17 → 14 (-17.6%).",
+        "text": "Content group \"Invention\" is decaying: clicks 17 \u2192 14 (-17.6%).",
         "data": {
           "group": "invention",
           "clicks": 14,
@@ -2350,7 +2350,7 @@
         "id": "topic_cluster_decaying_14",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Product Design Services\" is decaying: clicks 401 → 272, impressions 41.8K → 42.4K.",
+        "text": "Topic cluster \"Product Design Services\" is decaying: clicks 401 \u2192 272, impressions 41.8K \u2192 42.4K.",
         "data": {
           "cluster": "product-design-services",
           "changePct": -0.32169576059850374
@@ -2360,7 +2360,7 @@
         "id": "topic_cluster_decaying_15",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Prototyping\" is decaying: clicks 245 → 214, impressions 12.9K → 16.9K.",
+        "text": "Topic cluster \"Prototyping\" is decaying: clicks 245 \u2192 214, impressions 12.9K \u2192 16.9K.",
         "data": {
           "cluster": "prototyping",
           "changePct": -0.12653061224489795
@@ -2370,7 +2370,7 @@
         "id": "topic_cluster_decaying_16",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Electronic Product Design\" is decaying: clicks 173 → 79, impressions 23.2K → 22.7K.",
+        "text": "Topic cluster \"Electronic Product Design\" is decaying: clicks 173 \u2192 79, impressions 23.2K \u2192 22.7K.",
         "data": {
           "cluster": "electronic-product-design",
           "changePct": -0.5433526011560693
@@ -2380,7 +2380,7 @@
         "id": "topic_cluster_decaying_17",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"CAD Design Services\" is decaying: clicks 142 → 60, impressions 14.2K → 14.4K.",
+        "text": "Topic cluster \"CAD Design Services\" is decaying: clicks 142 \u2192 60, impressions 14.2K \u2192 14.4K.",
         "data": {
           "cluster": "cad-design",
           "changePct": -0.5774647887323944
@@ -2390,7 +2390,7 @@
         "id": "topic_cluster_decaying_18",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Invention Services\" is decaying: clicks 18 → 15, impressions 11.3K → 10.4K.",
+        "text": "Topic cluster \"Invention Services\" is decaying: clicks 18 \u2192 15, impressions 11.3K \u2192 10.4K.",
         "data": {
           "cluster": "invention-services",
           "changePct": -0.16666666666666666
@@ -2400,7 +2400,7 @@
         "id": "topic_cluster_decaying_19",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Concept Product Design\" is decaying: clicks 23 → 10, impressions 6,488 → 9,239.",
+        "text": "Topic cluster \"Concept Product Design\" is decaying: clicks 23 \u2192 10, impressions 6,488 \u2192 9,239.",
         "data": {
           "cluster": "concept-product-design",
           "changePct": -0.5652173913043478
@@ -2468,7 +2468,7 @@
         "id": "rankings_top_buckets_25",
         "kind": "rankings_top_buckets",
         "sentiment": "positive",
-        "text": "Keywords in the top 3: 4 → 4; top 10: 6 → 7; top 30: 15 → 15.",
+        "text": "Keywords in the top 3: 4 \u2192 4; top 10: 6 \u2192 7; top 30: 15 \u2192 15.",
         "data": {
           "top3": 4,
           "top10": 7,
@@ -2550,7 +2550,7 @@
         "id": "priority_decaying_groups_33",
         "kind": "priority_decaying_groups",
         "sentiment": "warning",
-        "text": "Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups — clicks declined this period.",
+        "text": "Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups \u2014 clicks declined this period.",
         "data": {
           "groups": "prototyping,product-design,sectors,invention"
         }
@@ -2578,34 +2578,34 @@
   "commentary": [
     {
       "section": "executive_summary",
-      "suggestedText": "Total clicks fell from 711 to 527 (-25.9%). Total impressions rose from 76.9K to 79.9K (+4.0%). Site-wide click-through rate moved from 0.93% to 0.66%. Average position eased from 25.4 to 26.9. Site-wide average position blends every indexed query, so treat it as context rather than a target. A mixed month, with gains and declines roughly balancing out. Suggested focus: Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups — clicks declined this period.",
+      "suggestedText": "Total clicks fell from 711 to 527 (-25.9%). Total impressions rose from 76.9K to 79.9K (+4.0%). Site-wide click-through rate moved from 0.93% to 0.66%. Average position eased from 25.4 to 26.9. Site-wide average position blends every indexed query, so treat it as context rather than a target. A mixed month, with gains and declines roughly balancing out. Suggested focus: Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups \u2014 clicks declined this period.",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Total clicks fell from 711 to 527 (-25.9%). Total impressions rose from 76.9K to 79.9K (+4.0%). Site-wide click-through rate moved from 0.93% to 0.66%. Average position eased from 25.4 to 26.9. Site-wide average position blends every indexed query, so treat it as context rather than a target. A mixed month, with gains and declines roughly balancing out. Suggested focus: Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups — clicks declined this period.",
+      "finalText": "Total clicks fell from 711 to 527 (-25.9%). Total impressions rose from 76.9K to 79.9K (+4.0%). Site-wide click-through rate moved from 0.93% to 0.66%. Average position eased from 25.4 to 26.9. Site-wide average position blends every indexed query, so treat it as context rather than a target. A mixed month, with gains and declines roughly balancing out. Suggested focus: Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups \u2014 clicks declined this period.",
       "mode": "rules_only"
     },
     {
       "section": "traffic",
-      "suggestedText": "Mechanical Product Design lost clicks: 81 → 30 (impressions 8,061 → 10.1K). Consumer Products Sector lost clicks: 62 → 16 (impressions 4,028 → 4,091). Homepage gained clicks: 100 → 141 (impressions 2,759 → 2,379). Electronics Product Design lost clicks: 68 → 27 (impressions 8,559 → 7,216).",
+      "suggestedText": "Mechanical Product Design lost clicks: 81 \u2192 30 (impressions 8,061 \u2192 10.1K). Consumer Products Sector lost clicks: 62 \u2192 16 (impressions 4,028 \u2192 4,091). Homepage gained clicks: 100 \u2192 141 (impressions 2,759 \u2192 2,379). Electronics Product Design lost clicks: 68 \u2192 27 (impressions 8,559 \u2192 7,216).",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Mechanical Product Design lost clicks: 81 → 30 (impressions 8,061 → 10.1K). Consumer Products Sector lost clicks: 62 → 16 (impressions 4,028 → 4,091). Homepage gained clicks: 100 → 141 (impressions 2,759 → 2,379). Electronics Product Design lost clicks: 68 → 27 (impressions 8,559 → 7,216).",
+      "finalText": "Mechanical Product Design lost clicks: 81 \u2192 30 (impressions 8,061 \u2192 10.1K). Consumer Products Sector lost clicks: 62 \u2192 16 (impressions 4,028 \u2192 4,091). Homepage gained clicks: 100 \u2192 141 (impressions 2,759 \u2192 2,379). Electronics Product Design lost clicks: 68 \u2192 27 (impressions 8,559 \u2192 7,216).",
       "mode": "rules_only"
     },
     {
       "section": "content_groups",
-      "suggestedText": "Content group \"Prototyping\" is decaying: clicks 264 → 229 (-13.3%). Content group \"Product Design\" is decaying: clicks 238 → 109 (-54.2%). Content group \"Blog\" is growing: clicks 20 → 25 (+25.0%). Content group \"Sectors\" is decaying: clicks 62 → 16 (-74.2%). Content group \"Invention\" is decaying: clicks 17 → 14 (-17.6%).",
+      "suggestedText": "Content group \"Prototyping\" is decaying: clicks 264 \u2192 229 (-13.3%). Content group \"Product Design\" is decaying: clicks 238 \u2192 109 (-54.2%). Content group \"Blog\" is growing: clicks 20 \u2192 25 (+25.0%). Content group \"Sectors\" is decaying: clicks 62 \u2192 16 (-74.2%). Content group \"Invention\" is decaying: clicks 17 \u2192 14 (-17.6%).",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Content group \"Prototyping\" is decaying: clicks 264 → 229 (-13.3%). Content group \"Product Design\" is decaying: clicks 238 → 109 (-54.2%). Content group \"Blog\" is growing: clicks 20 → 25 (+25.0%). Content group \"Sectors\" is decaying: clicks 62 → 16 (-74.2%). Content group \"Invention\" is decaying: clicks 17 → 14 (-17.6%).",
+      "finalText": "Content group \"Prototyping\" is decaying: clicks 264 \u2192 229 (-13.3%). Content group \"Product Design\" is decaying: clicks 238 \u2192 109 (-54.2%). Content group \"Blog\" is growing: clicks 20 \u2192 25 (+25.0%). Content group \"Sectors\" is decaying: clicks 62 \u2192 16 (-74.2%). Content group \"Invention\" is decaying: clicks 17 \u2192 14 (-17.6%).",
       "mode": "rules_only"
     },
     {
       "section": "topic_clusters",
-      "suggestedText": "Topic cluster \"Product Design Services\" is decaying: clicks 401 → 272, impressions 41.8K → 42.4K. Topic cluster \"Prototyping\" is decaying: clicks 245 → 214, impressions 12.9K → 16.9K. Topic cluster \"Electronic Product Design\" is decaying: clicks 173 → 79, impressions 23.2K → 22.7K. Topic cluster \"CAD Design Services\" is decaying: clicks 142 → 60, impressions 14.2K → 14.4K. Topic cluster \"Invention Services\" is decaying: clicks 18 → 15, impressions 11.3K → 10.4K.",
+      "suggestedText": "Topic cluster \"Product Design Services\" is decaying: clicks 401 \u2192 272, impressions 41.8K \u2192 42.4K. Topic cluster \"Prototyping\" is decaying: clicks 245 \u2192 214, impressions 12.9K \u2192 16.9K. Topic cluster \"Electronic Product Design\" is decaying: clicks 173 \u2192 79, impressions 23.2K \u2192 22.7K. Topic cluster \"CAD Design Services\" is decaying: clicks 142 \u2192 60, impressions 14.2K \u2192 14.4K. Topic cluster \"Invention Services\" is decaying: clicks 18 \u2192 15, impressions 11.3K \u2192 10.4K.",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Topic cluster \"Product Design Services\" is decaying: clicks 401 → 272, impressions 41.8K → 42.4K. Topic cluster \"Prototyping\" is decaying: clicks 245 → 214, impressions 12.9K → 16.9K. Topic cluster \"Electronic Product Design\" is decaying: clicks 173 → 79, impressions 23.2K → 22.7K. Topic cluster \"CAD Design Services\" is decaying: clicks 142 → 60, impressions 14.2K → 14.4K. Topic cluster \"Invention Services\" is decaying: clicks 18 → 15, impressions 11.3K → 10.4K.",
+      "finalText": "Topic cluster \"Product Design Services\" is decaying: clicks 401 \u2192 272, impressions 41.8K \u2192 42.4K. Topic cluster \"Prototyping\" is decaying: clicks 245 \u2192 214, impressions 12.9K \u2192 16.9K. Topic cluster \"Electronic Product Design\" is decaying: clicks 173 \u2192 79, impressions 23.2K \u2192 22.7K. Topic cluster \"CAD Design Services\" is decaying: clicks 142 \u2192 60, impressions 14.2K \u2192 14.4K. Topic cluster \"Invention Services\" is decaying: clicks 18 \u2192 15, impressions 11.3K \u2192 10.4K.",
       "mode": "rules_only"
     },
     {
@@ -2618,18 +2618,18 @@
     },
     {
       "section": "rankings",
-      "suggestedText": "8 tracked keyword positions improved and 8 declined, with 1 new entry and 1 dropped out. Keywords in the top 3: 4 → 4; top 10: 6 → 7; top 30: 15 → 15. \"product design studio london\" entered the tracked set at position 7. \"product prototyping agency\" improved 25 places to position 18. \"3d prototyping agency\" improved 24 places to position 30. \"bespoke invention help\" dropped out of the tracked positions (was 42).",
+      "suggestedText": "8 tracked keyword positions improved and 8 declined, with 1 new entry and 1 dropped out. Keywords in the top 3: 4 \u2192 4; top 10: 6 \u2192 7; top 30: 15 \u2192 15. \"product design studio london\" entered the tracked set at position 7. \"product prototyping agency\" improved 25 places to position 18. \"3d prototyping agency\" improved 24 places to position 30. \"bespoke invention help\" dropped out of the tracked positions (was 42).",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "8 tracked keyword positions improved and 8 declined, with 1 new entry and 1 dropped out. Keywords in the top 3: 4 → 4; top 10: 6 → 7; top 30: 15 → 15. \"product design studio london\" entered the tracked set at position 7. \"product prototyping agency\" improved 25 places to position 18. \"3d prototyping agency\" improved 24 places to position 30. \"bespoke invention help\" dropped out of the tracked positions (was 42).",
+      "finalText": "8 tracked keyword positions improved and 8 declined, with 1 new entry and 1 dropped out. Keywords in the top 3: 4 \u2192 4; top 10: 6 \u2192 7; top 30: 15 \u2192 15. \"product design studio london\" entered the tracked set at position 7. \"product prototyping agency\" improved 25 places to position 18. \"3d prototyping agency\" improved 24 places to position 30. \"bespoke invention help\" dropped out of the tracked positions (was 42).",
       "mode": "rules_only"
     },
     {
       "section": "strategic_priorities",
-      "suggestedText": "1. Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups — clicks declined this period.\n2. Resolve the high-priority cannibalisation issues (starting with \"invention uk\") by consolidating or differentiating the competing pages.\n3. Monitor the declining tracked keywords (e.g. \"bespoke invention help\") and confirm whether the movement settles before making page changes.",
+      "suggestedText": "1. Review the \"Prototyping\", \"Product Design\", \"Sectors\", \"Invention\" content groups \u2014 clicks declined this period.\n2. Resolve the high-priority cannibalisation issues (starting with \"invention uk\") by consolidating or differentiating the competing pages.\n3. Monitor the declining tracked keywords (e.g. \"bespoke invention help\") and confirm whether the movement settles before making page changes.",
       "suggestedSource": "rules_only",
-      "overrideText": "1. Publish the two sector landing pages that are ready for review — these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
-      "finalText": "1. Publish the two sector landing pages that are ready for review — these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
+      "overrideText": "1. Publish the two sector landing pages that are ready for review \u2014 these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
+      "finalText": "1. Publish the two sector landing pages that are ready for review \u2014 these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
       "mode": "human_override"
     }
   ],
@@ -5824,8 +5824,5 @@
       "results": null
     }
   },
-  "published": {
-    "token": "4d88b19702a9b35895c5843308365ef5",
-    "publishedAt": "2026-07-30T14:34:54.919Z"
-  }
+  "published": null
 }
