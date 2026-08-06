@@ -1,0 +1,1038 @@
+{
+ "/": {
+  "title": "Golf Club Weights - Dial In Your Swing \u2013 Golfweights.co.uk",
+  "desc": "Wide range of aftermarket golf club weights & wrenches for drivers, fairway woods, hybrids, irons & putters, compatible with all major brands."
+ },
+ "/collections/drivers": {
+  "title": "Drivers \u2013 Golfweights.co.uk",
+  "desc": "Dial in your swing weight with our range of driver golf weights. Compatible with all major brands including TaylorMade, Titleist, Callaway, Ping, PXG & Cobra."
+ },
+ "/collections/putters": {
+  "title": "Putters \u2013 Golfweights.co.uk",
+  "desc": "The largest range of putter weights compatible with all major brands including Scotty Cameron, TaylorMade, Odyssey, PXG, Ping and Cobra."
+ },
+ "/collections/fairway-woods": {
+  "title": "Fairway Woods \u2013 Golfweights.co.uk",
+  "desc": "Dial in your swing weight with our range of fairway wood golf weights. Compatible with major brands including TaylorMade, Titleist, Callaway, Ping & Cobra."
+ },
+ "/collections/hybrids": {
+  "title": "Hybrids \u2013 Golfweights.co.uk",
+  "desc": "Reach your optimum swing weight with our range of hybrid golf weights. Compatible with major brands including TaylorMade, Titleist, Callaway, Ping & PXG."
+ },
+ "/collections/irons": {
+  "title": "Irons \u2013 Golfweights.co.uk",
+  "desc": "Golf Weights has a ranges of iron weights compatible with major brands such as Ping, TaylorMade and PXG."
+ },
+ "/collections/weights": {
+  "title": "Golf Club Weights \u2013 Golfweights.co.uk",
+  "desc": "Dial in your swing weight with our range of golf club weights compatible with all major brands including Taylormade, Titleist, Callaway, PXG, Ping & Cobra."
+ },
+ "/collections/scotty-cameron": {
+  "title": "Scotty Cameron \u2013 Golfweights.co.uk",
+  "desc": "Dial in your swing weight with our wide range of Scotty Cameron golf club putter weights & wrenches fitting popular models such as Phantom and Newport."
+ },
+ "/collections/taylormade": {
+  "title": "TaylorMade \u2013 Golfweights.co.uk",
+  "desc": "TaylorMade golf club head weights, shaft adapters & golf club wrenches fitting TaylorMade drivers, fairways woods, hybrids & putters."
+ },
+ "/collections/odyssey": {
+  "title": "Odyssey \u2013 Golfweights.co.uk",
+  "desc": "Wide range of Odyssey golf club putter weights compatible with the latest models including Ai and Tri-Hot."
+ },
+ "/collections/pxg": {
+  "title": "PXG \u2013 Golfweights.co.uk",
+  "desc": "Collection of golf club weights & shaft adapters for PXG drivers, fairways woods, hybrids & putters, to help you dial in your swing."
+ },
+ "/collections/callaway": {
+  "title": "Callaway \u2013 Golfweights.co.uk",
+  "desc": "Our large collection of Callaway head weights and shaft adapters can help you find the optimum weight to better balance your drivers, fairways woods and hybrids. We offer products for the latest models including Elyte, Paradym and Ai Smoke. We also have wrenches so remember to add a wrench to your shopping basket too i"
+ },
+ "/collections/ping": {
+  "title": "Ping \u2013 Golfweights.co.uk",
+  "desc": "Wide range of Ping golf club weights and shaft adapters fitting most Ping drivers, fairways woods, hybrids and irons for popular models such as G430 & G425."
+ },
+ "/collections/titleist": {
+  "title": "Titleist \u2013 Golfweights.co.uk",
+  "desc": "Wide range of golf club weights, shaft adapters and golf club wrenches fitting many Titleist golf club models including GT, TSR and TSi."
+ },
+ "/collections/cobra": {
+  "title": "Cobra \u2013 Golfweights.co.uk",
+  "desc": "Wide variety of golf club weights & shaft adapters fitting Cobra drivers, fairway woods, hybrids and putters."
+ },
+ "/collections/srixon": {
+  "title": "Srixon \u2013 Golfweights.co.uk",
+  "desc": "Achieve your optimum swing weight with our range of Srixon golf club weights and shaft adapters. We also have wrenches for all brands so remember to add a wrench to your shopping basket too if required."
+ },
+ "/collections/mizuno": {
+  "title": "Mizuno \u2013 Golfweights.co.uk",
+  "desc": "Range of golf club weights & shaft adapters fitting Mizuno drivers & fairway woods including popular models such as STX, STZ & STG."
+ },
+ "/collections/lab": {
+  "title": "Head Weights for Lab Putters \u2013 Golfweights.co.uk",
+  "desc": "Dial in your swing weight with our range of Lab putter head weights."
+ },
+ "/collections/honma": {
+  "title": "Honma \u2013 Golfweights.co.uk",
+  "desc": "Our Honma golf club weights can help you find the optimum swing weight to better balance your driver or fairway wood."
+ },
+ "/collections/toulondesign": {
+  "title": "Toulon Design \u2013 Golfweights.co.uk",
+  "desc": "Range of Odyssey Toulon Design golf club putter weights compatible with the latest models including Toulon 2025."
+ },
+ "/collections/shaft-adapters": {
+  "title": "Golf Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for drivers, fairways and hybrids in sizes 0.335 and 0.350."
+ },
+ "/collections/titleist-shaft-adapters": {
+  "title": "Titleist Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Titleist drivers, fairways and hybrids."
+ },
+ "/collections/golf-shaft-adapters-taylormade": {
+  "title": "TaylorMade Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for TaylorMade drivers, fairways and hybrids in sizes 0.335 and 0.350."
+ },
+ "/collections/callaway-shaft-adapters": {
+  "title": "Callaway Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Callaway drivers and fairways."
+ },
+ "/collections/ping-shaft-adapters": {
+  "title": "Ping Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Ping drivers, fairways and hybrids in 0.335 and 0.350 sizes."
+ },
+ "/collections/cobra-shaft-adapters": {
+  "title": "Cobra Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Cobra drivers and fairways."
+ },
+ "/collections/pxg-shaft-adapters": {
+  "title": "PXG Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for PXG drivers, fairways and hybrids."
+ },
+ "/collections/srixon-shaft-adapters": {
+  "title": "Srixon Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Srixon drivers and fairways."
+ },
+ "/collections/mizuno-shaft-adapters": {
+  "title": "Mizuno Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Mizuno drivers."
+ },
+ "/collections/wilson-shaft-adapters": {
+  "title": "Wilson Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "High quality aftermarket golf shaft adapters for Wilson drivers & fairways."
+ },
+ "/collections/lh-shaft-adapters": {
+  "title": "Left-Handed Shaft Adapters \u2013 Golfweights.co.uk",
+  "desc": "We stock a range of left-handed golf shaft adapters, offering a wide range of aftermarket sleeve options designed for many left handed driver, fairway wood, and hybrid models."
+ },
+ "/collections/golf-club-weight-kits-1": {
+  "title": "Golf Club Weight Kits \u2013 Golfweights.co.uk",
+  "desc": "Lightweight, Heavyweight and Full weight Kits now available for all major brands including Callaway, TaylorMade, Titleist, Ping, Cobra, PXG, Odyssey &amp; Scotty Cameron. Bespoke weight kits can also be ordered, please contact us for more details."
+ },
+ "/collections/golf-club-wrench": {
+  "title": "Golf Club Wrenches \u2013 Golfweights.co.uk",
+  "desc": "We stock golf club wrenches compatible with all major brands & for all weight sizes - T15, T20, T25 in both budget friendly options & quality torque wrenches."
+ },
+ "/collections/best-sellers": {
+  "title": "Best Sellers \u2013 Golfweights.co.uk",
+  "desc": "View our best selling golf club weights, shaft adapters and golf club wrenches here..."
+ },
+ "/collections/new-products": {
+  "title": "New Arrivals \u2013 Golfweights.co.uk",
+  "desc": "Wide range of quality aftermarket golf club weights, shaft adapters and golf club wrenches including the latest models."
+ },
+ "/collections/sale": {
+  "title": "SALE \u2013 Golfweights.co.uk",
+  "desc": "Swing Into Savings: End of Season Deals + 10% Multibuy! Our sale is in full swing! Explore a wide range of discounted aftermarket golf club weights and weight kits compatible with TaylorMade, Callaway, Cobra, Mizuno and more. Plus, enjoy our standard 10% multibuy discount on all purchases \u2014 even on sale items!"
+ },
+ "/products/callaway-paradym-driver-and-fairway-wood-aftermarket-golf-weights-4g-18g": {
+  "title": "Callaway Paradym X Triple Diamond Drivers & Fairway Aftermarket Golf W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym, Paradym X and Paradym Triple Diamond drivers."
+ },
+ "/products/quality-aftermarket-weight-for-callaway-epic-speed-max-drivers-fairway-woods-and-apex-utility-hybrids": {
+  "title": "Callaway Epic Speed Drivers, Epic Speed & Epic Max Fairway Woods After \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Epic Speed Drivers and Epic Speed/Epic Max Fairway Woods."
+ },
+ "/products/quality-aftermarket-weight-for-callaway-mavrik-sub-zero-max-driver-fairway-woods": {
+  "title": "Callaway Mavrik Sub Zero Max Driver & Fairway Woods Aftermarket Golf W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Mavrik Sub Zero Max Driver and Fairway Woods."
+ },
+ "/products/wefd-aftermarket-golf-weights-and-wrench-for-callaway-epic-flash-sub-zero-and-epic-max-drivers-6g-23g": {
+  "title": "Callaway Epic Flash Sub Zero, Flash Star Drivers Aftermarket Golf Weig \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Epic Flash, Epic Flash Sub Zero & Epic Flash Star drivers & fairway woods."
+ },
+ "/products/cobra-aerojet-max-ls-golf-club-driver-fairway-woods-hybrids-aftermarket-golf-weights-4g-16g": {
+  "title": "Cobra Aerojet Max LS Golf Club Driver, Fairway Woods & Hybrids Afterma \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra Aerojet, Aerojet Max & Aerojet LS drivers, fairway woods and hybrids."
+ },
+ "/products/cobra-king-vintage-series-putter-aftermarket-golf-weights-5g-25g": {
+  "title": "Cobra King Vintage & 3D Printed Series Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra King Vintage & 3D Series Putters."
+ },
+ "/products/copy-of-crf-aftermarket-golf-weights-wrench-for-cobra-king-radspeed-xb-xd-drivers-4g-14g": {
+  "title": "Cobra King RS Radspeed Fairway Woods & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Cobra RS RADSPEED fairway woods and hybrid."
+ },
+ "/products/quality-aftermarket-driver-weight-for-cobra-king-radspeed-xb-xd-drivers": {
+  "title": "Cobra King Radspeed XB XD Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra King Radspeed XB XD Drivers."
+ },
+ "/products/cszd-cszf-aftermarket-golf-weights-wrench-for-cobta-sz-speedzone-drivers-fairway-woods-hybrids-4g-14g": {
+  "title": "Cobra SZ Speedzone Drivers Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Cobra SZ Speedzone drivers."
+ },
+ "/products/scfb": {
+  "title": "Scotty Cameron Fastback & Squareback Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Scotty Cameron Fastback & Squareback Putters for models Studio Select, Select & California."
+ },
+ "/products/odyssey-ai-one-ai-crusier-series-putter-aftermarket-golf-weights-5g-35g": {
+  "title": "Odyssey Ai One & Ai Cruiser, Square 2 Square Series Putter Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Odyssey Ai one & Ai One Crusier series putters."
+ },
+ "/products/odyssey-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-copy": {
+  "title": "Odyssey BLACK Stroke Lab Series, White HOT OG Series, Ten Series & O W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Odyssey Stroke Lab Series, White Hot Series, Ten Series & O Works Putters."
+ },
+ "/products/quality-aftermarket-weight-for-odyssey-stroke-lab-series-and-white-hot-series-putters": {
+  "title": "Odyssey Stroke Lab Series, White HOT OG Series, Ten Series & O Works P \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Odyssey Stroke Lab Series, White Hot Series, Ten Series & O Works Putters."
+ },
+ "/products/ping-g400-lst-sft-max-aftermarket-driver-fairway-hybrid-golf-weights-10-21g": {
+  "title": "Ping G400 LST SFT MAX Aftermarket Driver, Fairway & Hybrid Golf Weight \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G400 LST, SFT Driver, Fairway Woods and Hybrids."
+ },
+ "/products/png410-aftermarket-weights-for-ping-g410-driver-fairway-hybrid-woods": {
+  "title": "Ping G410 Driver, Fairway Wood & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G410 LST, SFT Driver, Fairway Woods and Hybrids."
+ },
+ "/products/png425f-aftermarket-weight-for-ping-g425-fairway-woods-and-hybrid": {
+  "title": "Ping G425 Max, LST Fairway Woods & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G425 Max, LST Fairway Woods and Hybrid."
+ },
+ "/products/quality-aftermarket-sliding-head-weight-for-ping-g425-driver": {
+  "title": "Ping G425 Max, LST & SFT Drivers Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G425 Max, LST & SFT Drivers."
+ },
+ "/products/sc-aftermarket-weights-for-scotty-cameron-putters": {
+  "title": "Scotty Cameron Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/quality-aftermarket-heel-weight-for-talyormade-sim2-sim2-max-and-sim2-max-d-drivers": {
+  "title": "TaylorMade SIM2, SIM2 Max & Max D Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade SIM2, SIM2 Max, SIM2 Max D drivers, fairway & Stealth hybrids."
+ },
+ "/products/quality-aftermarket-sliding-head-weight-for-taylormade-m5-driver": {
+  "title": "TaylorMade M5 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M5 Driver."
+ },
+ "/products/taylormade-2016-m2-driver-aftermarket-golf-weights": {
+  "title": "TaylorMade 2016 M2 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade 2016 M2 Driver."
+ },
+ "/products/taylormade-brnr-mini-driver-1-2-aftermarket-golf-club-weights-2g-17g": {
+  "title": "TaylorMade Burner BRNR Mini Driver 1 & 2 pcs Aftermarket Golf Club Wei \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade BRNR mini drivers."
+ },
+ "/products/taylormade-m1-driver-2016-2017-aftermarket-golf-club-head-weights-5g-22g": {
+  "title": "TaylorMade M1 Driver 2016 & 2017 Aftermarket Golf Club Head Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M1 Driver (2016 & 2017 models)."
+ },
+ "/products/taylormade-m2-d-type-driver-aftermarket-golf-weights": {
+  "title": "TaylorMade M2 D-Type Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M4 Driver & M4 Tour Fairway Woods."
+ },
+ "/products/taylormade-qi-10-aftermarket-max-ls-hl-golf-club-driver-fairway-hybrid-weights-2-17g": {
+  "title": "TaylorMade Qi 10 Max LS Golf Club Driver Fairway Hybrid Aftermarket We \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade Qi10, Qi10 Max, Qi10 LS, Qi10 Tour drivers, fairway woods and hybrids."
+ },
+ "/products/taylormade-r7-quad-mini-driver-1-2-pcs-aftermarket-golf-club-weights": {
+  "title": "TaylorMade R7 Quad Mini Driver 1 & 2 pcs Aftermarket Golf Club Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade R7 Quad Mini Driver."
+ },
+ "/products/taylormade-tp-reserve-spider-gtx-max-putters-aftermarket-golf-weights-5g-20g": {
+  "title": "TaylorMade TP Reserve Collection & Spider GTX Max Putters Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade Putter TP Reserve Collection & Spider GTX Max."
+ },
+ "/products/tms-aftermarket-weight-for-taylormade-stealth-stealth-hd-and-stealth-plus-driver-fairway-woods-and-hybrids": {
+  "title": "TaylorMade Stealth, Stealth HD & Stealth Plus Driver, Fairway Wood & H \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade Stealth, Stealth HD and Stealth Plus Drivers, Fairway Woods and Hybrid."
+ },
+ "/products/tmst2-taylormade-stealth-2-plus-drivers-and-hybrid-aftermarket-golf-weights-2g-15g": {
+  "title": "TaylorMade Stealth 2, Stealth 2 Plus, Stealth 2 HD Driver& Hybrid Afte \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for TaylorMade Stealth 2, Stealth 2 Plus & HD Driver and Hybrid."
+ },
+ "/products/titleistts3-driver-aftermarket-magnetic-surefit-golf-weights-7g-19g": {
+  "title": "Titleist TS3 Driver Aftermarket magnetic SureFit Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Titleist TS3 driver."
+ },
+ "/products/callaway-elyte-x-max-fast-driver-fairway-wood-aftermarket-golf-weights": {
+  "title": "Callaway Elyte X Max Fast Driver Fairway & Hybrid Aftermarket Golf Wei \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym Ai Smoke Max D Fast Triple Diamond drivers and fairway woods."
+ },
+ "/products/callaway-paradym-ai-smoke-max-d-fast-triple-diamond-driver-aftermarket-golf-weights-2g-18g": {
+  "title": "Callaway Paradym Ai Smoke Max D Fast Triple Diamond Driver & Fairway W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym Ai Smoke Max D Fast Triple Diamond drivers and fairway woods."
+ },
+ "/products/callaway-paradym-ai-smoke-max-d-fast-triple-diamond-driver-fairway-wood-aftermarket-golf-weights-copy": {
+  "title": "Callaway Paradym Ai Smoke Driver & Fairway Aftermarket Golf Weights Ki \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym Ai Smoke Max D Fast Triple Diamond drivers and fairway woods."
+ },
+ "/products/callaway-quantum-driver-aftermarket-golf-weights": {
+  "title": "Callaway Quantum Driver & Fairway Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Quantum drivers."
+ },
+ "/products/callaway-quantum-hybrid-aftermarket-golf-weights": {
+  "title": "Callaway Quantum Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf head weights for Callaway Quantum Hybrids available in the following sizes: 3g, 4g, 7g, 9g"
+ },
+ "/products/cobra-darkspeed-ls-max-x-ls-golf-club-driver-aftermarket-golf-weights-6g-12g": {
+  "title": "Cobra Darkspeed LS MAX X LS Golf Club Driver Fairway & Hybrid Aftermar \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra Darkspeed LS, MAX, X & LS drivers."
+ },
+ "/products/cobra-ds-adapt-golf-club-driver-fairway-hybrid-aftermarket-golf-weights": {
+  "title": "Cobra DS Adapt Driver Fairway & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra DS Adapt Driver, fairways and hybrids."
+ },
+ "/products/ping-g440-driver-aftermarket-golf-weights": {
+  "title": "Ping G440 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G440 drivers."
+ },
+ "/products/ping-g440-fairway-woods-aftermarket-golf-weights": {
+  "title": "Ping G440 Fairway Woods & hybrids Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G440 Fairway Woods & Hybrids."
+ },
+ "/products/srixon-zxi-zxi-ls-zxi-max-driver-aftermarket-golf-weights": {
+  "title": "Srixon ZXi, ZXi LS, ZXi Max Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights for Srixon ZXi, ZXi LS, ZXi Max Drivers."
+ },
+ "/products/titleist-gt2-gt4-driver-fairway-wood-hybrid-aftermarket-golf-weights-19g-23g": {
+  "title": "Titleist GT1, GT2, GT4 Driver & Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Titleist GT1, GT2 & GT4 drivers, fairway woods & hybrids."
+ },
+ "/products/titleist-gt2-gt4-hybrid-aftermarket-golf-weights": {
+  "title": "Titleist GT1, GT2, GT4 Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Titleist GT2 & GT4 hybrids."
+ },
+ "/products/titleist-gt3-driver-fairway-wood-hybrid-aftermarket-golf-weights": {
+  "title": "Titleist GT3 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Titleist GT3 drivers."
+ },
+ "/products/titleist-gt3-fairway-aftermarket-golf-weights": {
+  "title": "Titleist GT3 Fairway Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Titleist GT3 fairway woods."
+ },
+ "/products/aftermarket-golf-weights-and-wrench-for-callaway-epic-flash-rogue-st-sub-zero-drivers-fairway-woods-2g-18g": {
+  "title": "Callaway Rogue ST Drivers & Fairway Wood Aftermarket Speed Cartridge & \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Rogue ST drivers and fairway woods."
+ },
+ "/products/callaway-apex-utility-wood-2025-aftermarket-golf-club-weights": {
+  "title": "Callaway Apex Utility Wood 2025 Aftermarket Golf Club Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket Callaway Apex Utility Wood 2025 Golf Club Weights"
+ },
+ "/products/callaway-apex-utility-wood-24-aftermarket-golf-club-weights-4g-16g": {
+  "title": "Callaway Apex Utility Wood 24 Aftermarket Golf Club Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights & wrench for 2024 Callaway Apex utility wood."
+ },
+ "/products/callaway-paradym-x-triple-diamond-driver-aftermarket-golf-weights-copy": {
+  "title": "Callaway Paradym Driver & Fairway Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym, Paradym X and Paradym Triple Diamond drivers."
+ },
+ "/products/callaway-paradym-x-triple-diamond-fairway-woods-aftermarket-golf-weights-6g-14g": {
+  "title": "Callaway Paradym X Triple Diamond Fairway Woods Aftermarket Golf Weigh \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym fairway woods."
+ },
+ "/products/callaway-paradym-x-triple-diamond-hybrid-aftermarket-golf-weights-4g-12g": {
+  "title": "Callaway Paradym X Triple Diamond Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym, Paradym X hybrids."
+ },
+ "/products/cwap-aftermarket-golf-weights-and-wrench-for-callaway-apex-hybrid-6g-18g": {
+  "title": "Callaway Apex, Epic, Alpha Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights & wrench for Callaway Apex, Callaway Epic, Epic Super, Epic Star, Big Bertha Alpha 815, Big Bertha OS."
+ },
+ "/products/cwemd-aftermarket-golf-weights-wrench-for-callaway-epic-max-and-max-ls-drivers-5g-22g": {
+  "title": "Callaway EPIC Max & Max LS Drivers Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway EPIC Max, Max LS & Max Star drivers."
+ },
+ "/products/cwesz-aftermarket-golf-weights-and-wrench-for-callaway-epic-sub-zero-fairway-woods-alpha-815-range-6g-16g": {
+  "title": "Callaway Epic Sub Zero Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Epic Sub Zero fairway woods"
+ },
+ "/products/quality-aftermarket-weight-for-callaway-big-bertha-b21-reva-driver-and-fairway-woods": {
+  "title": "Callaway Big Bertha B21, Reva Drivers & Fairway Woods Aftermarket Golf \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Big Bertha B21 & Big Bertha Reva Driver and Fairway Woods."
+ },
+ "/products/quality-aftermarket-weight-for-callaway-great-big-bertha-alpha-and-xr16-drivers-and-fairway-woods": {
+  "title": "Callaway Great Big Bertha, Alpha & XR16 Drivers & Fairway Woods Afterm \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Great Big Bertha, Alpha and XR16 Drivers and Fairway Woods."
+ },
+ "/products/quality-aftermarket-weights-for-callaway-rogue-drivers-and-fairway-woods": {
+  "title": "Callaway Rogue, Rogue Sub Zero, Rogue Draw Drivers & Fairway Woods Aft \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Rogue, Rogue Sub Zero, Rogue Draw drivers and fairway woods."
+ },
+ "/products/cbl-aftermarket-golf-weights-wrench-for-cobra-ltdx-drivers-fairway-woods-hybrids-4g-18g": {
+  "title": "Cobra LTDx Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra LTDx drivers."
+ },
+ "/products/cobra-ltdx-fairway-woods-hybrids-aftermarket-golf-weights-4g-10g": {
+  "title": "Cobra LTDx Fairway Woods & Hybrids Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Cobra LTDx fairway woods and hybrids."
+ },
+ "/products/cobra-optm-driver-fairway-hybrid-aftermarket-golf-weights": {
+  "title": "Cobra OPTM Driver Fairway & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights and wrench for Cobra OPTM driver, fairways and hybrids available in the following sizes: 3g, 5g, 7g, 9g, 11g, 13g, 15g"
+ },
+ "/products/cobra-sz-speedzone-fairway-woods-hybrids-aftermarket-golf-weights-4g-8g": {
+  "title": "Cobra SZ Speedzone Fairway Woods & Hybrids Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Cobra SZ Speedzone fairway woods and hybrids."
+ },
+ "/products/hnm-aftermarket-weights-for-honma-golf-t-world-tr20-gs-driver-fairway-woods": {
+  "title": "Honma Golf T World TR20 GS Drivers & Fairway Woods Aftermarket Golf We \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Honma Golf T World TR20 GS Driver and Fairway Woods."
+ },
+ "/products/lab-golf-club-putter-head-aftermarket-weights": {
+  "title": "LAB Golf OZ DF2 DF3 MEZZ Club Putter Head Aftermarket Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights for LAB Putters available in the following sizes: 2.5g & 6g Compatible with the following models: OZ.1 OZ.1i DF2.1 DF3 MEZZ.1"
+ },
+ "/products/mz-aftermarket-weights-for-mizuno-st-range-drivers": {
+  "title": "Mizuno STX STZ 230 STG220 ST190G Drivers & Fairway Woods Aftermarket G \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Mizuno STX STZ 230 STG220 ST190G Drivers and Fairway Woods."
+ },
+ "/products/lead-tape-self-adhesive-swing-weight-tape": {
+  "title": "Lead Tape Self Adhesive Swing Weight Tape \u2013 Golfweights.co.uk",
+  "desc": "Easy to apply self adhesive swing weighting tape, peel off the backing and stick the lead tape to your desired location on the golf club."
+ },
+ "/products/odyssey-ai-dual-square-2-square-series-putter-aftermarket-golf-weights": {
+  "title": "Odyssey Ai Dual Square 2 Square Series Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club head weights and golf club wrenches for Odyssey Ai Dual series putters."
+ },
+ "/products/odyssey-ai-one-milled-series-toulon-ai-golf-club-putter-head-aftermarket-weights-5-22g": {
+  "title": "Odyssey Ai One Milled series Toulon Ai Golf Club Putter Head Aftermark \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Odyssey Ai one Milled and Toulon Ai series putters."
+ },
+ "/products/odyssey-toulon-2022-series-golf-club-putter-head-aftermarket-weights": {
+  "title": "Odyssey Toulon 2022 Series Golf Club Putter Head Aftermarket Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights for Odyssey Toulon 2022 series Putters."
+ },
+ "/products/odyssey-toulon-2025-series-golf-club-putter-head-aftermarket-weights": {
+  "title": "Odyssey Toulon 2025 Collection Golf Club Putter Head Aftermarket Weigh \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights for Odyssey Toulon 2025 series Putters."
+ },
+ "/products/odyssey-tri-hot-2-square-series-putter-aftermarket-golf-weights": {
+  "title": "Odyssey Tri Hot Square 2 Square Series Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club head weights for Odyssey Tri Hot, Ai One & Ai Dual Square 2 Square Putters."
+ },
+ "/products/odyssey-tri-hot-5k-series-putter-aftermarket-golf-weights": {
+  "title": "Odyssey Tri-Hot 5k, Eleven & White Hot Versa Series Putter Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Odyssey Tri-Hot 5k, Eleven & White Hot Versa Putters."
+ },
+ "/products/pxg-gen-8-irons-aftermarket-golf-weights": {
+  "title": "PXG Gen 8 Irons Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights for PXG Gen 8 0311XP, 0311T & 0311P Irons in the following sizes: 3g, 5g, 8g, 10g, 12g"
+ },
+ "/products/pxgg-aftermarket-weights-for-pxg-gen-5-gen-4-0211-0317-0311-irons-set": {
+  "title": "PXG Irons Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for PXG Gen 7, Gen 6, Gen 5, Gen 4, 0211, 0317, 0311 Irons Set available in black or silver."
+ },
+ "/products/quality-aftermarket-putter-weight-for-for-pxg-battle-ready-gen-2-putters": {
+  "title": "PXG Putters Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for PXG Zero Torque, Tour Series, Battle Ready II, Battle Ready & Gen 2 Putters."
+ },
+ "/products/quality-aftermarket-weight-for-pxg-gen4-0811-0341-xgen4-0211-drivers-and-fairway-woods": {
+  "title": "PXG Drivers, Fairway Woods & Hybrids Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for PXG Lightening, Secret Weapon, Black Ops, Gen7, Gen6, Gen5, Gen4 0811 & 0341 XGEN4 & 0211 Drivers, Fairway Woods & Hybrids."
+ },
+ "/products/ping-g30-ls-sf-tec-golf-club-driver-fairway-hybrid-aftermarket-head-weights-14-20g-uk-stock": {
+  "title": "Ping G30 LS SF Tec Golf Club Driver Fairway Hybrid Aftermarket Golf He \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Ping G30 driver, fairway & hybrids."
+ },
+ "/products/ping-g430-driver-aftermarket-golf-weights-5g-34g": {
+  "title": "Ping G430 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G430, Max, LST Drivers."
+ },
+ "/products/png430-aftermarket-weights-for-ping-g430-driver-fairway-woods-hybrids": {
+  "title": "Ping G430 Fairway Woods & Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G430, Max, LST & SFT Fairway Woods and Hybrids."
+ },
+ "/products/pngirn-aftermarket-weights-for-ping-irons": {
+  "title": "Ping G410, G425, G430, G710, I230, I59 & I525 i Crossover Blueprint Ir \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Ping G410, G425, G430, G710, i230, i59 & i525 Irons."
+ },
+ "/products/quality-aftermarket-putter-weight-for-ping-vault-2-0-putters-dale-answer-voss-b60-zb-piper-craz-e-h-stealth-ketsch": {
+  "title": "Ping Vault 2.0 Putters: Dale Answer, Voss, B60, ZB, Piper, Craz-E H, S \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights anf golf club wrench for Ping Vault 2.0 putters including Dale Answer, Voss, B60, ZB, Piper, Craz-E H, Stealth, Ketsch."
+ },
+ "/products/aftermarket-golf-weights-wrench-for-scotty-cameron-v2": {
+  "title": "Scotty Cameron Aftermarket Golf Club Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf wrench for Scotty Cameron Putters Compatible with popular models including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-blue-insert-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron Blue Insert Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with Blue insert for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-captain-america-blue-star-insert-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron Captain America Blue Star Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with Captain America, Blue Star design for Scotty Cameron RED Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron Tour Issue Design Circle T Red Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with Tour Issue Circle T RED design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights-1": {
+  "title": "Scotty Cameron Tour Issue Circle T Design Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights in Tour Issue Circle T design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-copper-putter-aftermarket-golf-weights-limited-edition": {
+  "title": "Scotty Cameron Copper Putter Aftermarket Golf Weights Limited Edition \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench in Copper for Scotty Cameron Putters including Phantom X, Newport, GoLo, Futura, Phantom Series."
+ },
+ "/products/scotty-cameron-four-leaf-clover-insert-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron Green Four Leaf Clover Insert Putter Aftermarket Golf W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with green four leaf clover design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-gold-putter-aftermarket-golf-weights-limited-edition": {
+  "title": "Scotty Cameron Gold Putter Aftermarket Golf Weights Limited Edition \u2013 Golfweights.co.uk",
+  "desc": "Limited Edition Quality aftermarket golf weights for Scotty Cameron Putters in Gold design available in the following sizes: 5g, 10g, 15g, 20g, 25g, 30g, 35g, 40g,"
+ },
+ "/products/scotty-cameron-putter-aftermarket-golf-weights-5g-45g-copy": {
+  "title": "Scotty Cameron BLACK Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights in Black for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-putter-aftermarket-golf-weights-5g-45g-copy-1": {
+  "title": "Scotty Cameron SILVER/RED Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights in Silver / Red for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-red-insert-fastback-squareback-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron RED Insert Fastback & Squareback Putter Aftermarket Gol \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Scotty Cameron Fastback & Squareback Putters for models Studio Select, Select & California."
+ },
+ "/products/scotty-cameron-red-insert-phantom-x-newport-series-golo-series-futura-series-phantom-series-california-series-button-series-special-select-my-girl-putter-aftermarket-golf-weights-5g-45g": {
+  "title": "Scotty Cameron RED Insert Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with Red insert for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-rose-gold-putter-aftermarket-golf-weights-limited-edition": {
+  "title": "Scotty Cameron Rose Gold Putter Aftermarket Golf Weights Limited Editi \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench in Rose Gold for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-superman-insert-putter-aftermarket-golf-weights": {
+  "title": "Scotty Cameron Superman Insert Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights with Superman design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/srixon-zx-golf-weights": {
+  "title": "Srixon ZX5, ZX7, MKI, MKII Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights for Srixon ZX5, ZX7, MKI, MKII Drivers."
+ },
+ "/products/putter-weights-for-taylormade-tp-collection-spider-mini-fsg-and-truss-putters-5g-10g-15g-20g-and-wrench": {
+  "title": "TaylorMade TP, Spider Mini & FCG Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and wrench for TaylorMade Putter TP Silver, TP Red/ White, TP Patina, TP Black Copper, TP Red, Spider Mini, FCG & Truss."
+ },
+ "/products/quality-aftermarket-sliding-head-weight-for-taylormade-m3-driver": {
+  "title": "TaylorMade M3 Driver & Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M3 Driver."
+ },
+ "/products/taylormade-qi-35-aftermarket-weights": {
+  "title": "TaylorMade Qi 35 Driver Aftermarket Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade Qi 35 drivers."
+ },
+ "/products/taylormade-qi-35-fairway-hybrid-aftermarket-weights": {
+  "title": "TaylorMade Qi 35 Fairway & Hybrid Aftermarket Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade Qi35 fairway woods and hybrids."
+ },
+ "/products/taylormade-qi4d": {
+  "title": "TaylorMade Qi4D Driver Fairway Hybrid Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights forTaylorMade Qi4D Driver, Fairway & Hybrids."
+ },
+ "/products/taylormade-sim-driver-aftermarket-golf-back-slider-weights-4g-21g": {
+  "title": "Taylormade Sim Driver Aftermarket Golf back & slider Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade SIM drivers."
+ },
+ "/products/taylormade-sim-max-d-driver-aftermarket-golf-weights-13g-20g": {
+  "title": "TaylorMade Sim Max-D Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade SIM Max-D drivers."
+ },
+ "/products/taylormade-sim-max-driver-aftermarket-golf-weights-7g-17g": {
+  "title": "TaylorMade Sim Max Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade SIM Max drivers."
+ },
+ "/products/taylormade-spider-tour-putter-aftermarket-golf-weights-2g-17g": {
+  "title": "TaylorMade Spider Tour Putter 2023 Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for 2023 Taylormade Spider Tour putters."
+ },
+ "/products/taylormade-tp-hydroblast-truss-putter-aftermarket-golf-head-weights-5g-20g": {
+  "title": "TaylorMade TP Hydroblast Truss Putter Aftermarket Golf Head Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade TP Hydroblast & Truss Putter Collection."
+ },
+ "/products/tmex-aftermarket-golf-weights-wrench-for-taylormade-spider-ex-putter-series-4g-18g": {
+  "title": "TaylorMade Spider EX Putter Series Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade Spider EX Putter Series."
+ },
+ "/products/tmm4-aftermarket-head-weight-for-taylormade-m4-driver-m4-tour-fairway-woods": {
+  "title": "TaylorMade M4 Drivers & M4 Tour Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M4 Driver & M4 Tour Fairway Woods."
+ },
+ "/products/tmm6-aftermarket-head-weight-for-taylormade-m6-driver": {
+  "title": "TaylorMade M6 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade M6 Driver."
+ },
+ "/products/tmr-aftermarket-golf-weights-wrench-for-taylormade-r1-r5-r7-r9-r11-driver-fairway-woods-1g-20g": {
+  "title": "TaylorMade R1 R5 R7 R9 R11 Driver & Fairway Wood Aftermarket Golf Weig \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade R1 R5 R7 R9 R11 Driver & Fairway Woods."
+ },
+ "/products/tmsf-aftermarket-head-weight-for-taylormade-sim-titanium-fairway-wood-and-sim-udi-utility-iron": {
+  "title": "TaylorMade SIM Titanium Fairway Wood & SIM UDI Utility Iron Aftermarke \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for TaylorMade SIM Titanium Fairway Woods and SIM UDI Utility Irons."
+ },
+ "/products/tmsx-aftermarket-weight-for-taylormade-spider-x-and-myspider-x-putter-series": {
+  "title": "TaylorMade Spider X & MySpider X Putter Series Aftermarket Golf Weight \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade Spider X and MySpider X Putter Series."
+ },
+ "/products/tmts-aftermarket-weights-for-taylormade-spider-tour-putter": {
+  "title": "TaylorMade Spider Tour Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Taylormade Spider Tour putters."
+ },
+ "/products/aftermarket-golf-weights-wrench-for-titleist-tsi2-tsi4-drivers-and-fairway-woods-5g-21g": {
+  "title": "Titleist TSi1, TSi2 & TSi4 Driver & Fairway Wood Aftermarket Golf Weig \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Titleist TSi1, TSi2 & TSi4 drivers and fairway woods."
+ },
+ "/products/quality-aftermarket-weight-for-titleist-ts2-ts4-driver-and-fairway-woods": {
+  "title": "Titleist TS2 & TS4 Driver & Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Titleist TS2 & TS4 drivers and fairway woods."
+ },
+ "/products/quality-aftermarket-weight-for-titleist-tsi2-tsi4-drivers-and-fairway-woods": {
+  "title": "Titleist TSR1, TSR2 & TSR4 Driver & Fairway Wood Aftermarket Golf Weig \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Titleist TSR1, TSR2 & TSR4 drivers, fairway woods & hybrids."
+ },
+ "/products/titleist-gts2-gts3-gts4-driver-fairway-wood-aftermarket-golf-weights": {
+  "title": "Titleist GTS2, GTS3, GTS4 Driver & Fairway Wood Aftermarket Golf Weigh \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights for Titleist GTS series Drivers & Fairway Metals, GTS2, GTS3 & GTS4 available in the following sizes: 3g, 5g, 7g, 9g, 11g, 13g, 15g"
+ },
+ "/products/tti3-aftermarket-golf-weights-wrench-for-titleist-tsi3-drivers-2-5g-18g": {
+  "title": "Titleist TSi3 Driver Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Titleist TSi3 drivers."
+ },
+ "/products/tts1-aftermarket-head-screw-golf-weights-wrench-for-titleist-ts1-drivers-5g-20g": {
+  "title": "Titleist TS1 Driver Head Screw Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket head screw golf club weights and wrench for Titleist TS1 drivers."
+ },
+ "/products/callaway-mavrik-sub-zero-max-driver-fairway-woods-aftermarket-golf-weights-kit": {
+  "title": "Callaway Mavrik Driver & Fairway Woods Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Mavrik Sub Zero Max Driver and Fairway Woods."
+ },
+ "/products/cobra-aerojet-max-ls-golf-club-driver-fairway-woods-hybrids-aftermarket-golf-weights-kit": {
+  "title": "Cobra Aerojet Golf Club Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra Aerojet, Aerojet Max & Aerojet LS drivers, fairway woods and hybrids."
+ },
+ "/products/odyssey-black-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-kit": {
+  "title": "Odyssey BLACK Stroke Lab Series, White HOT OG Series, Ten Series & O W \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Odyssey Stroke Lab Series, White Hot Series, Ten Series & O Works Putters."
+ },
+ "/products/odyssey-stroke-lab-series-white-hot-og-series-ten-series-o-works-putters-aftermarket-golf-weights-kit": {
+  "title": "Odyssey Stroke Lab Series, White HOT OG Series, Ten Series & O Works P \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Odyssey Stroke Lab Series, White Hot Series, Ten Series & O Works Putters."
+ },
+ "/products/taylormade-qi-10-aftermarket-max-ls-hl-golf-club-driver-fairway-hybrid-weights-kit": {
+  "title": "TaylorMade Qi 10 Max LS HL Golf Club Driver Fairway Hybrid Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Taylormade Qi10, Qi10 Max, Qi10 LS, Qi10 Tour drivers, fairway woods and hybrids."
+ },
+ "/products/taylormade-r7-quad-mini-driver-1-2-pcs-aftermarket-golf-club-weight-kit": {
+  "title": "TaylorMade R7 Quad Mini Driver Aftermarket Golf Club Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Taylormade R7 Quad Mini Driver."
+ },
+ "/products/callaway-elyte-x-max-fast-driver-fairway-wood-aftermarket-golf-weights-kit": {
+  "title": "Callaway Elyte X Max Fast Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for Callaway Paradym Ai Smoke Max D Fast Triple Diamond drivers and fairway woods."
+ },
+ "/products/callaway-quantum-driver-aftermarket-golf-weights-kit": {
+  "title": "Callaway Quantum Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club head weights kit for Callaway Quantum drivers."
+ },
+ "/products/cobra-darkspeed-ls-max-x-ls-driver-aftermarket-golf-weights-kit": {
+  "title": "Cobra Darkspeed Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra Darkspeed LS, MAX, X & LS drivers."
+ },
+ "/products/cobra-ds-adapt-driver-aftermarket-golf-weights-kit": {
+  "title": "Cobra DS Adapt Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra DS Adapt Drivers."
+ },
+ "/products/cobra-ds-adapt-fairway-aftermarket-golf-weights-kit": {
+  "title": "Cobra DS Adapt Fairway & Hybrid Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra DS Adapt Fairway and Hybrids."
+ },
+ "/products/pxg-black-ops-gen6-0311-gen5-0311-gen4-0811-0317-0211-drivers-fairway-woods-hybrids-aftermarket-golf-weights-kit": {
+  "title": "PXG Drivers, Fairway Woods & Hybrids Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for PXG Lightning, Secret Weapon, Black Ops Gen6, Gen5, Gen4 0811 & 0341 XGEN4 & 0211 Drivers, Fairway Woods & Hybrids."
+ },
+ "/products/ping-g440-driver-aftermarket-golf-weights-kit": {
+  "title": "Ping G440 Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Ping G440 Drivers."
+ },
+ "/products/ping-g440-fairway-woods-hybrids-aftermarket-golf-weights-kit": {
+  "title": "Ping G440 Fairway Woods & Hybrids Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Ping G440 Fairway Woods & Hybrids."
+ },
+ "/products/srixon-zxi-zxi-ls-zxi-max-driver-aftermarket-golf-weights-kit": {
+  "title": "Srixon ZXi, ZXi LS, ZXi Max Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Srixon ZXi, ZXi LS, ZXi Max Drivers."
+ },
+ "/products/titleist-gt2-gt4-driver-fairway-wood-hybrid-aftermarket-golf-weights-kit": {
+  "title": "Titleist GT1, GT2, GT4 Driver & Fairway Wood Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Titleist GT1, GT2 & GT4 drivers, fairway woods & hybrids."
+ },
+ "/products/titleist-gt3-driver-aftermarket-golf-weights-kit": {
+  "title": "Titleist GT3 Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Titleist GT3 drivers."
+ },
+ "/products/callaway-big-bertha-b21-reva-drivers-fairway-woods-aftermarket-golf-weights-kit": {
+  "title": "Callaway Big Bertha B21, Reva Drivers & Fairway Woods Aftermarket Golf \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Mavrik Sub Zero Max Driver and Fairway Woods."
+ },
+ "/products/callaway-epic-speed-driver-aftermarket-golf-weights-kit": {
+  "title": "Callaway Epic Speed Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Rogue, Rogue Sub Zero, Rogue Draw drivers and fairway woods."
+ },
+ "/products/callaway-great-big-bertha-alpha-xr16-drivers-aftermarket-golf-weights-kit": {
+  "title": "Callaway Great Big Bertha, Alpha & XR16 Drivers Aftermarket Golf Weigh \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Rogue, Rogue Sub Zero, Rogue Draw drivers and fairway woods."
+ },
+ "/products/callaway-rogue-drivers-fairway-woods-aftermarket-golf-weights-kit": {
+  "title": "Callaway Rogue Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrenches for Callaway Rogue, Rogue Sub Zero, Rogue Draw drivers and fairway woods."
+ },
+ "/products/cobra-king-radspeed-xb-xd-driver-aftermarket-golf-weights-kit": {
+  "title": "Cobra King Radspeed Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra King Radspeed XB XD Drivers."
+ },
+ "/products/cobra-king-vintage-3d-printed-series-putter-aftermarket-golf-weight-kits": {
+  "title": "Cobra King Vintage & 3D Printed Series Putter Aftermarket Golf Weights \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra King Vintage & 3D Series Putters."
+ },
+ "/products/cobra-ltdx-driver-aftermarket-golf-weights-kit": {
+  "title": "Cobra LTDx Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Cobra LTDx drivers."
+ },
+ "/products/cobra-optm-driver-fairway-hybrid-aftermarket-golf-weights-kit": {
+  "title": "Cobra OPTM Driver Fairway & Hybrid Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf head weight kit for Cobra OPTM (Optimum) driver, fairways & hybrids."
+ },
+ "/products/odyssey-ai-one-ai-cruiser-series-putter-aftermarket-golf-weights-kit": {
+  "title": "Odyssey Ai One & Ai Cruiser Series Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Odyssey Ai one & Ai One Crusier series putters."
+ },
+ "/products/odyssey-ai-one-milled-series-toulon-ai-golf-club-putter-head-aftermarket-weights-kit": {
+  "title": "Odyssey Ai One Milled Golf Club Putter Head Aftermarket Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Odyssey Ai One Milled and Toulon Ai series putters."
+ },
+ "/products/odyssey-toulon-2025-collection-golf-club-putter-head-aftermarket-weights-kit": {
+  "title": "Odyssey Toulon 2025 Collection Putter Aftermarket Golf Weight Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket weight kit for Odyssey Toulon 2025 Collection Putters."
+ },
+ "/products/odyssey-tri-hot-5k-eleven-white-hot-versa-series-putter-aftermarket-golf-weights-kit": {
+  "title": "Odyssey Tri-Hot 5k, Eleven & White Hot Versa Series Putter Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Odyssey Tri-Hot 5k, Eleven & White Hot Versa Putters."
+ },
+ "/products/pxg-battle-ready-ii-battle-ready-collection-gen-2-collection-putters-aftermarket-golf-weights-kit": {
+  "title": "PXG Putters Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights and golf club wrench for PXG Zero Torque, Tour Series, Battle Ready II, Battle Ready & Gen 2 Putters."
+ },
+ "/products/ping-g425-max-lst-fairway-woods-hybrid-aftermarket-golf-weights-kit": {
+  "title": "Ping G425 Fairway Woods & Hybrid Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Ping G425 Max, LST Fairway Woods and Hybrid."
+ },
+ "/products/ping-g425-max-lst-sft-drivers-aftermarket-golf-weights-kit": {
+  "title": "Ping G425 Drivers Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Ping G425 Max, LST & SFT Drivers."
+ },
+ "/products/ping-g430-driver-aftermarket-golf-weights-kit": {
+  "title": "Ping G430 Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Ping G430, Max, LST Drivers."
+ },
+ "/products/ping-g430-fairway-woods-hybrid-aftermarket-golf-weights-kit": {
+  "title": "Ping G430 Fairway Woods & Hybrid Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit wrenches for Ping G430, Max, LST & SFT Fairway Woods and Hybrids."
+ },
+ "/products/scotty-cameron-black-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron BLACK Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit in Black for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-blue-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Blue Insert Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit with blue insert for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-captain-america-blue-star-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Captain America Blue Star Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weight kit with Captain America, Blue Star design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-circle-t-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Tour Issue Design Circle T Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit in Circle T design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-circle-t-red-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Tour Issue Red Design Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit in Circle T RED design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-copper-putter-aftermarket-golf-weights-kit-limited-edition": {
+  "title": "Scotty Cameron Copper Putter Aftermarket Golf Weights Kit Limited Edit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit in Copper for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-gold-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Gold Putter Aftermarket Golf Weights Kit Limited Editio \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Scotty Cameron Gold Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-green-clover-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Green Clover Insert Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit with green clover insert for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron SILVER/RED Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights kit in silver / red design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-putter-aftermarket-golf-weights-kit-1": {
+  "title": "Scotty Cameron Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights kit for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-putter-aftermarket-golf-weights-xx-piece-kit": {
+  "title": "Scotty Cameron RED Insert Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit with Red insert for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-rose-gold-putter-aftermarket-golf-weights-kit-limited-edition": {
+  "title": "Scotty Cameron Rose Gold Putter Aftermarket Golf Weights Kit Limited E \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket rose gold golf club weight kit for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-superman-insert-putter-aftermarket-golf-weights-kit": {
+  "title": "Scotty Cameron Superman Insert Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weights kit with Superman design for Scotty Cameron Putters including Newport 2, Phantom X, Special Select & Studio Style."
+ },
+ "/products/srixon-zx5-zx7-mki-mkii-driver-aftermarket-golf-weights-kit": {
+  "title": "Srixon ZX5, ZX7, MKI, MKII Driver Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Srixon ZX5, ZX7, MKI, MKII Drivers."
+ },
+ "/products/taylormade-burner-mini-driver-1-2-pcs-aftermarket-golf-club-weights-kit": {
+  "title": "TaylorMade Burner BRNR Mini Driver Aftermarket Golf Club Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Taylormade BRNR mini drivers."
+ },
+ "/products/taylormade-putter-tp-collection-tp-silver-tp-patina-tp-black-copper-tp-red-tp-white-spider-mini-fcg-truss-putter-aftermarket-golf-weights-kit": {
+  "title": "TaylorMade TP, Spider Mini & FCG Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for TaylorMade Putter TP Silver, TP Red/ White, TP Patina, TP Black Copper, TP Red, Spider Mini, FCG & Truss."
+ },
+ "/products/taylormade-qi-35-driver-aftermarket-weights-kit": {
+  "title": "TaylorMade Qi 35 Driver Aftermarket Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Taylormade Qi 35 drivers."
+ },
+ "/products/taylormade-qi-35-fairway-hybrid-aftermarket-weights-kit": {
+  "title": "TaylorMade Qi 35 Fairway Hybrid Aftermarket Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Taylormade Qi 35 fairway woods and hybrids."
+ },
+ "/products/taylormade-qi4d-driver-fairway-hybrid-aftermarket-golf-weights-kit": {
+  "title": "TaylorMade Qi4D Driver Fairway Hybrid Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weights forTaylorMade Qi4D Driver, Fairway & Hybrids."
+ },
+ "/products/taylormade-spider-tour-putter-2023-aftermarket-golf-weights-kit": {
+  "title": "TaylorMade Spider Tour Putter 2023 Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for 2023 Taylormade Spider Tour putters."
+ },
+ "/products/taylormade-stealth-2-stealth-2-plus-stealth-2-hd-driver-hybrid-aftermarket-golf-weights-kit": {
+  "title": "TaylorMade Stealth 2, Stealth 2 Plus, Stealth 2 HD Driver Aftermarket \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for TaylorMade Stealth 2, Stealth 2 Plus & HD Driver and Hybrid."
+ },
+ "/products/taylormade-tp-hydroblast-truss-putter-aftermarket-golf-head-weights-kit": {
+  "title": "TaylorMade TP Hydroblast & Truss Putter Aftermarket Golf Weights Kit \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for TaylorMade TP Hydroblast & Truss Putter Collection."
+ },
+ "/products/titleist-gts2-gts3-gts4-driver-fairway-wood-aftermarket-golf-weights-kit": {
+  "title": "Titleist GTS2, GTS3, GTS4 Driver & Fairway Wood Aftermarket Golf Weigh \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf weight kits for Titleist GTS series Drivers & Fairway Woods."
+ },
+ "/products/titleist-tsr1-tsr2-tsr4-driver-fairway-wood-aftermarket-golf-weights-kit": {
+  "title": "Titleist TSR1, TSR2 & TSR4 Driver & Fairway Wood Aftermarket Golf Weig \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club weight kit for Titleist TSR1, TSR2 & TSR4 drivers, fairway woods & hybrids."
+ },
+ "/products/taylormade-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway": {
+  "title": "Callaway Aftermarket Golf Sleeve Adapter 0.335 RH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of right handed Callaway Drivers including Quantum, Elyte, Paradym, Rogue and Epic."
+ },
+ "/products/taylormade-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "TaylorMade Aftermarket Golf Shaft Adapter 0.335 RH Driver & Fairway Wo \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a range of TaylorMade Drivers & Fairway woods including Qi4D, Qi35, Qi10, Brnr, Stealth 2 & SIM 2."
+ },
+ "/products/titleist-aftermarket-surefit-golf-sleeve-adapter-0-335-rh-lh-driver": {
+  "title": "Titleist Aftermarket Surefit Golf Sleeve Adapter 0.335 RH LH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a range of Titleist Drivers including GT and TSR Series."
+ },
+ "/products/callaway-elyte-paradym-rogue-epic-aftermarket-golf-shaft-adapter-0-335-lh-driver": {
+  "title": "Callaway Aftermarket Golf Sleeve Adapter 0.335 LH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Left-Handed Callaway Drivers."
+ },
+ "/products/callaway-elyte-paradym-rogue-epic-aftermarket-golf-shaft-adapter-0-335-lh-fairway": {
+  "title": "Callaway Elyte Paradym Rogue Epic Aftermarket Golf Shaft Adapter 0.335 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Callaway Fairway woods."
+ },
+ "/products/callaway-quantum-aftermarket-golf-shaft-adapter-0-335-0-370-rh-fairway-hybrid": {
+  "title": "Callaway Quantum Aftermarket Golf Shaft Adapter 0.335 0.370 RH Fairway \u2013 Golfweights.co.uk",
+  "desc": "0.335 & 0.370 tip size aftermarket shaft adapter that fits Callaway Quantum Fairway woods & hybrids allowing for 7 different loft / lie configurations"
+ },
+ "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-lh-driver": {
+  "title": "Cobra Darkspeed Aerojet LTDx RadSpeed Aftermarket Golf Shaft Adapter 0 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of LH Cobra Drivers & Fairway Woods including Darkspeed, Aerojet, LTDs & RadSpeed."
+ },
+ "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-lh-fairway": {
+  "title": "Cobra Darkspeed Aerojet LTDx RadSpeed Aftermarket Golf Shaft Adapter 0 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of LH Cobra Drivers & Fairway Woods including Darkspeed, Aerojet, LTDs & RadSpeed."
+ },
+ "/products/cobra-darkspeed-aerojet-ltdx-radspeed-aftermarket-golf-shaft-adapter-0-335-rh-fairway": {
+  "title": "Cobra Darkspeed Aerojet LTDx RadSpeed Aftermarket Golf Shaft Adapter 0 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of RH Cobra Drivers & Fairway Woods including Darkspeed, Aerojet, LTDs & RadSpeed."
+ },
+ "/products/cobra-darkspeed-aerojet-tldx-radspeed-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Cobra Darkspeed Aerojet LTDx RadSpeed Aftermarket Golf Shaft Adapter 0 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of RH Cobra Drivers & Fairway Woods including Darkspeed, Aerojet, LTDs & RadSpeed."
+ },
+ "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-lh-driver": {
+  "title": "Cobra DS Adapt Aftermarket Golf Shaft Adapter 0.335 LH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits LH Cobra DS Adapt Drivers."
+ },
+ "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-rh-driver": {
+  "title": "Cobra DS Adapt Aftermarket Golf Shaft Adapter 0.335 RH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits Cobra DS Adapt RH Drivers."
+ },
+ "/products/cobra-ds-adapt-aftermarket-golf-shaft-adapter-0-335-rh-fairways": {
+  "title": "Cobra DS Adapt Aftermarket Golf Shaft Adapter 0.335 RH Fairway \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits Cobra DS Adapt RH Fairways."
+ },
+ "/products/srizon-zxi-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Srixon ZXi series Aftermarket Golf Shaft Adapter 0.335 RH Driver & Fai \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits the Srizon ZXi series RH driver and fairway woods."
+ },
+ "/products/pxg-black-ops-gen-6-gen-5-gen-4-0811-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods": {
+  "title": "PXG Aftermarket Golf Shaft Adapter 0.335 LH Driver & Fairway Woods \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of PXG Drivers and Fairway Woods including Lightning, Secret Weapon, Black Ops, Gen 6, Gen 5, Gen 4, 0811."
+ },
+ "/products/pxg-black-ops-gen-6-gen-5-gen-4-0811-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "PXG Aftermarket Golf Shaft Adapter 0.335 RH Driver & Fairway Woods \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of PXG Drivers and Fairway Woods including Lightning, Secret Weapon, Black Ops, Gen 6, Gen 5, Gen 4, 0811."
+ },
+ "/products/ping-g440-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods": {
+  "title": "Ping G440 Aftermarket Golf Shaft Adapter 0.335 LH Driver & Fairway Woo \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits Ping G440 LH drivers and fairway woods."
+ },
+ "/products/ping-g440-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Ping G440 Aftermarket Golf Shaft Adapter 0.335 RH Driver & Fairway Woo \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits Ping G440 drivers and fairways woods."
+ },
+ "/products/taylormade-qi35-stealth-sim-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods": {
+  "title": "TaylorMade Aftermarket Golf Shaft Adapter 0.335 LH Driver & Fairway Wo \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a range of left handed TaylorMade Drivers & Fairway woods including Qi4D, Qi35, Qi10, Brnr, Stealth 2 & SIM 2."
+ },
+ "/products/callaway-aftermarket-golf-sleeve-adapter-0-350-rh-driver": {
+  "title": "Callaway Elyte Paradym Rogue Epic Aftermarket Golf Shaft Adapter 0.335 \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Callaway Fairway woods."
+ },
+ "/products/callaway-aftermarket-golf-sleeve-adapter-0-350-rh-driver-1": {
+  "title": "Callaway Quantum Elyte Paradym Aftermarket Golf Shaft Adapter 0.350 RH \u2013 Golfweights.co.uk",
+  "desc": "0.350 tip size shaft adapter that fits a wide range of Callaway Drivers."
+ },
+ "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-lh-driver": {
+  "title": "Cobra OPTM Aftermarket Golf Shaft Adapter 0.335 LH Driver \u2013 Golfweights.co.uk",
+  "desc": "Left Hand only 0.335 tip size aftermarket golf shaft adapter for Cobra OPTM Drivers."
+ },
+ "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-rh-driver": {
+  "title": "Cobra OPTM Aftermarket Golf Shaft Adapter 0.335 RH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size aftermarket golf shaft adapter for Cobra OPTM Drivers."
+ },
+ "/products/cobra-optm-aftermarket-golf-shaft-adapter-0-335-rh-fairway": {
+  "title": "Cobra OPTM Aftermarket Golf Shaft Adapter 0.335 RH Fairway \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size aftermarket golf shaft adapter for Cobra OPTM Fairways."
+ },
+ "/products/mizuno-stg-stx-stz-aftermarket-golf-sleeve-adapter-0-335-rh-driver": {
+  "title": "Mizuno STG STX STZ Aftermarket Golf Shaft Adapter 0.335 RH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a range of Mizuno Drivers including STG, STX & STZ."
+ },
+ "/products/0-335-universal-fit-shaft-sleeve-adapter": {
+  "title": "0.335 Universal Fit Shaft Sleeve Adapter \u2013 Golfweights.co.uk",
+  "desc": "0.335 universal fit shaft adapter sleeve. Compatible with all major brands including Titleist, Callaway, TaylorMade, Cobra"
+ },
+ "/products/pxg-aftermarket-golf-shaft-adapter-0-370-lh-hybrids": {
+  "title": "PXG Aftermarket Golf Shaft Adapter 0.335 LH Hybrids \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size aftermarket shaft adapter that fits a range of PXG hybrids including Lightning, Black Ops, Gen 6, Gen 5"
+ },
+ "/products/ping-g400-g30-g-series-aftermarket-golf-sleeve-adapter-0-335-rh-lh-driver-fairway-woods": {
+  "title": "Ping G400 G30 G Series Aftermarket Golf Shaft Adapter 0.335 RH & LH Dr \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Ping Drivers & Fairway Woods including G400, G30 and G series."
+ },
+ "/products/ping-g430-g425-g410-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods": {
+  "title": "Ping G430 G425 G410 Aftermarket Golf Shaft Adapter 0.335 LH Driver & F \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of LH Ping Drivers & Fairway Woods including G430, G425 and G410."
+ },
+ "/products/ping-g430-g425-g410-aftermarket-golf-shaft-adapter-0-370-rh-hybrid": {
+  "title": "Ping G430 G425 G410 Aftermarket Golf Shaft Adapter 0.370 RH Hybrid \u2013 Golfweights.co.uk",
+  "desc": "0.370\" tip size aftermarket shaft adapter that fits a range of Ping Hybrid clubs."
+ },
+ "/products/ping-g430-g425-g410-aftermarket-golf-sleeve-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Ping G430 G425 G410 Aftermarket Golf Shaft Adapter 0.335 RH Driver & F \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Ping Drivers & Fairway Woods including G430, G425 and G410."
+ },
+ "/products/ping-g430-g425-g410-aftermarket-golf-sleeve-adapter-0-350-rh-driver-fairway-woods": {
+  "title": "Ping G430 G425 G410 Aftermarket Golf Shaft Adapter 0.350 RH Driver & F \u2013 Golfweights.co.uk",
+  "desc": "0.350 tip size shaft adapter that fits a wide range of Ping Drivers & Fairway Woods including G430, G425 and G410."
+ },
+ "/products/srixon-zx5-zx7-z-series-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Srixon ZX5 ZX7 Z Series Aftermarket Golf Shaft Adapter 0.335 RH Driver & Fairway \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a wide range of Srixon ZX5, ZX7, Z Series driver and fairway woods."
+ },
+ "/products/taylormade-hybrid-aftermarket-golf-shaft-adapter-0-370-rh": {
+  "title": "TaylorMade Hybrid Aftermarket Golf Shaft Adapter 0.370 RH \u2013 Golfweights.co.uk",
+  "desc": "0.370 tip size shaft adapter that fits a range of TaylorMade Hybrids including Qi4D, Qi35, Qi10, Stealth 2 & SIM 2."
+ },
+ "/products/titleist-aftermarket-golf-shaft-adapter-0-335-rh-lh-fairway": {
+  "title": "Titleist Aftermarket Surefit Golf Sleeve Adapter 0.335 RH LH Fairways \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits a range of Titleist Fairways including GT and TSR Series."
+ },
+ "/products/wilson-aftermarket-golf-shaft-adapter-0-335-rh-driver-fairway-woods": {
+  "title": "Wilson Dynapower series Aftermarket Golf Shaft Adapter 0.335 RH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size shaft adapter that fits the Wilson Dynapower series drivers and fairway woods."
+ },
+ "/products/wilson-dynapower-series-aftermarket-golf-shaft-adapter-0-335-lh-driver-fairway-woods": {
+  "title": "Wilson Dynapower Series Aftermarket Golf Shaft Adapter 0.335 LH Driver \u2013 Golfweights.co.uk",
+  "desc": "0.335 tip size left handed shaft adapter that fits Wilson Dynapower Series golf clubs"
+ },
+ "/products/t20-torque-wrench-for-taylormade-callaway-pxg": {
+  "title": "T20 Universal Torque Wrench for TaylorMade, Callaway & PXG \u2013 Golfweights.co.uk",
+  "desc": "Universal T20 torque golf club wrench compatible with golf club weights for TaylorMade, Callaway & PXG."
+ },
+ "/products/t25-universal-torque-wrench-for-taylormade-titleist-callaway-ping-cobra-odyssey-pxg-mizuno-honma": {
+  "title": "T25 Universal Torque Wrench \u2013 Golfweights.co.uk",
+  "desc": "Universal T25 torque golf club wrench compatible with golf club weights for TaylorMade, Titleist, Callaway, Ping, Cobra, Odyssey, PXG, Mizuno & Honma."
+ },
+ "/products/t15-aftermarket-wrench-very-small": {
+  "title": "T15 Aftermarket Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket T15 golf club wrench compatible with various models including TaylorMade Putter TP Reserve Collection & Spider GTX Max."
+ },
+ "/products/t20-aftermarket-wrench-small": {
+  "title": "T20 Aftermarket Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket T20 golf club wrench compatible with various golf club weights and brands including Callaway, PXG & Taylormade."
+ },
+ "/products/t25-aftermarket-wrench-large": {
+  "title": "T25 Aftermarket Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket T25 golf club wrench compatible with popular golf brands including Callaway, Cobra, PXG, Ping, Taylormade, Titleist, Mizuno & Honma."
+ },
+ "/products/odyssey-tri-hot-5k-series-aftermarket-golf-wrench": {
+  "title": "Odyssey Tri-Hot 5k Series Aftermarket Golf Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club wrench for Odyssey Tri-Hot 5k & White Hot Versa Putters."
+ },
+ "/products/png-aftermarket-golf-club-wrench-for-ping-vault-2-0-putters": {
+  "title": "Ping Vault 2.0 Putter Aftermarket Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club wrench for Ping Vault 2.0 putters."
+ },
+ "/products/red-scotty-cameron-aftermarket-golf-club-wrench": {
+  "title": "Scotty Cameron Aftermarket Golf Club Wrench in Red \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf wrench for Scotty Cameron Putters Compatible with popular models including Newport 2, Phantom, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-aftermarket-golf-club-wrench-in-black": {
+  "title": "Scotty Cameron Aftermarket Golf Club Wrench in Black \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf wrench for Scotty Cameron Putters Compatible with popular models including Newport 2, Phantom, Special Select & Studio Style."
+ },
+ "/products/scotty-cameron-aftermarket-golf-club-wrench-in-green": {
+  "title": "Scotty Cameron Aftermarket Golf Club Wrench in Green \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf wrench for Scotty Cameron Putters Compatible with popular models including Newport 2, Phantom, Special Select & Studio Style."
+ },
+ "/products/aftermarket-wrench-for-taylormade-tp-collection": {
+  "title": "TaylorMade TP Collection Aftermarket Wrench \u2013 Golfweights.co.uk",
+  "desc": "Quality aftermarket golf club wrench for TaylorMade TP Putter Collection - TP Silver, TP Patina, TP Black Copper, TP Red, TP White, Spider Mini, FCG & Truss."
+ }
+}

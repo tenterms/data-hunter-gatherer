@@ -8,6 +8,7 @@ from openpyxl.utils import get_column_letter
 HOOKS = "UK stock — same-day dispatch before 1pm and free delivery over £40."
 import json as _json
 CURRENT_H1 = _json.load(open("current_h1s.json"))  # live titles pulled from the site, 6 Aug 2026
+CURRENT_META = _json.load(open("current_meta.json"))  # live page titles + meta descriptions, 6 Aug 2026
 
 # ---------------------------------------------------------------- helpers
 BRAND_SLUG = {"TaylorMade": "taylormade", "Callaway": "callaway", "Titleist": "titleist",
@@ -632,8 +633,10 @@ ws.column_dimensions["B"].width = 110
 
 # ============ Tab 2: Page edits ============
 ws = wb.create_sheet("Page Edits")
-headers = ["Page", "Page URL (do not change)", "Priority", "New Page Title",
-           "New Meta Description", "Current H1 (as of 6 Aug 2026)", "New H1"] + [f"H2 suggestion {i}" for i in range(1, 7)] + \
+headers = ["Page", "Page URL (do not change)", "Priority",
+           "Current Page Title (as of 6 Aug 2026)", "New Page Title",
+           "Current Meta Description (as of 6 Aug 2026)", "New Meta Description",
+           "Current H1 (as of 6 Aug 2026)", "New H1"] + [f"H2 suggestion {i}" for i in range(1, 7)] + \
           ["Text block further down the page (use real H2/H3 headings)", "Remove / avoid on this page"]
 ws.append(headers)
 style_header(ws, len(headers))
@@ -642,7 +645,10 @@ for sec, rows in SECTIONS:
     section_row(ws, r, sec, len(headers)); r += 1
     for row in rows:
         h2s = (row["h2s"] + [""] * 6)[:6]
-        vals = [row["page"], row["url"], row["prio"], row["title"], row["desc"],
+        cm = CURRENT_META.get(row["url"], {})
+        vals = [row["page"], row["url"], row["prio"],
+                cm.get("title", "—"), row["title"],
+                cm.get("desc", "—"), row["desc"],
                 CURRENT_H1.get(row["url"], "—"), row["h1"]] + h2s + [row["block"], row["avoid"]]
         for c, v in enumerate(vals, start=1):
             cell = ws.cell(row=r, column=c, value=v or None)
@@ -650,7 +656,7 @@ for sec, rows in SECTIONS:
         if row["prio"] == "High":
             ws.cell(row=r, column=3).font = Font(name=FONT, size=10, bold=True, color="B00000")
         r += 1
-widths = [34, 46, 9, 52, 58, 40, 38, 26, 26, 26, 26, 26, 26, 55, 55]
+widths = [34, 46, 9, 48, 52, 52, 58, 38, 38, 26, 26, 26, 26, 26, 26, 55, 55]
 for i, w in enumerate(widths, start=1):
     ws.column_dimensions[get_column_letter(i)].width = w
 ws.freeze_panes = "C2"
