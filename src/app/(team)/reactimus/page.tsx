@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { loadAdminConfig } from "@/lib/sheets";
-import { readReactimusSnapshot } from "@/lib/reactimus";
+import { editKey, ideaKey, readReactimusSnapshot } from "@/lib/reactimus";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +30,7 @@ export default async function ReactimusPage() {
                 </span>
                 <span className="meta">
                   {snapshot
-                    ? `${snapshot.suggestedEdits.length} improvements · ${snapshot.newPageIdeas.length} new page ideas · run ${new Date(snapshot.generatedAt).toLocaleDateString("en-GB")}`
+                    ? `${snapshot.suggestedEdits.filter((e) => !snapshot.archived[editKey(e)]).length} improvements · ${snapshot.newPageIdeas.filter((i) => !snapshot.archived[ideaKey(i)]).length} new page ideas · run ${new Date(snapshot.generatedAt).toLocaleDateString("en-GB")}`
                     : "not analysed yet"}
                 </span>
               </li>

@@ -43,6 +43,14 @@ import type {
 export const REACTIMUS_DIR = path.join(DATA_DIR, "reactimus");
 const MAX_PAGES_PER_RUN = 15;
 
+/** A ruled-out suggestion: suppressed on every future run until restored. */
+export interface ArchivedSuggestion {
+  archivedAt: string;
+  kind: string;
+  title: string;
+  detail: string;
+}
+
 export interface ReactimusSnapshot {
   clientKey: string;
   clientName: string;
@@ -57,6 +65,9 @@ export interface ReactimusSnapshot {
   rejectedCount: number;
   /** suggestion key -> period_key it was added to the report for */
   added: Record<string, string>;
+  /** suggestion key -> archive entry; carried across runs so a ruled-out
+   * suggestion never has to be ruled out again */
+  archived: Record<string, ArchivedSuggestion>;
 }
 
 const normUrl = (u: string) => u.trim().toLowerCase().replace(/\/+$/, "");
@@ -76,7 +87,10 @@ export function readReactimusSnapshot(clientKey: string): ReactimusSnapshot | nu
   const file = snapshotFile(clientKey);
   if (!fs.existsSync(file)) return null;
   try {
-    return JSON.parse(fs.readFileSync(file, "utf8")) as ReactimusSnapshot;
+    const snapshot = JSON.parse(fs.readFileSync(file, "utf8")) as ReactimusSnapshot;
+    snapshot.added ??= {};
+    snapshot.archived ??= {};
+    return snapshot;
   } catch {
     return null;
   }
@@ -305,6 +319,9 @@ export async function runReactimus(
     newPageIdeas,
     rejectedCount: rejected.length,
     added,
+    // Archived (ruled-out) suggestions carry over in full: the whole point
+    // is that a ruled-out idea stays ruled out on every future run.
+    archived: previous?.archived ?? {},
   };
   writeReactimusSnapshot(snapshot);
   log(
@@ -401,4 +418,74 @@ export async function addReactimusToReport(input: {
     ok: true,
     message: `Added to ${period.label}'s strategic priorities${draft ? "" : " (generate the report to see it)"}.`,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Archive: rule a suggestion out so it stays suppressed on every future run
+// ---------------------------------------------------------------------------
+
+const shortPathOf = (url: string) => {
+  try {
+    return new URL(url).pathname || "/";
+  } catch {
+    return url;
+  }
+};
+
+/** Compact display info for a suggestion, so the archive stays browsable
+ * even after the underlying suggestion stops being generated. */
+function describeSuggestion(
+  snapshot: ReactimusSnapshot,
+  key: string,
+): Omit<ArchivedSuggestion, "archivedAt"> | null {
+  const edit = snapshot.suggestedEdits.find((e) => editKey(e) === key);
+  if (edit) {
+    return {
+      kind: "Page improvement",
+      title: `${edit.editType} on ${shortPathOf(edit.url)}`,
+      detail: edit.keywordsTargeted.split(";").slice(0, 3).join(";"),
+    };
+  }
+  const idea = snapshot.newPageIdeas.find((i) => ideaKey(i) === key);
+  if (idea) {
+    return {
+      kind: "New page idea",
+      title: idea.suggestedPageIdea,
+      detail: `${idea.totalImpressions.toLocaleString("en-GB")} impressions`,
+    };
+  }
+  const rec = snapshot.recommendations.find((r) => recKey(r) === key);
+  if (rec) {
+    return {
+      kind: "Recommendation",
+      title: `${rec.recommendationType.replace(/_/g, " ")}: "${rec.canonicalQueryGroup}" on ${shortPathOf(rec.url)}`,
+      detail: rec.searchDemandSummary,
+    };
+  }
+  return null;
+}
+
+export async function archiveReactimusSuggestion(input: {
+  clientKey: string;
+  key: string;
+}): Promise<ActionResult> {
+  const snapshot = readReactimusSnapshot(input.clientKey);
+  if (!snapshot) return { ok: false, message: "Run the analysis first." };
+  const described = describeSuggestion(snapshot, input.key);
+  if (!described) return { ok: false, message: "Suggestion not found." };
+  snapshot.archived[input.key] = { archivedAt: new Date().toISOString(), ...described };
+  writeReactimusSnapshot(snapshot);
+  return { ok: true, message: "Archived — it won't come back on future runs unless you restore it." };
+}
+
+export async function restoreReactimusSuggestion(input: {
+  clientKey: string;
+  key: string;
+}): Promise<ActionResult> {
+  const snapshot = readReactimusSnapshot(input.clientKey);
+  if (!snapshot) return { ok: false, message: "Run the analysis first." };
+  if (!snapshot.archived[input.key]) return { ok: false, message: "That item isn't in the archive." };
+  delete snapshot.archived[input.key];
+  writeReactimusSnapshot(snapshot);
+  return { ok: true, message: "Restored — it will show as a live suggestion again." };
 }

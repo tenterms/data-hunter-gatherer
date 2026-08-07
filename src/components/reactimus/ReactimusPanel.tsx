@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { ReactimusSnapshot } from "@/lib/reactimus";
+import type { ArchivedSuggestion, ReactimusSnapshot } from "@/lib/reactimus";
 import type { NewPageIdeaRow, RecommendationRow, SuggestedEditRow } from "@/reactimus/types";
 
 /** Client-side view of a Reactimus snapshot: run control + suggestion lists. */
@@ -36,6 +36,10 @@ export default function ReactimusPanel({
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
   const [added, setAdded] = useState<Record<string, string>>(snapshot?.added ?? {});
   const [addingKey, setAddingKey] = useState<string | null>(null);
+  const [archived, setArchived] = useState<Record<string, ArchivedSuggestion>>(
+    snapshot?.archived ?? {},
+  );
+  const [archivingKey, setArchivingKey] = useState<string | null>(null);
 
   async function run() {
     setRunning(true);
@@ -74,6 +78,46 @@ export default function ReactimusPanel({
     }
   }
 
+  async function archiveSuggestion(key: string, entry: Omit<ArchivedSuggestion, "archivedAt">) {
+    setArchivingKey(key);
+    try {
+      const res = await fetch("/api/reactimus/archive", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ clientKey, key, action: "archive" }),
+      });
+      const data = (await res.json()) as { ok: boolean; message: string };
+      setMessage({ ok: data.ok, text: data.message });
+      if (data.ok) {
+        setArchived((prev) => ({ ...prev, [key]: { archivedAt: new Date().toISOString(), ...entry } }));
+      }
+    } finally {
+      setArchivingKey(null);
+    }
+  }
+
+  async function restoreSuggestion(key: string) {
+    setArchivingKey(key);
+    try {
+      const res = await fetch("/api/reactimus/archive", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ clientKey, key, action: "restore" }),
+      });
+      const data = (await res.json()) as { ok: boolean; message: string };
+      setMessage({ ok: data.ok, text: data.message });
+      if (data.ok) {
+        setArchived((prev) => {
+          const next = { ...prev };
+          delete next[key];
+          return next;
+        });
+      }
+    } finally {
+      setArchivingKey(null);
+    }
+  }
+
   const AddButton = ({ suggestionKey }: { suggestionKey: string }) =>
     added[suggestionKey] ? (
       <span className="badge live">in report</span>
@@ -87,6 +131,30 @@ export default function ReactimusPanel({
         {addingKey === suggestionKey ? "Adding…" : "Add to report"}
       </button>
     );
+
+  const ArchiveButton = ({
+    suggestionKey,
+    entry,
+  }: {
+    suggestionKey: string;
+    entry: Omit<ArchivedSuggestion, "archivedAt">;
+  }) => (
+    <button
+      className="row-toggle off"
+      title="Rule this out — it stays suppressed on future runs"
+      onClick={() => archiveSuggestion(suggestionKey, entry)}
+      disabled={archivingKey === suggestionKey}
+    >
+      {archivingKey === suggestionKey ? "…" : "archive"}
+    </button>
+  );
+
+  const liveEdits = (snapshot?.suggestedEdits ?? []).filter((e) => !archived[editKey(e)]);
+  const liveIdeas = (snapshot?.newPageIdeas ?? []).filter((i) => !archived[ideaKey(i)]);
+  const liveRecs = (snapshot?.recommendations ?? []).filter((r) => !archived[recKey(r)]);
+  const archivedEntries = Object.entries(archived).sort(
+    (a, b) => b[1].archivedAt.localeCompare(a[1].archivedAt),
+  );
 
   return (
     <>
@@ -139,10 +207,10 @@ export default function ReactimusPanel({
               Copy-and-paste changes to existing pages, based on searches each page already shows up
               for but doesn&apos;t fully cover.
             </p>
-            {snapshot.suggestedEdits.length === 0 ? (
+            {liveEdits.length === 0 ? (
               <p className="bars-empty">No page improvements suggested in the last run.</p>
             ) : (
-              snapshot.suggestedEdits.map((edit) => {
+              liveEdits.map((edit) => {
                 const key = editKey(edit);
                 return (
                   <div className="nested-box reactimus-item" key={key}>
@@ -154,7 +222,17 @@ export default function ReactimusPanel({
                           {shortPath(edit.url)}
                         </a>
                       </div>
-                      <AddButton suggestionKey={key} />
+                      <span className="reactimus-actions">
+                        <ArchiveButton
+                          suggestionKey={key}
+                          entry={{
+                            kind: "Page improvement",
+                            title: `${edit.editType} on ${shortPath(edit.url)}`,
+                            detail: edit.keywordsTargeted.split(";").slice(0, 3).join(";"),
+                          }}
+                        />
+                        <AddButton suggestionKey={key} />
+                      </span>
                     </div>
                     <p className="section-desc" style={{ margin: "6px 0" }}>
                       {edit.whereOnPage} · targets: {edit.keywordsTargeted}
@@ -173,10 +251,10 @@ export default function ReactimusPanel({
               Searches with real demand that none of the client&apos;s pages properly serve —
               candidates for brand-new pages.
             </p>
-            {snapshot.newPageIdeas.length === 0 ? (
+            {liveIdeas.length === 0 ? (
               <p className="bars-empty">No new page ideas from the last run.</p>
             ) : (
-              snapshot.newPageIdeas.map((idea) => {
+              liveIdeas.map((idea) => {
                 const key = ideaKey(idea);
                 return (
                   <div className="nested-box reactimus-item" key={key}>
@@ -186,7 +264,17 @@ export default function ReactimusPanel({
                         <strong>{idea.suggestedPageIdea}</strong>{" "}
                         <span className="badge">{idea.commercialOrInformational}</span>
                       </div>
-                      <AddButton suggestionKey={key} />
+                      <span className="reactimus-actions">
+                        <ArchiveButton
+                          suggestionKey={key}
+                          entry={{
+                            kind: "New page idea",
+                            title: idea.suggestedPageIdea,
+                            detail: `${idea.totalImpressions.toLocaleString("en-GB")} impressions`,
+                          }}
+                        />
+                        <AddButton suggestionKey={key} />
+                      </span>
                     </div>
                     <p style={{ margin: "6px 0" }}>{idea.whySeparatePage}</p>
                     <p className="section-desc" style={{ margin: "6px 0" }}>
@@ -212,7 +300,7 @@ export default function ReactimusPanel({
               {snapshot.rejectedCount} low-value query group{snapshot.rejectedCount === 1 ? " was" : "s were"}{" "}
               rejected automatically.
             </p>
-            {snapshot.recommendations.length === 0 ? (
+            {liveRecs.length === 0 ? (
               <p className="bars-empty">Nothing else to flag.</p>
             ) : (
               <div className="table-wrap">
@@ -228,7 +316,7 @@ export default function ReactimusPanel({
                     </tr>
                   </thead>
                   <tbody>
-                    {snapshot.recommendations.map((rec) => {
+                    {liveRecs.map((rec) => {
                       const key = recKey(rec);
                       return (
                         <tr key={key}>
@@ -240,7 +328,17 @@ export default function ReactimusPanel({
                             <span className={`badge flag-${rec.priority}`}>{rec.priority}</span>
                           </td>
                           <td className="num">
-                            <AddButton suggestionKey={key} />
+                            <span className="reactimus-actions">
+                              <ArchiveButton
+                                suggestionKey={key}
+                                entry={{
+                                  kind: "Recommendation",
+                                  title: `${rec.recommendationType.replace(/_/g, " ")}: "${rec.canonicalQueryGroup}" on ${shortPath(rec.url)}`,
+                                  detail: rec.searchDemandSummary,
+                                }}
+                              />
+                              <AddButton suggestionKey={key} />
+                            </span>
                           </td>
                         </tr>
                       );
@@ -250,6 +348,38 @@ export default function ReactimusPanel({
               </div>
             )}
           </div>
+
+          {archivedEntries.length > 0 && (
+            <div className="card reactimus-archive">
+              <details>
+                <summary>
+                  Archived suggestions ({archivedEntries.length}) — ruled out; these stay suppressed
+                  on every future run
+                </summary>
+                <ul className="reactimus-archive-list">
+                  {archivedEntries.map(([key, entry]) => (
+                    <li key={key}>
+                      <span>
+                        <span className="badge">{entry.kind}</span> <strong>{entry.title}</strong>
+                        {entry.detail && <span className="meta"> · {entry.detail}</span>}
+                        <span className="meta">
+                          {" "}
+                          · archived {new Date(entry.archivedAt).toLocaleDateString("en-GB")}
+                        </span>
+                      </span>
+                      <button
+                        className="row-toggle"
+                        onClick={() => restoreSuggestion(key)}
+                        disabled={archivingKey === key}
+                      >
+                        {archivingKey === key ? "…" : "restore"}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </div>
+          )}
         </>
       )}
     </>
