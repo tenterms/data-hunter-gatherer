@@ -83,33 +83,8 @@ export class LiveGscAdapter implements GscAdapter {
     return { summary: summaryRows[0] ?? null, pages, queries, queryPages };
   }
 
-  /**
-   * Ask Search Console which properties the service account can see and pick
-   * the one matching the client's domain. Handles the common mismatch where
-   * the client was set up as `sc-domain:example.com` but access was granted
-   * on a URL-prefix property like `https://example.com/` (or vice versa,
-   * and with/without www).
-   */
-  private async findAccessibleProperty(client: ClientRow): Promise<string | null> {
-    const res = await this.api().sites.list();
-    const domain = client.domain.toLowerCase().replace(/^www\./, "");
-    const matchesDomain = (siteUrl: string): boolean => {
-      const s = siteUrl.toLowerCase();
-      if (s.startsWith("sc-domain:")) return s.slice("sc-domain:".length) === domain;
-      try {
-        return new URL(s).hostname.replace(/^www\./, "") === domain;
-      } catch {
-        return false;
-      }
-    };
-    const usable = (res.data.siteEntry ?? []).filter(
-      (e) => e.siteUrl && e.permissionLevel !== "siteUnverifiedUser",
-    );
-    // Prefer a domain property when both kinds are available.
-    const match =
-      usable.find((e) => e.siteUrl!.startsWith("sc-domain:") && matchesDomain(e.siteUrl!)) ??
-      usable.find((e) => matchesDomain(e.siteUrl!));
-    return match?.siteUrl ?? null;
+  private findAccessibleProperty(client: ClientRow): Promise<string | null> {
+    return findAccessibleProperty(client);
   }
 
   async fetchDataset(client: ClientRow, range: DateRange): Promise<GscDataset> {
@@ -130,6 +105,60 @@ export class LiveGscAdapter implements GscAdapter {
       this.siteUrlCache.set(client.client_key, alternative);
       return data;
     }
+  }
+}
+
+/**
+ * Ask Search Console which properties the service account can see and pick
+ * the one matching the client's domain. Handles the common mismatch where
+ * the client was set up as `sc-domain:example.com` but access was granted
+ * on a URL-prefix property like `https://example.com/` (or vice versa,
+ * and with/without www).
+ */
+export async function findAccessibleProperty(client: ClientRow): Promise<string | null> {
+  const api = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  const res = await api.sites.list();
+  const domain = client.domain.toLowerCase().replace(/^www\./, "");
+  const matchesDomain = (siteUrl: string): boolean => {
+    const s = siteUrl.toLowerCase();
+    if (s.startsWith("sc-domain:")) return s.slice("sc-domain:".length) === domain;
+    try {
+      return new URL(s).hostname.replace(/^www\./, "") === domain;
+    } catch {
+      return false;
+    }
+  };
+  const usable = (res.data.siteEntry ?? []).filter(
+    (e) => e.siteUrl && e.permissionLevel !== "siteUnverifiedUser",
+  );
+  // Prefer a domain property when both kinds are available.
+  const match =
+    usable.find((e) => e.siteUrl!.startsWith("sc-domain:") && matchesDomain(e.siteUrl!)) ??
+    usable.find((e) => matchesDomain(e.siteUrl!));
+  return match?.siteUrl ?? null;
+}
+
+/**
+ * Resolve the property URL the service account can actually query for this
+ * client: the configured one if it works, else the best match from the
+ * property list (shared by report generation and Reactimus).
+ */
+export async function resolveGscSiteUrl(client: ClientRow): Promise<string> {
+  const api = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  const end = new Date();
+  end.setDate(end.getDate() - 2);
+  const start = new Date(end);
+  start.setDate(start.getDate() - 28);
+  const fmt = (d: Date) => d.toISOString().slice(0, 10);
+  try {
+    await api.searchanalytics.query({
+      siteUrl: client.gsc_property_url,
+      requestBody: { startDate: fmt(start), endDate: fmt(end), rowLimit: 1 },
+    });
+    return client.gsc_property_url;
+  } catch {
+    const alternative = await findAccessibleProperty(client).catch(() => null);
+    return alternative ?? client.gsc_property_url;
   }
 }
 

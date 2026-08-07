@@ -1074,3 +1074,26 @@ button {
   margin: 0;
   font-size: 14px;
 }
+
+/* Reactimus suggestion cards */
+.reactimus-item {
+  margin-top: 14px;
+}
+.reactimus-item-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.reactimus-copy {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 13.5px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 6px 0 0;
+}

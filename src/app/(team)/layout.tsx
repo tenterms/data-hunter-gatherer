@@ -12,6 +12,7 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
           <span className="sub">SEO reporting</span>
           <nav className="header-nav">
             <Link href="/">Reports</Link>
+            <Link href="/reactimus">Reactimus</Link>
             <Link href="/admin">Admin</Link>
           </nav>
         </div>

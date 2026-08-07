@@ -18,11 +18,13 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.111.0",
     "@fontsource-variable/inter": "^5.3.0",
+    "cheerio": "^1.2.0",
     "dotenv": "^16.4.5",
     "googleapis": "^173.0.0",
     "next": "^15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "undici": "^8.10.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

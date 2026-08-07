@@ -1285,7 +1285,7 @@
         "id": "page_clicks_down_5",
         "kind": "page_clicks_down",
         "sentiment": "negative",
-        "text": "Homepage lost clicks: 53 → 39 (impressions 3,184 → 2,210).",
+        "text": "Homepage lost clicks: 53 \u2192 39 (impressions 3,184 \u2192 2,210).",
         "data": {
           "url": "https://cyberalchemy.co.uk/",
           "role": "primary",
@@ -1299,7 +1299,7 @@
         "id": "topic_cluster_decaying_6",
         "kind": "topic_cluster_decaying",
         "sentiment": "negative",
-        "text": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
+        "text": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 \u2192 0, impressions 8,837 \u2192 7,643.",
         "data": {
           "cluster": "penetration-testing",
           "changePct": -1
@@ -1382,10 +1382,10 @@
     },
     {
       "section": "traffic",
-      "suggestedText": "Homepage lost clicks: 53 → 39 (impressions 3,184 → 2,210).",
+      "suggestedText": "Homepage lost clicks: 53 \u2192 39 (impressions 3,184 \u2192 2,210).",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Homepage lost clicks: 53 → 39 (impressions 3,184 → 2,210).",
+      "finalText": "Homepage lost clicks: 53 \u2192 39 (impressions 3,184 \u2192 2,210).",
       "mode": "rules_only"
     },
     {
@@ -1398,10 +1398,10 @@
     },
     {
       "section": "topic_clusters",
-      "suggestedText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
+      "suggestedText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 \u2192 0, impressions 8,837 \u2192 7,643.",
       "suggestedSource": "rules_only",
       "overrideText": null,
-      "finalText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 → 0, impressions 8,837 → 7,643.",
+      "finalText": "Topic cluster \"Penetration Testing\" is decaying: clicks 3 \u2192 0, impressions 8,837 \u2192 7,643.",
       "mode": "rules_only"
     },
     {
@@ -4533,7 +4533,7 @@
           },
           {
             "keys": [
-              "consultoría devsecops"
+              "consultor\u00eda devsecops"
             ],
             "clicks": 0,
             "impressions": 12,
@@ -7287,7 +7287,7 @@
           },
           {
             "keys": [
-              "cybersäkerhet medicinteknik"
+              "cybers\u00e4kerhet medicinteknik"
             ],
             "clicks": 0,
             "impressions": 21,
@@ -15414,7 +15414,7 @@
           },
           {
             "keys": [
-              "what’s a top compliance training tool with robust data encryption to protect sensitive information in financial services?"
+              "what\u2019s a top compliance training tool with robust data encryption to protect sensitive information in financial services?"
             ],
             "clicks": 0,
             "impressions": 4,
@@ -15585,7 +15585,7 @@
           },
           {
             "keys": [
-              "اه"
+              "\u0627\u0647"
             ],
             "clicks": 0,
             "impressions": 1,
@@ -17726,7 +17726,7 @@
           },
           {
             "keys": [
-              "consultoría devsecops",
+              "consultor\u00eda devsecops",
               "https://cyberalchemy.co.uk/service/devsecops-consultancy/"
             ],
             "clicks": 0,
@@ -21436,7 +21436,7 @@
           },
           {
             "keys": [
-              "cybersäkerhet medicinteknik",
+              "cybers\u00e4kerhet medicinteknik",
               "https://cyberalchemy.co.uk/service/medical-technology-cyber-security/"
             ],
             "clicks": 0,
@@ -30846,7 +30846,7 @@
           },
           {
             "keys": [
-              "what’s a top compliance training tool with robust data encryption to protect sensitive information in financial services?",
+              "what\u2019s a top compliance training tool with robust data encryption to protect sensitive information in financial services?",
               "https://cyberalchemy.co.uk/knowledge-hub/how-to-secure-financial-data/"
             ],
             "clicks": 0,
@@ -31046,7 +31046,7 @@
           },
           {
             "keys": [
-              "اه",
+              "\u0627\u0647",
               "https://cyberalchemy.co.uk/knowledge-hub/how-to-secure-financial-data/"
             ],
             "clicks": 0,
@@ -37495,7 +37495,7 @@
           },
           {
             "keys": [
-              "cybersäkerhet medicinteknik"
+              "cybers\u00e4kerhet medicinteknik"
             ],
             "clicks": 0,
             "impressions": 1,
@@ -46198,7 +46198,7 @@
           },
           {
             "keys": [
-              "what’s a top compliance training tool with robust data encryption to protect sensitive information in financial services?"
+              "what\u2019s a top compliance training tool with robust data encryption to protect sensitive information in financial services?"
             ],
             "clicks": 0,
             "impressions": 2,
@@ -46207,7 +46207,7 @@
           },
           {
             "keys": [
-              "what’s the best solution for financial data access?"
+              "what\u2019s the best solution for financial data access?"
             ],
             "clicks": 0,
             "impressions": 1,
@@ -46216,7 +46216,7 @@
           },
           {
             "keys": [
-              "what’s the best way to protect your financial data?"
+              "what\u2019s the best way to protect your financial data?"
             ],
             "clicks": 0,
             "impressions": 5,
@@ -53282,7 +53282,7 @@
           },
           {
             "keys": [
-              "cybersäkerhet medicinteknik",
+              "cybers\u00e4kerhet medicinteknik",
               "https://cyberalchemy.co.uk/service/medical-technology-cyber-security/"
             ],
             "clicks": 0,
@@ -63412,7 +63412,7 @@
           },
           {
             "keys": [
-              "what’s a top compliance training tool with robust data encryption to protect sensitive information in financial services?",
+              "what\u2019s a top compliance training tool with robust data encryption to protect sensitive information in financial services?",
               "https://cyberalchemy.co.uk/knowledge-hub/how-to-secure-financial-data/"
             ],
             "clicks": 0,
@@ -63422,7 +63422,7 @@
           },
           {
             "keys": [
-              "what’s the best solution for financial data access?",
+              "what\u2019s the best solution for financial data access?",
               "https://cyberalchemy.co.uk/knowledge-hub/how-to-secure-financial-data/"
             ],
             "clicks": 0,
@@ -63432,7 +63432,7 @@
           },
           {
             "keys": [
-              "what’s the best way to protect your financial data?",
+              "what\u2019s the best way to protect your financial data?",
               "https://cyberalchemy.co.uk/knowledge-hub/how-to-secure-financial-data/"
             ],
             "clicks": 0,

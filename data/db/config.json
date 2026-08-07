@@ -300,7 +300,7 @@
       "content_type": "commercial",
       "commercial_priority": "high",
       "active": "true",
-      "notes": "Added automatically — edit in the sheet."
+      "notes": "Added automatically \u2014 edit in the sheet."
     }
   ],
   "ContentGroups": [
@@ -1522,7 +1522,7 @@
       "period_key": "2026-06",
       "section": "strategic_priorities",
       "suggested_text": "",
-      "override_text": "1. Publish the two sector landing pages that are ready for review — these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
+      "override_text": "1. Publish the two sector landing pages that are ready for review \u2014 these unlock the sector cluster strategy.\n2. Consolidate the concept product design pages before making further changes; rankings there are still settling.\n3. Keep building prototyping content while the cluster has momentum.",
       "final_text": "",
       "approved_by": "demo strategist",
       "approved_at": "2026-07-08"
