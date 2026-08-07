@@ -78,6 +78,38 @@ export const ideaKey = (i: NewPageIdeaRow) =>
 export const recKey = (r: RecommendationRow) =>
   `rec##${normUrl(r.url)}##${r.canonicalQueryGroup.trim().toLowerCase()}`;
 
+// Generic words that carry no brand meaning on their own, so a query made up
+// only of these plus the client's distinctive name is "just the brand".
+const GENERIC_BRAND_WORDS = new Set([
+  "it", "services", "service", "ltd", "limited", "group", "uk", "the", "and",
+  "co", "company", "inc", "solutions", "solution", "agency", "consulting",
+  "consultancy", "partners", "systems", "technologies", "technology",
+]);
+
+function contentTokens(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t && !GENERIC_BRAND_WORDS.has(t));
+}
+
+/**
+ * Build a test for whether a query is essentially the client's own brand name
+ * (e.g. "aag it services" for client "AAG IT Services"). Such queries must
+ * never become "new page" ideas: a business does not need a new page about
+ * its own name. Distinctive brand tokens only, so "cyber security" is not
+ * flagged for a client called "Cyber Alchemy".
+ */
+function brandQueryTest(clientName: string): (query: string) => boolean {
+  const brandTokens = new Set(contentTokens(clientName));
+  return (query: string) => {
+    const tokens = contentTokens(query);
+    if (tokens.length === 0 || brandTokens.size === 0) return false;
+    return tokens.every((t) => brandTokens.has(t));
+  };
+}
+
 function snapshotFile(clientKey: string): string {
   return path.join(REACTIMUS_DIR, `${clientKey}.json`);
 }
@@ -239,7 +271,7 @@ export async function runReactimus(
       windowStart = rows[0].startDate;
       windowEnd = rows[0].endDate;
     }
-    const page = await fetchPageContent(input.url);
+    const page = await fetchPageContent(input.url, 20000, log);
     pages.set(normUrl(input.url), page);
     const statusBits = [
       error ? `GSC error: ${error}` : `${rows.length} queries`,
@@ -290,9 +322,22 @@ export async function runReactimus(
   log(`Analysed ${analysed.length} query group(s) from ${allRaw.length} raw queries.`);
 
   const NEW_PAGE = new Set(["new_commercial_page", "new_supporting_content"]);
+  // A new-page idea is a claim that a topic is genuinely missing from the site.
+  // We can only make that claim about pages we actually read, and never about
+  // the client's own brand name, so guard both: an unreadable page or a
+  // brand-dominated query must never turn into a "build a new page" suggestion.
+  const unreadableUrls = new Set(
+    [...pages.entries()].filter(([, p]) => p.httpStatus !== 200).map(([key]) => key),
+  );
+  const isBrandDominated = brandQueryTest(client.client_name);
   const actionable = analysed.filter((g) => g.category !== "reject" && !NEW_PAGE.has(g.category));
   const rejected = analysed.filter((g) => g.category === "reject");
-  const newPageGroups = analysed.filter((g) => NEW_PAGE.has(g.category));
+  const newPageGroups = analysed.filter(
+    (g) =>
+      NEW_PAGE.has(g.category) &&
+      !unreadableUrls.has(normUrl(g.url)) &&
+      !isBrandDominated(g.canonicalQuery),
+  );
 
   const newRecommendations = actionable.map(buildRecommendation);
   const newSuggestedEdits = buildSuggestedEdits(analysed, pages, toolConfig);
