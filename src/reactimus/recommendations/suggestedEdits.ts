@@ -148,7 +148,8 @@ export function buildSuggestedEdits(
             : 'New section after the opening content',
         suggestedCopy:
           `H2: ${heading}\n` +
-          `Opening line: "${client} provides ${g.canonicalQuery} designed around your organisation's needs — [adapt to the page's tone and add 1–2 specifics]."` +
+          `Under it, write 2–3 sentences covering "${g.canonicalQuery}", grounded in what the page already says ` +
+          `(services, specifics, locations). Use the phrase once, naturally — never as a bolted-on SEO sentence.` +
           (otherVariants.length > 0
             ? `\nWork these close variants into the section copy (not extra headings): ${otherVariants.join('; ')}.`
             : ''),
@@ -180,7 +181,8 @@ export function buildSuggestedEdits(
           (g.highestImpressionQuery !== g.canonicalQuery
             ? ` (or the variant "${g.highestImpressionQuery}")`
             : '') +
-          `.\nDraft: "${client} also offers ${g.canonicalQuery} — [tie this to an existing point in the section rather than adding a standalone SEO sentence]."` +
+          `.\nWrite it the way a customer would read it: tie the phrase to a point the section already makes, ` +
+          `rather than adding a standalone SEO sentence.` +
           (otherVariants.length > 0
             ? `\nOne or two sentences can also cover: ${otherVariants.join('; ')} — no need for one sentence per keyword.`
             : ''),
@@ -206,7 +208,7 @@ export function buildSuggestedEdits(
         suggestedCopy:
           `Link to: ${target}\n` +
           `Anchor text: "${g.canonicalQuery}" (or a natural variant)\n` +
-          `Draft sentence: "For ${g.canonicalQuery}, see our dedicated page — [link the phrase to ${target}]."`,
+          `Work the link into an existing sentence where the topic comes up — not a standalone "see our page" line.`,
         keywordsTargeted: g.variants.map((v) => v.query).join('; '),
         why:
           `${target} should own this query; an internal link passes the relevance signal there and reduces the ` +
@@ -227,7 +229,8 @@ export function buildSuggestedEdits(
           const question = suggestFaqQuestion(g.canonicalQuery);
           return (
             `H3: ${question}\n` +
-            `Suggested answer: "${client} ${answerStem(g, page)} — [give a 2–3 sentence direct answer, then a next step such as a link to contact]."`
+            `Answer: write 2–3 plain sentences drawing on the page (who it's for, what's included, where ${client} works), ` +
+            `then a next step such as a link to contact. Do not repeat the search phrase word-for-word.`
           );
         });
       const demandProxy: AnalysedGroup = {
@@ -255,10 +258,4 @@ export function buildSuggestedEdits(
   // Highest-value edits first.
   const rank = { high: 0, medium: 1, low: 2 } as const;
   return edits.sort((a, b) => rank[a.priority] - rank[b.priority] || b.confidence - a.confidence);
-}
-
-/** A phrase-appropriate stem for the FAQ answer draft. */
-function answerStem(g: AnalysedGroup, page?: PageContentRow): string {
-  const topic = page?.h1 || page?.titleTag || g.canonicalQuery;
-  return `provides ${topic.toLowerCase().replace(/\s*\|.*$/, '')} and can help with "${g.canonicalQuery}"`;
 }

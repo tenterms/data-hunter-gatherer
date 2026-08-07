@@ -1,7 +1,7 @@
 {
   "clientKey": "cyber-alchemy",
   "clientName": "Cyber Alchemy",
-  "generatedAt": "2026-08-07T16:15:43.443Z",
+  "generatedAt": "2026-08-07T16:47:49.736Z",
   "window": {
     "start": "2026-05-05",
     "end": "2026-08-05"
@@ -12,7 +12,8 @@
     {
       "url": "https://cyberalchemy.co.uk/",
       "status": "58 queries · page fetched",
-      "queries": 58
+      "queries": 58,
+      "analysedAt": "2026-08-07T16:47:48.565Z"
     }
   ],
   "recommendations": [
@@ -286,7 +287,7 @@
       "url": "https://cyberalchemy.co.uk/",
       "editType": "Body copy",
       "whereOnPage": "Within the \"Cyber Security Services for Financial Services Companies\" section",
-      "suggestedCopy": "Add one sentence using \"cyber security services sheffield\".\nDraft: \"Cyber Alchemy also offers cyber security services sheffield — [tie this to an existing point in the section rather than adding a standalone SEO sentence].\"\nOne or two sentences can also cover: cyber security sheffield; cyber security training sheffield; cyber security companies sheffield; cyber security consultant companies; cyber security consultants uk — no need for one sentence per keyword.",
+      "suggestedCopy": "Add one sentence using \"cyber security services sheffield\".\nWrite it the way a customer would read it: tie the phrase to a point the section already makes, rather than adding a standalone SEO sentence.\nOne or two sentences can also cover: cyber security sheffield; cyber security training sheffield; cyber security companies sheffield; cyber security consultant companies; cyber security consultants uk — no need for one sentence per keyword.",
       "keywordsTargeted": "cyber security services sheffield; cybersecurity services sheffield; cyber security sheffield; cybersecurity sheffield; cyber security training sheffield; cyber security companies sheffield; cyber security consultant companies; cyber security consultants uk",
       "why": "Relevant commercial variant (relevance 5, commerciality 4), but not an undeniable heading — work it into paragraph copy naturally instead. One section covers 6 close keyword groups: \"cyber security services sheffield\", \"cyber security sheffield\", \"cyber security training sheffield\", \"cyber security companies sheffield\", \"cyber security consultant companies\", \"cyber security consultants uk\" — do not create separate headings for each.",
       "priority": "high",
@@ -298,7 +299,7 @@
       "url": "https://cyberalchemy.co.uk/",
       "editType": "New H2 section",
       "whereOnPage": "Promote the existing copy — \"…with a trusted cyber consultancy. Reviews of our…\" — into its own section",
-      "suggestedCopy": "H2: Cyber Consultancy\nOpening line: \"Cyber Alchemy provides cyber consultancy designed around your organisation's needs — [adapt to the page's tone and add 1–2 specifics].\"\nWork these close variants into the section copy (not extra headings): cyber security consultant.",
+      "suggestedCopy": "H2: Cyber Consultancy\nUnder it, write 2–3 sentences covering \"cyber consultancy\", grounded in what the page already says (services, specifics, locations). Use the phrase once, naturally — never as a bolted-on SEO sentence.\nWork these close variants into the section copy (not extra headings): cyber security consultant.",
       "keywordsTargeted": "cyber consultancy; \"cyber consultancy; cyber security consultant",
       "why": "Phrase already appears in body copy (\"…with a trusted cyber consultancy. Reviews of our…\"); promote it to a section heading for prominence. One section covers 2 close keyword groups: \"cyber consultancy\", \"cyber security consultant\" — do not create separate headings for each.",
       "priority": "high",
@@ -310,7 +311,7 @@
       "url": "https://cyberalchemy.co.uk/",
       "editType": "New H2 section",
       "whereOnPage": "Promote the existing copy — \"…More Red Teaming Services A Trusted UK Cyber Security and IT Security Consultancy We’re…\" — into its own section",
-      "suggestedCopy": "H2: It Security Services uk\nOpening line: \"Cyber Alchemy provides it security services uk designed around your organisation's needs — [adapt to the page's tone and add 1–2 specifics].\"",
+      "suggestedCopy": "H2: It Security Services uk\nUnder it, write 2–3 sentences covering \"it security services uk\", grounded in what the page already says (services, specifics, locations). Use the phrase once, naturally — never as a bolted-on SEO sentence.",
       "keywordsTargeted": "it security services uk",
       "why": "Phrase already appears in body copy (\"…More Red Teaming Services A Trusted UK Cyber Security and IT Security Consultancy We’re…\"); promote it to a section heading for prominence.",
       "priority": "low",
@@ -322,7 +323,7 @@
       "url": "https://cyberalchemy.co.uk/",
       "editType": "Body copy",
       "whereOnPage": "Within the \"Want to Build a Security Posture that Supports Growth? Cyber Alchemy Can Help.\" section",
-      "suggestedCopy": "Add one sentence using \"cyber strategies\".\nDraft: \"Cyber Alchemy also offers cyber strategies — [tie this to an existing point in the section rather than adding a standalone SEO sentence].\"\nOne or two sentences can also cover: cyber essentials consultancy; cybersecurity compliance consulting — no need for one sentence per keyword.",
+      "suggestedCopy": "Add one sentence using \"cyber strategies\".\nWrite it the way a customer would read it: tie the phrase to a point the section already makes, rather than adding a standalone SEO sentence.\nOne or two sentences can also cover: cyber essentials consultancy; cybersecurity compliance consulting — no need for one sentence per keyword.",
       "keywordsTargeted": "cyber strategies; cyber essentials consultancy; cybersecurity compliance consulting",
       "why": "Relevant secondary variant/detail (relevance 4, commerciality 3); fits naturally in paragraph copy rather than a heading. One section covers 3 close keyword groups: \"cyber strategies\", \"cyber essentials consultancy\", \"cybersecurity compliance consulting\" — do not create separate headings for each.",
       "priority": "low",

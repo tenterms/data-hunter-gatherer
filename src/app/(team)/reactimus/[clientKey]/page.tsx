@@ -17,9 +17,11 @@ export default async function ReactimusClientPage({
   if (!client) notFound();
 
   const snapshot = readReactimusSnapshot(clientKey);
-  const keyPageCount = config.clientPages.filter(
-    (p) => p.client_key === clientKey && p.active,
-  ).length;
+  const roleOrder: Record<string, number> = { primary: 0, secondary: 1, supporting: 2, rest_of_site: 3 };
+  const keyPages = config.clientPages
+    .filter((p) => p.client_key === clientKey && p.active)
+    .sort((a, b) => (roleOrder[a.page_role] ?? 9) - (roleOrder[b.page_role] ?? 9))
+    .map((p) => ({ url: p.url, label: p.label, role: p.page_role }));
 
   return (
     <>
@@ -29,11 +31,11 @@ export default async function ReactimusClientPage({
       </p>
       <h1>Reactimus — {client.client_name}</h1>
       <p className="subtitle">
-        Suggestions built from the last three months of Search Console data for the client&apos;s{" "}
-        {keyPageCount} key page{keyPageCount === 1 ? "" : "s"}. &ldquo;Add to report&rdquo; puts a
-        suggestion into the strategic priorities of the client&apos;s latest month.
+        Pick the pages to analyse (2–5 works best), run the analysis, and the suggestions appear
+        under each page. &ldquo;Add to report&rdquo; puts a suggestion into the strategic priorities
+        of the client&apos;s latest month; &ldquo;archive&rdquo; rules it out for good.
       </p>
-      <ReactimusPanel clientKey={clientKey} snapshot={snapshot} />
+      <ReactimusPanel clientKey={clientKey} snapshot={snapshot} keyPages={keyPages} />
     </>
   );
 }

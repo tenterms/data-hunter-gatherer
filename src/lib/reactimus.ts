@@ -58,7 +58,7 @@ export interface ReactimusSnapshot {
   window: { start: string; end: string };
   property: string;
   llm: string;
-  pagesAnalysed: Array<{ url: string; status: string; queries: number }>;
+  pagesAnalysed: Array<{ url: string; status: string; queries: number; analysedAt?: string }>;
   recommendations: RecommendationRow[];
   suggestedEdits: SuggestedEditRow[];
   newPageIdeas: NewPageIdeaRow[];
@@ -153,6 +153,7 @@ async function queriesForUrl(
 
 export async function runReactimus(
   clientKey: string,
+  urls: string[] | undefined,
   logFn?: (message: string) => void,
 ): Promise<{ ok: boolean; message: string; snapshot?: ReactimusSnapshot }> {
   const log = logFn ?? (() => {});
@@ -172,22 +173,30 @@ export async function runReactimus(
       message: "This client has no key pages yet — add some in the Key pages tab first (Reactimus analyses those pages).",
     };
   }
-  // Primary pages first, and a sane cap so a run stays quick.
+  // Primary pages first.
   const roleOrder: Record<string, number> = { primary: 0, secondary: 1, supporting: 2, rest_of_site: 3 };
   const inputsAll = [...keyPages].sort(
     (a, b) => (roleOrder[a.page_role] ?? 9) - (roleOrder[b.page_role] ?? 9),
   );
-  const inputs = inputsAll.slice(0, MAX_PAGES_PER_RUN);
-  if (inputsAll.length > inputs.length) {
-    log(`Analysing the first ${inputs.length} of ${inputsAll.length} key pages (per-run cap).`);
+  // Page-scoped runs: analyse only the selected pages; other pages keep the
+  // suggestions from their previous run.
+  const selected = new Set((urls ?? []).map(normUrl).filter(Boolean));
+  const inputs = (selected.size > 0
+    ? inputsAll.filter((p) => selected.has(normUrl(p.url)))
+    : inputsAll
+  ).slice(0, MAX_PAGES_PER_RUN);
+  if (selected.size > 0 && inputs.length === 0) {
+    return { ok: false, message: "None of the selected pages are key pages for this client." };
   }
+  log(`Analysing ${inputs.length} page(s).`);
 
   const property = await resolveGscSiteUrl(client);
   log(`GSC property: ${property}`);
 
-  // Reactimus is deterministic by default; set REACTIMUS_LLM=anthropic to let
-  // Claude also polish the suggested copy (one call per edit).
-  const useLlm = process.env.REACTIMUS_LLM === "anthropic" && Boolean(app.anthropicApiKey);
+  // Claude drafts the suggested copy whenever a key exists (one call per
+  // suggestion; the analysis itself stays deterministic). REACTIMUS_LLM=none
+  // opts out and leaves the instruction-style outlines instead.
+  const useLlm = process.env.REACTIMUS_LLM !== "none" && Boolean(app.anthropicApiKey);
   const toolConfig: ToolConfig = {
     ...DEFAULT_CONFIG,
     clientName: client.client_name,
@@ -221,6 +230,7 @@ export async function runReactimus(
   let windowStart = "";
   let windowEnd = "";
 
+  const analysedAt = new Date().toISOString();
   for (const input of inputs) {
     log(`Pulling GSC queries for ${input.url} …`);
     const { rows, error } = await queriesForUrl(toolConfig, input.url);
@@ -235,7 +245,7 @@ export async function runReactimus(
       error ? `GSC error: ${error}` : `${rows.length} queries`,
       page.httpStatus === 200 ? "page fetched" : `page fetch failed (HTTP ${page.httpStatus})`,
     ];
-    pageStatuses.push({ url: input.url, status: statusBits.join(" · "), queries: rows.length });
+    pageStatuses.push({ url: input.url, status: statusBits.join(" · "), queries: rows.length, analysedAt });
   }
 
   // --- Group, score, classify (mirrors the standalone pipeline core) ---
@@ -284,16 +294,34 @@ export async function runReactimus(
   const rejected = analysed.filter((g) => g.category === "reject");
   const newPageGroups = analysed.filter((g) => NEW_PAGE.has(g.category));
 
-  const recommendations = actionable.map(buildRecommendation);
-  const suggestedEdits = buildSuggestedEdits(analysed, pages, toolConfig);
-  const drafted = await applyLlmDrafts(suggestedEdits, pages, toolConfig, llm);
-  if (drafted > 0) log(`Claude drafted publishable copy for ${drafted} edit(s).`);
-  const newPageIdeas = consolidateNewPageGroups(newPageGroups).map((c) =>
-    buildNewPageIdea(c, toolConfig),
-  );
+  const newRecommendations = actionable.map(buildRecommendation);
+  const newSuggestedEdits = buildSuggestedEdits(analysed, pages, toolConfig);
+  const drafted = await applyLlmDrafts(newSuggestedEdits, pages, toolConfig, llm);
+  if (drafted > 0) log(`Claude drafted publishable copy for ${drafted} suggestion(s).`);
+  const newIdeas = consolidateNewPageGroups(newPageGroups).map((c) => buildNewPageIdea(c, toolConfig));
 
-  // Carry "added to report" markers across runs.
+  // Merge with the previous snapshot: pages analysed in this run replace
+  // their old suggestions; every other page keeps its previous ones.
   const previous = readReactimusSnapshot(clientKey);
+  const runUrls = new Set(inputs.map((p) => normUrl(p.url)));
+  const suggestedEdits = [
+    ...(previous?.suggestedEdits ?? []).filter((e) => !runUrls.has(normUrl(e.url))),
+    ...newSuggestedEdits,
+  ];
+  const recommendations = [
+    ...(previous?.recommendations ?? []).filter((r) => !runUrls.has(normUrl(r.url))),
+    ...newRecommendations,
+  ];
+  const newPageIdeas = [
+    ...(previous?.newPageIdeas ?? []).filter((i) => !runUrls.has(normUrl(i.sourceUrl))),
+    ...newIdeas,
+  ];
+  const pagesAnalysed = [
+    ...(previous?.pagesAnalysed ?? []).filter((p) => !runUrls.has(normUrl(p.url))),
+    ...pageStatuses,
+  ];
+
+  // Carry "added to report" markers for suggestions that still exist.
   const added: Record<string, string> = {};
   if (previous?.added) {
     const liveKeys = new Set([
@@ -313,7 +341,7 @@ export async function runReactimus(
     window: { start: windowStart, end: windowEnd },
     property,
     llm: llm.name,
-    pagesAnalysed: pageStatuses,
+    pagesAnalysed,
     recommendations,
     suggestedEdits,
     newPageIdeas,
@@ -325,7 +353,7 @@ export async function runReactimus(
   };
   writeReactimusSnapshot(snapshot);
   log(
-    `Done: ${suggestedEdits.length} page improvement(s), ${newPageIdeas.length} new page idea(s), ${rejected.length} rejected group(s).`,
+    `Done: ${newSuggestedEdits.length} page improvement(s), ${newIdeas.length} new page idea(s), ${rejected.length} rejected group(s) for the selected pages.`,
   );
   return { ok: true, message: "Analysis complete.", snapshot };
 }

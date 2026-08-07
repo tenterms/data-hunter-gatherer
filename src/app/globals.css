@@ -1140,3 +1140,32 @@ button {
   gap: 10px;
   white-space: nowrap;
 }
+
+/* Reactimus page picker */
+.reactimus-page-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.reactimus-page-option {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.reactimus-page-option:hover {
+  background: var(--blue-bolt-25);
+}
+.reactimus-page-option .meta {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+.reactimus-page-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-left: 6px;
+}

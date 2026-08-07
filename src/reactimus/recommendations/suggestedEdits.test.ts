@@ -145,7 +145,7 @@ describe('buildSuggestedEdits', () => {
     expect(h2.suggestedCopy).toBe('H2: Polished Heading\nPolished opening paragraph.');
     expect(h2.why).toContain('review before publishing');
     const body = edits.find((e) => e.editType === 'Body copy')!;
-    expect(body.suggestedCopy).toContain('Draft:'); // template kept
+    expect(body.suggestedCopy).toContain('Add one sentence using'); // template kept
   });
 
   it('ignores non-on-page categories', () => {

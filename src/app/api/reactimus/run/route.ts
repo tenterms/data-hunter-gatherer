@@ -8,7 +8,8 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const log: string[] = [];
-    const result = await runReactimus(String(body.clientKey ?? ""), (m) => log.push(m));
+    const urls = Array.isArray(body.urls) ? body.urls.map(String) : undefined;
+    const result = await runReactimus(String(body.clientKey ?? ""), urls, (m) => log.push(m));
     return NextResponse.json({ ...result, log }, { status: result.ok ? 200 : 400 });
   } catch (error) {
     return NextResponse.json(
