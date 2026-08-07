@@ -33,8 +33,17 @@ const ROW_LIMIT = 25000;
 export class LiveGscAdapter implements GscAdapter {
   readonly source = "live" as const;
 
+  /** client_key -> property URL that actually worked, so retries only happen once */
+  private siteUrlCache = new Map<string, string>();
+
+  constructor(private log: (message: string) => void = () => {}) {}
+
+  private api() {
+    return google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  }
+
   private async queryAll(siteUrl: string, range: DateRange, dimensions: string[]): Promise<GscRow[]> {
-    const searchconsole = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+    const searchconsole = this.api();
     const rows: GscRow[] = [];
     let startRow = 0;
     for (;;) {
@@ -64,8 +73,7 @@ export class LiveGscAdapter implements GscAdapter {
     return rows;
   }
 
-  async fetchDataset(client: ClientRow, range: DateRange): Promise<GscDataset> {
-    const siteUrl = client.gsc_property_url;
+  private async fetchAll(siteUrl: string, range: DateRange): Promise<GscDataset> {
     const [summaryRows, pages, queries, queryPages] = await Promise.all([
       this.queryAll(siteUrl, range, []),
       this.queryAll(siteUrl, range, ["page"]),
@@ -73,6 +81,55 @@ export class LiveGscAdapter implements GscAdapter {
       this.queryAll(siteUrl, range, ["query", "page"]),
     ]);
     return { summary: summaryRows[0] ?? null, pages, queries, queryPages };
+  }
+
+  /**
+   * Ask Search Console which properties the service account can see and pick
+   * the one matching the client's domain. Handles the common mismatch where
+   * the client was set up as `sc-domain:example.com` but access was granted
+   * on a URL-prefix property like `https://example.com/` (or vice versa,
+   * and with/without www).
+   */
+  private async findAccessibleProperty(client: ClientRow): Promise<string | null> {
+    const res = await this.api().sites.list();
+    const domain = client.domain.toLowerCase().replace(/^www\./, "");
+    const matchesDomain = (siteUrl: string): boolean => {
+      const s = siteUrl.toLowerCase();
+      if (s.startsWith("sc-domain:")) return s.slice("sc-domain:".length) === domain;
+      try {
+        return new URL(s).hostname.replace(/^www\./, "") === domain;
+      } catch {
+        return false;
+      }
+    };
+    const usable = (res.data.siteEntry ?? []).filter(
+      (e) => e.siteUrl && e.permissionLevel !== "siteUnverifiedUser",
+    );
+    // Prefer a domain property when both kinds are available.
+    const match =
+      usable.find((e) => e.siteUrl!.startsWith("sc-domain:") && matchesDomain(e.siteUrl!)) ??
+      usable.find((e) => matchesDomain(e.siteUrl!));
+    return match?.siteUrl ?? null;
+  }
+
+  async fetchDataset(client: ClientRow, range: DateRange): Promise<GscDataset> {
+    const cached = this.siteUrlCache.get(client.client_key);
+    const configured = cached ?? client.gsc_property_url;
+    try {
+      const data = await this.fetchAll(configured, range);
+      this.siteUrlCache.set(client.client_key, configured);
+      return data;
+    } catch (error) {
+      if (cached) throw error; // the resolved property itself failed — a real error
+      const alternative = await this.findAccessibleProperty(client).catch(() => null);
+      if (!alternative || alternative === configured) throw error;
+      this.log(
+        `GSC: no access to "${configured}" — using "${alternative}" instead (matched from the service account's property list).`,
+      );
+      const data = await this.fetchAll(alternative, range);
+      this.siteUrlCache.set(client.client_key, alternative);
+      return data;
+    }
   }
 }
 

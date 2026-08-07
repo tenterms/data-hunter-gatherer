@@ -138,7 +138,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
 
   // --- Fetch GSC data (live or mock) ---------------------------------------
   const useLive = app.hasGoogleCredentials && !options.forceMock;
-  let gsc: GscAdapter = useLive ? new LiveGscAdapter() : new MockGscAdapter(config);
+  let gsc: GscAdapter = useLive ? new LiveGscAdapter(log) : new MockGscAdapter(config);
   log(`Fetching GSC data via ${gsc.source} adapter…`);
 
   const currentRange = { startDate: period.start_date, endDate: period.end_date };
