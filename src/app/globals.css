@@ -1055,3 +1055,22 @@ button {
   vertical-align: super;
   font-weight: 600;
 }
+
+/* Account manager assistant panel */
+.focus-notes {
+  border-left: 4px solid var(--violet-volt);
+}
+.focus-notes .focus-notes-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.focus-notes-body {
+  white-space: pre-line;
+  background: var(--violet-volt-25);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin: 0;
+  font-size: 14px;
+}

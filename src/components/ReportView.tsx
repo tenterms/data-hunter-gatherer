@@ -49,7 +49,10 @@ export default function ReportView({
   return (
     <>
       {/* 1. Executive summary */}
-      <ReportSection title="Executive summary">
+      <ReportSection
+        title="Executive summary"
+        description="The month in a nutshell — what happened, why it matters, and what we're focused on next."
+      >
         <Commentary section="executive_summary" />
       </ReportSection>
 
@@ -63,7 +66,7 @@ export default function ReportView({
       {/* 3. Work grid (DRAW) */}
       <ReportSection
         title="Work completed &amp; planned"
-        description="Priority tasks this month and what we did last month, across the four DRAW workstreams."
+        description="What we're doing for you right now, and what we finished last month — across design, SEO fixes, content and everything else."
       >
         <DrawGrid
           tasks={snapshot.drawTasks}
@@ -72,7 +75,10 @@ export default function ReportView({
       </ReportSection>
 
       {/* 4. Strategic priorities */}
-      <ReportSection title="Strategic priorities">
+      <ReportSection
+        title="Strategic priorities"
+        description="The moves we recommend next, and why each one is worth doing."
+      >
         <Commentary section="strategic_priorities" />
         {snapshot.strategicNotes.length > 0 && (
           <ul>
@@ -94,7 +100,7 @@ export default function ReportView({
       {/* 5. Traffic changes (GSC) */}
       <ReportSection
         title="Traffic changes (Google Search Console)"
-        description="Clicks, impressions, CTR and average position for the key pages, current period vs comparison period."
+        description="How often the site showed up in Google searches, and how many people clicked through — for the pages that matter most, compared with the month before."
       >
         <Commentary section="traffic" />
         {primaryPages.length > 0 && (
@@ -145,6 +151,11 @@ export default function ReportView({
         {metrics.contentGroups.length > 0 && (
           <div className="nested-box">
             <h3>Content group performance</h3>
+            <p className="section-desc">
+              The site&apos;s pages bundled into groups (like &ldquo;service pages&rdquo; or
+              &ldquo;blog posts&rdquo;), so you can see at a glance which parts of the site are
+              gaining or losing search traffic.
+            </p>
             <Commentary section="content_groups" />
             <PerformanceBars groups={metrics.contentGroups} />
           </div>
@@ -153,8 +164,9 @@ export default function ReportView({
           <div className="nested-box">
             <h3>Keyword group performance</h3>
             <p className="section-desc">
-              Search demand by topic: groups of related queries from Search Console, current period vs
-              comparison period.
+              How the site performed in searches about each topic below — for example, every search
+              containing that phrase. A quick read on which subjects are growing and which are
+              slipping.
             </p>
             <Commentary section="topic_clusters" />
             <PerformanceBars groups={metrics.topicClusters} />
@@ -165,7 +177,7 @@ export default function ReportView({
       {/* 6. Visibility changes (rankings) */}
       <ReportSection
         title="Visibility changes (tracked rankings)"
-        description="Tracked keyword positions, start vs end of the period."
+        description="Where the site ranks in Google for the keywords we track on purpose. Position 1 is the top result; anything up to 10 is on page one."
       >
         <Commentary section="rankings" />
         <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
@@ -174,7 +186,7 @@ export default function ReportView({
       {/* 7. Cannibalisation catcher */}
       <ReportSection
         title="Cannibalisation catcher"
-        description="Queries where more than one page competes in the search results. Click ▸ to see the competing URLs."
+        description="Searches where two or more of the site's pages are competing with each other for the same spot in Google. Fixing these usually means one strong page instead of two weaker ones. Click ▸ to see the competing pages."
       >
         <Commentary section="cannibalisation" />
         {mode === "team" ? (

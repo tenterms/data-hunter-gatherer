@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { readSnapshot } from "@/lib/snapshots";
 import ReportView from "@/components/ReportView";
 import PublishControls from "@/components/PublishControls";
+import FocusNotesPanel from "@/components/FocusNotesPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,7 @@ export default async function TeamReportPage({
         <span className="badge">generated {new Date(snapshot.generatedAt).toLocaleString("en-GB")}</span>
       </p>
       <PublishControls clientKey={clientKey} periodKey={periodKey} published={snapshot.published ?? null} />
+      <FocusNotesPanel clientKey={clientKey} periodKey={periodKey} initialNotes={snapshot.focusNotes ?? ""} />
       <ReportView snapshot={snapshot} mode="team" />
     </>
   );

@@ -172,6 +172,16 @@ export interface CannibalisationExclusionRow {
   query: string;
 }
 
+/**
+ * Account manager notes for a client/month: the priorities, client concerns
+ * and work-in-progress that should steer the report's commentary.
+ */
+export interface FocusNoteRow {
+  client_key: string;
+  period_key: string;
+  notes: string;
+}
+
 export interface GeneratedReportRow {
   client_key: string;
   period_key: string;
@@ -198,6 +208,7 @@ export interface AdminConfig {
   strategicNotes: StrategicNoteRow[];
   rankingEngines: RankingEngineRow[];
   cannibalisationExclusions: CannibalisationExclusionRow[];
+  focusNotes: FocusNoteRow[];
 }
 
 // ---------------------------------------------------------------------------
@@ -472,6 +483,8 @@ export interface ReportSnapshot {
   commentary: SectionCommentary[];
   drawTasks: DrawTaskRow[];
   strategicNotes: StrategicNoteRow[];
+  /** account manager's focus notes for the month (steers commentary drafts) */
+  focusNotes?: string | null;
   /**
    * Raw-ish inputs, kept so the report is reproducible even if later API pulls
    * would return different numbers.

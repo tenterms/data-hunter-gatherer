@@ -11,6 +11,7 @@ import type {
   ContentGroupRow,
   ContentGroupUrlRow,
   DrawTaskRow,
+  FocusNoteRow,
   GeneratedReportRow,
   NarrativeOverrideRow,
   RankingEngineRow,
@@ -104,6 +105,7 @@ export const SHEET_SCHEMA: Record<string, string[]> = {
   StrategicNotes: ["client_key", "period_key", "note_type", "title", "body", "priority", "active"],
   RankingEngines: ["client_key", "engine_id", "label", "sort_order", "active"],
   CannibalisationExclusions: ["client_key", "query"],
+  FocusNotes: ["client_key", "period_key", "notes"],
   GeneratedReports: ["client_key", "period_key", "generated_at", "snapshot_path", "dashboard_url", "status"],
 };
 
@@ -311,6 +313,11 @@ const parsers = {
     client_key: str(r.client_key),
     query: str(r.query),
   }),
+  FocusNotes: (r: RawRow): FocusNoteRow => ({
+    client_key: str(r.client_key),
+    period_key: str(r.period_key),
+    notes: String(r.notes ?? ""),
+  }),
 };
 
 // ---------------------------------------------------------------------------
@@ -346,6 +353,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     strategicNotes,
     rankingEngines,
     cannibalisationExclusions,
+    focusNotes,
   ] = await Promise.all([
     readTab(sheets, googleSheetId, "Clients"),
     readTab(sheets, googleSheetId, "ReportPeriods"),
@@ -362,6 +370,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     readTab(sheets, googleSheetId, "StrategicNotes"),
     readTab(sheets, googleSheetId, "RankingEngines").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "CannibalisationExclusions").catch(() => [] as RawRow[]),
+    readTab(sheets, googleSheetId, "FocusNotes").catch(() => [] as RawRow[]),
   ]);
 
   return {
@@ -380,6 +389,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     strategicNotes: strategicNotes.map(parsers.StrategicNotes),
     rankingEngines: rankingEngines.map(parsers.RankingEngines),
     cannibalisationExclusions: cannibalisationExclusions.map(parsers.CannibalisationExclusions),
+    focusNotes: focusNotes.map(parsers.FocusNotes),
   };
 }
 
@@ -407,6 +417,7 @@ export function loadAdminConfigFromLocal(): AdminConfig {
     strategicNotes: (raw.StrategicNotes ?? []).map(parsers.StrategicNotes),
     rankingEngines: (raw.RankingEngines ?? []).map(parsers.RankingEngines),
     cannibalisationExclusions: (raw.CannibalisationExclusions ?? []).map(parsers.CannibalisationExclusions),
+    focusNotes: (raw.FocusNotes ?? []).map(parsers.FocusNotes),
   };
 }
 

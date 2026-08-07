@@ -303,6 +303,11 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
   const drawTasks = config.drawTasks.filter(
     (t) => t.client_key === client.client_key && t.period_key === period.period_key,
   );
+  const focusNotes =
+    config.focusNotes.find(
+      (n) => n.client_key === client.client_key && n.period_key === period.period_key,
+    )?.notes ?? null;
+  if (focusNotes) log("Account manager notes found — commentary will be steered by them.");
   const overrides = config.narrativeOverrides;
   const llmProvider = app.enableLlmCommentary
     ? createLlmProvider(app.anthropicApiKey, app.anthropicModel)
@@ -314,6 +319,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       periodLabel: period.label,
       kpis,
       drawTasks: drawTasks.map((t) => ({ timing: t.timing, category: t.category, title: t.title })),
+      focusNotes,
     },
     requestedMode: app.commentaryMode,
     llmProvider,
@@ -351,6 +357,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
     commentary,
     drawTasks,
     strategicNotes,
+    focusNotes,
     raw: {
       gsc: { current, comparison },
       rankingImports: config.rankingImports.filter(

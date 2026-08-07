@@ -67,12 +67,13 @@ export function getAppConfig(): AppConfig {
   const googleSheetId = readEnv("GOOGLE_SHEET_ID");
   const hasCreds = hasGoogleCredentials();
   const anthropicApiKey = readEnv("ANTHROPIC_API_KEY");
-  const enableLlm = readEnv("ENABLE_LLM_COMMENTARY") === "true";
+  // LLM commentary is on by default whenever an API key exists; set
+  // ENABLE_LLM_COMMENTARY=false (or COMMENTARY_MODE=rules_only) to opt out.
+  const enableLlm = readEnv("ENABLE_LLM_COMMENTARY") !== "false" && Boolean(anthropicApiKey);
 
-  // Default behaviour: rules_only unless explicitly enabled AND a key exists.
   const requestedMode = readEnv("COMMENTARY_MODE");
   let commentaryMode: "rules_only" | "llm_draft" = "rules_only";
-  if (enableLlm && anthropicApiKey) {
+  if (enableLlm) {
     commentaryMode = requestedMode === "rules_only" ? "rules_only" : "llm_draft";
   }
 
@@ -84,7 +85,7 @@ export function getAppConfig(): AppConfig {
     configBackend: readEnv("CONFIG_BACKEND") === "sheets" && hasSheets ? "sheets" : "local",
     seRankingApiKey: readEnv("SERANKING_API_KEY"),
     anthropicApiKey,
-    anthropicModel: readEnv("ANTHROPIC_MODEL") ?? "claude-opus-4-8",
+    anthropicModel: readEnv("ANTHROPIC_MODEL") ?? "claude-opus-5",
     enableLlmCommentary: enableLlm,
     commentaryMode,
     appUrl: readEnv("NEXT_PUBLIC_APP_URL") ?? "http://localhost:3000",
