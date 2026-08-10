@@ -310,7 +310,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
   if (focusNotes) log("Account manager notes found — commentary will be steered by them.");
   const overrides = config.narrativeOverrides;
   const llmProvider = app.enableLlmCommentary
-    ? createLlmProvider(app.anthropicApiKey, app.anthropicModel)
+    ? createLlmProvider(app.anthropicApiKey, app.anthropicCommentaryModel)
     : null;
   const commentary = await buildCommentary({
     findings,

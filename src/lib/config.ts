@@ -40,6 +40,9 @@ export interface AppConfig {
   seRankingApiKey: string | null;
   anthropicApiKey: string | null;
   anthropicModel: string;
+  /** Model for report commentary — the writing quality matters most here,
+   * so it runs on Claude's top model while bulk drafting stays on Opus. */
+  anthropicCommentaryModel: string;
   enableLlmCommentary: boolean;
   commentaryMode: "rules_only" | "llm_draft";
   appUrl: string;
@@ -86,6 +89,7 @@ export function getAppConfig(): AppConfig {
     seRankingApiKey: readEnv("SERANKING_API_KEY"),
     anthropicApiKey,
     anthropicModel: readEnv("ANTHROPIC_MODEL") ?? "claude-opus-5",
+    anthropicCommentaryModel: readEnv("ANTHROPIC_COMMENTARY_MODEL") ?? "claude-fable-5",
     enableLlmCommentary: enableLlm,
     commentaryMode,
     appUrl: readEnv("NEXT_PUBLIC_APP_URL") ?? "http://localhost:3000",

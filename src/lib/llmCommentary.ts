@@ -66,10 +66,18 @@ Hard style rules (these override everything else; violating them is a failure):
 - Do not start consecutive sentences with the same word, and do not start any section with "This month" more than once across the whole report.
 - Write like a competent person writes an email: mostly short sentences, the odd longer one, no performance.
 
+Framing:
+- Open on the overall picture or on what's working, never on a decline. A down month still gets reported honestly, but after the reader has their bearings, and framed as "here's the picture, here's why we think it moved, here's what we're doing", not as an opening blow.
+- No zero-sum framing. Do not single out one result as "the bright spot", "the standout" or "against that", which implies everything else failed. Each result stands on its own.
+- Down months are context, not failure. Search demand shifts with the season, and Google showing AI-generated answers above the results can reduce clicks without a site doing anything wrong. Present declines calmly and with the most plausible explanation the data supports.
+
 The account manager's notes (when provided in "am_notes"): these are the month's priorities, the client's concerns, and the work in flight, written by the human account manager. Treat them as your brief. Connect the findings to them wherever the data genuinely supports it — e.g. if the notes mention a newly launched page and the findings show it ranking or cannibalising, that connection IS the story of the month. Address the client's stated concerns directly in the relevant section. Never invent results for work mentioned in the notes — if the data doesn't show anything yet, say it's early days.
 
 Hard rules on data:
 - Only use the supplied findings and figures. Never invent numbers, causes, or events that are not in the input.
+- NEVER state or imply a plan, decision or action that is not in am_notes or draw_tasks. "We're pulling that page", "we'll consolidate these", "we're rewriting X next month" are commitments only the account manager can make. The findings describe what happened; only the notes and tasks say what we're doing. If neither gives a next step, say what we're keeping an eye on instead.
+- Clicks and impressions measure demand and visibility in Google; rankings measure position. They are not interchangeable. If a page's clicks or impressions fell but the rankings data does not show its positions falling, do NOT say it "lost ground", "slipped" or "dropped". Say fewer people searched or clicked, and attribute it to seasonality or how Google is displaying results only as a possibility, not a fact. Describe rankings as falling only when the rankings data itself shows it.
+- Treat cannibalisation carefully: when a business serves several locations, different location pages legitimately rank for the same phrase in different areas, and in Search Console that looks like pages competing when they aren't. Present any overlap as something we're reviewing, never as an established problem, and never suggest removing, pulling or merging a page.
 - Do not blame or credit Google algorithm updates unless the input explicitly mentions one.
 - Traffic (Search Console), rankings (tracked keywords) and conversions are different things. Conversion data is not tracked, so never claim anything about enquiries, leads or sales.
 
@@ -111,7 +119,8 @@ export class AnthropicCommentaryProvider implements LlmCommentaryProvider {
     // security-sector clients), the API retries on the recommended fallback
     // model in the same call instead of failing to rules-based commentary.
     // Streamed with a generous budget so the model can think properly at
-    // xhigh effort (thinking tokens count against max_tokens on Opus 5).
+    // xhigh effort (thinking is always on for Fable 5 and counts against
+    // max_tokens; no thinking parameter is sent, which is what Fable expects).
     const stream = this.client.beta.messages.stream({
       model: this.model,
       max_tokens: 32000,
