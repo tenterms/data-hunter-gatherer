@@ -96,6 +96,39 @@ async function solveChallenge(
   return cookie;
 }
 
+/**
+ * Fetch a URL's raw body (sitemaps, robots.txt, XML) through the same bot
+ * challenge handling and per-host pass cookies as page fetches. Returns ''
+ * when the resource can't be read.
+ */
+export async function fetchTextThroughChallenges(url: string, timeoutMs = 15000): Promise<string> {
+  try {
+    const headers = { ...headersFor(url), Accept: 'application/xml,text/xml,text/plain,text/html,*/*' };
+    let res = await proxyAwareFetch(url, {
+      headers,
+      redirect: 'follow',
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+    let body = await res.text();
+    if (looksLikeChallenge(res.status, res.headers.get('sg-captcha'), body)) {
+      const cookie = await solveChallenge(url, body, timeoutMs);
+      if (cookie) {
+        passCookies.set(hostKey(url), cookie);
+        res = await proxyAwareFetch(url, {
+          headers: { ...headers, Cookie: cookie },
+          redirect: 'follow',
+          signal: AbortSignal.timeout(timeoutMs),
+        });
+        body = await res.text();
+      }
+    }
+    if (!res.ok || looksLikeChallenge(res.status, res.headers.get('sg-captcha'), body)) return '';
+    return body;
+  } catch {
+    return '';
+  }
+}
+
 /** Fetch a live page and extract the structured content used for analysis. */
 export async function fetchPageContent(
   url: string,

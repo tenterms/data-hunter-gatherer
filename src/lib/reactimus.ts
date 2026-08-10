@@ -213,14 +213,26 @@ async function queriesForUrl(
   }
 }
 
+const INTENT_ORDER: Record<string, number> = { commercial: 0, informational: 1, other: 2 };
+
 /** The set of pages Reactimus can run on: master list first, key pages as fallback. */
 export async function reactimusPages(clientKey: string): Promise<Array<{ url: string; label: string; role: string }>> {
   const { config } = await loadAdminConfig();
   const master = config.masterPages.filter((p) => p.client_key === clientKey && p.active);
   if (master.length > 0) {
+    // Commercial pages first — they're the ones the team runs most.
     return [...master]
-      .sort((a, b) => a.section.localeCompare(b.section) || a.url.localeCompare(b.url))
-      .map((p) => ({ url: p.url, label: p.primary_keyword || p.title || p.url, role: p.section || "" }));
+      .sort(
+        (a, b) =>
+          (INTENT_ORDER[a.intent] ?? 1) - (INTENT_ORDER[b.intent] ?? 1) ||
+          a.section.localeCompare(b.section) ||
+          a.url.localeCompare(b.url),
+      )
+      .map((p) => ({
+        url: p.url,
+        label: p.primary_keyword || p.title || p.url,
+        role: [p.intent, p.section].filter(Boolean).join(" · "),
+      }));
   }
   const roleOrder: Record<string, number> = { primary: 0, secondary: 1, supporting: 2, rest_of_site: 3 };
   return config.clientPages
@@ -293,7 +305,12 @@ export async function runReactimus(
           include: "TRUE",
           pageType: "",
           primaryTopic: p.primary_keyword,
-          targetIntent: "" as const,
+          targetIntent:
+            p.intent === "commercial"
+              ? ("commercial" as const)
+              : p.intent === "informational"
+                ? ("informational" as const)
+                : ("" as const),
           titleTag: p.title,
           h1: p.h1,
           canonicalUrl: "",

@@ -17,6 +17,8 @@ interface Props {
   domain: string;
 }
 
+const INTENT_ORDER: Record<string, number> = { commercial: 0, informational: 1, other: 2 };
+
 const shortPath = (url: string) => {
   try {
     return new URL(url).pathname || "/";
@@ -75,7 +77,7 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
     [rows],
   );
 
-  const edit = (url: string, field: "primary_keyword" | "section" | "close_group", value: string) => {
+  const edit = (url: string, field: "primary_keyword" | "intent" | "section" | "close_group", value: string) => {
     setRows((prev) => prev.map((r) => (r.url === url ? { ...r, [field]: value } : r)));
     setDirty(true);
   };
@@ -104,6 +106,7 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
       rows: rows.map((r) => ({
         url: r.url,
         primary_keyword: r.primary_keyword,
+        intent: r.intent,
         section: r.section,
         close_group: r.close_group,
         active: r.active,
@@ -158,6 +161,7 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
                     <tr>
                       <th>Page</th>
                       <th>Primary keyword</th>
+                      <th>Intent</th>
                       <th>Section</th>
                       <th>Close group</th>
                       <th></th>
@@ -165,7 +169,11 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
                   </thead>
                   <tbody>
                     {groupRows
-                      .sort((a, b) => a.url.localeCompare(b.url))
+                      .sort(
+                        (a, b) =>
+                          (INTENT_ORDER[a.intent] ?? 1) - (INTENT_ORDER[b.intent] ?? 1) ||
+                          a.url.localeCompare(b.url),
+                      )
                       .map((row) => (
                         <tr key={row.url}>
                           <td className="master-page-cell">
@@ -179,6 +187,17 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
                               value={row.primary_keyword}
                               onChange={(e) => edit(row.url, "primary_keyword", e.target.value)}
                             />
+                          </td>
+                          <td>
+                            <select
+                              className={`reactimus-status intent-${row.intent || "informational"}`}
+                              value={row.intent || "informational"}
+                              onChange={(e) => edit(row.url, "intent", e.target.value)}
+                            >
+                              <option value="commercial">Commercial</option>
+                              <option value="informational">Informational</option>
+                              <option value="other">Other</option>
+                            </select>
                           </td>
                           <td>
                             <input

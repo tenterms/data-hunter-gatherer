@@ -61,6 +61,8 @@ export interface MasterPageRow {
   title: string;
   h1: string;
   primary_keyword: string;
+  /** Best-guess page intent: "commercial", "informational" or "other". */
+  intent: string;
   section: string;
   close_group: string;
   active: boolean;

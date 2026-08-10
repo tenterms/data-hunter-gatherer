@@ -1205,6 +1205,13 @@ button {
   font-size: 12px;
   color: var(--ink-muted);
 }
+.intent-commercial {
+  background: var(--blue-bolt-25);
+  font-weight: 600;
+}
+.intent-other {
+  color: var(--ink-muted);
+}
 
 /* Reactimus archive: ruled-out suggestions, greyed and collapsed */
 .reactimus-archive {
