@@ -19,6 +19,52 @@ interface Props {
 
 const INTENT_ORDER: Record<string, number> = { commercial: 0, informational: 1, other: 2 };
 
+/**
+ * Text input that keeps what's being typed local and only commits the value
+ * when the field is left (blur or Enter). Section and close group changes
+ * physically move the row into its new group — committing per keystroke
+ * would move the row (and unmount the input) after one character.
+ */
+function CommitInput({
+  value,
+  list,
+  placeholder,
+  onCommit,
+}: {
+  value: string;
+  list?: string;
+  placeholder?: string;
+  onCommit: (value: string) => void;
+}) {
+  const [draft, setDraft] = useState(value);
+  const [editing, setEditing] = useState(false);
+  const shown = editing ? draft : value;
+  return (
+    <input
+      value={shown}
+      list={list}
+      placeholder={placeholder}
+      onFocus={() => {
+        setDraft(value);
+        setEditing(true);
+      }}
+      onChange={(e) => setDraft(e.target.value)}
+      onBlur={() => {
+        setEditing(false);
+        if (draft !== value) onCommit(draft);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") (e.target as HTMLInputElement).blur();
+        if (e.key === "Escape") {
+          setDraft(value);
+          setEditing(false);
+          (e.target as HTMLInputElement).blur();
+        }
+      }}
+    />
+  );
+}
+
 const shortPath = (url: string) => {
   try {
     return new URL(url).pathname || "/";
@@ -200,18 +246,18 @@ export default function MasterPagesPanel({ clientKey, initialRows, domain }: Pro
                             </select>
                           </td>
                           <td>
-                            <input
+                            <CommitInput
                               value={row.section}
                               list="master-sections"
-                              onChange={(e) => edit(row.url, "section", e.target.value)}
+                              onCommit={(v) => edit(row.url, "section", v)}
                             />
                           </td>
                           <td>
-                            <input
+                            <CommitInput
                               value={row.close_group}
                               list="master-groups"
                               placeholder="—"
-                              onChange={(e) => edit(row.url, "close_group", e.target.value)}
+                              onCommit={(v) => edit(row.url, "close_group", v)}
                             />
                           </td>
                           <td>
