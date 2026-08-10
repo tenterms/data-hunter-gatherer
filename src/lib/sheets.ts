@@ -13,6 +13,7 @@ import type {
   DrawTaskRow,
   FocusNoteRow,
   GeneratedReportRow,
+  MasterPageRow,
   NarrativeOverrideRow,
   RankingEngineRow,
   RankingImportRow,
@@ -106,6 +107,17 @@ export const SHEET_SCHEMA: Record<string, string[]> = {
   RankingEngines: ["client_key", "engine_id", "label", "sort_order", "active"],
   CannibalisationExclusions: ["client_key", "query"],
   FocusNotes: ["client_key", "period_key", "notes"],
+  MasterPages: [
+    "client_key",
+    "url",
+    "title",
+    "h1",
+    "primary_keyword",
+    "section",
+    "close_group",
+    "active",
+    "notes",
+  ],
   GeneratedReports: ["client_key", "period_key", "generated_at", "snapshot_path", "dashboard_url", "status"],
 };
 
@@ -318,6 +330,17 @@ const parsers = {
     period_key: str(r.period_key),
     notes: String(r.notes ?? ""),
   }),
+  MasterPages: (r: RawRow): MasterPageRow => ({
+    client_key: str(r.client_key),
+    url: str(r.url),
+    title: str(r.title),
+    h1: str(r.h1),
+    primary_keyword: str(r.primary_keyword),
+    section: str(r.section),
+    close_group: str(r.close_group),
+    active: r.active === undefined || String(r.active).trim() === "" ? true : parseBool(r.active),
+    notes: str(r.notes),
+  }),
 };
 
 // ---------------------------------------------------------------------------
@@ -354,6 +377,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     rankingEngines,
     cannibalisationExclusions,
     focusNotes,
+    masterPages,
   ] = await Promise.all([
     readTab(sheets, googleSheetId, "Clients"),
     readTab(sheets, googleSheetId, "ReportPeriods"),
@@ -371,6 +395,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     readTab(sheets, googleSheetId, "RankingEngines").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "CannibalisationExclusions").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "FocusNotes").catch(() => [] as RawRow[]),
+    readTab(sheets, googleSheetId, "MasterPages").catch(() => [] as RawRow[]),
   ]);
 
   return {
@@ -390,6 +415,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     rankingEngines: rankingEngines.map(parsers.RankingEngines),
     cannibalisationExclusions: cannibalisationExclusions.map(parsers.CannibalisationExclusions),
     focusNotes: focusNotes.map(parsers.FocusNotes),
+    masterPages: masterPages.map(parsers.MasterPages),
   };
 }
 
@@ -418,6 +444,7 @@ export function loadAdminConfigFromLocal(): AdminConfig {
     rankingEngines: (raw.RankingEngines ?? []).map(parsers.RankingEngines),
     cannibalisationExclusions: (raw.CannibalisationExclusions ?? []).map(parsers.CannibalisationExclusions),
     focusNotes: (raw.FocusNotes ?? []).map(parsers.FocusNotes),
+    masterPages: (raw.MasterPages ?? []).map(parsers.MasterPages),
   };
 }
 

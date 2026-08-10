@@ -176,6 +176,24 @@ export function parseHtml(html: string): Omit<PageContentRow, 'url' | 'httpStatu
   container.find('nav, header, footer, aside').remove();
   const bodyText = container.text().replace(/\s+/g, ' ').trim();
 
+  const base = canonicalUrl || '';
+  const linkedUrls = [
+    ...new Set(
+      container
+        .find('a[href]')
+        .map((_, el) => String($(el).attr('href') ?? '').trim())
+        .get()
+        .filter((href) => href && !href.startsWith('#') && !/^(mailto|tel|javascript):/i.test(href))
+        .map((href) => {
+          try {
+            return base ? new URL(href, base).toString() : href;
+          } catch {
+            return href;
+          }
+        }),
+    ),
+  ];
+
   return {
     canonicalUrl,
     titleTag,
@@ -184,5 +202,6 @@ export function parseHtml(html: string): Omit<PageContentRow, 'url' | 'httpStatu
     h2s,
     bodyText,
     wordCount: bodyText ? bodyText.split(/\s+/).length : 0,
+    linkedUrls,
   };
 }

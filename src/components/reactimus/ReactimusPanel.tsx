@@ -1,23 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { ArchivedSuggestion, ReactimusSnapshot } from "@/lib/reactimus";
-import type { NewPageIdeaRow, RecommendationRow, SuggestedEditRow } from "@/reactimus/types";
+import type { ReactimusAction, ReactimusSnapshot, ReactimusStatus } from "@/lib/reactimus";
 
 /**
- * Reactimus per-client view: pick pages, run the analysis, then review the
- * suggestions grouped under each page. Pages not in a run keep the
- * suggestions from their previous run.
+ * Reactimus results, laid out like the team's manual edit tracker: per page,
+ * one row per keyword (direct synonyms grouped), with the action, rationale
+ * and the exact before/after edit in columns across the row.
  */
 
-const normUrl = (u: string) => u.trim().toLowerCase().replace(/\/+$/, "");
-const editKey = (e: SuggestedEditRow) =>
-  `edit##${normUrl(e.url)}##${e.editType}##${(e.keywordsTargeted.split(";")[0] ?? "").trim().toLowerCase()}`;
-const ideaKey = (i: NewPageIdeaRow) =>
-  `idea##${normUrl(i.sourceUrl)}##${i.suggestedPageIdea.trim().toLowerCase()}`;
-const recKey = (r: RecommendationRow) =>
-  `rec##${normUrl(r.url)}##${r.canonicalQueryGroup.trim().toLowerCase()}`;
+interface PageOption {
+  url: string;
+  label: string;
+  role: string;
+}
+
+interface Props {
+  clientKey: string;
+  snapshot: ReactimusSnapshot | null;
+  keyPages: PageOption[];
+}
+
+const STATUS_LABELS: Record<ReactimusStatus, string> = {
+  ready_to_review: "Ready to review",
+  approved: "Approved",
+  not_approved: "Not approved",
+  implemented: "Implemented",
+};
 
 const shortPath = (url: string) => {
   try {
@@ -27,417 +37,164 @@ const shortPath = (url: string) => {
   }
 };
 
-export interface KeyPageOption {
-  url: string;
-  label: string;
-  role: string;
+async function post(url: string, body: Record<string, unknown>) {
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  const data = (await res.json().catch(() => ({}))) as {
+    ok?: boolean;
+    message?: string;
+    log?: string[];
+  };
+  return { ok: res.ok && data.ok !== false, message: data.message ?? "", log: data.log ?? [] };
 }
 
-export default function ReactimusPanel({
-  clientKey,
-  snapshot,
-  keyPages,
-}: {
-  clientKey: string;
-  snapshot: ReactimusSnapshot | null;
-  keyPages: KeyPageOption[];
-}) {
+export default function ReactimusPanel({ clientKey, snapshot, keyPages }: Props) {
   const router = useRouter();
-  const [selectedUrls, setSelectedUrls] = useState<Set<string>>(new Set());
+  const [selected, setSelected] = useState<Set<string>>(new Set());
   const [running, setRunning] = useState(false);
-  const [runLog, setRunLog] = useState<string[] | null>(null);
-  const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
-  const [added, setAdded] = useState<Record<string, string>>(snapshot?.added ?? {});
-  const [addingKey, setAddingKey] = useState<string | null>(null);
-  const [archived, setArchived] = useState<Record<string, ArchivedSuggestion>>(
-    snapshot?.archived ?? {},
-  );
-  const [archivingKey, setArchivingKey] = useState<string | null>(null);
+  const [log, setLog] = useState<string[]>([]);
+  const [message, setMessage] = useState("");
 
-  function toggleUrl(url: string) {
-    setSelectedUrls((prev) => {
+  const analysedAt = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const p of snapshot?.pagesAnalysed ?? []) {
+      if (p.analysedAt) map.set(p.url.replace(/\/+$/, ""), p.analysedAt);
+    }
+    return map;
+  }, [snapshot]);
+
+  const toggle = (url: string) => {
+    setSelected((prev) => {
       const next = new Set(prev);
       if (next.has(url)) next.delete(url);
       else next.add(url);
       return next;
     });
-  }
+  };
 
-  async function run() {
+  const run = async () => {
     setRunning(true);
-    setMessage(null);
-    setRunLog(null);
-    try {
-      const res = await fetch("/api/reactimus/run", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientKey, urls: [...selectedUrls] }),
-      });
-      const data = (await res.json()) as { ok: boolean; message: string; log?: string[] };
-      setMessage({ ok: data.ok, text: data.message });
-      if (data.log) setRunLog(data.log);
-      if (data.ok) router.refresh();
-    } catch (error) {
-      setMessage({ ok: false, text: error instanceof Error ? error.message : "Run failed." });
-    } finally {
-      setRunning(false);
-    }
+    setMessage("");
+    setLog([]);
+    const result = await post("/api/reactimus/run", { clientKey, urls: [...selected] });
+    setLog(result.log);
+    setMessage(result.ok ? "Analysis complete." : result.message || "Analysis failed.");
+    setRunning(false);
+    router.refresh();
+  };
+
+  // Group live actions by the page they're filed under.
+  const live = (snapshot?.actions ?? []).filter((a) => !snapshot?.archived[a.key]);
+  const byPage = new Map<string, ReactimusAction[]>();
+  for (const a of live) {
+    const key = a.pageUrl.replace(/\/+$/, "");
+    const list = byPage.get(key) ?? [];
+    list.push(a);
+    byPage.set(key, list);
   }
+  const pageOrder = [...byPage.keys()].sort((a, b) => (byPage.get(b)?.length ?? 0) - (byPage.get(a)?.length ?? 0));
+  const labelFor = (url: string) =>
+    keyPages.find((p) => p.url.replace(/\/+$/, "") === url)?.label ?? shortPath(url);
 
-  async function addToReport(key: string) {
-    setAddingKey(key);
-    try {
-      const res = await fetch("/api/reactimus/add", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientKey, key }),
-      });
-      const data = (await res.json()) as { ok: boolean; message: string };
-      setMessage({ ok: data.ok, text: data.message });
-      if (data.ok) setAdded((prev) => ({ ...prev, [key]: "added" }));
-    } finally {
-      setAddingKey(null);
-    }
-  }
-
-  async function archiveSuggestion(key: string, entry: Omit<ArchivedSuggestion, "archivedAt">) {
-    setArchivingKey(key);
-    try {
-      const res = await fetch("/api/reactimus/archive", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientKey, key, action: "archive" }),
-      });
-      const data = (await res.json()) as { ok: boolean; message: string };
-      setMessage({ ok: data.ok, text: data.message });
-      if (data.ok) {
-        setArchived((prev) => ({ ...prev, [key]: { archivedAt: new Date().toISOString(), ...entry } }));
-      }
-    } finally {
-      setArchivingKey(null);
-    }
-  }
-
-  async function restoreSuggestion(key: string) {
-    setArchivingKey(key);
-    try {
-      const res = await fetch("/api/reactimus/archive", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ clientKey, key, action: "restore" }),
-      });
-      const data = (await res.json()) as { ok: boolean; message: string };
-      setMessage({ ok: data.ok, text: data.message });
-      if (data.ok) {
-        setArchived((prev) => {
-          const next = { ...prev };
-          delete next[key];
-          return next;
-        });
-      }
-    } finally {
-      setArchivingKey(null);
-    }
-  }
-
-  const AddButton = ({ suggestionKey }: { suggestionKey: string }) =>
-    added[suggestionKey] ? (
-      <span className="badge live">in report</span>
-    ) : (
-      <button
-        className="btn"
-        style={{ padding: "3px 12px", fontSize: 13 }}
-        onClick={() => addToReport(suggestionKey)}
-        disabled={addingKey === suggestionKey}
-      >
-        {addingKey === suggestionKey ? "Adding…" : "Add to report"}
-      </button>
-    );
-
-  const ArchiveButton = ({
-    suggestionKey,
-    entry,
-  }: {
-    suggestionKey: string;
-    entry: Omit<ArchivedSuggestion, "archivedAt">;
-  }) => (
-    <button
-      className="row-toggle off"
-      title="Rule this out — it stays suppressed on future runs"
-      onClick={() => archiveSuggestion(suggestionKey, entry)}
-      disabled={archivingKey === suggestionKey}
-    >
-      {archivingKey === suggestionKey ? "…" : "archive"}
-    </button>
-  );
-
-  const liveEdits = (snapshot?.suggestedEdits ?? []).filter((e) => !archived[editKey(e)]);
-  const liveIdeas = (snapshot?.newPageIdeas ?? []).filter((i) => !archived[ideaKey(i)]);
-  const liveRecs = (snapshot?.recommendations ?? []).filter((r) => !archived[recKey(r)]);
-  const archivedEntries = Object.entries(archived).sort((a, b) =>
+  const archivedEntries = Object.entries(snapshot?.archived ?? {}).sort((a, b) =>
     b[1].archivedAt.localeCompare(a[1].archivedAt),
   );
 
-  // Group everything by page, in key-page order; analysed pages without a
-  // matching key page (e.g. removed since) go last.
-  const analysedByUrl = new Map(
-    (snapshot?.pagesAnalysed ?? []).map((p) => [normUrl(p.url), p]),
-  );
-  const orderedUrls: string[] = [];
-  for (const p of keyPages) {
-    if (analysedByUrl.has(normUrl(p.url))) orderedUrls.push(normUrl(p.url));
-  }
-  for (const p of snapshot?.pagesAnalysed ?? []) {
-    if (!orderedUrls.includes(normUrl(p.url))) orderedUrls.push(normUrl(p.url));
-  }
-  const labelFor = (url: string) =>
-    keyPages.find((p) => normUrl(p.url) === normUrl(url))?.label ?? "";
-
-  const selectedCount = selectedUrls.size;
-
   return (
     <>
-      {/* --- Page picker + run --- */}
+      {/* 1. Page picker */}
       <div className="card">
         <h2>1. Pick pages to analyse</h2>
         <p className="section-desc">
-          Tick 2–5 pages per run — a run pulls three months of search data and reads each live page,
-          so smaller batches are quicker. Pages you don&apos;t re-run keep their previous
-          suggestions.
+          Tick the pages you want suggestions for. Each run replaces those pages&apos; rows from
+          scratch; other pages keep their latest results.
         </p>
         <div className="reactimus-page-picker">
           {keyPages.map((p) => {
-            const analysed = analysedByUrl.get(normUrl(p.url));
+            const when = analysedAt.get(p.url.replace(/\/+$/, ""));
             return (
               <label key={p.url} className="reactimus-page-option">
                 <input
                   type="checkbox"
-                  checked={selectedUrls.has(p.url)}
-                  onChange={() => toggleUrl(p.url)}
+                  checked={selected.has(p.url)}
+                  onChange={() => toggle(p.url)}
+                  disabled={running}
                 />
                 <span>
-                  <strong>{p.label || shortPath(p.url)}</strong>{" "}
-                  <span className="meta">{shortPath(p.url)}</span>{" "}
-                  <span className="badge">{p.role.replace(/_/g, " ")}</span>
-                  {analysed?.analysedAt && (
-                    <span className="meta">
-                      {" "}
-                      · analysed {new Date(analysed.analysedAt).toLocaleDateString("en-GB")}
-                    </span>
-                  )}
+                  <strong>{p.label}</strong>{" "}
+                  <span className="meta">
+                    {shortPath(p.url)}
+                    {p.role ? ` · ${p.role}` : ""}
+                    {when ? ` · analysed ${new Date(when).toLocaleDateString("en-GB")}` : ""}
+                  </span>
                 </span>
               </label>
             );
           })}
+          {keyPages.length === 0 && <p className="meta">No pages available yet.</p>}
         </div>
-        <div className="btn-row" style={{ marginTop: 12 }}>
-          <button className="btn primary" onClick={run} disabled={running || selectedCount === 0}>
-            {running
-              ? "Analysing… (this can take a minute)"
-              : selectedCount === 0
-                ? "Select pages to run"
-                : `Run analysis on ${selectedCount} page${selectedCount === 1 ? "" : "s"}`}
-          </button>
-          {selectedCount > 5 && (
-            <span className="section-desc" style={{ margin: 0 }}>
-              That&apos;s a big batch — it&apos;ll work, but 2–5 pages per run is quicker.
-            </span>
-          )}
-          {message && (
-            <span className={`action-msg ${message.ok ? "success" : "error"}`} style={{ margin: 0 }}>
-              {message.text}
-            </span>
-          )}
-        </div>
-        {runLog && <pre className="test-output" style={{ marginTop: 12 }}>{runLog.join("\n")}</pre>}
-        {snapshot && (
-          <p className="section-desc" style={{ margin: "10px 0 0" }}>
-            Last run {new Date(snapshot.generatedAt).toLocaleString("en-GB")} · data window{" "}
-            {snapshot.window.start} to {snapshot.window.end} · {snapshot.property}
+        {selected.size > 5 && (
+          <p className="meta" style={{ color: "var(--electric-orange, #ff8c55)" }}>
+            {selected.size} pages selected — runs work best 2–5 pages at a time.
           </p>
+        )}
+        <p>
+          <button className="btn" onClick={run} disabled={running || selected.size === 0}>
+            {running ? "Analysing…" : `Run analysis (${selected.size} page${selected.size === 1 ? "" : "s"})`}
+          </button>{" "}
+          {message && <span className="meta">{message}</span>}
+        </p>
+        {log.length > 0 && (
+          <pre className="test-output" style={{ maxHeight: 180, overflow: "auto" }}>
+            {log.join("\n")}
+          </pre>
         )}
       </div>
 
-      {/* --- Suggestions, grouped by page --- */}
-      {!snapshot ? (
+      {/* 2. Results, one table per page */}
+      {snapshot &&
+        pageOrder.map((pageUrl) => (
+          <PageTable
+            key={pageUrl}
+            clientKey={clientKey}
+            pageUrl={pageUrl}
+            label={labelFor(pageUrl)}
+            actions={byPage.get(pageUrl)!}
+            added={snapshot.added}
+            onChanged={() => router.refresh()}
+          />
+        ))}
+      {snapshot && live.length === 0 && (
         <div className="card">
-          <p className="bars-empty">No analysis yet — pick some pages above and run.</p>
+          <p className="meta">No live suggestions — run the analysis on some pages above.</p>
         </div>
-      ) : (
-        orderedUrls.map((url) => {
-          const analysed = analysedByUrl.get(url)!;
-          const pageEdits = liveEdits.filter((e) => normUrl(e.url) === url);
-          const pageIdeas = liveIdeas.filter((i) => normUrl(i.sourceUrl) === url);
-          const pageRecs = liveRecs.filter((r) => normUrl(r.url) === url);
-          const label = labelFor(url);
-          return (
-            <div className="card" key={url}>
-              <h2>
-                {label || shortPath(analysed.url)}{" "}
-                <a
-                  href={analysed.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="reactimus-page-link"
-                >
-                  {shortPath(analysed.url)}
-                </a>
-              </h2>
-              <p className="section-desc">
-                {analysed.status}
-                {analysed.analysedAt &&
-                  ` · analysed ${new Date(analysed.analysedAt).toLocaleDateString("en-GB")}`}
-              </p>
-
-              {pageEdits.length === 0 && pageIdeas.length === 0 && pageRecs.length === 0 && (
-                <p className="bars-empty">
-                  Nothing outstanding for this page — suggestions were either archived or none were
-                  found.
-                </p>
-              )}
-
-              {pageEdits.map((edit) => {
-                const key = editKey(edit);
-                return (
-                  <div className="nested-box reactimus-item" key={key}>
-                    <div className="reactimus-item-header">
-                      <div>
-                        <span className={`badge flag-${edit.priority}`}>{edit.priority}</span>{" "}
-                        <strong>{edit.editType}</strong>{" "}
-                        <span className="meta">· {edit.whereOnPage}</span>
-                      </div>
-                      <span className="reactimus-actions">
-                        <ArchiveButton
-                          suggestionKey={key}
-                          entry={{
-                            kind: "Page improvement",
-                            title: `${edit.editType} on ${shortPath(edit.url)}`,
-                            detail: edit.keywordsTargeted.split(";").slice(0, 3).join(";"),
-                          }}
-                        />
-                        <AddButton suggestionKey={key} />
-                      </span>
-                    </div>
-                    <p style={{ margin: "6px 0" }}>{edit.why}</p>
-                    <pre className="reactimus-copy">{edit.suggestedCopy}</pre>
-                    <p className="section-desc" style={{ margin: "6px 0 0" }}>
-                      Targets: {edit.keywordsTargeted}
-                    </p>
-                  </div>
-                );
-              })}
-
-              {pageIdeas.map((idea) => {
-                const key = ideaKey(idea);
-                return (
-                  <div className="nested-box reactimus-item" key={key}>
-                    <div className="reactimus-item-header">
-                      <div>
-                        <span className={`badge flag-${idea.priority}`}>{idea.priority}</span>{" "}
-                        <strong>New page idea: {idea.suggestedPageIdea}</strong>{" "}
-                        <span className="badge">{idea.commercialOrInformational}</span>
-                      </div>
-                      <span className="reactimus-actions">
-                        <ArchiveButton
-                          suggestionKey={key}
-                          entry={{
-                            kind: "New page idea",
-                            title: idea.suggestedPageIdea,
-                            detail: `${idea.totalImpressions.toLocaleString("en-GB")} impressions`,
-                          }}
-                        />
-                        <AddButton suggestionKey={key} />
-                      </span>
-                    </div>
-                    <p style={{ margin: "6px 0" }}>{idea.whySeparatePage}</p>
-                    <p className="section-desc" style={{ margin: "6px 0" }}>
-                      {idea.totalImpressions.toLocaleString("en-GB")} impressions ·{" "}
-                      {idea.supportingQueryVariants}
-                      {idea.suggestedUrlSlug && <> · suggested URL: {idea.suggestedUrlSlug}</>}
-                    </p>
-                    {idea.cannibalisationCheck && (
-                      <p className="section-desc" style={{ margin: "6px 0" }}>
-                        {idea.cannibalisationCheck}
-                      </p>
-                    )}
-                  </div>
-                );
-              })}
-
-              {pageRecs.length > 0 && (
-                <div className="table-wrap" style={{ marginTop: 14 }}>
-                  <table className="data">
-                    <thead>
-                      <tr>
-                        <th>Type</th>
-                        <th>Search group</th>
-                        <th>Demand</th>
-                        <th className="num">Priority</th>
-                        <th className="num"></th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {pageRecs.map((rec) => {
-                        const key = recKey(rec);
-                        return (
-                          <tr key={key}>
-                            <td>{rec.recommendationType.replace(/_/g, " ")}</td>
-                            <td>{rec.canonicalQueryGroup}</td>
-                            <td>{rec.searchDemandSummary}</td>
-                            <td className="num">
-                              <span className={`badge flag-${rec.priority}`}>{rec.priority}</span>
-                            </td>
-                            <td className="num">
-                              <span className="reactimus-actions">
-                                <ArchiveButton
-                                  suggestionKey={key}
-                                  entry={{
-                                    kind: "Recommendation",
-                                    title: `${rec.recommendationType.replace(/_/g, " ")}: "${rec.canonicalQueryGroup}" on ${shortPath(rec.url)}`,
-                                    detail: rec.searchDemandSummary,
-                                  }}
-                                />
-                                <AddButton suggestionKey={key} />
-                              </span>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-            </div>
-          );
-        })
       )}
 
-      {/* --- Archive: ruled-out suggestions --- */}
+      {/* 3. Archive */}
       {archivedEntries.length > 0 && (
         <div className="card reactimus-archive">
           <details>
             <summary>
-              Archived suggestions ({archivedEntries.length}) — ruled out; these stay suppressed on
-              every future run
+              Archive — {archivedEntries.length} ruled-out suggestion
+              {archivedEntries.length === 1 ? "" : "s"} (never shown again unless restored)
             </summary>
             <ul className="reactimus-archive-list">
               {archivedEntries.map(([key, entry]) => (
                 <li key={key}>
                   <span>
-                    <span className="badge">{entry.kind}</span> <strong>{entry.title}</strong>
-                    {entry.detail && <span className="meta"> · {entry.detail}</span>}
-                    <span className="meta">
-                      {" "}
-                      · archived {new Date(entry.archivedAt).toLocaleDateString("en-GB")}
-                    </span>
+                    <strong>{entry.kind}</strong> · {entry.title}{" "}
+                    <span className="meta">{entry.detail}</span>
                   </span>
-                  <button
-                    className="row-toggle"
-                    onClick={() => restoreSuggestion(key)}
-                    disabled={archivingKey === key}
-                  >
-                    {archivingKey === key ? "…" : "restore"}
-                  </button>
+                  <RowButton
+                    label="Restore"
+                    onClick={async () => {
+                      await post("/api/reactimus/archive", { clientKey, key, action: "restore" });
+                      router.refresh();
+                    }}
+                  />
                 </li>
               ))}
             </ul>
@@ -445,5 +202,175 @@ export default function ReactimusPanel({
         </div>
       )}
     </>
+  );
+}
+
+function PageTable({
+  clientKey,
+  pageUrl,
+  label,
+  actions,
+  added,
+  onChanged,
+}: {
+  clientKey: string;
+  pageUrl: string;
+  label: string;
+  actions: ReactimusAction[];
+  added: Record<string, string>;
+  onChanged: () => void;
+}) {
+  const ordered = [...actions].sort((a, b) => b.impressions - a.impressions);
+  return (
+    <div className="card">
+      <h2>
+        {label}{" "}
+        <a href={pageUrl} target="_blank" rel="noreferrer" className="meta">
+          {shortPath(pageUrl)}
+        </a>
+      </h2>
+      <div className="scroll-x">
+        <table className="reactimus-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Action</th>
+              <th>Rationale</th>
+              <th>Before</th>
+              <th>After</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {ordered.map((a) => (
+              <ActionRow
+                key={a.key}
+                clientKey={clientKey}
+                action={a}
+                addedPeriod={added[a.key]}
+                onChanged={onChanged}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+function ActionRow({
+  clientKey,
+  action,
+  addedPeriod,
+  onChanged,
+}: {
+  clientKey: string;
+  action: ReactimusAction;
+  addedPeriod?: string;
+  onChanged: () => void;
+}) {
+  const [status, setStatus] = useState<ReactimusStatus>(action.status);
+  const [busy, setBusy] = useState(false);
+  const [note, setNote] = useState("");
+
+  const changeStatus = async (next: ReactimusStatus) => {
+    setStatus(next);
+    await post("/api/reactimus/status", { clientKey, key: action.key, status: next });
+  };
+
+  const variantCount = action.variants ? action.variants.split(";").length : 1;
+  return (
+    <tr className={status === "not_approved" ? "row-dimmed" : undefined}>
+      <td className="reactimus-kw">
+        <strong>{action.keyword}</strong>
+        <span className="meta" title={action.variants}>
+          {variantCount > 1 ? `${variantCount} variants · ` : ""}
+          {action.impressions > 0 ? `${action.impressions.toLocaleString("en-GB")} impressions` : ""}
+        </span>
+      </td>
+      <td>
+        <span className={`reactimus-action-badge badge-${action.action.toLowerCase().replace(/\s+/g, "-")}`}>
+          {action.action}
+        </span>
+        {action.targetUrl && (
+          <span className="meta" style={{ display: "block" }}>
+            → {shortPath(action.targetUrl)}
+          </span>
+        )}
+      </td>
+      <td className="reactimus-rationale" title={action.why}>
+        {action.rationale}
+      </td>
+      <td className="reactimus-copy-cell">
+        {action.before ? <pre>{action.before}</pre> : <span className="meta">(new addition)</span>}
+      </td>
+      <td className="reactimus-copy-cell">
+        <pre>{action.after}</pre>
+      </td>
+      <td>
+        <select
+          className="reactimus-status"
+          value={status}
+          onChange={(e) => changeStatus(e.target.value as ReactimusStatus)}
+        >
+          {Object.entries(STATUS_LABELS).map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
+      </td>
+      <td className="reactimus-controls">
+        {addedPeriod ? (
+          <span className="meta">In report ({addedPeriod})</span>
+        ) : (
+          <RowButton
+            label={busy ? "…" : "Add to report"}
+            onClick={async () => {
+              setBusy(true);
+              const r = await post("/api/reactimus/add", { clientKey, key: action.key });
+              setNote(r.message);
+              setBusy(false);
+              onChanged();
+            }}
+          />
+        )}
+        <RowButton
+          label="Archive"
+          subtle
+          onClick={async () => {
+            await post("/api/reactimus/archive", { clientKey, key: action.key, action: "archive" });
+            onChanged();
+          }}
+        />
+        {note && <span className="meta">{note}</span>}
+      </td>
+    </tr>
+  );
+}
+
+function RowButton({
+  label,
+  subtle,
+  onClick,
+}: {
+  label: string;
+  subtle?: boolean;
+  onClick: () => void | Promise<void>;
+}) {
+  const [busy, setBusy] = useState(false);
+  return (
+    <button
+      className={subtle ? "btn btn-subtle" : "btn"}
+      disabled={busy}
+      onClick={async () => {
+        setBusy(true);
+        await onClick();
+        setBusy(false);
+      }}
+    >
+      {label}
+    </button>
   );
 }

@@ -48,6 +48,25 @@ export interface ClientPageRow {
   notes: string;
 }
 
+/**
+ * One page in the client's master page list: the shared site map used by both
+ * the reports and Reactimus. Each page carries an (initially Claude-guessed)
+ * primary keyword plus two grouping fields — "section of site" and "close
+ * group" — that drive how the list displays and which pages are natural
+ * internal-link partners.
+ */
+export interface MasterPageRow {
+  client_key: string;
+  url: string;
+  title: string;
+  h1: string;
+  primary_keyword: string;
+  section: string;
+  close_group: string;
+  active: boolean;
+  notes: string;
+}
+
 export interface ContentGroupRow {
   client_key: string;
   group_key: string;
@@ -209,6 +228,7 @@ export interface AdminConfig {
   rankingEngines: RankingEngineRow[];
   cannibalisationExclusions: CannibalisationExclusionRow[];
   focusNotes: FocusNoteRow[];
+  masterPages: MasterPageRow[];
 }
 
 // ---------------------------------------------------------------------------

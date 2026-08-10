@@ -1075,27 +1075,135 @@ button {
   font-size: 14px;
 }
 
-/* Reactimus suggestion cards */
-.reactimus-item {
-  margin-top: 14px;
+/* Reactimus results table: one row per keyword, spreadsheet-style */
+.scroll-x {
+  overflow-x: auto;
 }
-.reactimus-item-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
+.reactimus-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
 }
-.reactimus-copy {
+.reactimus-table th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-muted);
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.reactimus-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.reactimus-table tr:last-child td {
+  border-bottom: 0;
+}
+.reactimus-kw {
+  min-width: 150px;
+}
+.reactimus-kw strong {
+  display: block;
+}
+.reactimus-kw .meta,
+.reactimus-table .meta {
+  color: var(--ink-muted);
+  font-size: 12px;
+}
+.reactimus-rationale {
+  min-width: 110px;
+  color: var(--ink-secondary);
+  cursor: help;
+}
+.reactimus-copy-cell {
+  min-width: 220px;
+  max-width: 340px;
+}
+.reactimus-copy-cell pre {
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   white-space: pre-wrap;
   word-break: break-word;
-  margin: 6px 0 0;
+  margin: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.reactimus-action-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--blue-bolt-25);
+  white-space: nowrap;
+}
+.badge-internal-link {
+  background: var(--violet-volt-25);
+}
+.badge-new-page {
+  background: var(--electric-orange-25, #ffe7da);
+}
+.badge-task {
+  background: var(--bg);
+  border: 1px dashed var(--border);
+}
+.reactimus-status {
+  font-size: 12.5px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface, #fff);
+}
+.reactimus-controls {
+  white-space: nowrap;
+}
+.reactimus-controls .btn {
+  display: block;
+  margin-bottom: 6px;
+}
+.btn-subtle {
+  background: transparent;
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+/* Master page list */
+.master-table input {
+  width: 100%;
+  min-width: 140px;
+  font-size: 13px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.master-page-cell {
+  min-width: 180px;
+  max-width: 300px;
+}
+.master-page-cell a {
+  display: block;
+  word-break: break-all;
+}
+.master-page-cell .meta {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+.master-group-title {
+  margin: 0 0 8px;
+  font-size: 14.5px;
+}
+.master-group-title .meta {
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--ink-muted);
 }
 
 /* Reactimus archive: ruled-out suggestions, greyed and collapsed */

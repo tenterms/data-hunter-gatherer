@@ -63,6 +63,8 @@ export interface PageContentRow {
   bodyText: string;
   wordCount: number;
   lastFetched: string;
+  /** hrefs found in the page's main content (absolute where resolvable). */
+  linkedUrls?: string[];
 }
 
 // ---------------------------------------------------------------------------

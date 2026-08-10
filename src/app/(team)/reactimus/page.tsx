@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { loadAdminConfig } from "@/lib/sheets";
-import { editKey, ideaKey, readReactimusSnapshot } from "@/lib/reactimus";
+import { readReactimusSnapshot } from "@/lib/reactimus";
 
 export const dynamic = "force-dynamic";
 
@@ -13,13 +13,20 @@ export default async function ReactimusPage() {
     <>
       <h1>Reactimus</h1>
       <p className="subtitle">
-        Page improvement suggestions and new page ideas, built from each client&apos;s live Google
-        Search Console data. Pick a client — anything useful can be added straight to their report.
+        Precise page edits, internal links and new page ideas, built from each client&apos;s live
+        Google Search Console data. Pick a client — anything useful can be added straight to their
+        report.
       </p>
       <div className="card">
         <ul className="report-list client-menu">
           {clients.map((client) => {
             const snapshot = readReactimusSnapshot(client.client_key);
+            const masterCount = config.masterPages.filter(
+              (p) => p.client_key === client.client_key && p.active,
+            ).length;
+            const liveActions = snapshot
+              ? snapshot.actions.filter((a) => !snapshot.archived[a.key]).length
+              : 0;
             return (
               <li key={client.client_key}>
                 <span>
@@ -29,8 +36,9 @@ export default async function ReactimusPage() {
                   <span className="meta">{client.domain}</span>
                 </span>
                 <span className="meta">
+                  {masterCount > 0 ? `${masterCount} pages mapped · ` : "no master list yet · "}
                   {snapshot
-                    ? `${snapshot.suggestedEdits.filter((e) => !snapshot.archived[editKey(e)]).length} improvements · ${snapshot.newPageIdeas.filter((i) => !snapshot.archived[ideaKey(i)]).length} new page ideas · run ${new Date(snapshot.generatedAt).toLocaleDateString("en-GB")}`
+                    ? `${liveActions} actions · run ${new Date(snapshot.generatedAt).toLocaleDateString("en-GB")}`
                     : "not analysed yet"}
                 </span>
               </li>
