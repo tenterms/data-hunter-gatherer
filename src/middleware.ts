@@ -22,6 +22,10 @@ export async function middleware(request: NextRequest) {
     pathname.startsWith("/share/") ||
     pathname === "/login" ||
     pathname === "/api/login" ||
+    // OAuth surface for the SEO Gets connection: the metadata document is
+    // fetched by their server, and the callback arrives from their redirect.
+    pathname === "/oauth-client.json" ||
+    pathname === "/api/seogets/callback" ||
     pathname.startsWith("/_next/") ||
     pathname === "/favicon.ico";
   if (isPublic) return NextResponse.next();

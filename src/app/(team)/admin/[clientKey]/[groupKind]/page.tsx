@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getEditorData } from "@/lib/groupEditor";
+import { seoGetsConnected } from "@/lib/seogets";
 import GroupEditor from "@/components/admin/GroupEditor";
+import SeoGetsImportPanel from "@/components/admin/SeoGetsImportPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +33,7 @@ export default async function GroupEditorPage({
       <div className="card">
         <GroupEditor clientKey={clientKey} kind={kind} items={data.items} />
       </div>
+      <SeoGetsImportPanel clientKey={clientKey} connected={seoGetsConnected()} />
     </>
   );
 }
