@@ -35,6 +35,8 @@ interface StoredAuth {
   refresh_token?: string;
   /** epoch ms */
   expires_at?: number;
+  /** the client_id (metadata URL) the tokens were issued to — needed on refresh */
+  client_id?: string;
 }
 
 function readAuth(): StoredAuth | null {
@@ -68,6 +70,20 @@ export function disconnectSeoGets(): void {
 
 const b64url = (buf: Buffer) => buf.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 
+/**
+ * The app's public base URL, taken from the request that's being served —
+ * behind Railway's proxy the forwarded headers carry the real host, so this
+ * works without any environment variable. NEXT_PUBLIC_APP_URL (when set to a
+ * non-localhost value) still wins, for setups behind unusual proxies.
+ */
+export function publicBaseUrl(headers: Headers): string {
+  const { appUrl } = getAppConfig();
+  if (appUrl && !/localhost|127\.0\.0\.1/.test(appUrl)) return appUrl.replace(/\/+$/, "");
+  const host = headers.get("x-forwarded-host") ?? headers.get("host") ?? "localhost:3000";
+  const proto = headers.get("x-forwarded-proto") ?? (/localhost|127\.0\.0\.1/.test(host) ? "http" : "https");
+  return `${proto}://${host}`;
+}
+
 export function clientMetadata(appUrl: string) {
   const base = appUrl.replace(/\/+$/, "");
   return {
@@ -82,9 +98,8 @@ export function clientMetadata(appUrl: string) {
   };
 }
 
-export function buildAuthorizeRedirect(): { url: string; verifier: string } {
-  const { appUrl } = getAppConfig();
-  const meta = clientMetadata(appUrl);
+export function buildAuthorizeRedirect(baseUrl: string): { url: string; verifier: string } {
+  const meta = clientMetadata(baseUrl);
   const verifier = b64url(crypto.randomBytes(48));
   const challenge = b64url(crypto.createHash("sha256").update(verifier).digest());
   const params = new URLSearchParams({
@@ -99,9 +114,8 @@ export function buildAuthorizeRedirect(): { url: string; verifier: string } {
   return { url: `${AUTH_URL}?${params}`, verifier };
 }
 
-export async function exchangeAuthCode(code: string, verifier: string): Promise<void> {
-  const { appUrl } = getAppConfig();
-  const meta = clientMetadata(appUrl);
+export async function exchangeAuthCode(code: string, verifier: string, baseUrl: string): Promise<void> {
+  const meta = clientMetadata(baseUrl);
   const res = await proxyAwareFetch(TOKEN_URL, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -127,6 +141,7 @@ export async function exchangeAuthCode(code: string, verifier: string): Promise<
     access_token: data.access_token,
     refresh_token: data.refresh_token,
     expires_at: data.expires_in ? Date.now() + (data.expires_in - 60) * 1000 : undefined,
+    client_id: meta.client_id,
   });
 }
 
@@ -136,15 +151,13 @@ async function getAccessToken(): Promise<string> {
   if (!auth.expires_at || auth.expires_at > Date.now()) return auth.access_token;
   if (!auth.refresh_token) return auth.access_token; // let the server tell us if it's expired
 
-  const { appUrl } = getAppConfig();
-  const meta = clientMetadata(appUrl);
   const res = await proxyAwareFetch(TOKEN_URL, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       grant_type: "refresh_token",
       refresh_token: auth.refresh_token,
-      client_id: meta.client_id,
+      client_id: auth.client_id ?? clientMetadata(getAppConfig().appUrl).client_id,
     }).toString(),
   });
   const data = (await res.json()) as {
@@ -159,6 +172,7 @@ async function getAccessToken(): Promise<string> {
     access_token: data.access_token,
     refresh_token: data.refresh_token ?? auth.refresh_token,
     expires_at: data.expires_in ? Date.now() + (data.expires_in - 60) * 1000 : undefined,
+    client_id: auth.client_id,
   };
   writeAuth(next);
   return next.access_token;

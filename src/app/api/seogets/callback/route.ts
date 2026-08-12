@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAppConfig } from "@/lib/config";
-import { exchangeAuthCode } from "@/lib/seogets";
+import { exchangeAuthCode, publicBaseUrl } from "@/lib/seogets";
 
 /** OAuth redirect target: exchange the code for tokens, bounce back to admin. */
 export async function GET(request: NextRequest) {
-  const { appUrl } = getAppConfig();
-  const back = (query: string) => NextResponse.redirect(`${appUrl.replace(/\/+$/, "")}/admin?${query}`);
+  const baseUrl = publicBaseUrl(request.headers);
+  const back = (query: string) => NextResponse.redirect(`${baseUrl}/admin?${query}`);
 
   const error = request.nextUrl.searchParams.get("error");
   if (error) {
@@ -17,7 +16,7 @@ export async function GET(request: NextRequest) {
     return back("seogets=error&detail=Missing%20code%20or%20verifier%20(try%20connecting%20again)");
   }
   try {
-    await exchangeAuthCode(code, verifier);
+    await exchangeAuthCode(code, verifier, baseUrl);
   } catch (err) {
     return back(`seogets=error&detail=${encodeURIComponent((err as Error).message)}`);
   }
