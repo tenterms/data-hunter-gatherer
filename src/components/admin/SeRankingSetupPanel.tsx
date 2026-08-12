@@ -17,6 +17,7 @@ interface Status {
   groups?: Array<{ id: string; name: string }>;
   keywordCount?: number;
   systemEngines?: Array<{ id: string; name: string }>;
+  systemEnginesError?: string;
 }
 
 async function post(body: Record<string, unknown>) {
@@ -34,6 +35,7 @@ export default function SeRankingSetupPanel({ clientKey }: { clientKey: string }
   const [message, setMessage] = useState("");
 
   const [engineQuery, setEngineQuery] = useState("");
+  const [chosenEngine, setChosenEngine] = useState<{ id: string; name: string } | null>(null);
   const [regionName, setRegionName] = useState("");
   const [groupName, setGroupName] = useState("");
   const [keywordsText, setKeywordsText] = useState("");
@@ -61,9 +63,12 @@ export default function SeRankingSetupPanel({ clientKey }: { clientKey: string }
     if (result.ok) await refresh();
   };
 
-  const selectedEngine = status?.systemEngines?.find(
-    (e) => e.name.toLowerCase() === engineQuery.trim().toLowerCase() || e.id === engineQuery.trim(),
-  );
+  const allEngines = status?.systemEngines ?? [];
+  const query = engineQuery.trim().toLowerCase();
+  const engineMatches =
+    query.length > 0 && (!chosenEngine || chosenEngine.name.toLowerCase() !== query)
+      ? allEngines.filter((e) => e.name.toLowerCase().includes(query)).slice(0, 12)
+      : [];
 
   return (
     <div className="card">
@@ -88,13 +93,25 @@ export default function SeRankingSetupPanel({ clientKey }: { clientKey: string }
 
           <div className="nested-box">
             <h3 style={{ marginTop: 0 }}>Add a search engine</h3>
+            {status.systemEnginesError ? (
+              <p className="meta" style={{ color: "var(--electric-orange, #b45309)" }}>
+                Couldn&apos;t load SE Ranking&apos;s engine list: {status.systemEnginesError}
+              </p>
+            ) : (
+              <p className="meta">
+                {allEngines.length.toLocaleString("en-GB")} engines available — type to search (e.g.
+                &ldquo;google united&rdquo; or &ldquo;bing&rdquo;), then pick one.
+              </p>
+            )}
             <p style={{ display: "flex", gap: 8, flexWrap: "wrap", alignItems: "center" }}>
               <input
-                list="ser-engines"
                 placeholder="Search engine (e.g. Google United States)"
                 value={engineQuery}
-                onChange={(e) => setEngineQuery(e.target.value)}
-                style={{ minWidth: 260 }}
+                onChange={(e) => {
+                  setEngineQuery(e.target.value);
+                  setChosenEngine(null);
+                }}
+                style={{ minWidth: 280 }}
               />
               <input
                 placeholder="Location (optional, e.g. New York)"
@@ -104,25 +121,37 @@ export default function SeRankingSetupPanel({ clientKey }: { clientKey: string }
               />
               <button
                 className="btn"
-                disabled={busy !== null || !selectedEngine}
+                disabled={busy !== null || !chosenEngine}
                 onClick={() =>
                   run(
-                    { action: "add_engine", clientKey, searchEngineId: selectedEngine!.id, regionName },
+                    { action: "add_engine", clientKey, searchEngineId: chosenEngine!.id, regionName },
                     "engine",
                   )
                 }
               >
-                {busy === "engine" ? "Adding…" : "Add engine"}
+                {busy === "engine" ? "Adding…" : chosenEngine ? `Add ${chosenEngine.name}` : "Add engine"}
               </button>
             </p>
-            {engineQuery && !selectedEngine && (
-              <p className="meta">Pick an engine from the list so the right ID is sent.</p>
+            {engineMatches.length > 0 && (
+              <ul className="engine-suggestions">
+                {engineMatches.map((e) => (
+                  <li key={e.id}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setChosenEngine(e);
+                        setEngineQuery(e.name);
+                      }}
+                    >
+                      {e.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
             )}
-            <datalist id="ser-engines">
-              {(status.systemEngines ?? []).map((e) => (
-                <option key={e.id} value={e.name} />
-              ))}
-            </datalist>
+            {query.length > 0 && engineMatches.length === 0 && !chosenEngine && !status.systemEnginesError && (
+              <p className="meta">No engine matches &ldquo;{engineQuery}&rdquo; — try fewer words.</p>
+            )}
           </div>
 
           <div className="nested-box">

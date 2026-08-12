@@ -42,6 +42,55 @@ describe("deriveCounterpart", () => {
     expect(warnings.some((w) => w.includes("brand name"))).toBe(true);
     expect(warnings.some((w) => w.includes("deep URL path"))).toBe(true);
     expect(warnings.some((w) => w.includes("too short"))).toBe(true);
-    expect(derived[2]!.contains).toEqual([]);
+    // "Tiny" translated to nothing, so no counterpart is derived for it at all.
+    expect(derived.map((d) => d.name)).not.toContain("Tiny");
+  });
+});
+
+import { parseSeoGetsFilterGroups } from "../src/lib/seogets";
+
+describe("parseSeoGetsFilterGroups (real SEO Gets payload shape)", () => {
+  const cyberAlchemyGroups = [
+    { name: "AI Services", is_priority: false, filters: [
+      { expression: "ai-", operator: "contains" },
+      { expression: "knowledge-hub", operator: "notContains" },
+    ]},
+    { name: "Medical & DTAC", is_priority: false, filters: [
+      { expression: "medical|dtac", operator: "contains" },
+      { expression: "knowledge", operator: "notContains" },
+    ]},
+    { name: "Home Page / Cyber Security Consultancy", is_priority: false, filters: [
+      { expression: "https://cyberalchemy.co.uk/", operator: "equals" },
+    ]},
+    { name: "Penetration Testing", is_priority: false, filters: [
+      { expression: "penetration", operator: "contains" },
+    ]},
+  ];
+
+  it("maps contains/notContains/equals filters, splitting pipe expressions", () => {
+    const warnings: string[] = [];
+    const items = parseSeoGetsFilterGroups(cyberAlchemyGroups, warnings);
+    expect(items).toHaveLength(4);
+    expect(items[0]).toMatchObject({ name: "AI Services", contains: ["ai-"], notContains: ["knowledge-hub"] });
+    expect(items[1]!.contains).toEqual(["medical", "dtac"]);
+    expect(items[1]!.notContains).toEqual(["knowledge"]);
+    expect(items[2]!.contains).toEqual([]);
+    expect(items[2]!.exact).toEqual(["https://cyberalchemy.co.uk/"]);
+    expect(items[3]!.contains).toEqual(["penetration"]);
+    expect(warnings).toEqual([]);
+  });
+
+  it("derives topic clusters from the parsed groups, dropping untranslatable ones", () => {
+    const warnings: string[] = [];
+    const items = parseSeoGetsFilterGroups(cyberAlchemyGroups, warnings);
+    const derived = deriveCounterpart(items, "content", "Cyber Alchemy", warnings);
+    const names = derived.map((d) => d.name);
+    // Pen testing and Medical & DTAC translate; the homepage equals-only group doesn't.
+    expect(names).toContain("Penetration Testing");
+    expect(names).toContain("Medical & DTAC");
+    expect(names).not.toContain("Home Page / Cyber Security Consultancy");
+    const medical = derived.find((d) => d.name === "Medical & DTAC")!;
+    expect(medical.contains).toEqual(["medical", "dtac"]);
+    expect(warnings.some((w) => w.includes("no counterpart was derived"))).toBe(true);
   });
 });

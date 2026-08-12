@@ -299,7 +299,50 @@ export interface ImportGroupItem {
   name: string;
   contains: string[];
   notContains: string[];
+  /** SEO Gets "equals" filters — imported as exact-match rules. */
+  exact?: string[];
   description?: string;
+}
+
+/**
+ * Parse SEO Gets' actual group shape (seen live):
+ * { name, is_priority, filters: [{ expression, operator }] } with operators
+ * contains / notContains / equals, and "|" pipes inside an expression as OR.
+ */
+export function parseSeoGetsFilterGroups(
+  list: unknown,
+  warnings: string[],
+): ImportGroupItem[] {
+  if (!Array.isArray(list)) return [];
+  const items: ImportGroupItem[] = [];
+  for (const raw of list) {
+    if (typeof raw !== "object" || raw === null) continue;
+    const obj = raw as Record<string, unknown>;
+    const name = groupName(obj);
+    if (!name) continue;
+    const item: ImportGroupItem = { name, contains: [], notContains: [], exact: [] };
+    const filters = Array.isArray(obj.filters) ? obj.filters : [];
+    for (const f of filters) {
+      const filter = f as { expression?: unknown; operator?: unknown };
+      const expression = String(filter.expression ?? "").trim();
+      const operator = String(filter.operator ?? "").trim();
+      if (!expression) continue;
+      const parts = expression.split("|").map((p) => p.trim()).filter(Boolean);
+      if (operator === "contains") item.contains.push(...parts);
+      else if (operator === "notContains" || operator === "not_contains") item.notContains.push(...parts);
+      else if (operator === "equals" || operator === "exact") item.exact!.push(expression);
+      else {
+        warnings.push(`"${name}": filter operator "${operator}" isn't supported — "${expression}" imported as a contains term; check it.`);
+        item.contains.push(...parts);
+      }
+    }
+    if (item.contains.length === 0 && (item.exact?.length ?? 0) === 0) {
+      warnings.push(`"${name}": no usable filters — skipped.`);
+      continue;
+    }
+    items.push(item);
+  }
+  return items;
 }
 
 export interface SeoGetsPullResult {
@@ -388,12 +431,23 @@ export function deriveCounterpart(
       }
       converted.push(mapped);
     }
+    if ((item.exact?.length ?? 0) > 0) {
+      warnings.push(
+        `"${item.name}": has an exact-match filter (${item.exact!.join(", ")}) which doesn't translate to the other side — the derived ${from === "content" ? "topic cluster" : "content group"} only carries the contains terms.`,
+      );
+    }
     return {
       name: item.name,
       contains: converted,
       notContains: item.notContains.map((t) => (from === "content" ? patternToQuery(t) : queryToPattern(t))).filter(Boolean),
       description: `Derived 1:1 from the ${from === "content" ? "content group" : "topic cluster"} of the same name (SEO Gets import).`,
     };
+  }).filter((item) => {
+    if (item.contains.length === 0) {
+      warnings.push(`"${item.name}": nothing translated cleanly, so no counterpart was derived — add one by hand if needed.`);
+      return false;
+    }
+    return true;
   });
 }
 
@@ -425,8 +479,8 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
   // every listing-ish candidate, preferring tools that need no arguments —
   // a per-property tool (required property_id) can't list anything.
   const siteCandidates = tools
-    .filter((t) => /site|propert|project|domain/i.test(t.name))
-    .sort((a, b) => requiredKeys(a).length - requiredKeys(b).length || (/list|all/i.test(b.name) ? 1 : 0) - (/list|all/i.test(a.name) ? 1 : 0));
+    .filter((t) => /^list.*(site|propert|project)/i.test(t.name) || t.name === "list_sites")
+    .sort((a, b) => requiredKeys(a).length - requiredKeys(b).length);
   let siteId: unknown = null;
   let siteLabel = "";
   for (const siteTool of siteCandidates) {
@@ -439,20 +493,39 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
       continue;
     }
     debug.calls.push({ tool: siteTool.name, args: {}, result: sites });
-    const siteObjs = findGroupObjects(sites).length > 0 ? findGroupObjects(sites) : [];
+    // SEO Gets sites are GSC-style property IDs with no name field:
+    // {id: "sc-domain:cyberalchemy.co.uk"} or {id: "https://www.foo.com/"}.
+    // Collect every id-ish string anywhere in the result and match on domain.
     const wanted = norm(client.domain);
-    const match = siteObjs.find((s) =>
-      Object.values(s).some((v) => typeof v === "string" && (norm(v).includes(wanted) || wanted.includes(norm(v).replace(/^sc-domain:/, "")))),
-    );
-    if (match) {
-      siteId = match.id ?? match.property_id ?? match.site_id ?? match.siteId ?? match.domain ?? match.url ?? match.property;
-      siteLabel = groupName(match) || String(siteId);
+    const normId = (v: string) =>
+      norm(v).replace(/^sc-domain:/, "").replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+    const candidates: string[] = [];
+    const collect = (value: unknown, depth = 0) => {
+      if (depth > 4 || value === null || typeof value !== "object") return;
+      if (Array.isArray(value)) return value.forEach((v) => collect(v, depth + 1));
+      for (const [key, v] of Object.entries(value as Record<string, unknown>)) {
+        if (typeof v === "string" && /^(id|property|property_id|site|site_id|url|domain)$/i.test(key)) candidates.push(v);
+        else collect(v, depth + 1);
+      }
+    };
+    collect(sites);
+    const matches = candidates.filter((c) => normId(c) === wanted || normId(c).endsWith(`.${wanted}`));
+    if (matches.length > 0) {
+      // Prefer the sc-domain property (covers every protocol/subdomain).
+      siteId = matches.find((m) => m.startsWith("sc-domain:")) ?? matches[0];
+      siteLabel = String(siteId);
       break;
     }
   }
+  if (!siteId) {
+    warnings.push(`No SEO Gets property matched ${client.domain} — using the domain itself, which their tools usually accept.`);
+  }
 
-  // 2. Call every group-ish tool, scoped to the site where the schema allows.
-  const groupTools = tools.filter((t) => /group|cluster|topic|folder|segment/i.test(t.name));
+  // 2. Call the group listing tools, scoped to the property. Read-only tools
+  // only: create/update/delete tools are never touched.
+  const groupTools = tools.filter(
+    (t) => /group|cluster|topic|folder|segment/i.test(t.name) && /^(list|get)/i.test(t.name),
+  );
   if (groupTools.length === 0) {
     return {
       ok: false,
@@ -494,16 +567,26 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
 
     const isContent = /content|page|url/i.test(tool.name);
     const target = isContent ? contentGroups : topicClusters;
+
+    // SEO Gets' real shape: {content_groups|topic_clusters: [{name, filters:[{expression, operator}]}]}
+    const container = (typeof result === "object" && result !== null ? (result as Record<string, unknown>) : {});
+    const filterList = Object.entries(container).find(
+      ([, v]) => Array.isArray(v) && v.some((g) => typeof g === "object" && g !== null && Array.isArray((g as Record<string, unknown>).filters)),
+    )?.[1];
+    if (filterList) {
+      target.push(...parseSeoGetsFilterGroups(filterList, warnings));
+      continue;
+    }
+
+    // Fallback for any other shape: objects with a name plus string arrays.
     for (const obj of findGroupObjects(result)) {
       const name = groupName(obj);
       const arrays = stringArrays(obj);
-      // Prefer explicitly named pattern fields; fall back to the first array.
       const patternKey =
         Object.keys(arrays).find((k) => /pattern|contain|include|match|term|keyword|quer|url|path/i.test(k)) ??
         Object.keys(arrays)[0];
       const excludeKey = Object.keys(arrays).find((k) => /exclude|not/i.test(k));
       if (!patternKey) {
-        // Single-pattern groups sometimes carry a string field instead.
         const single = Object.entries(obj).find(
           ([k, v]) => typeof v === "string" && /pattern|contain|include|match|filter/i.test(k) && (v as string).trim(),
         );

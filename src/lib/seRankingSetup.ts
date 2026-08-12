@@ -72,12 +72,15 @@ export interface SeRankingSetupStatus {
   keywordCount?: number;
   /** system dictionary for the "add engine" picker */
   systemEngines?: Array<{ id: string; name: string }>;
+  /** set when the engine dictionary couldn't be loaded */
+  systemEnginesError?: string;
 }
 
 export async function seRankingSetupStatus(clientKey: string): Promise<SeRankingSetupStatus> {
   try {
     const { client, siteId } = await findClientSite(clientKey);
 
+    let systemEnginesError: string | undefined;
     const [engines, groups, keywords, system] = await Promise.all([
       request<Array<{ site_engine_id?: number | string; search_engine_id?: number | string; region_name?: string | null }>>(
         "GET",
@@ -88,12 +91,20 @@ export async function seRankingSetupStatus(clientKey: string): Promise<SeRanking
         `/keywords/groups?site_id=${siteId}`,
       ).catch(() => []),
       request<Array<{ id?: number | string }>>("GET", `/keywords?site_id=${siteId}`).catch(() => []),
-      request<Array<{ id?: number | string; name?: string; title?: string }>>("GET", SYSTEM_ENGINES).catch(() => []),
+      request<Array<{ id?: number | string; name?: string; title?: string }>>("GET", SYSTEM_ENGINES).catch(
+        (err: Error) => {
+          systemEnginesError = err.message;
+          return [];
+        },
+      ),
     ]);
 
     const systemNames = new Map(
       (Array.isArray(system) ? system : []).map((e) => [String(e.id), e.name ?? e.title ?? `Engine ${e.id}`]),
     );
+    if (!systemEnginesError && systemNames.size === 0) {
+      systemEnginesError = "SE Ranking returned an empty search engine dictionary.";
+    }
 
     return {
       ok: true,
@@ -110,7 +121,10 @@ export async function seRankingSetupStatus(clientKey: string): Promise<SeRanking
         name: g.name ?? g.title ?? `Group ${g.id}`,
       })),
       keywordCount: Array.isArray(keywords) ? keywords.length : 0,
-      systemEngines: [...systemNames.entries()].map(([id, name]) => ({ id, name })),
+      systemEngines: [...systemNames.entries()]
+        .map(([id, name]) => ({ id, name }))
+        .sort((a, b) => a.name.localeCompare(b.name)),
+      systemEnginesError,
     };
   } catch (err) {
     return { ok: false, message: (err as Error).message };
