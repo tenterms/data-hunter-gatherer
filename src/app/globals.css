@@ -1213,6 +1213,33 @@ button {
   color: var(--ink-muted);
 }
 
+/* SE Ranking engine picker suggestions */
+.engine-suggestions {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface, #fff);
+  max-width: 420px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.engine-suggestions li button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.engine-suggestions li button:hover {
+  background: var(--blue-bolt-25);
+}
+
 /* Reactimus archive: ruled-out suggestions, greyed and collapsed */
 .reactimus-archive {
   background: var(--bg);
