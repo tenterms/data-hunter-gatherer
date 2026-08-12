@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getReportSettingsData } from "@/lib/reportSettings";
 import ReportSettingsPanel from "@/components/admin/ReportSettingsPanel";
+import SeRankingSetupPanel from "@/components/admin/SeRankingSetupPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -28,6 +29,7 @@ export default async function ReportSettingsPage({
         initialEngines={data.engines}
         initialCannibalisation={data.cannibalisation}
       />
+      <SeRankingSetupPanel clientKey={clientKey} />
     </>
   );
 }

@@ -409,16 +409,35 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
   const client = config.clients.find((c) => c.client_key === clientKey);
   if (!client) return { ok: false, message: "Unknown client.", warnings, debug };
 
-  const mcp = await seoGetsClient();
-  const tools = await mcp.listTools();
+  let mcp: McpClient;
+  let tools: Awaited<ReturnType<McpClient["listTools"]>>;
+  try {
+    mcp = await seoGetsClient();
+    tools = await mcp.listTools();
+  } catch (err) {
+    return { ok: false, message: (err as Error).message, warnings, debug };
+  }
   debug.tools = tools.map((t) => t.name);
+  const requiredKeys = (t: { inputSchema?: Record<string, unknown> }): string[] =>
+    Array.isArray(t.inputSchema?.required) ? (t.inputSchema!.required as string[]) : [];
 
-  // 1. Find the SEO Gets site matching this client's domain.
-  const siteTool = tools.find((t) => /site|propert|project|domain/i.test(t.name) && /list|get|all/i.test(t.name)) ?? tools.find((t) => /site/i.test(t.name));
+  // 1. Find the SEO Gets site/property matching this client's domain. Try
+  // every listing-ish candidate, preferring tools that need no arguments —
+  // a per-property tool (required property_id) can't list anything.
+  const siteCandidates = tools
+    .filter((t) => /site|propert|project|domain/i.test(t.name))
+    .sort((a, b) => requiredKeys(a).length - requiredKeys(b).length || (/list|all/i.test(b.name) ? 1 : 0) - (/list|all/i.test(a.name) ? 1 : 0));
   let siteId: unknown = null;
   let siteLabel = "";
-  if (siteTool) {
-    const sites = await mcp.callTool(siteTool.name, {});
+  for (const siteTool of siteCandidates) {
+    if (requiredKeys(siteTool).length > 0) continue; // can't satisfy its arguments
+    let sites: unknown;
+    try {
+      sites = await mcp.callTool(siteTool.name, {});
+    } catch (err) {
+      debug.calls.push({ tool: siteTool.name, args: {}, result: `ERROR: ${(err as Error).message}` });
+      continue;
+    }
     debug.calls.push({ tool: siteTool.name, args: {}, result: sites });
     const siteObjs = findGroupObjects(sites).length > 0 ? findGroupObjects(sites) : [];
     const wanted = norm(client.domain);
@@ -426,8 +445,9 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
       Object.values(s).some((v) => typeof v === "string" && (norm(v).includes(wanted) || wanted.includes(norm(v).replace(/^sc-domain:/, "")))),
     );
     if (match) {
-      siteId = match.id ?? match.site_id ?? match.siteId ?? match.domain ?? match.url ?? match.property;
+      siteId = match.id ?? match.property_id ?? match.site_id ?? match.siteId ?? match.domain ?? match.url ?? match.property;
       siteLabel = groupName(match) || String(siteId);
+      break;
     }
   }
 
@@ -453,11 +473,21 @@ export async function pullSeoGetsGroups(clientKey: string): Promise<SeoGetsPullR
         args[key] = /domain|url/i.test(key) ? client.domain : (siteId ?? client.domain);
       }
     }
+    // Never call a tool whose required arguments we couldn't fill — a
+    // guaranteed validation error tells us nothing and aborts nothing useful.
+    const unfillable = requiredKeys(tool).filter((k) => !(k in args));
+    if (unfillable.length > 0) {
+      warnings.push(
+        `Skipped tool "${tool.name}": couldn't supply required argument(s) ${unfillable.join(", ")}${siteId ? "" : " (no matching SEO Gets property was found for this client's domain)"}.`,
+      );
+      continue;
+    }
     let result: unknown;
     try {
       result = await mcp.callTool(tool.name, args);
     } catch (err) {
       warnings.push(`Tool "${tool.name}" failed: ${(err as Error).message}`);
+      debug.calls.push({ tool: tool.name, args, result: `ERROR: ${(err as Error).message}` });
       continue;
     }
     debug.calls.push({ tool: tool.name, args, result });
