@@ -33,6 +33,14 @@ export async function middleware(request: NextRequest) {
   const cookie = request.cookies.get("team_auth")?.value;
   if (cookie && cookie === (await sha256Hex(appPassword))) return NextResponse.next();
 
+  // Machine access for API routes: a separate revocable token (used by the
+  // team's Claude workspace to run setup/imports without the human password).
+  const apiToken = process.env.ADMIN_API_TOKEN;
+  if (apiToken && pathname.startsWith("/api/")) {
+    const header = request.headers.get("authorization") ?? "";
+    if (header === `Bearer ${apiToken}`) return NextResponse.next();
+  }
+
   if (pathname.startsWith("/api/")) {
     return NextResponse.json({ ok: false, message: "Not signed in." }, { status: 401 });
   }

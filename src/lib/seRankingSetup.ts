@@ -70,6 +70,7 @@ export interface SeRankingSetupStatus {
   engines?: Array<{ siteEngineId: string; label: string; keywordCount?: number }>;
   groups?: Array<{ id: string; name: string }>;
   keywordCount?: number;
+  keywords?: Array<{ name: string; groupId: string | null }>;
   /** system dictionary for the "add engine" picker */
   systemEngines?: Array<{ id: string; name: string }>;
   /** set when the engine dictionary couldn't be loaded */
@@ -90,7 +91,10 @@ export async function seRankingSetupStatus(clientKey: string): Promise<SeRanking
         "GET",
         `/keywords/groups?site_id=${siteId}`,
       ).catch(() => []),
-      request<Array<{ id?: number | string }>>("GET", `/keywords?site_id=${siteId}`).catch(() => []),
+      request<Array<{ id?: number | string; name?: string; keyword?: string; group_id?: number | string | null }>>(
+        "GET",
+        `/keywords?site_id=${siteId}`,
+      ).catch(() => []),
       request<Array<{ id?: number | string; name?: string; title?: string }>>("GET", SYSTEM_ENGINES).catch(
         (err: Error) => {
           systemEnginesError = err.message;
@@ -121,6 +125,12 @@ export async function seRankingSetupStatus(clientKey: string): Promise<SeRanking
         name: g.name ?? g.title ?? `Group ${g.id}`,
       })),
       keywordCount: Array.isArray(keywords) ? keywords.length : 0,
+      keywords: (Array.isArray(keywords) ? keywords : [])
+        .map((k) => ({
+          name: String(k.name ?? k.keyword ?? "").trim(),
+          groupId: k.group_id !== null && k.group_id !== undefined ? String(k.group_id) : null,
+        }))
+        .filter((k) => k.name !== ""),
       systemEngines: [...systemNames.entries()]
         .map(([id, name]) => ({ id, name }))
         .sort((a, b) => a.name.localeCompare(b.name)),
