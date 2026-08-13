@@ -4,7 +4,7 @@ import ReportSection from "@/components/ReportSection";
 import CommentaryBlock from "@/components/CommentaryBlock";
 import EditableCommentary from "@/components/EditableCommentary";
 import PerformanceBars from "@/components/PerformanceBars";
-import PagesTable from "@/components/PagesTable";
+import PageGroupSlider from "@/components/PageGroupSlider";
 import CannibalisationTable from "@/components/CannibalisationTable";
 import RankingsSection from "@/components/RankingsSection";
 import DrawGrid from "@/components/DrawGrid";
@@ -107,30 +107,14 @@ export default function ReportView({
         description="How often the site showed up in Google searches and how many people clicked through, compared with the month before."
       >
         <Commentary section="traffic" />
-        {primaryPages.length > 0 && (
-          <>
-            <h3>Primary services</h3>
-            <PagesTable pages={primaryPages} />
-          </>
-        )}
-        {secondaryPages.length > 0 && (
-          <>
-            <h3>Secondary services</h3>
-            <PagesTable pages={secondaryPages} />
-          </>
-        )}
-        {sectorPages.length > 0 && (
-          <>
-            <h3>Sector pages</h3>
-            <PagesTable pages={sectorPages} />
-          </>
-        )}
-        {supportingPages.length > 0 && (
-          <>
-            <h3>Supporting &amp; blog content</h3>
-            <PagesTable pages={supportingPages} />
-          </>
-        )}
+        <PageGroupSlider
+          groups={[
+            { label: "Primary services", pages: primaryPages },
+            { label: "Secondary services", pages: secondaryPages },
+            { label: "Sector pages", pages: sectorPages },
+            { label: "Supporting & blog content", pages: supportingPages },
+          ]}
+        />
         <div className="nested-box">
           <h3>Rest of site</h3>
           <p className="section-desc">
