@@ -171,3 +171,31 @@ describe("commentary fallback behaviour", () => {
     expect(result.find((c) => c.section === "executive_summary")?.mode).toBe("rules_only");
   });
 });
+
+describe("llm commentary parsing", () => {
+  it("accepts an empty strategic_priorities section without failing the draft", async () => {
+    const { parseCommentaryJson } = await import("@/lib/llmCommentary");
+    const full = {
+      executive_summary: "A steady month.",
+      traffic: "Traffic held.",
+      content_groups: "Groups steady.",
+      topic_clusters: "Clusters steady.",
+      rankings: "Rankings steady.",
+      cannibalisation: "Nothing to act on.",
+      strategic_priorities: "",
+    };
+    const parsed = parseCommentaryJson(JSON.stringify(full));
+    expect(parsed.strategic_priorities).toBe("");
+    expect(parsed.executive_summary).toBe("A steady month.");
+  });
+
+  it("still rejects an empty required section", async () => {
+    const { parseCommentaryJson } = await import("@/lib/llmCommentary");
+    const bad = {
+      executive_summary: "",
+      traffic: "t", content_groups: "c", topic_clusters: "t",
+      rankings: "r", cannibalisation: "c", strategic_priorities: "s",
+    };
+    expect(() => parseCommentaryJson(JSON.stringify(bad))).toThrow(/executive_summary/);
+  });
+});

@@ -158,17 +158,30 @@ export class AnthropicCommentaryProvider implements LlmCommentaryProvider {
     const text = response.content.find((b) => b.type === "text")?.text;
     if (!text) throw new Error("LLM returned no text content");
 
-    const parsed = JSON.parse(text) as Record<string, unknown>;
-    const result = {} as Record<CommentarySection, string>;
-    for (const section of SECTIONS) {
-      const value = parsed[section];
-      if (typeof value !== "string" || value.trim() === "") {
-        throw new Error(`LLM output missing section "${section}"`);
-      }
-      result[section] = value.trim();
-    }
-    return result;
+    return parseCommentaryJson(text);
   }
+}
+
+/**
+ * Parse and validate the model's JSON. Every section must be present and
+ * non-empty, except strategic_priorities: that one is legitimately empty when
+ * the account manager notes contain nothing forward-looking (the report then
+ * hides the section instead of inventing priorities).
+ */
+export function parseCommentaryJson(text: string): Record<CommentarySection, string> {
+  const parsed = JSON.parse(text) as Record<string, unknown>;
+  const result = {} as Record<CommentarySection, string>;
+  for (const section of SECTIONS) {
+    const value = parsed[section];
+    if (typeof value !== "string") {
+      throw new Error(`LLM output missing section "${section}"`);
+    }
+    if (value.trim() === "" && section !== "strategic_priorities") {
+      throw new Error(`LLM output empty for section "${section}"`);
+    }
+    result[section] = value.trim();
+  }
+  return result;
 }
 
 export function createLlmProvider(
