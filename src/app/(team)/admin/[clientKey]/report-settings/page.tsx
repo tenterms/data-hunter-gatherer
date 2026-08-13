@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getReportSettingsData } from "@/lib/reportSettings";
 import ReportSettingsPanel from "@/components/admin/ReportSettingsPanel";
 import SeRankingSetupPanel from "@/components/admin/SeRankingSetupPanel";
+import GoogleGscPanel from "@/components/admin/GoogleGscPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -29,6 +30,7 @@ export default async function ReportSettingsPage({
         initialEngines={data.engines}
         initialCannibalisation={data.cannibalisation}
       />
+      <GoogleGscPanel clientKey={clientKey} />
       <SeRankingSetupPanel clientKey={clientKey} />
     </>
   );

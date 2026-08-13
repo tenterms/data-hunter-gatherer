@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import { google } from "googleapis";
 import { DATA_DIR, getAppConfig, REPORTS_DIR } from "./config";
-import { getGoogleAuth, loadAdminConfig } from "./sheets";
+import { loadAdminConfig } from "./sheets";
+import { getGscAuth } from "./googleAuth";
 import { resolveGscSiteUrl } from "./gsc";
 import { appendRowsAnywhere } from "./rowStore";
 import { readSnapshot } from "./snapshots";
@@ -168,7 +169,7 @@ async function queriesForUrl(
   config: ToolConfig,
   url: string,
 ): Promise<{ rows: GscRawRow[]; error?: string }> {
-  const api = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  const api = google.searchconsole({ version: "v1", auth: getGscAuth() as never });
   const end = new Date();
   end.setDate(end.getDate() - 2); // GSC data lags ~2 days
   const start = new Date(end);

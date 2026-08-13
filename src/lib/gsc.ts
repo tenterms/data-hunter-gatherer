@@ -1,5 +1,5 @@
 import { google } from "googleapis";
-import { getGoogleAuth } from "./sheets";
+import { getGscAuth } from "./googleAuth";
 import type {
   AdminConfig,
   ClientRow,
@@ -39,7 +39,7 @@ export class LiveGscAdapter implements GscAdapter {
   constructor(private log: (message: string) => void = () => {}) {}
 
   private api() {
-    return google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+    return google.searchconsole({ version: "v1", auth: getGscAuth() as never });
   }
 
   private async queryAll(siteUrl: string, range: DateRange, dimensions: string[]): Promise<GscRow[]> {
@@ -116,7 +116,7 @@ export class LiveGscAdapter implements GscAdapter {
  * and with/without www).
  */
 export async function findAccessibleProperty(client: ClientRow): Promise<string | null> {
-  const api = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  const api = google.searchconsole({ version: "v1", auth: getGscAuth() as never });
   const res = await api.sites.list();
   const domain = client.domain.toLowerCase().replace(/^www\./, "");
   const matchesDomain = (siteUrl: string): boolean => {
@@ -144,7 +144,7 @@ export async function findAccessibleProperty(client: ClientRow): Promise<string 
  * property list (shared by report generation and Reactimus).
  */
 export async function resolveGscSiteUrl(client: ClientRow): Promise<string> {
-  const api = google.searchconsole({ version: "v1", auth: getGoogleAuth() as never });
+  const api = google.searchconsole({ version: "v1", auth: getGscAuth() as never });
   const end = new Date();
   end.setDate(end.getDate() - 2);
   const start = new Date(end);

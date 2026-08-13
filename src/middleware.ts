@@ -26,6 +26,8 @@ export async function middleware(request: NextRequest) {
     // fetched by their server, and the callback arrives from their redirect.
     pathname === "/oauth-client.json" ||
     pathname === "/api/seogets/callback" ||
+    // Google OAuth return leg (state cookie is validated in the route).
+    pathname === "/api/google/callback" ||
     pathname.startsWith("/_next/") ||
     pathname === "/favicon.ico";
   if (isPublic) return NextResponse.next();

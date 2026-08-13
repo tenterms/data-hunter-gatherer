@@ -70,19 +70,7 @@ export function disconnectSeoGets(): void {
 
 const b64url = (buf: Buffer) => buf.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 
-/**
- * The app's public base URL, taken from the request that's being served —
- * behind Railway's proxy the forwarded headers carry the real host, so this
- * works without any environment variable. NEXT_PUBLIC_APP_URL (when set to a
- * non-localhost value) still wins, for setups behind unusual proxies.
- */
-export function publicBaseUrl(headers: Headers): string {
-  const { appUrl } = getAppConfig();
-  if (appUrl && !/localhost|127\.0\.0\.1/.test(appUrl)) return appUrl.replace(/\/+$/, "");
-  const host = headers.get("x-forwarded-host") ?? headers.get("host") ?? "localhost:3000";
-  const proto = headers.get("x-forwarded-proto") ?? (/localhost|127\.0\.0\.1/.test(host) ? "http" : "https");
-  return `${proto}://${host}`;
-}
+export { publicBaseUrl } from "./googleAuth";
 
 export function clientMetadata(appUrl: string) {
   const base = appUrl.replace(/\/+$/, "");

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GoogleGscPanel from "@/components/admin/GoogleGscPanel";
 import { listSnapshots } from "@/lib/snapshots";
 import { loadAdminConfig } from "@/lib/sheets";
 
@@ -49,6 +50,8 @@ export default async function HomePage() {
           </ul>
         )}
       </div>
+
+      <GoogleGscPanel />
 
       {clientNames.filter((c) => !clientsWithReports.has(c.key)).length > 0 && (
         <div className="card">
