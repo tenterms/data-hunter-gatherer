@@ -58,7 +58,13 @@ describe("rules commentary", () => {
       strategic_priority_candidates: [],
     };
     const text = generateRulesCommentary(empty);
-    for (const value of Object.values(text)) {
+    for (const [section, value] of Object.entries(text)) {
+      // Strategic priorities are the account manager's own words, so the
+      // rules engine deliberately leaves that section empty.
+      if (section === "strategic_priorities") {
+        expect(value).toBe("");
+        continue;
+      }
       expect(value.length).toBeGreaterThan(10);
     }
   });

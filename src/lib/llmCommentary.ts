@@ -88,7 +88,7 @@ Section guidance (length caps are hard limits):
 - topic_clusters: 1-3 sentences on which subjects the site is gaining or losing ground on.
 - rankings: 2-4 sentences on what moved in the tracked keywords and whether it matters.
 - cannibalisation: 1-3 sentences. Explain the idea simply ("two of your pages are competing for the same search") and what we'll do. If there's nothing worth acting on, one sentence saying so.
-- strategic_priorities: a short numbered list (in one string, \\n between items), each item one plain sentence: the move and why it's worth it.
+- strategic_priorities: the team's own priorities, not analysis. Build this section ONLY from am_notes: rewrite the forward-looking priorities and business goals the account manager describes there into client-facing language, as a short numbered list (in one string, \\n between items), each item one plain sentence. Do not derive priorities from the findings. If am_notes is empty or contains nothing forward-looking, return an empty string for this section.
 
 Respond with ONLY a JSON object with exactly these string keys:
 ${SECTIONS.map((s) => `"${s}"`).join(", ")}.`;
@@ -110,7 +110,9 @@ export class AnthropicCommentaryProvider implements LlmCommentaryProvider {
       reporting_period: input.periodLabel,
       am_notes: input.focusNotes ?? null,
       kpis: input.kpis.map((k) => ({ label: k.label, value: k.value, change: k.changeLabel })),
-      findings: input.findings,
+      // Strategic priorities come from the account manager, so the data-derived
+      // candidates stay out of the model's sight entirely.
+      findings: { ...input.findings, strategic_priority_candidates: [] },
       draw_tasks: input.drawTasks,
     };
 

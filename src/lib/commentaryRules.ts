@@ -26,9 +26,7 @@ export function generateRulesCommentary(findings: Findings): Record<CommentarySe
   const executive = [
     sentences(findings.executive_findings, 4),
     balanceLine([...findings.executive_findings, ...findings.ranking_findings]),
-    findings.strategic_priority_candidates.length > 0
-      ? `Suggested focus: ${findings.strategic_priority_candidates[0].text}`
-      : "",
+    "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -58,10 +56,9 @@ export function generateRulesCommentary(findings: Findings): Record<CommentarySe
       ? sentences(findings.ranking_findings, 6)
       : "No ranking data was available for this period.";
 
-  const strategic =
-    findings.strategic_priority_candidates.length > 0
-      ? findings.strategic_priority_candidates.map((f, i) => `${i + 1}. ${f.text}`).join("\n")
-      : "No data-driven priorities were flagged automatically this period — set priorities manually in the StrategicNotes sheet.";
+  // Strategic priorities are the account manager's, never derived from data.
+  // The rules fallback leaves the section empty for the team to fill in.
+  const strategic = "";
 
   return {
     executive_summary: executive,

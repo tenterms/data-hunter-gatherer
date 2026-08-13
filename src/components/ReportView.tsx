@@ -75,10 +75,12 @@ export default function ReportView({
         />
       </ReportSection>
 
-      {/* 4. Strategic priorities */}
+      {/* 4. Strategic priorities (the team's own, written via the account
+          manager notes, never AI analysis of the data) */}
+      {((commentaryFor("strategic_priorities")?.finalText ?? "").trim() !== "" || snapshot.strategicNotes.length > 0 || mode === "team") && (
       <ReportSection
         title="Strategic priorities"
-        description="The moves we recommend next, and why each one is worth doing."
+        description="The priorities we've agreed for the months ahead."
       >
         <Commentary section="strategic_priorities" />
         {snapshot.strategicNotes.length > 0 && (
@@ -97,6 +99,7 @@ export default function ReportView({
           </ul>
         )}
       </ReportSection>
+      )}
 
       {/* 5. Traffic changes (GSC) */}
       <ReportSection
