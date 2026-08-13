@@ -24,7 +24,7 @@ export default async function TeamReportPage({
         <Link href={`/admin/${clientKey}`}>{snapshot.client.client_name} admin</Link>
       </p>
       <h1>
-        {snapshot.client.client_name} — {snapshot.period.label}
+        {snapshot.client.client_name}, {snapshot.period.label}
       </h1>
       <p className="subtitle">
         {snapshot.period.start_date} to {snapshot.period.end_date} (compared with{" "}

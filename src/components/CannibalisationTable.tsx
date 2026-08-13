@@ -60,7 +60,7 @@ export default function CannibalisationTable({
   const [savingQuery, setSavingQuery] = useState<string | null>(null);
 
   if (issues.length === 0) {
-    return <p className="bars-empty">No queries with more than one page receiving impressions — nothing to fix here.</p>;
+    return <p className="bars-empty">No queries with more than one page receiving impressions, so nothing to fix here.</p>;
   }
 
   const isHidden = (issue: CannibalisationIssue) => hiddenOverride[issue.query] ?? !!issue.hidden;

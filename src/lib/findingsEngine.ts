@@ -251,7 +251,7 @@ export function buildFindings(input: ReportComputation): Findings {
       finding(
         "priority_decaying_groups",
         "warning",
-        `Review the ${decayingGroups.map((g) => `"${g.name}"`).join(", ")} content ${decayingGroups.length === 1 ? "group" : "groups"} — clicks declined this period.`,
+        `Review the ${decayingGroups.map((g) => `"${g.name}"`).join(", ")} content ${decayingGroups.length === 1 ? "group" : "groups"}: clicks declined this period.`,
         { groups: decayingGroups.map((g) => g.key).join(",") },
       ),
     );
@@ -271,7 +271,7 @@ export function buildFindings(input: ReportComputation): Findings {
       finding(
         "priority_ctr_gap",
         "neutral",
-        `${page.label} earns impressions but converts none into clicks — review titles, meta descriptions and search intent fit.`,
+        `${page.label} earns impressions but converts none into clicks. Review the titles, meta descriptions and search intent fit.`,
         { url: page.url },
       ),
     );

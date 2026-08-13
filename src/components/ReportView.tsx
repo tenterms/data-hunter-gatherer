@@ -52,7 +52,7 @@ export default function ReportView({
       {/* 1. Executive summary */}
       <ReportSection
         title="Executive summary"
-        description="The month in a nutshell — what happened, why it matters, and what we're focused on next."
+        description="The month in a nutshell, and what we're focused on next."
       >
         <Commentary section="executive_summary" />
       </ReportSection>
@@ -67,7 +67,7 @@ export default function ReportView({
       {/* 3. Work grid (DRAW) */}
       <ReportSection
         title="Work completed &amp; planned"
-        description="What we're doing for you right now, and what we finished last month — across design, SEO fixes, content and everything else."
+        description="The work in progress right now, and what we finished last month."
       >
         <DrawGrid
           tasks={snapshot.drawTasks}
@@ -101,7 +101,7 @@ export default function ReportView({
       {/* 5. Traffic changes (GSC) */}
       <ReportSection
         title="Traffic changes (Google Search Console)"
-        description="How often the site showed up in Google searches, and how many people clicked through — for the pages that matter most, compared with the month before."
+        description="How often the site showed up in Google searches and how many people clicked through, compared with the month before."
       >
         <Commentary section="traffic" />
         {primaryPages.length > 0 && (
@@ -131,7 +131,7 @@ export default function ReportView({
         <div className="nested-box">
           <h3>Rest of site</h3>
           <p className="section-desc">
-            Everything beyond the tracked key pages — {rest.pageCount.toLocaleString("en-GB")} URLs
+            Everything beyond the tracked key pages: {rest.pageCount.toLocaleString("en-GB")} URLs
             picking up search traffic across the wider site.
           </p>
           <div className="mini-stats">
@@ -159,9 +159,9 @@ export default function ReportView({
           <div className="nested-box">
             <h3>Content group performance</h3>
             <p className="section-desc">
-              The site&apos;s pages bundled into groups (like &ldquo;service pages&rdquo; or
-              &ldquo;blog posts&rdquo;), so you can see at a glance which parts of the site are
-              gaining or losing search traffic.
+              The site&apos;s pages grouped by the services and locations we target (like
+              &ldquo;Sheffield&rdquo; or &ldquo;Penetration testing&rdquo;), so you can see which
+              parts of the site are gaining or losing search traffic.
             </p>
             <Commentary section="content_groups" />
             <PerformanceBars groups={metrics.contentGroups} />
@@ -171,9 +171,8 @@ export default function ReportView({
           <div className="nested-box">
             <h3>Keyword group performance</h3>
             <p className="section-desc">
-              How the site performed in searches about each topic below — for example, every search
-              containing that phrase. A quick read on which subjects are growing and which are
-              slipping.
+              Searches grouped by topic. Each group counts every search containing that phrase,
+              showing which subjects are growing and which are slipping.
             </p>
             <Commentary section="topic_clusters" />
             <PerformanceBars groups={metrics.topicClusters} />
@@ -184,7 +183,7 @@ export default function ReportView({
       {/* 6. Visibility changes (rankings) */}
       <ReportSection
         title="Visibility changes (tracked rankings)"
-        description="Where the site ranks in Google for the keywords we track on purpose. Position 1 is the top result; anything up to 10 is on page one."
+        description="Where the site ranks in Google for the keywords we track. Position 1 is the top result; anything up to 10 is on page one."
       >
         <Commentary section="rankings" />
         <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
@@ -199,7 +198,7 @@ export default function ReportView({
         {mode === "team" ? (
           <>
             <p className="section-desc">
-              Use the &ldquo;In report?&rdquo; toggle to curate what the client sees — hidden rows are
+              Use the &ldquo;In report?&rdquo; toggle to curate what the client sees. Hidden rows are
               dimmed here and left out of the published report.
             </p>
             <CannibalisationTable issues={metrics.cannibalisation} curation={{ clientKey }} />

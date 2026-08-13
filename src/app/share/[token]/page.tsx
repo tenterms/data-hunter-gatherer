@@ -22,7 +22,7 @@ export default async function SharedReportPage({ params }: { params: Promise<{ t
           TenTerms<span className="tm">™</span>
         </div>
         <h1>
-          {snapshot.client.client_name} — {snapshot.period.label}
+          {snapshot.client.client_name}, {snapshot.period.label}
         </h1>
         <p className="subtitle">
           Monthly SEO report · {snapshot.period.start_date} to {snapshot.period.end_date}, compared with the

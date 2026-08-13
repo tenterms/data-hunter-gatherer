@@ -22,7 +22,7 @@ const ROWS: Array<{ timing: DrawTiming; label: string }> = [
 function cellText(tasks: DrawTaskRow[], timing: DrawTiming, category: DrawCategory): string {
   return tasks
     .filter((t) => t.timing === timing && t.category === category)
-    .map((t) => (t.description ? `${t.title} — ${t.description}` : t.title))
+    .map((t) => (t.description ? `${t.title}: ${t.description}` : t.title))
     .join("\n");
 }
 
