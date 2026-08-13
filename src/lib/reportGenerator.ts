@@ -192,6 +192,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       url: p.url,
       label: p.label,
       pageRole: p.page_role,
+      pageGroup: p.page_group,
       contentType: p.content_type,
       commercialPriority: p.commercial_priority,
       current: cur,

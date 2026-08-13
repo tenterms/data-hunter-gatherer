@@ -11,6 +11,7 @@ interface Row {
   page_role: PageRole;
   content_type: ContentType;
   commercial_priority: CommercialPriority;
+  page_group?: string;
   active: boolean;
   notes: string;
 }
@@ -70,6 +71,7 @@ export default function PagesEditor({
         url,
         label: labelFromUrl(url),
         page_role: "secondary",
+        page_group: "",
         content_type: "commercial",
         commercial_priority: "medium",
         active: true,
@@ -97,6 +99,11 @@ export default function PagesEditor({
 
   return (
     <div>
+      <datalist id="page-screen-names">
+        {[...new Set(rows.map((r) => (r.page_group ?? "").trim()).filter(Boolean))].map((g) => (
+          <option key={g} value={g} />
+        ))}
+      </datalist>
       <div className="table-wrap">
         <table className="data pages-editor">
           <thead>
@@ -104,6 +111,7 @@ export default function PagesEditor({
               <th>Page</th>
               <th>Label</th>
               <th>Role</th>
+              <th>Screen</th>
               <th>Type</th>
               <th>Priority</th>
               <th aria-label="remove" />
@@ -126,6 +134,16 @@ export default function PagesEditor({
                       </option>
                     ))}
                   </select>
+                </td>
+                <td>
+                  <input
+                    value={row.page_group ?? ""}
+                    placeholder="auto"
+                    title="Optional screen name in the report's traffic tables (e.g. Locations, By material). Blank = grouped by role."
+                    style={{ width: 110 }}
+                    onChange={(e) => update(i, { page_group: e.target.value })}
+                    list="page-screen-names"
+                  />
                 </td>
                 <td>
                   <select

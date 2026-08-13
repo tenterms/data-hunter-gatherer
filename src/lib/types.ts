@@ -44,6 +44,8 @@ export interface ClientPageRow {
   page_role: PageRole;
   content_type: ContentType;
   commercial_priority: CommercialPriority;
+  /** optional display screen in the report's traffic tables (e.g. "By material", "Locations") */
+  page_group: string;
   active: boolean;
   notes: string;
 }
@@ -321,6 +323,8 @@ export interface PagePerformance {
   url: string;
   label: string;
   pageRole: PageRole;
+  /** named screen in the traffic tables; empty/absent = grouped by role */
+  pageGroup?: string;
   contentType: ContentType;
   commercialPriority: CommercialPriority;
   current: MetricSet;

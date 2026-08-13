@@ -20,6 +20,7 @@ const pages: ClientPageRow[] = [
     commercial_priority: "high",
     active: true,
     notes: "",
+  page_group: "",
   },
   {
     client_key: "c",
@@ -30,6 +31,7 @@ const pages: ClientPageRow[] = [
     commercial_priority: "low",
     active: true,
     notes: "",
+  page_group: "",
   },
 ];
 

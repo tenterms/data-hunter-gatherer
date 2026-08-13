@@ -62,6 +62,7 @@ export interface EditablePage {
   page_role: PageRole;
   content_type: ContentType;
   commercial_priority: CommercialPriority;
+  page_group?: string;
   active: boolean;
   notes: string;
 }
@@ -88,6 +89,7 @@ export async function savePages(input: { clientKey: string; pages: EditablePage[
       commercial_priority: PRIORITIES.includes(page.commercial_priority) ? page.commercial_priority : "medium",
       active: page.active ? "true" : "false",
       notes: page.notes ?? "",
+      page_group: (page.page_group ?? "").trim(),
     });
   }
   const where = await replaceRowsAnywhere(

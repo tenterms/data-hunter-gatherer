@@ -41,10 +41,21 @@ export default function ReportView({
       <CommentaryBlock commentary={commentaryFor(section)} readOnly />
     );
 
-  const primaryPages = metrics.pages.filter((p) => p.pageRole === "primary");
-  const secondaryPages = metrics.pages.filter((p) => p.pageRole === "secondary");
-  const sectorPages = metrics.pages.filter((p) => p.pageRole === "sector");
-  const supportingPages = metrics.pages.filter((p) => p.pageRole === "supporting");
+  // Pages with a named screen get their own slider screens (in the order the
+  // pages are configured); the rest fall into the role buckets.
+  const namedGroups: Array<{ label: string; pages: typeof metrics.pages }> = [];
+  for (const page of metrics.pages) {
+    const name = (page.pageGroup ?? "").trim();
+    if (!name) continue;
+    const existing = namedGroups.find((g) => g.label === name);
+    if (existing) existing.pages.push(page);
+    else namedGroups.push({ label: name, pages: [page] });
+  }
+  const ungrouped = metrics.pages.filter((p) => !(p.pageGroup ?? "").trim());
+  const primaryPages = ungrouped.filter((p) => p.pageRole === "primary");
+  const secondaryPages = ungrouped.filter((p) => p.pageRole === "secondary");
+  const sectorPages = ungrouped.filter((p) => p.pageRole === "sector");
+  const supportingPages = ungrouped.filter((p) => p.pageRole === "supporting");
   const rest = metrics.restOfSite;
 
   return (
@@ -109,6 +120,7 @@ export default function ReportView({
         <Commentary section="traffic" />
         <PageGroupSlider
           groups={[
+            ...namedGroups,
             { label: "Primary services", pages: primaryPages },
             { label: "Secondary services", pages: secondaryPages },
             { label: "Sector pages", pages: sectorPages },
