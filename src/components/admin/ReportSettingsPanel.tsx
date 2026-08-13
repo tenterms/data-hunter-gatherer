@@ -157,7 +157,7 @@ function CannibalisationCard({
   async function save() {
     await run("/api/admin/cannibalisation", {
       clientKey,
-      hiddenQueries: rows.filter((r) => r.hidden).map((r) => r.query),
+      visibleQueries: rows.filter((r) => !r.hidden).map((r) => r.query),
     });
   }
 
@@ -167,9 +167,9 @@ function CannibalisationCard({
     <div className="card">
       <h3 style={{ marginTop: 0 }}>Cannibalisation catcher — curate the list</h3>
       <p className="section-desc">
-        Every query below has more than one page competing in search. Hide the rows that aren&apos;t
-        worth the client&apos;s attention (brand terms, false positives); hidden rows stay out of the
-        report until you show them again.
+        Every query below has more than one page competing in search. Everything starts{" "}
+        <strong>hidden</strong> — switch on just the rows worth the client&apos;s attention, and the
+        rest stay out of the report.
       </p>
       {rows.length === 0 ? (
         <p className="bars-empty">No cannibalisation issues in the latest report.</p>

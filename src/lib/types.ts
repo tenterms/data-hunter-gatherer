@@ -33,7 +33,7 @@ export interface ReportPeriodRow {
   status: PeriodStatus;
 }
 
-export type PageRole = "primary" | "secondary" | "supporting" | "rest_of_site";
+export type PageRole = "primary" | "secondary" | "sector" | "supporting" | "rest_of_site";
 export type ContentType = "commercial" | "blog" | "guide" | "sector" | "tool" | "other";
 export type CommercialPriority = "high" | "medium" | "low";
 
@@ -193,6 +193,12 @@ export interface CannibalisationExclusionRow {
   query: string;
 }
 
+/** Cannibalisation rows are hidden by default; these are the ones shown to the client. */
+export interface CannibalisationVisibleRow {
+  client_key: string;
+  query: string;
+}
+
 /**
  * Account manager notes for a client/month: the priorities, client concerns
  * and work-in-progress that should steer the report's commentary.
@@ -229,6 +235,7 @@ export interface AdminConfig {
   strategicNotes: StrategicNoteRow[];
   rankingEngines: RankingEngineRow[];
   cannibalisationExclusions: CannibalisationExclusionRow[];
+  cannibalisationVisible: CannibalisationVisibleRow[];
   focusNotes: FocusNoteRow[];
   masterPages: MasterPageRow[];
 }

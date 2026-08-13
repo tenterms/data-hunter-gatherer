@@ -66,7 +66,7 @@ export interface EditablePage {
   notes: string;
 }
 
-const ROLES: PageRole[] = ["primary", "secondary", "supporting", "rest_of_site"];
+const ROLES: PageRole[] = ["primary", "secondary", "sector", "supporting", "rest_of_site"];
 const TYPES: ContentType[] = ["commercial", "blog", "guide", "sector", "tool", "other"];
 const PRIORITIES: CommercialPriority[] = ["high", "medium", "low"];
 

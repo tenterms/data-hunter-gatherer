@@ -14,6 +14,7 @@ export default function ClientTabs({ clientKey }: { clientKey: string }) {
     { href: `${base}/content-groups`, label: "Content groups" },
     { href: `${base}/topic-clusters`, label: "Topic clusters" },
     { href: `${base}/report-settings`, label: "Report settings" },
+    { href: `/reactimus/${clientKey}/pages`, label: "Master page list" },
   ];
   return (
     <nav className="client-tabs">

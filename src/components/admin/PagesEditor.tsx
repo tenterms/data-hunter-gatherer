@@ -15,7 +15,14 @@ interface Row {
   notes: string;
 }
 
-const ROLES: PageRole[] = ["primary", "secondary", "supporting", "rest_of_site"];
+const ROLES: PageRole[] = ["primary", "secondary", "sector", "supporting", "rest_of_site"];
+const ROLE_LABELS: Record<PageRole, string> = {
+  primary: "Primary Service",
+  secondary: "Secondary Service",
+  sector: "Sector",
+  supporting: "Supporting",
+  rest_of_site: "Rest of site",
+};
 const TYPES: ContentType[] = ["commercial", "blog", "guide", "sector", "tool", "other"];
 const PRIORITIES: CommercialPriority[] = ["high", "medium", "low"];
 
@@ -115,7 +122,7 @@ export default function PagesEditor({
                   <select value={row.page_role} onChange={(e) => update(i, { page_role: e.target.value as PageRole })}>
                     {ROLES.map((r) => (
                       <option key={r} value={r}>
-                        {r.replace(/_/g, " ")}
+                        {ROLE_LABELS[r]}
                       </option>
                     ))}
                   </select>

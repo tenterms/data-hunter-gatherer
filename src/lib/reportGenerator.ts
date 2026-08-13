@@ -226,15 +226,16 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
     minImpressionsPerPage: 5,
     maxIssues: 40,
   });
-  // The team can curate the cannibalisation list from the admin panel: excluded
-  // queries stay in the snapshot (so they can be un-hidden) but are flagged.
-  const excludedQueries = new Set(
-    config.cannibalisationExclusions
+  // Cannibalisation rows are hidden from the client by default — the team
+  // opts the worthwhile ones in from the admin panel. Hidden rows stay in the
+  // snapshot so they can be shown later without regenerating.
+  const visibleQueries = new Set(
+    config.cannibalisationVisible
       .filter((e) => e.client_key === client.client_key)
       .map((e) => e.query.toLowerCase()),
   );
   for (const issue of cannibalisation) {
-    if (excludedQueries.has(issue.query.toLowerCase())) issue.hidden = true;
+    if (!visibleQueries.has(issue.query.toLowerCase())) issue.hidden = true;
   }
 
   // --- Rankings -----------------------------------------------------------------

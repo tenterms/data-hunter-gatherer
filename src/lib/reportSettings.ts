@@ -119,8 +119,8 @@ export async function getReportSettingsData(clientKey: string): Promise<ReportSe
     return orderFor(a.id) - orderFor(b.id);
   });
 
-  const exclusions = new Set(
-    config.cannibalisationExclusions
+  const visible = new Set(
+    config.cannibalisationVisible
       .filter((e) => e.client_key === clientKey)
       .map((e) => e.query.toLowerCase()),
   );
@@ -129,7 +129,7 @@ export async function getReportSettingsData(clientKey: string): Promise<ReportSe
     pageCount: i.pageCount,
     clicks: i.clicks,
     impressions: i.impressions,
-    hidden: exclusions.has(i.query.toLowerCase()),
+    hidden: !visible.has(i.query.toLowerCase()),
   }));
 
   return {
@@ -186,27 +186,27 @@ export async function saveRankingEngines(input: {
   };
 }
 
-export async function saveCannibalisationExclusions(input: {
+export async function saveCannibalisationVisibility(input: {
   clientKey: string;
-  hiddenQueries: string[];
+  visibleQueries: string[];
 }): Promise<ActionResult> {
-  const hidden = [...new Set(input.hiddenQueries.map((q) => q.trim()).filter((q) => q !== ""))];
-  const rows = hidden.map((query) => ({ client_key: input.clientKey, query }));
+  const shown = [...new Set(input.visibleQueries.map((q) => q.trim()).filter((q) => q !== ""))];
+  const rows = shown.map((query) => ({ client_key: input.clientKey, query }));
   const where = await replaceRowsAnywhere(
-    "CannibalisationExclusions",
+    "CannibalisationVisible",
     (r) => cell(r.client_key) === input.clientKey,
     rows,
   );
 
-  const hiddenSet = new Set(hidden.map((q) => q.toLowerCase()));
+  const shownSet = new Set(shown.map((q) => q.toLowerCase()));
   patchDrafts(input.clientKey, (snapshot) => {
     for (const issue of snapshot.metrics.cannibalisation) {
-      issue.hidden = hiddenSet.has(issue.query.toLowerCase()) ? true : undefined;
+      issue.hidden = shownSet.has(issue.query.toLowerCase()) ? undefined : true;
     }
   });
 
   return {
     ok: true,
-    message: `${hidden.length} quer${hidden.length === 1 ? "y" : "ies"} hidden from the report${where === "sheet" ? " (synced to the Google Sheet)" : ""}. The report pages update straight away; republish to update client links.`,
+    message: `${shown.length} quer${shown.length === 1 ? "y" : "ies"} shown in the report (everything else stays hidden)${where === "sheet" ? " (synced to the Google Sheet)" : ""}. The report pages update straight away; republish to update client links.`,
   };
 }

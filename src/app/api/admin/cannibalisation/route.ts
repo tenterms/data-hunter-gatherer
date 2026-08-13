@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { saveCannibalisationExclusions } from "@/lib/reportSettings";
+import { saveCannibalisationVisibility } from "@/lib/reportSettings";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const result = await saveCannibalisationExclusions({
+    const result = await saveCannibalisationVisibility({
       clientKey: String(body.clientKey ?? ""),
-      hiddenQueries: Array.isArray(body.hiddenQueries) ? body.hiddenQueries.map(String) : [],
+      visibleQueries: Array.isArray(body.visibleQueries) ? body.visibleQueries.map(String) : [],
     });
     return NextResponse.json(result, { status: result.ok ? 200 : 400 });
   } catch (error) {

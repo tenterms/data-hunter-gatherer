@@ -235,7 +235,7 @@ export async function reactimusPages(clientKey: string): Promise<Array<{ url: st
         role: [p.intent, p.section].filter(Boolean).join(" · "),
       }));
   }
-  const roleOrder: Record<string, number> = { primary: 0, secondary: 1, supporting: 2, rest_of_site: 3 };
+  const roleOrder: Record<string, number> = { primary: 0, secondary: 1, sector: 2, supporting: 3, rest_of_site: 4 };
   return config.clientPages
     .filter((p) => p.client_key === clientKey && p.active)
     .sort((a, b) => (roleOrder[a.page_role] ?? 9) - (roleOrder[b.page_role] ?? 9))

@@ -43,6 +43,7 @@ export default function ReportView({
 
   const primaryPages = metrics.pages.filter((p) => p.pageRole === "primary");
   const secondaryPages = metrics.pages.filter((p) => p.pageRole === "secondary");
+  const sectorPages = metrics.pages.filter((p) => p.pageRole === "sector");
   const supportingPages = metrics.pages.filter((p) => p.pageRole === "supporting");
   const rest = metrics.restOfSite;
 
@@ -105,14 +106,20 @@ export default function ReportView({
         <Commentary section="traffic" />
         {primaryPages.length > 0 && (
           <>
-            <h3>Primary pages</h3>
+            <h3>Primary services</h3>
             <PagesTable pages={primaryPages} />
           </>
         )}
         {secondaryPages.length > 0 && (
           <>
-            <h3>Secondary pages</h3>
+            <h3>Secondary services</h3>
             <PagesTable pages={secondaryPages} />
+          </>
+        )}
+        {sectorPages.length > 0 && (
+          <>
+            <h3>Sector pages</h3>
+            <PagesTable pages={sectorPages} />
           </>
         )}
         {supportingPages.length > 0 && (
