@@ -7,7 +7,8 @@ export default function TeamLayout({ children }: { children: React.ReactNode }) 
       <header className="site-header">
         <div className="inner">
           <Link href="/" className="brand">
-            TenTerms<span className="tm">™</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/tenterms-logo-bolt.svg" alt="TenTerms" className="brand-logo" />
           </Link>
           <span className="sub">SEO reporting</span>
           <nav className="header-nav">

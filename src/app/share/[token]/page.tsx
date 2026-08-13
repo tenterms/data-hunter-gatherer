@@ -19,7 +19,8 @@ export default async function SharedReportPage({ params }: { params: Promise<{ t
     <main className="container share-view">
       <header className="share-header">
         <div className="share-brand">
-          TenTerms<span className="tm">™</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/tenterms-logo.svg" alt="TenTerms" className="brand-logo" />
         </div>
         <h1>
           {snapshot.client.client_name}, {snapshot.period.label}
