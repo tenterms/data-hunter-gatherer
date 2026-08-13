@@ -188,7 +188,9 @@ export default function ReportView({
         <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
       </ReportSection>
 
-      {/* 7. Cannibalisation catcher */}
+      {/* 7. Cannibalisation catcher (clients only see it when something is shown;
+          the team always sees it, for curation) */}
+      {(mode === "team" || metrics.cannibalisation.some((i) => !i.hidden)) && (
       <ReportSection
         title="Cannibalisation catcher"
         description="Searches where two or more of the site's pages are competing with each other for the same spot in Google. Fixing these usually means one strong page instead of two weaker ones. Click ▸ to see the competing pages."
@@ -206,6 +208,7 @@ export default function ReportView({
           <CannibalisationTable issues={metrics.cannibalisation.filter((i) => !i.hidden)} />
         )}
       </ReportSection>
+      )}
 
       {/* 8. Raw data / debug — team only */}
       {mode === "team" && (
