@@ -1,0 +1,2676 @@
+{
+  "aag-it.com": {
+    "pages": [
+      {
+        "path": "/it-support-chesterfield/",
+        "label": "IT Support Chesterfield",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-sheffield/",
+        "label": "IT Support Sheffield",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-doncaster/",
+        "label": "IT Support Doncaster",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-leeds/",
+        "label": "IT Support Leeds",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-manchester/",
+        "label": "IT Support Manchester",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/managed-it-support-birmingham/",
+        "label": "IT Support Birmingham",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-london/",
+        "label": "IT Support London",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-mayfair/",
+        "label": "IT Support Mayfair",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-lincoln/",
+        "label": "IT Support Lincoln",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-derby/",
+        "label": "IT Support Derby",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/it-support-hull/",
+        "label": "IT Support Hull",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/outsourced-it-support/",
+        "label": "Outsourced IT Support",
+        "role": "primary",
+        "screen": "Key services",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/managed-it-support/",
+        "label": "Managed IT Support",
+        "role": "primary",
+        "screen": "Key services",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/ai-and-automation-services/",
+        "label": "AI & Automation",
+        "role": "secondary",
+        "screen": "Key services",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/sectors/it-support-for-law-firms/",
+        "label": "Law Firms",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/it-support-for-barristers-chambers/",
+        "label": "Barristers' Chambers",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/manufacturing-it-support/",
+        "label": "Manufacturing",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/charity-it-support/",
+        "label": "Charities",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/retail-it-support/",
+        "label": "Retail",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/it-support-accountants/",
+        "label": "Accountants",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/financial-services-it-support/",
+        "label": "Financial Services",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/it-support-for-start-ups/",
+        "label": "Startups",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/hospitality-it-support/",
+        "label": "Hospitality",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/supply-chain-it-solutions/",
+        "label": "Supply Chain",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/small-business-it-support/",
+        "label": "Small Business",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/sectors/it-support-for-logistics/",
+        "label": "Logistics",
+        "role": "sector",
+        "screen": "Sectors",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Locations",
+        "contains": [
+          "it-support-"
+        ],
+        "notContains": [
+          "/sectors/",
+          "/services/"
+        ]
+      },
+      {
+        "name": "Services",
+        "contains": [
+          "/services/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sectors",
+        "contains": [
+          "/sectors/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "AI & Automation",
+        "contains": [
+          "automation",
+          "ai-",
+          "-ai"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Azure",
+        "contains": [
+          "azure"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Sheffield",
+        "contains": [
+          "sheffield"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Chesterfield",
+        "contains": [
+          "chesterfield",
+          "barlborough"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Doncaster",
+        "contains": [
+          "doncaster"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Leeds",
+        "contains": [
+          "leeds"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Manchester",
+        "contains": [
+          "manchester",
+          "macclesfield",
+          "glossop"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Birmingham",
+        "contains": [
+          "birmingham"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "London",
+        "contains": [
+          "london",
+          "mayfair"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Lincoln",
+        "contains": [
+          "lincoln"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Derby",
+        "contains": [
+          "derby"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Hull",
+        "contains": [
+          "hull"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "IT support (generic)",
+        "contains": [
+          "it support",
+          "it service",
+          "it solution"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Outsourced",
+        "contains": [
+          "outsourc"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Managed",
+        "contains": [
+          "managed"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Consulting",
+        "contains": [
+          "consult"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cloud",
+        "contains": [
+          "cloud"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cyber security",
+        "contains": [
+          "cyber"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Microsoft 365",
+        "contains": [
+          "microsoft 365",
+          "office 365",
+          "m365",
+          "copilot"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Azure",
+        "contains": [
+          "azure"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "AI & Automation",
+        "contains": [
+          "automation",
+          "ai and automation",
+          "ai automation",
+          "artificial intelligence"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Legal sector",
+        "contains": [
+          "law firm",
+          "solicitor",
+          "legal",
+          "barrister",
+          "chambers"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Manufacturing",
+        "contains": [
+          "manufactur"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Charities",
+        "contains": [
+          "charit"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Retail",
+        "contains": [
+          "retail"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Accountants",
+        "contains": [
+          "accountant"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Financial services",
+        "contains": [
+          "financial"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Startups",
+        "contains": [
+          "startup",
+          "start up",
+          "start-up"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Hospitality",
+        "contains": [
+          "hospitality"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Supply chain & logistics",
+        "contains": [
+          "supply chain",
+          "logistic"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Small business",
+        "contains": [
+          "small business",
+          "sme"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "cyberalchemy.co.uk": {
+    "pages": [
+      {
+        "path": "/",
+        "label": "Homepage",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/cyber-security-consultancy/",
+        "label": "Cyber Security Consultancy",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/penetration-testing-services/",
+        "label": "Penetration Testing",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/vciso-cyber-strategy/",
+        "label": "vCISO & Cyber Strategy",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/cyber-essentials-services/",
+        "label": "Cyber Essentials",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/cybersecurity-compliance-services/",
+        "label": "Compliance Services",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/dora-compliance-services/",
+        "label": "DORA Compliance",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/dtac-compliance/",
+        "label": "DTAC Compliance",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/iso-27001-services-financial-companies/",
+        "label": "ISO 27001 (Financial)",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/cyber-awareness-training/",
+        "label": "Cyber Awareness Training",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/service/medical-technology-cyber-security/",
+        "label": "MedTech",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/service/cyber-security-services-financial-services/",
+        "label": "Financial Services",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Services",
+        "contains": [
+          "/service/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Knowledge hub",
+        "contains": [
+          "/knowledge-hub/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Pen testing",
+        "contains": [
+          "penetration-testing"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "VCISO",
+        "contains": [
+          "vciso"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Compliance",
+        "contains": [
+          "compliance",
+          "dora",
+          "dtac",
+          "iso-27001"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "MedTech",
+        "contains": [
+          "medical"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Financial services",
+        "contains": [
+          "financial"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Pen testing",
+        "contains": [
+          "pen test",
+          "penetration"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "VCISO",
+        "contains": [
+          "vciso",
+          "virtual ciso",
+          " ciso"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Compliance",
+        "contains": [
+          "compliance"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "DORA",
+        "contains": [
+          "dora"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "DTAC",
+        "contains": [
+          "dtac"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "ISO 27001",
+        "contains": [
+          "27001"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cyber Essentials",
+        "contains": [
+          "cyber essentials"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Awareness training",
+        "contains": [
+          "training",
+          "awareness"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "MedTech & healthcare",
+        "contains": [
+          "medical",
+          "medtech",
+          "healthcare",
+          "nhs"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Financial services",
+        "contains": [
+          "financial",
+          "fintech",
+          "finance"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Security & defence",
+        "contains": [
+          "defence",
+          "defense",
+          "secure by design"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sheffield",
+        "contains": [
+          "sheffield",
+          "rotherham"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Consultancy",
+        "contains": [
+          "consultanc",
+          "consulting",
+          "consultant"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "3point1.design": {
+    "pages": [
+      {
+        "path": "/",
+        "label": "Homepage",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/electronic-product-prototyping/",
+        "label": "Prototyping",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/pcb-design-prototyping/",
+        "label": "PCB Design",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/embedded-software-development-services/",
+        "label": "Embedded Software",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/firmware-development-services/",
+        "label": "Firmware",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/iot-product-design/",
+        "label": "IoT Product Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/ai-product-design/",
+        "label": "AI Product Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/electronic-product-testing/",
+        "label": "Product Testing",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/medical-device-product-design/",
+        "label": "Medical Devices",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/services/automotive-electronics-product-design/",
+        "label": "Automotive",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/services/aerospace-and-defence-electronics-design-services/",
+        "label": "Aerospace & Defence",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/services/security-electronics-design/",
+        "label": "Security Electronics",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Prototyping",
+        "contains": [
+          "prototyp"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "PCB",
+        "contains": [
+          "pcb"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Embedded & firmware",
+        "contains": [
+          "embedded",
+          "firmware"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "IoT & AI",
+        "contains": [
+          "iot",
+          "ai-product"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Medical",
+        "contains": [
+          "medical"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Automotive",
+        "contains": [
+          "automotive"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Aerospace & defence",
+        "contains": [
+          "aerospace",
+          "defence"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Security",
+        "contains": [
+          "security"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Testing",
+        "contains": [
+          "testing"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Electronic design",
+        "contains": [
+          "electronic"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "PCB",
+        "contains": [
+          "pcb",
+          "circuit board"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Prototyping",
+        "contains": [
+          "prototyp"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Embedded",
+        "contains": [
+          "embedded"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Firmware",
+        "contains": [
+          "firmware"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "IoT",
+        "contains": [
+          "iot",
+          "aiot"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Medical",
+        "contains": [
+          "medical"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Automotive",
+        "contains": [
+          "automotive"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Aerospace & defence",
+        "contains": [
+          "aerospace",
+          "defence",
+          "defense",
+          "avionics",
+          "military"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Security",
+        "contains": [
+          "security",
+          "surveillance"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Testing & compliance",
+        "contains": [
+          "testing",
+          "compliance",
+          "emc"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "AI",
+        "contains": [
+          "ai product",
+          "embedded ai",
+          "edge ai"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Enclosures",
+        "contains": [
+          "enclosure"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Aesthetics",
+        "contains": [
+          "aesthetic"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "ideareality.design": {
+    "pages": [
+      {
+        "path": "/",
+        "label": "Homepage",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/",
+        "label": "Services hub",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/prototyping/",
+        "label": "Prototyping hub",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/product-design/concept-product-design/",
+        "label": "Concept Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/product-design/cad-product-design/",
+        "label": "CAD Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/product-design/mechanical-product-design/",
+        "label": "Mechanical Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/product-design/electronics-product-design/",
+        "label": "Electronics Design",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/product-design/invention-services/",
+        "label": "Invention Services",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services/prototyping/prototype-to-manufacturing/",
+        "label": "Prototype to Manufacturing",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/design-sectors/toy-product-design/",
+        "label": "Toys",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/design-sectors/outdoor-product-design/",
+        "label": "Outdoor",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/design-sectors/pet-product-design/",
+        "label": "Pet",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Product design",
+        "contains": [
+          "/product-design/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Prototyping",
+        "contains": [
+          "/prototyping/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Launch & marketing",
+        "contains": [
+          "/product-launch-marketing/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sectors",
+        "contains": [
+          "/design-sectors/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Portfolio",
+        "contains": [
+          "/portfolio/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Blog",
+        "contains": [
+          "/blog/"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Product design",
+        "contains": [
+          "product design",
+          "product designer"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Prototyping",
+        "contains": [
+          "prototyp"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Invention",
+        "contains": [
+          "invention",
+          "inventor"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "CAD",
+        "contains": [
+          "cad"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Mechanical",
+        "contains": [
+          "mechanical"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Electronics",
+        "contains": [
+          "electronic"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Concept",
+        "contains": [
+          "concept"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Manufacturing",
+        "contains": [
+          "manufactur"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Toys",
+        "contains": [
+          "toy"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Outdoor",
+        "contains": [
+          "outdoor"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Wellbeing",
+        "contains": [
+          "wellbeing",
+          "wellness"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Pet",
+        "contains": [
+          "pet product",
+          "pet design",
+          "pets"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "knightsbridgecircle.com": {
+    "pages": [
+      {
+        "path": "/locations/london-concierge-service",
+        "label": "London",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/new-york-concierge-service",
+        "label": "New York",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/miami-luxury-concierge",
+        "label": "Miami",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/los-angeles-concierge-service",
+        "label": "Los Angeles",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/luxury-concierge-dallas",
+        "label": "Dallas",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/luxury-concierge-palm-beach",
+        "label": "Palm Beach",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/boston-concierge-service",
+        "label": "Boston",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/dubai-concierge-service",
+        "label": "Dubai",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/singapore-concierge-service",
+        "label": "Singapore",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/amsterdam-concierge-service",
+        "label": "Amsterdam",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/locations/lisbon-concierge-service",
+        "label": "Lisbon",
+        "role": "primary",
+        "screen": "Locations",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/luxury-travel-concierge",
+        "label": "Luxury Travel Concierge",
+        "role": "primary",
+        "screen": "Travel",
+        "type": "commercial",
+        "priority": "high"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Locations",
+        "contains": [
+          "/locations/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Travel",
+        "contains": [
+          "travel"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Access",
+        "contains": [
+          "/access"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "London",
+        "contains": [
+          "london"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "New York",
+        "contains": [
+          "new york",
+          "nyc"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Miami",
+        "contains": [
+          "miami"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Los Angeles",
+        "contains": [
+          "los angeles"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Dallas",
+        "contains": [
+          "dallas"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Palm Beach",
+        "contains": [
+          "palm beach"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Boston",
+        "contains": [
+          "boston"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Dubai",
+        "contains": [
+          "dubai"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Singapore",
+        "contains": [
+          "singapore"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Amsterdam",
+        "contains": [
+          "amsterdam"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Lisbon",
+        "contains": [
+          "lisbon"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Travel",
+        "contains": [
+          "travel"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Lifestyle management",
+        "contains": [
+          "lifestyle"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "VIP & elite",
+        "contains": [
+          "vip",
+          "elite",
+          "exclusive"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Concierge (all)",
+        "contains": [
+          "concierge"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "southernropes.co.uk": {
+    "pages": [
+      {
+        "path": "/",
+        "label": "Homepage",
+        "role": "primary",
+        "screen": "Core",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/product/soft-shackles/",
+        "label": "Soft Shackles",
+        "role": "primary",
+        "screen": "Core",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/nylon/",
+        "label": "Nylon",
+        "role": "primary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/hmpe/",
+        "label": "HMPE (Dyneema)",
+        "role": "primary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/polypropylene/",
+        "label": "Polypropylene",
+        "role": "primary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/polyester/",
+        "label": "Polyester",
+        "role": "primary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/polyethylene/",
+        "label": "Polyethylene",
+        "role": "secondary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/polysteel/",
+        "label": "Polysteel",
+        "role": "secondary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/polyrene/",
+        "label": "Polyrene",
+        "role": "secondary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/material/technora/",
+        "label": "Technora",
+        "role": "secondary",
+        "screen": "By material",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/rope-access/climbing/",
+        "label": "Climbing",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/rope-access/arborist/",
+        "label": "Arborist",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/lifting-towing/",
+        "label": "Towing",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/rope-for-abseiling/",
+        "label": "Abseiling",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/caving-rope/",
+        "label": "Caving",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/mountaineering-rope/",
+        "label": "Mountaineering",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/high-strength-rope/",
+        "label": "High Strength",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/general-purpose-rope/",
+        "label": "General Purpose",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/dynamic-rope/",
+        "label": "Dynamic",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/static-rope/",
+        "label": "Static",
+        "role": "secondary",
+        "screen": "By type",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/low-stretch-kernmantle-rope/",
+        "label": "Low Stretch Kernmantle",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/construction/12-strand/",
+        "label": "12-Strand",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/construction/8-strand/",
+        "label": "8-Strand",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/construction/3-strand/",
+        "label": "3-Strand",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/construction/braided/",
+        "label": "Braided",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/construction/spliced/",
+        "label": "Spliced",
+        "role": "supporting",
+        "screen": "By construction",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/category/commercial-marine/",
+        "label": "Commercial Marine",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/leisure-marine/",
+        "label": "Leisure Marine",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/commercial-marine/fishing/",
+        "label": "Commercial Fishing",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/agriculture/aquaculture/",
+        "label": "Aquaculture",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/armed-forces-military/",
+        "label": "Armed Forces",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/agriculture/",
+        "label": "Agriculture",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/agriculture/farming/",
+        "label": "Farming",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/agriculture/livestock-fencing-applications/",
+        "label": "Livestock & Fencing",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/energy/",
+        "label": "Energy",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/movie-stunts-rigging/",
+        "label": "Movies & Stunts",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/rope-access/",
+        "label": "Rope Access",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/fire-rescue-rope/",
+        "label": "Fire Rescue",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/lifting-towing/tug-tow-operators/",
+        "label": "Tug & Tow",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/lifting-towing/mining-quarrying/",
+        "label": "Mining & Quarrying",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/lifting-towing/heavy-haulage-recovery-vehicles/",
+        "label": "Heavy Haulage & Recovery",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/lifting-towing/heavy-industry-construction/",
+        "label": "Heavy Industry & Construction",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/category/lifting-towing/industrial-crane-rigging-companies/",
+        "label": "Industrial Crane & Rigging",
+        "role": "sector",
+        "screen": "By sector",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Materials",
+        "contains": [
+          "/material/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Construction",
+        "contains": [
+          "/construction/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Categories (types & sectors)",
+        "contains": [
+          "/category/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Products",
+        "contains": [
+          "/product/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Marine & mooring",
+        "contains": [
+          "commercial-marine"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Leisure marine",
+        "contains": [
+          "leisure-marine"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Rope access",
+        "contains": [
+          "rope-access"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Mooring & marine",
+        "contains": [
+          "mooring",
+          "marine",
+          "dock line",
+          "berthing"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sailing & leisure",
+        "contains": [
+          "sailing",
+          "yacht",
+          "dinghy",
+          "boat"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Nylon",
+        "contains": [
+          "nylon"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "HMPE & Dyneema",
+        "contains": [
+          "hmpe",
+          "dyneema",
+          "uhmwpe"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Polypropylene",
+        "contains": [
+          "polyprop"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Polyester",
+        "contains": [
+          "polyester"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Polysteel",
+        "contains": [
+          "polysteel"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Technora",
+        "contains": [
+          "technora"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Arborist",
+        "contains": [
+          "arbor",
+          "tree"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Climbing & height safety",
+        "contains": [
+          "climb",
+          "kernmantle",
+          "static rope",
+          "dynamic rope",
+          "abseil",
+          "caving",
+          "mountaineer"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Rope access",
+        "contains": [
+          "rope access",
+          "irata"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Splicing",
+        "contains": [
+          "splic"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Shackles",
+        "contains": [
+          "shackle"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Winch & recovery",
+        "contains": [
+          "winch",
+          "recovery",
+          "kinetic"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Tug & tow",
+        "contains": [
+          "tug",
+          "towline",
+          "towing",
+          "tow rope"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cricket",
+        "contains": [
+          "cricket",
+          "boundary"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Fishing & aquaculture",
+        "contains": [
+          "fishing",
+          "aquaculture",
+          "trawl"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Military",
+        "contains": [
+          "military",
+          "fast rope",
+          "armed forces"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Energy & offshore",
+        "contains": [
+          "offshore",
+          "energy"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Theatre & stunts",
+        "contains": [
+          "theatre",
+          "stage",
+          "stunt",
+          "hemp"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Rescue",
+        "contains": [
+          "rescue"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Supplier & trade",
+        "contains": [
+          "supplier",
+          "manufacturer",
+          "wholesale",
+          "trade"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cordage",
+        "contains": [
+          "shock cord",
+          "bungee",
+          "elastic"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "atlasjetcharter.com": {
+    "pages": [
+      {
+        "path": "/services-we-offer/private-jet-charter/",
+        "label": "Private Jet Charter",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/private-jet-membership/",
+        "label": "Membership",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/private-jet-membership/atlas-jet-cards/",
+        "label": "Jet Cards",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/information/the-cost-of-flying-privately/",
+        "label": "Cost of Flying Privately",
+        "role": "primary",
+        "screen": "",
+        "type": "guide",
+        "priority": "high"
+      },
+      {
+        "path": "/services-we-offer/helicopter-charter/",
+        "label": "Helicopter Charter",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/group-charter/",
+        "label": "Group Charter",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/pet-friendly-charter/",
+        "label": "Pet-Friendly Charter",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/cargo-charter-flights/",
+        "label": "Cargo Charter",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services-we-offer/air-ambulance-charter/",
+        "label": "Air Ambulance",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services-we-offer/on-demand-charter/",
+        "label": "On-Demand Charter",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services-we-offer/charter-a-jet-between-london-and-dubai/",
+        "label": "London to Dubai",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/services-we-offer/charter-a-jet-between-london-and-the-maldives/",
+        "label": "London to Maldives",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Charter services",
+        "contains": [
+          "/services-we-offer/"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Membership & jet cards",
+        "contains": [
+          "membership",
+          "jet-card"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Routes",
+        "contains": [
+          "charter-a-jet-between"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Group charter",
+        "contains": [
+          "group-charter"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cargo",
+        "contains": [
+          "cargo"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Pet friendly",
+        "contains": [
+          "pet-friendly"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Regions",
+        "contains": [
+          "/europe",
+          "/north-america",
+          "/middle-east",
+          "/asia"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Guides & information",
+        "contains": [
+          "/information/"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Charter & hire",
+        "contains": [
+          "charter",
+          "hire",
+          "rental"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cost",
+        "contains": [
+          "cost",
+          "price",
+          "how much"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Jet cards",
+        "contains": [
+          "jet card"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Membership",
+        "contains": [
+          "membership",
+          "subscription"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Empty legs",
+        "contains": [
+          "empty leg"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Pet friendly",
+        "contains": [
+          "pet",
+          "dog"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Helicopter",
+        "contains": [
+          "helicopter"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Medical",
+        "contains": [
+          "medical",
+          "ambulance",
+          "repatriation",
+          "medevac"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Cargo",
+        "contains": [
+          "cargo",
+          "freight"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Group & sports",
+        "contains": [
+          "group",
+          "sports team"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Corporate",
+        "contains": [
+          "corporate",
+          "business jet",
+          "executive"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Dubai & Maldives",
+        "contains": [
+          "dubai",
+          "maldives"
+        ],
+        "notContains": []
+      }
+    ]
+  },
+  "solentpower.co.uk": {
+    "pages": [
+      {
+        "path": "/generator-service-maintenance/",
+        "label": "Servicing & Maintenance",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/generator-installation/",
+        "label": "Installation",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/generator-hire/",
+        "label": "Hire",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/generator-sales/",
+        "label": "Sales",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/uninterruptible-power-supplies/",
+        "label": "UPS",
+        "role": "primary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/generator-load-bank-testing/",
+        "label": "Load Bank Testing",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/ups-servicing-maintenance-repairs-uk/",
+        "label": "UPS Servicing",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/used-diesel-generators/",
+        "label": "Used Generators",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/generators/industrial-generators/",
+        "label": "Industrial Generators",
+        "role": "secondary",
+        "screen": "",
+        "type": "commercial",
+        "priority": "high"
+      },
+      {
+        "path": "/hospital-generators/",
+        "label": "Hospitals & Healthcare",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/construction-generators/",
+        "label": "Construction",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/agricultural-generators/",
+        "label": "Agriculture",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      },
+      {
+        "path": "/generator-sales/manufacturing/",
+        "label": "Manufacturing",
+        "role": "sector",
+        "screen": "",
+        "type": "sector",
+        "priority": "medium"
+      }
+    ],
+    "contentGroups": [
+      {
+        "name": "Servicing & repair",
+        "contains": [
+          "service-maintenance",
+          "servicing",
+          "repair"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Installation",
+        "contains": [
+          "installation"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Hire",
+        "contains": [
+          "hire"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sales & categories",
+        "contains": [
+          "generator-sales",
+          "diesel-generators",
+          "used-diesel",
+          "silent-generators",
+          "industrial-generators",
+          "three-phase",
+          "single-phase-generators",
+          "stage-v"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Size ladder",
+        "contains": [
+          "kva"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "UPS",
+        "contains": [
+          "ups",
+          "uninterruptible"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Compliance & fuel",
+        "contains": [
+          "load-bank",
+          "fuel",
+          "thermographic",
+          "htm"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sectors",
+        "contains": [
+          "hospital",
+          "construction-generators",
+          "agricultural",
+          "manufacturing",
+          "data-centres"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Locations",
+        "contains": [
+          "/locations/",
+          "hampshire-generators"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Brands",
+        "contains": [
+          "/brands/"
+        ],
+        "notContains": []
+      }
+    ],
+    "topicClusters": [
+      {
+        "name": "Servicing & maintenance",
+        "contains": [
+          "servic",
+          "maintenance"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Repair",
+        "contains": [
+          "repair",
+          "callout",
+          "call out"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Installation",
+        "contains": [
+          "install"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Hire",
+        "contains": [
+          "hire"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Sales",
+        "contains": [
+          "for sale",
+          "sales"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "kVA sizes",
+        "contains": [
+          "kva"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "UPS",
+        "contains": [
+          "ups",
+          "uninterruptible"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Load bank & compliance",
+        "contains": [
+          "load bank",
+          "htm",
+          "commissioning",
+          "fuel"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Healthcare",
+        "contains": [
+          "hospital",
+          "healthcare"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Data centres",
+        "contains": [
+          "data centre",
+          "data center"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Power continuity",
+        "contains": [
+          "continuity",
+          "standby",
+          "backup",
+          "emergency power"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Local",
+        "contains": [
+          "southampton",
+          "hampshire",
+          "portsmouth",
+          "winchester",
+          "basingstoke",
+          "petersfield",
+          "new forest",
+          "dorset",
+          "bournemouth",
+          "brighton",
+          "sussex",
+          "surrey",
+          "berkshire",
+          "reading",
+          "oxford",
+          "luton"
+        ],
+        "notContains": []
+      },
+      {
+        "name": "Brands",
+        "contains": [
+          "himoinsa",
+          "fg wilson",
+          "sdmo",
+          "broadcrown",
+          "comap",
+          "deep sea",
+          "dale power",
+          "musgrave",
+          "pramac",
+          "evopower"
+        ],
+        "notContains": []
+      }
+    ]
+  }
+}
