@@ -51,3 +51,22 @@ describe("AAG prompt seed", () => {
     expect(prompts[0].prompt).toBe("Who are the best IT Support companies in Chesterfield?");
   });
 });
+
+describe("run listing", () => {
+  it("ignores the progress dotfile and malformed files", async () => {
+    const fsMod = await import("fs");
+    const os = await import("os");
+    const pathMod = await import("path");
+    const tmp = fsMod.mkdtempSync(pathMod.join(os.tmpdir(), "aivis-"));
+    const dir = pathMod.join(tmp, "aivis", "aag");
+    fsMod.mkdirSync(dir, { recursive: true });
+    fsMod.writeFileSync(pathMod.join(dir, ".progress.json"), JSON.stringify({ startedAt: "x", total: 5, done: 2, finished: false }));
+    fsMod.writeFileSync(pathMod.join(dir, "broken.json"), "{not json");
+    fsMod.writeFileSync(pathMod.join(dir, "2026-08-24-10-00-00.json"), JSON.stringify({ clientKey: "aag", ranAt: "2026-08-24T10:00:00Z", prompts: [] }));
+    const { listAiVisibilityRuns } = await import("@/lib/aiVisibility");
+    const runs = listAiVisibilityRuns("aag", tmp);
+    fsMod.rmSync(tmp, { recursive: true, force: true });
+    expect(runs).toHaveLength(1);
+    expect(runs[0].ranAt).toBe("2026-08-24T10:00:00Z");
+  });
+});

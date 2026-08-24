@@ -499,13 +499,14 @@ export async function runAiVisibility(
 // History / report assembly
 // ---------------------------------------------------------------------------
 
-export function listAiVisibilityRuns(clientKey: string): AiVisibilityRun[] {
+export function listAiVisibilityRuns(clientKey: string, baseDir: string = DATA_DIR): AiVisibilityRun[] {
   if (!SAFE.test(clientKey)) return [];
-  const dir = RUNS_DIR(clientKey);
+  const dir = path.join(baseDir, "aivis", clientKey);
   if (!fs.existsSync(dir)) return [];
   return fs
     .readdirSync(dir)
-    .filter((f) => f.endsWith(".json"))
+    // dotfiles (like .progress.json) live alongside the runs and are not runs
+    .filter((f) => f.endsWith(".json") && !f.startsWith("."))
     .sort()
     .map((f) => {
       try {
@@ -514,7 +515,7 @@ export function listAiVisibilityRuns(clientKey: string): AiVisibilityRun[] {
         return null;
       }
     })
-    .filter((r): r is AiVisibilityRun => r !== null);
+    .filter((r): r is AiVisibilityRun => r !== null && Array.isArray(r.prompts));
 }
 
 /** Latest run + per-prompt history, in the shape the report embeds. */
