@@ -336,9 +336,51 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promis
   return results;
 }
 
+// ---------------------------------------------------------------------------
+// Background runs (a full run is minutes of live queries — far longer than an
+// HTTP request survives behind the proxy — so POST starts it and GET polls)
+// ---------------------------------------------------------------------------
+
+export interface RunProgress {
+  startedAt: string;
+  total: number;
+  done: number;
+  finished: boolean;
+  ok?: boolean;
+  message?: string;
+}
+
+const activeRuns = new Map<string, RunProgress>();
+
+export function aiVisibilityProgress(clientKey: string): RunProgress | null {
+  return activeRuns.get(clientKey) ?? null;
+}
+
+export function startAiVisibilityRun(clientKey: string): ActionResult {
+  const existing = activeRuns.get(clientKey);
+  if (existing && !existing.finished) {
+    return { ok: true, message: `Already running (${existing.done}/${existing.total} queries done).` };
+  }
+  const progress: RunProgress = { startedAt: new Date().toISOString(), total: 0, done: 0, finished: false };
+  activeRuns.set(clientKey, progress);
+  runAiVisibility(clientKey, () => {}, progress)
+    .then((result) => {
+      progress.finished = true;
+      progress.ok = result.ok;
+      progress.message = result.message;
+    })
+    .catch((error) => {
+      progress.finished = true;
+      progress.ok = false;
+      progress.message = error instanceof Error ? error.message : "Run failed.";
+    });
+  return { ok: true, message: "Run started — this takes a few minutes, progress shows below." };
+}
+
 export async function runAiVisibility(
   clientKey: string,
   log: (message: string) => void = () => {},
+  progress?: RunProgress,
 ): Promise<ActionResult & { run?: AiVisibilityRun }> {
   if (!SAFE.test(clientKey)) return { ok: false, message: "Bad client key." };
   const { config } = await loadAdminConfig();
@@ -358,12 +400,13 @@ export async function runAiVisibility(
   const jobs = prompts.flatMap((prompt) =>
     AI_PLATFORMS.map((platform) => ({ prompt, platform: platform.id })),
   );
+  if (progress) progress.total = jobs.length;
   log(`AI visibility: ${prompts.length} prompts x ${active.length} platforms...`);
 
-  const cells = await mapLimit(jobs, 4, async ({ prompt, platform }): Promise<[string, AiPromptResult]> => {
-    const provider = providers[platform];
-    if (!provider) return [prompt.prompt_key, { platform, status: "not_configured" }];
+  const cells = await mapLimit(jobs, 6, async ({ prompt, platform }): Promise<[string, AiPromptResult]> => {
     try {
+      const provider = providers[platform];
+      if (!provider) return [prompt.prompt_key, { platform, status: "not_configured" }];
       const answer = await provider(prompt.prompt);
       if (answer.text.trim() === "" && platform === "ai_overview") {
         return [prompt.prompt_key, { platform, status: "absent", snippet: "No AI Overview shown for this search." }];
@@ -375,6 +418,8 @@ export async function runAiVisibility(
         prompt.prompt_key,
         { platform, status: "error", error: error instanceof Error ? error.message.slice(0, 200) : "failed" },
       ];
+    } finally {
+      if (progress) progress.done += 1;
     }
   });
 

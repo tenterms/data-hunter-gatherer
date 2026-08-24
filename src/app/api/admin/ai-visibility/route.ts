@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { aiPlatformAvailability, listAiVisibilityRuns, runAiVisibility, AI_PLATFORMS } from "@/lib/aiVisibility";
+import { aiPlatformAvailability, aiVisibilityProgress, listAiVisibilityRuns, startAiVisibilityRun, AI_PLATFORMS } from "@/lib/aiVisibility";
 import { loadAdminConfig } from "@/lib/sheets";
 
-// A full run is prompts x platforms live queries; give it room.
-export const maxDuration = 300;
+export const maxDuration = 30;
 
 export async function GET(request: NextRequest) {
   const clientKey = request.nextUrl.searchParams.get("clientKey") ?? "";
@@ -17,13 +16,14 @@ export async function GET(request: NextRequest) {
     platforms: AI_PLATFORMS.map((p) => ({ ...p, configured: aiPlatformAvailability()[p.id] })),
     runCount: runs.length,
     lastRunAt: latest?.ranAt ?? null,
+    progress: aiVisibilityProgress(clientKey),
   });
 }
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const result = await runAiVisibility(String(body.clientKey ?? ""));
+    const result = startAiVisibilityRun(String(body.clientKey ?? ""));
     return NextResponse.json(
       { ok: result.ok, message: result.message },
       { status: result.ok ? 200 : 400 },
