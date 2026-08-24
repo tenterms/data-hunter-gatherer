@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g fill="#D97757">
+    <g id="r"><path d="M50 4 L55 38 L50 50 L45 38 Z"/></g>
+    <use href="#r" transform="rotate(30 50 50)"/><use href="#r" transform="rotate(60 50 50)"/>
+    <use href="#r" transform="rotate(90 50 50)"/><use href="#r" transform="rotate(120 50 50)"/>
+    <use href="#r" transform="rotate(150 50 50)"/><use href="#r" transform="rotate(180 50 50)"/>
+    <use href="#r" transform="rotate(210 50 50)"/><use href="#r" transform="rotate(240 50 50)"/>
+    <use href="#r" transform="rotate(270 50 50)"/><use href="#r" transform="rotate(300 50 50)"/>
+    <use href="#r" transform="rotate(330 50 50)"/>
+  </g>
+</svg>

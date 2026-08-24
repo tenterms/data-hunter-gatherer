@@ -3,6 +3,7 @@ import path from "path";
 import { loadAdminConfig } from "./sheets";
 import { savePages, type EditablePage } from "./pagesEditor";
 import { saveGroup } from "./groupEditor";
+import { replaceRowsAnywhere, cell } from "./rowStore";
 import type { ActionResult } from "./adminActions";
 import type { CommercialPriority, ContentType, PageRole } from "./types";
 
@@ -36,6 +37,8 @@ interface ClientProposal {
   pages: ProposalPage[];
   contentGroups: ProposalGroup[];
   topicClusters: ProposalGroup[];
+  /** AI visibility prompts (optional per client) */
+  aiPrompts?: Array<{ key: string; prompt: string }>;
 }
 
 const PROPOSAL_FILE = path.join(process.cwd(), "data", "proposals", "targeting-2026-08.json");
@@ -99,6 +102,25 @@ export async function applyTargeting(clientKey: string): Promise<ActionResult & 
   }
   detail.push(`${groupsOk} groups/clusters written (${proposal.contentGroups.length} content, ${proposal.topicClusters.length} topic).`);
   if (failures.length > 0) detail.push(`Failed: ${failures.join("; ")}`);
+
+  if (proposal.aiPrompts && proposal.aiPrompts.length > 0) {
+    await replaceRowsAnywhere(
+      "AiSearchPrompts",
+      (r) => cell(r.client_key) === clientKey,
+      proposal.aiPrompts.map((p) => ({
+        client_key: clientKey,
+        prompt_key: p.key,
+        prompt: p.prompt,
+        engine: "all",
+        market: "gb",
+        expected_brand: client.client_name,
+        expected_url: `https://${domain}/`,
+        priority: "high",
+        active: "true",
+      })),
+    );
+    detail.push(`${proposal.aiPrompts.length} AI visibility prompts loaded.`);
+  }
 
   return {
     ok: failures.length === 0,

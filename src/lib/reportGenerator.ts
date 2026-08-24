@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { getAppConfig, REPORTS_DIR } from "./config";
+import { buildAiVisibilityReport } from "./aiVisibility";
 import { loadAdminConfig, recordGeneratedReport } from "./sheets";
 import { LiveGscAdapter, MockGscAdapter, type GscAdapter } from "./gsc";
 import {
@@ -367,6 +368,7 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       ),
       rankingKeywords: config.rankingKeywords.filter((r) => r.client_key === client.client_key),
     },
+    aiVisibility: buildAiVisibilityReport(client.client_key),
     future: {
       conversions: null,
       ga4: null,

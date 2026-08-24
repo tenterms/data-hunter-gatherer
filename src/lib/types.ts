@@ -513,6 +513,8 @@ export interface ReportSnapshot {
     rankingEngines?: RankingEngineData[];
   };
   findings: Findings;
+  /** AI assistant visibility (latest run + history); absent when never run */
+  aiVisibility?: import("./aiVisibility").AiVisibilityReport | null;
   commentary: SectionCommentary[];
   drawTasks: DrawTaskRow[];
   strategicNotes: StrategicNoteRow[];

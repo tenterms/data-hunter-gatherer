@@ -38,6 +38,10 @@ export interface AppConfig {
    */
   configBackend: "local" | "sheets";
   seRankingApiKey: string | null;
+  openAiApiKey: string | null;
+  perplexityApiKey: string | null;
+  geminiApiKey: string | null;
+  serpApiKey: string | null;
   anthropicApiKey: string | null;
   anthropicModel: string;
   /** Model for report commentary — the writing quality matters most here,
@@ -87,6 +91,11 @@ export function getAppConfig(): AppConfig {
     hasSheets,
     configBackend: readEnv("CONFIG_BACKEND") === "sheets" && hasSheets ? "sheets" : "local",
     seRankingApiKey: readEnv("SERANKING_API_KEY"),
+    // AI visibility providers (all optional — platforms without a key are skipped)
+    openAiApiKey: readEnv("OPEN_AI_API_KEY") ?? readEnv("OPENAI_API_KEY"),
+    perplexityApiKey: readEnv("PERPLEXITY_API_KEY"),
+    geminiApiKey: readEnv("GEMINI_API_KEY"),
+    serpApiKey: readEnv("SERPAPI_KEY") ?? readEnv("SERPAPI_API_KEY") ?? readEnv("SERP_API_KEY"),
     anthropicApiKey,
     anthropicModel: readEnv("ANTHROPIC_MODEL") ?? "claude-opus-5",
     anthropicCommentaryModel: readEnv("ANTHROPIC_COMMENTARY_MODEL") ?? "claude-fable-5",

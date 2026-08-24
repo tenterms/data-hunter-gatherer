@@ -7,6 +7,7 @@ import PerformanceBars from "@/components/PerformanceBars";
 import PageGroupSlider from "@/components/PageGroupSlider";
 import CannibalisationTable from "@/components/CannibalisationTable";
 import RankingsSection from "@/components/RankingsSection";
+import AiVisibilitySection from "@/components/AiVisibilitySection";
 import DrawGrid from "@/components/DrawGrid";
 import ChangeBadge from "@/components/ChangeBadge";
 
@@ -187,6 +188,16 @@ export default function ReportView({
         <Commentary section="rankings" />
         <RankingsSection summary={metrics.rankings} engines={metrics.rankingEngines} />
       </ReportSection>
+
+      {/* 6.5 AI visibility (optional; appears once a run exists) */}
+      {snapshot.aiVisibility && snapshot.aiVisibility.prompts.length > 0 && (
+        <ReportSection
+          title="AI visibility"
+          description="What the AI assistants say when people ask them the questions your customers ask. Each row is a real question; the logos show which assistants include the business in their answer."
+        >
+          <AiVisibilitySection data={snapshot.aiVisibility} teamView={mode === "team"} />
+        </ReportSection>
+      )}
 
       {/* 7. Cannibalisation catcher (clients only see it when something is shown;
           the team always sees it, for curation) */}

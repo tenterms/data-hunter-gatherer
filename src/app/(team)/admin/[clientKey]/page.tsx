@@ -3,6 +3,7 @@ import { getAdminOverview } from "@/lib/adminActions";
 import { hasTargetingProposal } from "@/lib/applyTargeting";
 import ClientOverviewPanel from "@/components/admin/ClientOverviewPanel";
 import ApplyTargetingPanel from "@/components/admin/ApplyTargetingPanel";
+import AiVisibilityPanel from "@/components/admin/AiVisibilityPanel";
 
 export const dynamic = "force-dynamic";
 
@@ -21,6 +22,7 @@ export default async function ClientAdminPage({
     <>
       <ClientOverviewPanel overview={client} />
       {proposal && <ApplyTargetingPanel clientKey={clientKey} />}
+      <AiVisibilityPanel clientKey={clientKey} />
     </>
   );
 }
