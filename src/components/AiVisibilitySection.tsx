@@ -66,6 +66,21 @@ export default function AiVisibilitySection({
   teamView: boolean;
 }) {
   const [open, setOpen] = useState<string | null>(null);
+  const [screen, setScreen] = useState(0);
+
+  // Prompts sharing a group become slider screens (locations first, in
+  // configured order, Sectors last by convention of the seed order);
+  // ungrouped prompts fall into one screen.
+  const screens: Array<{ label: string; prompts: typeof data.prompts }> = [];
+  for (const prompt of data.prompts) {
+    const label = (prompt.group ?? "").trim() || "All prompts";
+    const existing = screens.find((g) => g.label === label);
+    if (existing) existing.prompts.push(prompt);
+    else screens.push({ label, prompts: [prompt] });
+  }
+  const paginated = screens.length > 1;
+  const safeScreen = Math.min(screen, screens.length - 1);
+  const current = screens[safeScreen];
 
   return (
     <div>
@@ -74,8 +89,26 @@ export default function AiVisibilitySection({
         assistant names the business in its answer; a faded logo means it only cites the website as a
         source.
       </p>
+      {paginated && (
+        <div className="engine-switcher">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => setScreen((safeScreen - 1 + screens.length) % screens.length)}
+          >
+            ‹ Prev
+          </button>
+          <span className="engine-label">
+            <strong>{current.label}</strong> · {current.prompts.length} prompt
+            {current.prompts.length === 1 ? "" : "s"} · {safeScreen + 1} of {screens.length}
+          </span>
+          <button type="button" className="btn" onClick={() => setScreen((safeScreen + 1) % screens.length)}>
+            Next ›
+          </button>
+        </div>
+      )}
       <div className="ai-vis-list">
-        {data.prompts.map((p) => {
+        {current.prompts.map((p) => {
           const isOpen = open === p.promptKey;
           const byPlatform = new Map(p.results.map((r) => [r.platform, r]));
           const errors = p.results.filter((r) => r.status === "error").length;

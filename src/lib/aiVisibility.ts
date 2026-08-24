@@ -44,7 +44,7 @@ export interface AiPromptResult {
 export interface AiVisibilityRun {
   clientKey: string;
   ranAt: string;
-  prompts: Array<{ promptKey: string; prompt: string; results: AiPromptResult[] }>;
+  prompts: Array<{ promptKey: string; prompt: string; group?: string; results: AiPromptResult[] }>;
 }
 
 /** What a report embeds: the latest run plus per-prompt history. */
@@ -54,6 +54,7 @@ export interface AiVisibilityReport {
   prompts: Array<{
     promptKey: string;
     prompt: string;
+    group?: string;
     results: AiPromptResult[];
     history: Array<{ date: string; statuses: Partial<Record<AiPlatform, MentionStatus>> }>;
   }>;
@@ -219,7 +220,7 @@ async function askClaude(prompt: string): Promise<ProviderAnswer> {
 
 async function askGemini(prompt: string): Promise<ProviderAnswer> {
   const { geminiApiKey } = getAppConfig();
-  const model = process.env.AI_VIS_GEMINI_MODEL || "gemini-2.5-flash";
+  const model = process.env.AI_VIS_GEMINI_MODEL || "gemini-3.6-flash";
   const res = await timedFetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`,
     {
@@ -477,6 +478,7 @@ export async function runAiVisibility(
     prompts: prompts.map((p) => ({
       promptKey: p.prompt_key,
       prompt: p.prompt,
+      group: p.prompt_group || undefined,
       results: byPrompt.get(p.prompt_key) ?? [],
     })),
   };

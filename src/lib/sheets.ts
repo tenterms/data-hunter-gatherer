@@ -94,6 +94,7 @@ export const SHEET_SCHEMA: Record<string, string[]> = {
     "expected_url",
     "priority",
     "active",
+    "prompt_group",
   ],
   NarrativeOverrides: [
     "client_key",
@@ -298,6 +299,7 @@ const parsers = {
     expected_brand: str(r.expected_brand),
     expected_url: str(r.expected_url),
     priority: str(r.priority),
+    prompt_group: str(r.prompt_group),
     active: parseBool(r.active),
   }),
   NarrativeOverrides: (r: RawRow): NarrativeOverrideRow => ({

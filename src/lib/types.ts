@@ -157,6 +157,8 @@ export interface AiSearchPromptRow {
   expected_url: string;
   priority: string;
   active: boolean;
+  /** screen the prompt appears under in the report (e.g. a location, or "Sectors") */
+  prompt_group: string;
 }
 
 export interface NarrativeOverrideRow {

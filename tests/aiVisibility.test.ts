@@ -49,6 +49,11 @@ describe("AAG prompt seed", () => {
     expect(prompts.filter((p) => p.key.startsWith("sector-"))).toHaveLength(3);
     expect(prompts.filter((p) => p.key.startsWith("combo-"))).toHaveLength(18);
     expect(prompts[0].prompt).toBe("Who are the best IT Support companies in Chesterfield?");
+    // grouped for the report's pagination: location screens, Sectors last
+    const groups = [...new Set(prompts.map((p: { group: string }) => p.group))];
+    expect(groups).toHaveLength(12);
+    expect(groups[groups.length - 1]).toBe("Sectors");
+    expect(prompts.filter((p: { group: string }) => p.group === "Sheffield")).toHaveLength(4);
   });
 });
 
