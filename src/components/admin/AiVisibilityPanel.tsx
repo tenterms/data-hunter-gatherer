@@ -18,7 +18,9 @@ export default function AiVisibilityPanel({ clientKey }: { clientKey: string }) 
 
   const load = useCallback(async () => {
     const res = await fetch(`/api/admin/ai-visibility?clientKey=${encodeURIComponent(clientKey)}`);
-    setStatus((await res.json()) as Status);
+    const body = (await res.json()) as Status;
+    setStatus(body);
+    if (body.progress) setMessage(""); // progress line supersedes the start message
   }, [clientKey]);
 
   useEffect(() => {

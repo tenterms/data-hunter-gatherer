@@ -178,7 +178,7 @@ async function askChatGpt(prompt: string): Promise<ProviderAnswer> {
   const res = await timedFetch("https://api.openai.com/v1/responses", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${openAiApiKey}` },
-    body: JSON.stringify({ model, input: prompt, tools: [{ type: "web_search" }] }),
+    body: JSON.stringify({ model, input: prompt, tools: [{ type: "web_search" }], reasoning: { effort: "low" } }),
   });
   const body = await jsonOrThrow(res, "OpenAI");
   const text =
@@ -348,12 +348,47 @@ export interface RunProgress {
   finished: boolean;
   ok?: boolean;
   message?: string;
+  /** last time the run made progress (detects runs killed by a restart) */
+  updatedAt?: string;
 }
 
 const activeRuns = new Map<string, RunProgress>();
+const PROGRESS_FILE = (clientKey: string) => path.join(DATA_DIR, "aivis", clientKey, ".progress.json");
+const STALL_MS = 4 * 60_000;
+
+function persistProgress(clientKey: string, progress: RunProgress): void {
+  try {
+    progress.updatedAt = new Date().toISOString();
+    fs.mkdirSync(path.dirname(PROGRESS_FILE(clientKey)), { recursive: true });
+    fs.writeFileSync(PROGRESS_FILE(clientKey), JSON.stringify(progress));
+  } catch {
+    // progress display is best-effort
+  }
+}
 
 export function aiVisibilityProgress(clientKey: string): RunProgress | null {
-  return activeRuns.get(clientKey) ?? null;
+  const live = activeRuns.get(clientKey);
+  if (live) return live;
+  if (!SAFE.test(clientKey)) return null;
+  // No run in this process: a file left unfinished means a deploy or restart
+  // killed it mid-flight — say so instead of showing "running" forever.
+  try {
+    const stored = JSON.parse(fs.readFileSync(PROGRESS_FILE(clientKey), "utf8")) as RunProgress;
+    if (!stored.finished) {
+      const last = Date.parse(stored.updatedAt ?? stored.startedAt);
+      if (Date.now() - last > STALL_MS) {
+        return {
+          ...stored,
+          finished: true,
+          ok: false,
+          message: `Run interrupted after ${stored.done}/${stored.total} queries (the server restarted, likely a deploy). Run it again.`,
+        };
+      }
+    }
+    return stored;
+  } catch {
+    return null;
+  }
 }
 
 export function startAiVisibilityRun(clientKey: string): ActionResult {
@@ -363,16 +398,19 @@ export function startAiVisibilityRun(clientKey: string): ActionResult {
   }
   const progress: RunProgress = { startedAt: new Date().toISOString(), total: 0, done: 0, finished: false };
   activeRuns.set(clientKey, progress);
+  persistProgress(clientKey, progress);
   runAiVisibility(clientKey, () => {}, progress)
     .then((result) => {
       progress.finished = true;
       progress.ok = result.ok;
       progress.message = result.message;
+      persistProgress(clientKey, progress);
     })
     .catch((error) => {
       progress.finished = true;
       progress.ok = false;
       progress.message = error instanceof Error ? error.message : "Run failed.";
+      persistProgress(clientKey, progress);
     });
   return { ok: true, message: "Run started — this takes a few minutes, progress shows below." };
 }
@@ -400,10 +438,13 @@ export async function runAiVisibility(
   const jobs = prompts.flatMap((prompt) =>
     AI_PLATFORMS.map((platform) => ({ prompt, platform: platform.id })),
   );
-  if (progress) progress.total = jobs.length;
+  if (progress) {
+    progress.total = jobs.length;
+    persistProgress(clientKey, progress);
+  }
   log(`AI visibility: ${prompts.length} prompts x ${active.length} platforms...`);
 
-  const cells = await mapLimit(jobs, 6, async ({ prompt, platform }): Promise<[string, AiPromptResult]> => {
+  const cells = await mapLimit(jobs, 10, async ({ prompt, platform }): Promise<[string, AiPromptResult]> => {
     try {
       const provider = providers[platform];
       if (!provider) return [prompt.prompt_key, { platform, status: "not_configured" }];
@@ -419,7 +460,10 @@ export async function runAiVisibility(
         { platform, status: "error", error: error instanceof Error ? error.message.slice(0, 200) : "failed" },
       ];
     } finally {
-      if (progress) progress.done += 1;
+      if (progress) {
+        progress.done += 1;
+        if (progress.done % 5 === 0 || progress.done === progress.total) persistProgress(clientKey, progress);
+      }
     }
   });
 
