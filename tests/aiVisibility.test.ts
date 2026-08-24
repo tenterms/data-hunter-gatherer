@@ -39,21 +39,23 @@ describe("AI visibility mention detection", () => {
 });
 
 describe("AAG prompt seed", () => {
-  it("carries the three templates: 11 locations + 3 sectors + 18 combos", () => {
+  it("carries the three templates: 11 locations + 3 sectors + combos for every location", () => {
     const data = JSON.parse(
       fs.readFileSync(path.join(process.cwd(), "data", "proposals", "targeting-2026-08.json"), "utf8"),
     );
     const prompts: Array<{ key: string; prompt: string; group: string; query: string }> = data["aag-it.com"].aiPrompts;
-    expect(prompts).toHaveLength(32);
+    expect(prompts).toHaveLength(47);
     expect(prompts.filter((p) => p.key.startsWith("loc-"))).toHaveLength(11);
     expect(prompts.filter((p) => p.key.startsWith("sector-"))).toHaveLength(3);
-    expect(prompts.filter((p) => p.key.startsWith("combo-"))).toHaveLength(18);
+    expect(prompts.filter((p) => p.key.startsWith("combo-"))).toHaveLength(33);
     expect(prompts[0].prompt).toBe("Who are the best IT Support companies in Chesterfield?");
     // grouped for the report's pagination: location screens, Sectors last
     const groups = [...new Set(prompts.map((p) => p.group))];
     expect(groups).toHaveLength(12);
     expect(groups[groups.length - 1]).toBe("Sectors");
     expect(prompts.filter((p) => p.group === "Sheffield")).toHaveLength(4);
+    expect(prompts.filter((p) => p.group === "London")).toHaveLength(4);
+    expect(prompts.filter((p) => p.group === "Mayfair")).toHaveLength(4);
     // hidden queries disambiguate UK locations; the display prompt stays clean
     for (const p of prompts) {
       expect(p.query).toMatch(/\(UK\)|in the UK/);

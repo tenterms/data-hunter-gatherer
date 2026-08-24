@@ -1350,3 +1350,11 @@ button {
 .ai-vis-history .dot.half { background: #a9b6c0; }
 .ai-vis-history .dot.off { background: #e3e8ec; }
 @media (max-width: 640px) { .ai-vis-row { flex-direction: column; align-items: flex-start; } }
+
+.ai-vis-full-wrap { margin-top: 6px; }
+.ai-vis-full-wrap summary { cursor: pointer; }
+.ai-vis-full {
+  white-space: pre-wrap; font-size: 13px; color: var(--ink-secondary);
+  background: var(--mono-bg, #f4f6f8); border-radius: 8px; padding: 10px 12px;
+  margin-top: 6px; max-height: 320px; overflow-y: auto;
+}

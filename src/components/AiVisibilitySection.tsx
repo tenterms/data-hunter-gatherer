@@ -149,6 +149,12 @@ export default function AiVisibilitySection({
                         {result.snippet && result.status !== "error" && (
                           <p className="ai-vis-snippet">&ldquo;{result.snippet}&rdquo;</p>
                         )}
+                        {result.fullText && result.status !== "error" && (
+                          <details className="ai-vis-full-wrap">
+                            <summary className="meta">View full answer</summary>
+                            <div className="ai-vis-full">{result.fullText}</div>
+                          </details>
+                        )}
                         {teamView && result.status === "error" && (
                           <p className="meta">{result.error}</p>
                         )}

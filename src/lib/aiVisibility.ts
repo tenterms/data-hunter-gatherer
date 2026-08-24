@@ -38,6 +38,8 @@ export interface AiPromptResult {
   status: MentionStatus;
   /** the sentence(s) around the client's mention, or the answer opening */
   snippet?: string;
+  /** the assistant's complete answer (capped), behind "view full answer" */
+  fullText?: string;
   citedDomains?: string[];
   error?: string;
 }
@@ -434,7 +436,7 @@ export async function runAiVisibility(
         return [prompt.prompt_key, { platform, status: "absent", snippet: "No AI Overview shown for this search." }];
       }
       const classified = classifyMention(answer.text, answer.citations, client);
-      return [prompt.prompt_key, { platform, ...classified }];
+      return [prompt.prompt_key, { platform, ...classified, fullText: answer.text.trim().slice(0, 6000) }];
     } catch (error) {
       return [
         prompt.prompt_key,
