@@ -279,9 +279,17 @@ export class SERankingProvider implements RankingProvider {
 
   private async get<T>(path: string): Promise<T> {
     const url = path.startsWith("http") ? path : `${SERANKING_BASE}${path}`;
-    const res = await fetch(url, {
-      headers: { Authorization: `Token ${this.apiKey}` },
-    });
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 60_000);
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        headers: { Authorization: `Token ${this.apiKey}` },
+        signal: controller.signal,
+      });
+    } finally {
+      clearTimeout(timer);
+    }
     if (!res.ok) {
       throw new Error(`SE Ranking API ${res.status} for ${path}`);
     }

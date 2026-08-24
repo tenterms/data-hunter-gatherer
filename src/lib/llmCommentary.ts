@@ -149,7 +149,20 @@ export class AnthropicCommentaryProvider implements LlmCommentaryProvider {
         },
       },
     });
-    const response = await stream.finalMessage();
+    // A stalled stream must fail into the rules fallback, never hang the job.
+    const response = await Promise.race([
+      stream.finalMessage(),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => {
+          try {
+            stream.abort();
+          } catch {
+            // already closed
+          }
+          reject(new Error("LLM commentary timed out after 8 minutes"));
+        }, 8 * 60_000),
+      ),
+    ]);
 
     if (response.stop_reason === "refusal") {
       throw new Error("LLM declined to generate commentary");

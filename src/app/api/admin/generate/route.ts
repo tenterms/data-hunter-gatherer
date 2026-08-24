@@ -1,5 +1,13 @@
-import { NextResponse } from "next/server";
-import { generateReport } from "@/lib/reportGenerator";
+import { NextRequest, NextResponse } from "next/server";
+import { generateJobStatus, startGenerateJob } from "@/lib/generateJobs";
+
+export const maxDuration = 30;
+
+export async function GET(request: NextRequest) {
+  const clientKey = request.nextUrl.searchParams.get("clientKey") ?? "";
+  const periodKey = request.nextUrl.searchParams.get("periodKey") ?? "";
+  return NextResponse.json({ ok: true, job: generateJobStatus(clientKey, periodKey) });
+}
 
 export async function POST(request: Request) {
   try {
@@ -9,18 +17,8 @@ export async function POST(request: Request) {
     if (!clientKey || !periodKey) {
       return NextResponse.json({ ok: false, message: "clientKey and periodKey are required." }, { status: 400 });
     }
-    const log: string[] = [];
-    const { snapshot } = await generateReport({
-      clientKey,
-      periodKey,
-      log: (m) => log.push(m),
-    });
-    return NextResponse.json({
-      ok: true,
-      message: `Report generated for ${snapshot.client.client_name} — ${snapshot.period.label} (${snapshot.dataSource} data).`,
-      reportUrl: `/reports/${clientKey}/${periodKey}`,
-      log,
-    });
+    const result = startGenerateJob(clientKey, periodKey);
+    return NextResponse.json({ ...result, job: true }, { status: result.ok ? 200 : 400 });
   } catch (error) {
     return NextResponse.json(
       { ok: false, message: error instanceof Error ? error.message : "Report generation failed." },

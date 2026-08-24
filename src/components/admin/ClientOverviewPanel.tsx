@@ -20,7 +20,11 @@ export default function ClientOverviewPanel({ overview }: { overview: ClientOver
 
   async function generateFor(periodKey: string) {
     setBusyPeriod(periodKey);
-    await generate.run("/api/admin/generate", { clientKey: client.client_key, periodKey });
+    await generate.runJob(
+      "/api/admin/generate",
+      { clientKey: client.client_key, periodKey },
+      `/api/admin/generate?clientKey=${encodeURIComponent(client.client_key)}&periodKey=${encodeURIComponent(periodKey)}`,
+    );
     setBusyPeriod(null);
   }
 
