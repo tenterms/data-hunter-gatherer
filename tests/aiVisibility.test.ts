@@ -43,17 +43,22 @@ describe("AAG prompt seed", () => {
     const data = JSON.parse(
       fs.readFileSync(path.join(process.cwd(), "data", "proposals", "targeting-2026-08.json"), "utf8"),
     );
-    const prompts: Array<{ key: string; prompt: string }> = data["aag-it.com"].aiPrompts;
+    const prompts: Array<{ key: string; prompt: string; group: string; query: string }> = data["aag-it.com"].aiPrompts;
     expect(prompts).toHaveLength(32);
     expect(prompts.filter((p) => p.key.startsWith("loc-"))).toHaveLength(11);
     expect(prompts.filter((p) => p.key.startsWith("sector-"))).toHaveLength(3);
     expect(prompts.filter((p) => p.key.startsWith("combo-"))).toHaveLength(18);
     expect(prompts[0].prompt).toBe("Who are the best IT Support companies in Chesterfield?");
     // grouped for the report's pagination: location screens, Sectors last
-    const groups = [...new Set(prompts.map((p: { group: string }) => p.group))];
+    const groups = [...new Set(prompts.map((p) => p.group))];
     expect(groups).toHaveLength(12);
     expect(groups[groups.length - 1]).toBe("Sectors");
-    expect(prompts.filter((p: { group: string }) => p.group === "Sheffield")).toHaveLength(4);
+    expect(prompts.filter((p) => p.group === "Sheffield")).toHaveLength(4);
+    // hidden queries disambiguate UK locations; the display prompt stays clean
+    for (const p of prompts) {
+      expect(p.query).toMatch(/\(UK\)|in the UK/);
+      expect(p.prompt).not.toContain("(UK)");
+    }
   });
 });
 

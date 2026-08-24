@@ -38,7 +38,7 @@ interface ClientProposal {
   contentGroups: ProposalGroup[];
   topicClusters: ProposalGroup[];
   /** AI visibility prompts (optional per client) */
-  aiPrompts?: Array<{ key: string; prompt: string; group?: string }>;
+  aiPrompts?: Array<{ key: string; prompt: string; group?: string; query?: string }>;
 }
 
 const PROPOSAL_FILE = path.join(process.cwd(), "data", "proposals", "targeting-2026-08.json");
@@ -118,6 +118,7 @@ export async function applyTargeting(clientKey: string): Promise<ActionResult & 
         priority: "high",
         active: "true",
         prompt_group: p.group ?? "",
+        query_override: p.query ?? "",
       })),
     );
     detail.push(`${proposal.aiPrompts.length} AI visibility prompts loaded.`);

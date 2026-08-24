@@ -159,6 +159,8 @@ export interface AiSearchPromptRow {
   active: boolean;
   /** screen the prompt appears under in the report (e.g. a location, or "Sectors") */
   prompt_group: string;
+  /** what's actually sent to the assistants when set (e.g. adds "(UK)"); display uses prompt */
+  query_override: string;
 }
 
 export interface NarrativeOverrideRow {

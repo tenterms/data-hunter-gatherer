@@ -8,8 +8,9 @@ import type { ClientRow } from "./types";
 /**
  * AI visibility: ask the assistants people actually use ("Who are the best IT
  * support companies in Leeds?") and record whether the client is part of the
- * answer. Six platforms: ChatGPT, Claude, Gemini and Perplexity through their
- * own APIs with web search on; Google AI Overview and Copilot through SerpApi.
+ * answer. Five platforms: ChatGPT, Claude and Perplexity through their own
+ * APIs with web search on; Google AI Overview and Copilot through SerpApi.
+ * (Gemini is parked: its API needs a billing setup the account doesn't have.)
  * Platforms without a configured key are skipped, not failed.
  *
  * Per prompt and platform the client is either:
@@ -19,12 +20,12 @@ import type { ClientRow } from "./types";
  * Runs are stored on the data volume, so every prompt builds a history.
  */
 
+// "gemini" stays in the type so stored runs from when it was live still parse.
 export type AiPlatform = "chatgpt" | "claude" | "gemini" | "perplexity" | "ai_overview" | "copilot";
 
 export const AI_PLATFORMS: Array<{ id: AiPlatform; label: string; logo: string }> = [
   { id: "chatgpt", label: "ChatGPT", logo: "/ai/chatgpt.svg" },
   { id: "claude", label: "Claude", logo: "/ai/claude.svg" },
-  { id: "gemini", label: "Gemini", logo: "/ai/gemini.svg" },
   { id: "perplexity", label: "Perplexity", logo: "/ai/perplexity.svg" },
   { id: "ai_overview", label: "Google AI Overview", logo: "/ai/google.svg" },
   { id: "copilot", label: "Copilot", logo: "/ai/copilot.svg" },
@@ -218,28 +219,6 @@ async function askClaude(prompt: string): Promise<ProviderAnswer> {
   return { text, citations };
 }
 
-async function askGemini(prompt: string): Promise<ProviderAnswer> {
-  const { geminiApiKey } = getAppConfig();
-  const model = process.env.AI_VIS_GEMINI_MODEL || "gemini-3.6-flash";
-  const res = await timedFetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`,
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        tools: [{ google_search: {} }],
-      }),
-    },
-  );
-  const body = await jsonOrThrow(res, "Gemini");
-  const candidates = body.candidates as Array<Record<string, unknown>> | undefined;
-  const text = textDeep(candidates?.[0]?.content, ["text"]).join("\n");
-  const citations = urlsDeep(candidates?.[0]);
-  if (!text) throw new Error("Gemini returned no answer text");
-  return { text, citations };
-}
-
 async function askPerplexity(prompt: string): Promise<ProviderAnswer> {
   const { perplexityApiKey } = getAppConfig();
   const model = process.env.AI_VIS_PERPLEXITY_MODEL || "sonar";
@@ -303,7 +282,6 @@ function configuredPlatforms(): Partial<Record<AiPlatform, (p: string) => Promis
   const map: Partial<Record<AiPlatform, (p: string) => Promise<ProviderAnswer>>> = {};
   if (app.openAiApiKey) map.chatgpt = askChatGpt;
   if (app.anthropicApiKey) map.claude = askClaude;
-  if (app.geminiApiKey) map.gemini = askGemini;
   if (app.perplexityApiKey) map.perplexity = askPerplexity;
   if (app.serpApiKey) {
     map.ai_overview = askAiOverview;
@@ -433,7 +411,7 @@ export async function runAiVisibility(
   const providers = configuredPlatforms();
   const active = AI_PLATFORMS.filter((p) => providers[p.id]);
   if (active.length === 0) {
-    return { ok: false, message: "No AI platform keys configured (OPEN_AI_API_KEY, PERPLEXITY_API_KEY, GEMINI_API_KEY, SERPAPI_KEY, ANTHROPIC_API_KEY)." };
+    return { ok: false, message: "No AI platform keys configured (OPEN_AI_API_KEY, PERPLEXITY_API_KEY, SERPAPI_KEY, ANTHROPIC_API_KEY)." };
   }
 
   const jobs = prompts.flatMap((prompt) =>
@@ -449,7 +427,9 @@ export async function runAiVisibility(
     try {
       const provider = providers[platform];
       if (!provider) return [prompt.prompt_key, { platform, status: "not_configured" }];
-      const answer = await provider(prompt.prompt);
+      // The hidden query can disambiguate (e.g. "Chesterfield (UK)") while the
+      // report keeps showing the natural question.
+      const answer = await provider(prompt.query_override?.trim() || prompt.prompt);
       if (answer.text.trim() === "" && platform === "ai_overview") {
         return [prompt.prompt_key, { platform, status: "absent", snippet: "No AI Overview shown for this search." }];
       }

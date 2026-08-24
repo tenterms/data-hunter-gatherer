@@ -481,161 +481,193 @@
       {
         "key": "loc-chesterfield",
         "prompt": "Who are the best IT Support companies in Chesterfield?",
+        "query": "Who are the best IT Support companies in Chesterfield (UK)?",
         "group": "Chesterfield"
       },
       {
         "key": "combo-law-firms-chesterfield",
         "prompt": "Who are the best IT Support companies for law firms in Chesterfield?",
+        "query": "Who are the best IT Support companies for law firms in Chesterfield (UK)?",
         "group": "Chesterfield"
       },
       {
         "key": "combo-chambers-chesterfield",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Chesterfield?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Chesterfield (UK)?",
         "group": "Chesterfield"
       },
       {
         "key": "combo-manufacturing-chesterfield",
         "prompt": "Who are the best IT Support companies for manufacturing in Chesterfield?",
+        "query": "Who are the best IT Support companies for manufacturing in Chesterfield (UK)?",
         "group": "Chesterfield"
       },
       {
         "key": "loc-sheffield",
         "prompt": "Who are the best IT Support companies in Sheffield?",
+        "query": "Who are the best IT Support companies in Sheffield (UK)?",
         "group": "Sheffield"
       },
       {
         "key": "combo-law-firms-sheffield",
         "prompt": "Who are the best IT Support companies for law firms in Sheffield?",
+        "query": "Who are the best IT Support companies for law firms in Sheffield (UK)?",
         "group": "Sheffield"
       },
       {
         "key": "combo-chambers-sheffield",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Sheffield?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Sheffield (UK)?",
         "group": "Sheffield"
       },
       {
         "key": "combo-manufacturing-sheffield",
         "prompt": "Who are the best IT Support companies for manufacturing in Sheffield?",
+        "query": "Who are the best IT Support companies for manufacturing in Sheffield (UK)?",
         "group": "Sheffield"
       },
       {
         "key": "loc-doncaster",
         "prompt": "Who are the best IT Support companies in Doncaster?",
+        "query": "Who are the best IT Support companies in Doncaster (UK)?",
         "group": "Doncaster"
       },
       {
         "key": "combo-law-firms-doncaster",
         "prompt": "Who are the best IT Support companies for law firms in Doncaster?",
+        "query": "Who are the best IT Support companies for law firms in Doncaster (UK)?",
         "group": "Doncaster"
       },
       {
         "key": "combo-chambers-doncaster",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Doncaster?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Doncaster (UK)?",
         "group": "Doncaster"
       },
       {
         "key": "combo-manufacturing-doncaster",
         "prompt": "Who are the best IT Support companies for manufacturing in Doncaster?",
+        "query": "Who are the best IT Support companies for manufacturing in Doncaster (UK)?",
         "group": "Doncaster"
       },
       {
         "key": "loc-leeds",
         "prompt": "Who are the best IT Support companies in Leeds?",
+        "query": "Who are the best IT Support companies in Leeds (UK)?",
         "group": "Leeds"
       },
       {
         "key": "combo-law-firms-leeds",
         "prompt": "Who are the best IT Support companies for law firms in Leeds?",
+        "query": "Who are the best IT Support companies for law firms in Leeds (UK)?",
         "group": "Leeds"
       },
       {
         "key": "combo-chambers-leeds",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Leeds?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Leeds (UK)?",
         "group": "Leeds"
       },
       {
         "key": "combo-manufacturing-leeds",
         "prompt": "Who are the best IT Support companies for manufacturing in Leeds?",
+        "query": "Who are the best IT Support companies for manufacturing in Leeds (UK)?",
         "group": "Leeds"
       },
       {
         "key": "loc-manchester",
         "prompt": "Who are the best IT Support companies in Manchester?",
+        "query": "Who are the best IT Support companies in Manchester (UK)?",
         "group": "Manchester"
       },
       {
         "key": "combo-law-firms-manchester",
         "prompt": "Who are the best IT Support companies for law firms in Manchester?",
+        "query": "Who are the best IT Support companies for law firms in Manchester (UK)?",
         "group": "Manchester"
       },
       {
         "key": "combo-chambers-manchester",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Manchester?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Manchester (UK)?",
         "group": "Manchester"
       },
       {
         "key": "combo-manufacturing-manchester",
         "prompt": "Who are the best IT Support companies for manufacturing in Manchester?",
+        "query": "Who are the best IT Support companies for manufacturing in Manchester (UK)?",
         "group": "Manchester"
       },
       {
         "key": "loc-birmingham",
         "prompt": "Who are the best IT Support companies in Birmingham?",
+        "query": "Who are the best IT Support companies in Birmingham (UK)?",
         "group": "Birmingham"
       },
       {
         "key": "combo-law-firms-birmingham",
         "prompt": "Who are the best IT Support companies for law firms in Birmingham?",
+        "query": "Who are the best IT Support companies for law firms in Birmingham (UK)?",
         "group": "Birmingham"
       },
       {
         "key": "combo-chambers-birmingham",
         "prompt": "Who are the best IT Support companies for barristers' chambers in Birmingham?",
+        "query": "Who are the best IT Support companies for barristers' chambers in Birmingham (UK)?",
         "group": "Birmingham"
       },
       {
         "key": "combo-manufacturing-birmingham",
         "prompt": "Who are the best IT Support companies for manufacturing in Birmingham?",
+        "query": "Who are the best IT Support companies for manufacturing in Birmingham (UK)?",
         "group": "Birmingham"
       },
       {
         "key": "loc-london",
         "prompt": "Who are the best IT Support companies in London?",
+        "query": "Who are the best IT Support companies in London (UK)?",
         "group": "London"
       },
       {
         "key": "loc-mayfair",
         "prompt": "Who are the best IT Support companies in Mayfair?",
+        "query": "Who are the best IT Support companies in Mayfair (UK)?",
         "group": "Mayfair"
       },
       {
         "key": "loc-lincoln",
         "prompt": "Who are the best IT Support companies in Lincoln?",
+        "query": "Who are the best IT Support companies in Lincoln (UK)?",
         "group": "Lincoln"
       },
       {
         "key": "loc-derby",
         "prompt": "Who are the best IT Support companies in Derby?",
+        "query": "Who are the best IT Support companies in Derby (UK)?",
         "group": "Derby"
       },
       {
         "key": "loc-hull",
         "prompt": "Who are the best IT Support companies in Hull?",
+        "query": "Who are the best IT Support companies in Hull (UK)?",
         "group": "Hull"
       },
       {
         "key": "sector-law-firms",
         "prompt": "Who is the best IT Support company for law firms?",
+        "query": "Who is the best IT Support company for law firms in the UK?",
         "group": "Sectors"
       },
       {
         "key": "sector-chambers",
         "prompt": "Who is the best IT Support company for barristers' chambers?",
+        "query": "Who is the best IT Support company for barristers' chambers in the UK?",
         "group": "Sectors"
       },
       {
         "key": "sector-manufacturing",
         "prompt": "Who is the best IT Support company for manufacturing?",
+        "query": "Who is the best IT Support company for manufacturing in the UK?",
         "group": "Sectors"
       }
     ]
