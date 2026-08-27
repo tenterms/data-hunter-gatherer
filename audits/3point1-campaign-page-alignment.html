@@ -1,0 +1,474 @@
+<title>Campaign & Page Alignment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap">
+
+<style>
+:root{
+  --paper:#F6F7F8; --surface:#FFFFFF; --surface-2:#EEF1F3;
+  --ink:#12181D; --ink-2:#3D4A53; --ink-3:#6B7982;
+  --rule:#D8DEE2; --rule-soft:#E7EBEE;
+  --copper:#A85320; --copper-soft:#F2E3D8;
+  --ok:#1B6E4C; --ok-soft:#DFEDE6;
+  --warn:#8E6206; --warn-soft:#F5EAD2;
+  --bad:#9A2A21; --bad-soft:#F6E0DC;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --cond:"IBM Plex Sans Condensed","Helvetica Neue",Arial,sans-serif;
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1317; --surface:#151C21; --surface-2:#1C242A;
+    --ink:#E6EBEE; --ink-2:#AEBAC2; --ink-3:#7D8B94;
+    --rule:#2A343B; --rule-soft:#212A30;
+    --copper:#DE8850; --copper-soft:#312116;
+    --ok:#6DC79C; --ok-soft:#14261E;
+    --warn:#DDAE4A; --warn-soft:#2A2113;
+    --bad:#E58A7E; --bad-soft:#2C1714;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1317; --surface:#151C21; --surface-2:#1C242A;
+  --ink:#E6EBEE; --ink-2:#AEBAC2; --ink-3:#7D8B94;
+  --rule:#2A343B; --rule-soft:#212A30;
+  --copper:#DE8850; --copper-soft:#312116;
+  --ok:#6DC79C; --ok-soft:#14261E;
+  --warn:#DDAE4A; --warn-soft:#2A2113;
+  --bad:#E58A7E; --bad-soft:#2C1714;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--serif); font-size:17px; line-height:1.62;
+  margin:0; padding:0 20px 96px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto}
+.col{max-width:70ch}
+
+h1,h2,h3,h4{font-family:var(--cond);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(2.1rem,5vw,3.1rem);font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(1.5rem,3vw,1.95rem);font-weight:600;letter-spacing:-.01em}
+h3{font-size:1.18rem;font-weight:600}
+p{margin:0}
+a{color:var(--copper)}
+strong{font-weight:600}
+em{font-style:italic}
+
+.eyebrow{
+  font-family:var(--mono);font-size:.7rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3);
+}
+
+/* ---- masthead ---- */
+header.mast{
+  border-bottom:2px solid var(--ink);
+  padding:56px 0 22px; margin-bottom:44px;
+  display:flex;flex-direction:column;gap:18px;
+}
+.mast .meta{
+  display:flex;flex-wrap:wrap;gap:10px 26px;
+  font-family:var(--mono);font-size:.74rem;color:var(--ink-3);
+}
+.mast .meta b{color:var(--ink-2);font-weight:500}
+.standfirst{font-size:1.16rem;color:var(--ink-2);max-width:64ch}
+
+/* ---- section rhythm ---- */
+section{margin-top:64px;display:flex;flex-direction:column;gap:22px}
+.sec-head{display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--rule);padding-top:18px}
+
+/* ---- verdict scorecard ---- */
+.score{
+  display:grid;gap:1px;background:var(--rule);
+  grid-template-columns:repeat(auto-fit,minmax(158px,1fr));
+  border:1px solid var(--rule);
+}
+.score div{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:5px}
+.score .n{font-family:var(--cond);font-size:2.15rem;font-weight:700;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.score .l{font-family:var(--mono);font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-3)}
+.score .ok .n{color:var(--ok)} .score .warn .n{color:var(--warn)} .score .bad .n{color:var(--bad)}
+
+/* ---- findings ---- */
+.finding{
+  background:var(--surface);border:1px solid var(--rule);
+  border-left:4px solid var(--bad);
+  padding:20px 22px;display:flex;flex-direction:column;gap:10px;
+}
+.finding.w{border-left-color:var(--warn)}
+.finding h3{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.finding .tag{
+  font-family:var(--mono);font-size:.66rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:3px 7px;border-radius:2px;
+  background:var(--bad-soft);color:var(--bad);
+}
+.finding.w .tag{background:var(--warn-soft);color:var(--warn)}
+.finding p{color:var(--ink-2);font-size:.97rem}
+.finding .ev{
+  font-family:var(--mono);font-size:.78rem;color:var(--ink-2);
+  background:var(--surface-2);padding:11px 13px;border-radius:2px;line-height:1.6;
+}
+
+/* ---- matrix ---- */
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-family:var(--mono);font-size:.79rem}
+caption{
+  text-align:left;font-family:var(--cond);font-weight:600;font-size:1.05rem;
+  padding:14px 16px 12px;border-bottom:1px solid var(--rule);color:var(--ink);
+}
+caption span{font-family:var(--mono);font-size:.72rem;font-weight:400;color:var(--ink-3);display:block;margin-top:4px;letter-spacing:.02em}
+th{
+  text-align:left;font-weight:500;font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--ink-3);padding:9px 12px;border-bottom:1px solid var(--rule);white-space:nowrap;
+  background:var(--surface-2);
+}
+td{padding:9px 12px;border-bottom:1px solid var(--rule-soft);vertical-align:top;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:none}
+td.kw{color:var(--ink);white-space:nowrap}
+td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.r-ok td:first-child{box-shadow:inset 3px 0 0 var(--ok)}
+tr.r-warn td:first-child{box-shadow:inset 3px 0 0 var(--warn)}
+tr.r-bad td:first-child{box-shadow:inset 3px 0 0 var(--bad)}
+.chip{
+  display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.07em;
+  text-transform:uppercase;padding:2px 6px;border-radius:2px;white-space:nowrap;
+}
+.c-ok{background:var(--ok-soft);color:var(--ok)}
+.c-warn{background:var(--warn-soft);color:var(--warn)}
+.c-bad{background:var(--bad-soft);color:var(--bad)}
+.flag{color:var(--bad);font-weight:600}
+.zero{color:var(--bad)}
+.dash{color:var(--ink-3)}
+
+/* ---- page notes ---- */
+.pages{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
+.pg{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:9px}
+.pg .u{font-family:var(--mono);font-size:.75rem;color:var(--copper);word-break:break-all}
+.pg .t{font-family:var(--cond);font-weight:600;font-size:1.05rem}
+.pg ul{margin:0;padding-left:17px;font-size:.9rem;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+
+/* ---- actions ---- */
+.act{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.act .row{background:var(--surface);padding:16px 20px;display:grid;grid-template-columns:auto 1fr auto;gap:8px 18px;align-items:baseline}
+.act .p{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.08em;padding:3px 7px;border-radius:2px;background:var(--copper-soft);color:var(--copper);white-space:nowrap}
+.act .body{display:flex;flex-direction:column;gap:5px}
+.act .h{font-family:var(--cond);font-weight:600;font-size:1.02rem;color:var(--ink)}
+.act .d{font-size:.93rem;color:var(--ink-2)}
+.act .own{font-family:var(--mono);font-size:.68rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+@media(max-width:640px){
+  .act .row{grid-template-columns:1fr;gap:8px}
+  .act .own{justify-self:start}
+}
+
+footer{margin-top:72px;border-top:1px solid var(--rule);padding-top:18px;font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.7}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <div class="eyebrow">3Point1 Developments · Paid &amp; organic landing page audit</div>
+  <h1>Do the pages match the campaign?</h1>
+  <p class="standfirst">Short answer: three quarters of the list points at a page that could plausibly answer it, but only seven of the 44 keywords actually match the copy on the page they land on. And none of the six landing pages can convert a click without a second one.</p>
+  <div class="meta">
+    <span><b>44</b> keywords</span>
+    <span><b>6</b> landing pages</span>
+    <span><b>4</b> campaigns</span>
+    <span>Market <b>United Kingdom</b></span>
+    <span>Checked <b>27 Aug 2026</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">The verdict in numbers</div>
+    <h2>Where the 44 keywords land</h2>
+  </div>
+  <div class="score">
+    <div class="ok"><span class="n">7</span><span class="l">Clean match</span></div>
+    <div class="warn"><span class="n">25</span><span class="l">Right page, copy gap</span></div>
+    <div class="bad"><span class="n">12</span><span class="l">Wrong page or intent</span></div>
+    <div><span class="n">3,650</span><span class="l">UK searches / mo</span></div>
+    <div class="bad"><span class="n">31%</span><span class="l">Of that volume misaimed</span></div>
+    <div class="bad"><span class="n">0</span><span class="l">Lead forms on any LP</span></div>
+  </div>
+  <div class="col">
+    <p>The mapping itself is mostly sensible — someone clearly thought about which service page each ad group should serve, and the medical, IoT and prototyping groups are pointed at exactly the right URLs. The problem is not the routing. It is that a chunk of the list describes things 3Point1 doesn't sell to people who aren't buying, and that every correctly-routed click still lands on a page with nothing to fill in.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Three things explain the zeros</div>
+    <h2>Why nothing converted</h2>
+  </div>
+
+  <div class="finding">
+    <h3>No landing page has a lead form <span class="tag">Structural</span></h3>
+    <p>Every one of the six landing pages has exactly two <code>&lt;form&gt;</code> elements, and both are the WordPress site-search box. The only lead-capture form on the entire site sits on <em>/contact-us/</em>. So every paid click — regardless of keyword, ad group or match type — has to click a second time to convert, and the page it clicks through to has no <code>&lt;h1&gt;</code> at all.</p>
+    <p>This is almost certainly the single biggest cause of a 0.00% conversion rate across 44 keywords. It is also the cheapest thing on this list to fix.</p>
+    <div class="ev">forms found · p2–p6 &nbsp;→&nbsp; role="search" × 2, lead inputs × 0<br>tel: link present (0330 133 8050) · mailto: none · booking link none</div>
+  </div>
+
+  <div class="finding">
+    <h3>Every Google-flagged keyword is missing from its own landing page <span class="tag">Message match</span></h3>
+    <p>Eight keywords carry a status reason from Google — seven "low quality", one "rarely served". All eight appear <strong>zero times</strong> in the visible copy of the page they point to. Not in the title, not in a heading, not in the body. That correlation is exact across all eight, and it is the clearest available read on why Ad Relevance and Landing Page Experience are dragging Quality Score down.</p>
+    <div class="ev">medical device development company · 0&nbsp;&nbsp;|&nbsp;&nbsp;medical device design consultancy · 0<br>medical device prototyping · 0&nbsp;&nbsp;|&nbsp;&nbsp;pcb iot · 0&nbsp;&nbsp;|&nbsp;&nbsp;AIoT product design · 0<br>electronic product design and development · 0&nbsp;&nbsp;|&nbsp;&nbsp;product design engineering consultancy · 0<br>electronics design consultancy · 0</div>
+  </div>
+
+  <div class="finding">
+    <h3>Roughly a third of the volume is aimed at people who aren't buyers <span class="tag">Intent</span></h3>
+    <p>Several head terms look commercial but return SERPs with no consultancy on them. Pulling the live UK results: <em>pcb designing</em> returns Cadence, CircuitMaker, KiCad, SparkFun and a Reddit thread — it is a query about CAD software. <em>aiot</em> returns Wikipedia, Cisco and Supermicro definitions plus the PowerFleet stock ticker. <em>electronics design</em> returns a trade magazine, an MIT tutorial and EDN.</p>
+    <p>And the one that matters most commercially: <em>pcb design company</em> is dominated in the UK by fabricators and assembly houses — ABL Circuits, PCB Train, Eurocircuits, PCBWay. Searchers using it largely want boards made, not designed. 3Point1 doesn't manufacture, so even winning that click sells against the grain.</p>
+    <div class="ev">1,130 of 3,650 UK searches/mo (31%) sit on queries whose SERP is informational,<br>tool-led or fabrication-led. Four verified against live UK results; four inferred<br>from Ahrefs parent topic (easyeda, jlcpcb, pcb, electronic designers).</div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Keyword by keyword</div>
+    <h2>The alignment matrix</h2>
+    <p class="col" style="color:var(--ink-2);font-size:1rem">"On page" counts exact-phrase appearances in the visible copy of the destination URL. Volume is UK monthly search from Ahrefs. Rows are striped by verdict.</p>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>PCB — SEOW<span>→ /services/pcb-design-prototyping/ · 8 keywords · 870/mo</span></caption>
+      <thead><tr><th>Keyword</th><th>Match</th><th class="num">UK vol</th><th class="num">On page</th><th>Google flag</th><th>Verdict</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="r-warn"><td class="kw">pcb design services</td><td>Exact</td><td class="num">250</td><td class="num">1</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Best term in the group. Page barely says the phrase.</td></tr>
+        <tr class="r-bad"><td class="kw">pcb designing</td><td>Exact</td><td class="num">150</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>SERP is CAD software and tutorials. Verified.</td></tr>
+        <tr class="r-bad"><td class="kw">printed circuit board design</td><td>Exact</td><td class="num">150</td><td class="num">1</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>Parent topic "pcb" — definitional intent.</td></tr>
+        <tr class="r-bad"><td class="kw">pcb design company</td><td>Exact</td><td class="num">150</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>UK SERP is fabricators, not designers. Verified.</td></tr>
+        <tr class="r-warn"><td class="kw">pcb design and layout</td><td>Exact</td><td class="num">40</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Genuinely commercial. Page says "layout" 3×, never the phrase.</td></tr>
+        <tr class="r-warn"><td class="kw">pcb design engineering</td><td>Exact</td><td class="num">10</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Thin volume, right intent, absent phrasing.</td></tr>
+        <tr class="r-bad"><td class="kw">hardware engineering services</td><td>Exact</td><td class="num">20</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-bad">No page</span></td><td>Nothing on the site is about hardware engineering as an offer.</td></tr>
+        <tr class="r-bad"><td class="kw">custom printed circuit board</td><td>Exact</td><td class="num">100</td><td class="num zero">0</td><td>paused</td><td><span class="chip c-bad">Mismatch</span></td><td>Parent topic "jlcpcb" — board-ordering intent. Right call to pause.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Medical Design — SEOW<span>→ /services/medical-device-product-design/ · 14 keywords · 1,240/mo · the strongest group on the list</span></caption>
+      <thead><tr><th>Keyword</th><th>Match</th><th class="num">UK vol</th><th class="num">On page</th><th>Google flag</th><th>Verdict</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="r-ok"><td class="kw">medical device design</td><td>Phrase</td><td class="num">250</td><td class="num">3</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Head term, right page, KD 0. Should be winning.</td></tr>
+        <tr class="r-warn"><td class="kw">medical product design</td><td>Phrase</td><td class="num">200</td><td class="num">2</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Present but not in title or any heading.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device prototyping</td><td>Phrase</td><td class="num">150</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">Weak</span></td><td>$6.00 CPC — the most valuable term here — and the phrase is absent.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device design companies</td><td>Phrase</td><td class="num">150</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Page says "company" once, in an H2. Near miss.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device engineering</td><td>Phrase</td><td class="num">100</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Page is framed as "design", never "engineering".</td></tr>
+        <tr class="r-warn"><td class="kw">medical device industrial design</td><td>Phrase</td><td class="num">90</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>"Industrial design" appears once, in passing.</td></tr>
+        <tr class="r-ok"><td class="kw">medical device product design</td><td>Phrase</td><td class="num">90</td><td class="num">10</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Exact URL, title and H1 match. The model to copy.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device development company</td><td>Phrase</td><td class="num">70</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">Weak</span></td><td>"Medical Device Development Services" is on the page — one word off.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device engineering services</td><td>Phrase</td><td class="num">50</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Same "engineering" gap as above.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device design agency</td><td>Phrase</td><td class="num">30</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Title says "Agency", body never does.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device design consultancy</td><td>Phrase</td><td class="num">20</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">Weak</span></td><td>"Consultancy" is the homepage's word, not this page's.</td></tr>
+        <tr class="r-warn"><td class="kw">medical device feasibility study</td><td>Phrase</td><td class="num">20</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>"Feasibility" appears 3× but never as a named service.</td></tr>
+        <tr class="r-warn"><td class="kw">connected medical device design</td><td>Phrase</td><td class="num">20</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Sits between the medical and IoT pages; neither claims it.</td></tr>
+        <tr class="r-bad"><td class="kw">wearable medical device design</td><td>Phrase</td><td class="num dash">n/a</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-bad">No content</span></td><td>The word "wearable" does not appear anywhere on the page.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>IOT &amp; Testing — SEOW · IoT ad group<span>→ /services/iot-product-design/ · 6 keywords · 230/mo</span></caption>
+      <thead><tr><th>Keyword</th><th>Match</th><th class="num">UK vol</th><th class="num">On page</th><th>Google flag</th><th>Verdict</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="r-ok"><td class="kw">iot product design</td><td>Phrase</td><td class="num">100</td><td class="num">11</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Exact URL, title, H1. Clean.</td></tr>
+        <tr class="r-warn"><td class="kw">iot device design</td><td>Phrase</td><td class="num">60</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Page says "product", searcher says "device".</td></tr>
+        <tr class="r-warn"><td class="kw">iot hardware design</td><td>Phrase</td><td class="num">50</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>"Hardware design" appears 2×, never with "IoT".</td></tr>
+        <tr class="r-warn"><td class="kw">iot device design company</td><td>Phrase</td><td class="num">20</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>As above.</td></tr>
+        <tr class="r-bad"><td class="kw">pcb iot</td><td>Phrase</td><td class="num">0</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-bad">Drop</span></td><td>No UK volume. Pause it.</td></tr>
+        <tr class="r-bad"><td class="kw">AIoT product design</td><td>Phrase</td><td class="num dash">n/a</td><td class="num zero">0</td><td class="flag">rarely served</td><td><span class="chip c-bad">Drop</span></td><td>Also on the wrong page — AIoT lives on the AI page.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>IOT &amp; Testing — SEOW · AIOT ad group<span>→ /services/ai-product-design/ · 7 keywords · 580/mo · best copy match, weakest page</span></caption>
+      <thead><tr><th>Keyword</th><th>Match</th><th class="num">UK vol</th><th class="num">On page</th><th>Google flag</th><th>Verdict</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="r-bad"><td class="kw">aiot</td><td>Exact</td><td class="num">200</td><td class="num">3</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>SERP is Wikipedia, Cisco, and a stock ticker. Verified.</td></tr>
+        <tr class="r-bad"><td class="kw">embedded ai</td><td>Exact</td><td class="num">150</td><td class="num">5</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>Definitional intent. Great copy match, wrong audience.</td></tr>
+        <tr class="r-ok"><td class="kw">ai product design</td><td>Phrase</td><td class="num">100</td><td class="num">4</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Caveat: this term also attracts UX/software searchers.</td></tr>
+        <tr class="r-bad"><td class="kw">ai embedded systems</td><td>Exact</td><td class="num">80</td><td class="num">1</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>Definitional / academic intent.</td></tr>
+        <tr class="r-ok"><td class="kw">edge ai development</td><td>Phrase</td><td class="num">50</td><td class="num">3</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>In an H2. Genuinely commercial.</td></tr>
+        <tr class="r-warn"><td class="kw">aiot solutions</td><td>Phrase</td><td class="num">0</td><td class="num">1</td><td class="dash">—</td><td><span class="chip c-warn">Thin</span></td><td>No measurable UK volume.</td></tr>
+        <tr class="r-warn"><td class="kw">ai hardware design</td><td>Phrase</td><td class="num">0</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Thin</span></td><td>No measurable UK volume.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <caption>Generic — SEOW<span>→ homepage (5 kw) and /services/electronic-product-prototyping/ (2 kw) · 9 keywords · 730/mo</span></caption>
+      <thead><tr><th>Keyword</th><th>Match</th><th class="num">UK vol</th><th class="num">On page</th><th>Google flag</th><th>Verdict</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr class="r-warn"><td class="kw">electronic product design company</td><td>Phrase</td><td class="num">150</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">No page</span></td><td>Core offer, homepage H1 — but no service page to send it to.</td></tr>
+        <tr class="r-bad"><td class="kw">electronics design</td><td>Phrase</td><td class="num">150</td><td class="num">5</td><td class="dash">—</td><td><span class="chip c-bad">Mismatch</span></td><td>SERP is trade press and tutorials. Verified.</td></tr>
+        <tr class="r-warn"><td class="kw">electronic product design and development</td><td>Phrase</td><td class="num">100</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">No page</span></td><td>$3.50 CPC, KD 0. Wants a service page, gets a brand page.</td></tr>
+        <tr class="r-warn"><td class="kw">electronic design companies</td><td>Phrase</td><td class="num">100</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">No page</span></td><td>$4.50 CPC — highest in the generic group.</td></tr>
+        <tr class="r-warn"><td class="kw">product design consultants</td><td>Phrase</td><td class="num">60</td><td class="num zero">0</td><td class="dash">—</td><td><span class="chip c-warn">Weak</span></td><td>Broad — pulls industrial-design and app agencies too.</td></tr>
+        <tr class="r-warn"><td class="kw">product design engineering consultancy</td><td>Phrase</td><td class="num">40</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">Weak</span></td><td>Homepage says "consultancy" in H1 but not this phrase.</td></tr>
+        <tr class="r-warn"><td class="kw">electronics design consultancy</td><td>Phrase</td><td class="num">10</td><td class="num zero">0</td><td class="flag">low quality</td><td><span class="chip c-warn">Weak</span></td><td>Closest of all to the homepage H1. Still flagged.</td></tr>
+        <tr class="r-ok"><td class="kw">electronic prototyping company</td><td>Phrase</td><td class="num">100</td><td class="num">1</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Right page, right intent.</td></tr>
+        <tr class="r-ok"><td class="kw">electronics prototyping</td><td>Phrase</td><td class="num">20</td><td class="num">2</td><td class="dash">—</td><td><span class="chip c-ok">Aligned</span></td><td>Right page, right intent.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">Page by page</div>
+    <h2>What each destination is missing</h2>
+  </div>
+  <div class="pages">
+    <div class="pg">
+      <div class="t">Medical Device Product Design</div>
+      <div class="u">/services/medical-device-product-design/</div>
+      <ul>
+        <li>An H2 reads "Our Medical Device Product Design Certifications" — the only certification shown underneath is ISO 9001.</li>
+        <li>No mention of ISO 13485, IEC 62304, ISO 14971, UK MDR or FDA anywhere on the page. For this buyer, ISO 13485 is the first filter.</li>
+        <li>No mention of "wearable", despite a keyword targeting it.</li>
+        <li>Carries the most volume and the highest CPCs of any group. Deserves the most work.</li>
+      </ul>
+    </div>
+    <div class="pg">
+      <div class="t">AI Product Design</div>
+      <div class="u">/services/ai-product-design/</div>
+      <ul>
+        <li>706 words — the thinnest of the six. No H3s, no FAQ block, no case study.</li>
+        <li>Meta description is truncated body copy, cut mid-sentence: "…businesses risk adding".</li>
+        <li>Only 5 contact links vs 8–10 on sibling pages, and no "Contact us now" CTA.</li>
+        <li>Names one processor family (STM32). No NVIDIA, Jetson, TinyML, or inference-hardware specifics.</li>
+      </ul>
+    </div>
+    <div class="pg">
+      <div class="t">PCB Design &amp; Prototyping</div>
+      <div class="u">/services/pcb-design-prototyping/</div>
+      <ul>
+        <li>No mention of Altium, DFM, schematic capture, signal integrity, multilayer, rigid-flex or EMC — the vocabulary a PCB buyer scans for.</li>
+        <li>Nothing addresses hardware engineering, though a keyword points here for it.</li>
+        <li>Title is 33 characters against ~60 available, with no brand and no UK/London modifier.</li>
+      </ul>
+    </div>
+    <div class="pg">
+      <div class="t">IOT Product Design</div>
+      <div class="u">/services/iot-product-design/</div>
+      <ul>
+        <li>Zero connectivity specifics: no Bluetooth, LoRa, Zigbee, cellular, NB-IoT, MQTT, AWS or Azure, and no mention of antennas or low power.</li>
+        <li>Says "cloud" three times without naming a platform.</li>
+        <li>Title is 27 characters — the shortest on the site.</li>
+      </ul>
+    </div>
+    <div class="pg">
+      <div class="t">Homepage</div>
+      <div class="u">/</div>
+      <ul>
+        <li>Doing double duty as the landing page for seven commercial service keywords. A homepage optimises for brand, not for one query.</li>
+        <li>Schema is <code>Article</code> + <code>Person</code> + <code>Place</code>. There is no <code>Organization</code> or <code>LocalBusiness</code> markup — unusual for a homepage, and a miss for a London studio.</li>
+        <li>No <code>/services/electronic-product-design/</code> page exists, despite it being the H1 and the core offer.</li>
+      </ul>
+    </div>
+    <div class="pg">
+      <div class="t">Across all six</div>
+      <div class="u">site-wide</div>
+      <ul>
+        <li>No service page carries any schema at all. Five of six have a visible FAQ section with no <code>FAQPage</code> markup behind it.</li>
+        <li>All titles run 27–50 characters against ~60 available; none carry the brand or a UK/London modifier.</li>
+        <li>Organic footprint is 2 ranking keywords and ~40 visits/month. None of the 44 target terms rank. There is no independent evidence yet that any of these pages can win these queries.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <div class="eyebrow">What to do, in order</div>
+    <h2>Recommendations</h2>
+  </div>
+  <div class="act">
+    <div class="row">
+      <span class="p">P1</span>
+      <div class="body">
+        <div class="h">Put a short lead form on all six landing pages</div>
+        <div class="d">Name, email, company, one-line brief. Above or beside the first CTA. Nothing else on this list matters until a click can convert without a second click. Add an <code>&lt;h1&gt;</code> to /contact-us/ while you're in there.</div>
+      </div>
+      <span class="own">Web / us</span>
+    </div>
+    <div class="row">
+      <span class="p">P1</span>
+      <div class="body">
+        <div class="h">Pause the eight intent-mismatched keywords</div>
+        <div class="d">pcb designing, printed circuit board design, pcb design company, custom printed circuit board (already paused), aiot, embedded ai, ai embedded systems, electronics design. That's 1,130 searches/mo of budget buying definitions, CAD downloads and fab quotes. Recycle the spend into the medical group.</div>
+      </div>
+      <span class="own">PPC agency</span>
+    </div>
+    <div class="row">
+      <span class="p">P1</span>
+      <div class="body">
+        <div class="h">Fix the medical page's compliance story</div>
+        <div class="d">If 3Point1 holds ISO 13485, it needs to be the most visible thing on the page. If they don't, say plainly which standards they design to (IEC 62304, ISO 14971, UK MDR / FDA pathway). Biggest group, highest CPCs, and the credibility gap is doing the most damage here.</div>
+      </div>
+      <span class="own">Us + client</span>
+    </div>
+    <div class="row">
+      <span class="p">P2</span>
+      <div class="body">
+        <div class="h">Build /services/electronic-product-design/</div>
+        <div class="d">Seven generic keywords worth 610/mo currently point at the homepage because there is nowhere better — three of them at $3.50–$4.50 CPC. This page also unlocks the strongest organic opportunity on the list: "electronic product design and development" is 100/mo at KD 0.</div>
+      </div>
+      <span class="own">Us</span>
+    </div>
+    <div class="row">
+      <span class="p">P2</span>
+      <div class="body">
+        <div class="h">Close the phrase gaps on the flagged eight</div>
+        <div class="d">Work each flagged phrase into the destination page's title, an H2 and the body — naturally, as named services. "Medical device prototyping" at $6.00 CPC and "medical device engineering" at 100/mo are the two to start with; both are one word away from copy that's already there.</div>
+      </div>
+      <span class="own">Us</span>
+    </div>
+    <div class="row">
+      <span class="p">P2</span>
+      <div class="body">
+        <div class="h">Rewrite the AI page, or stop sending paid traffic to it</div>
+        <div class="d">706 words with a truncated meta description and no FAQ can't carry seven keywords. Once the definitional terms are paused it only needs to serve "ai product design" and "edge ai development" — but it needs depth and a CTA parity fix to serve those.</div>
+      </div>
+      <span class="own">Us</span>
+    </div>
+    <div class="row">
+      <span class="p">P3</span>
+      <div class="body">
+        <div class="h">Add the vocabulary each buyer scans for</div>
+        <div class="d">Connectivity stack on the IoT page; Altium, DFM, signal integrity and layer counts on the PCB page; silicon and inference specifics on the AI page. This raises Landing Page Experience and gives the organic pages something to rank on.</div>
+      </div>
+      <span class="own">Us + client</span>
+    </div>
+    <div class="row">
+      <span class="p">P3</span>
+      <div class="body">
+        <div class="h">Technical tidy-up</div>
+        <div class="d">FAQPage schema on the five pages with visible FAQs; Service schema per service page; Organization/LocalBusiness on the homepage in place of the current Article markup; rewrite all six titles to use the full ~60 characters with a UK or London modifier.</div>
+      </div>
+      <span class="own">Us</span>
+    </div>
+    <div class="row">
+      <span class="p">P3</span>
+      <div class="body">
+        <div class="h">Confirm conversion tracking actually fires</div>
+        <div class="d">GTM and Clarity are present on every page, but with no form on the landing pages there may be no conversion action defined beyond the tel: link. Worth verifying with the PPC agency before reading anything into the zeros — the report shows 0 conversions in both periods, which is consistent with either no traffic or no tracking.</div>
+      </div>
+      <span class="own">PPC agency</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Sources · live page fetches of all six destination URLs (27 Aug 2026) · Ahrefs Keywords Explorer, UK · Ahrefs Site Explorer, 3point1.design · live UK SERPs for "pcb designing", "pcb design company", "aiot", "electronics design" · the 3Point1 PPC keyword report, 10 Aug 2026 vs 15 Dec 2025.<br>
+  Volume figures are Ahrefs UK monthly estimates, not Google's. "Wearable medical device design" and "AIoT product design" returned no Ahrefs row, which usually means negligible volume. Four intent verdicts are verified against live SERPs; four are inferred from Ahrefs parent topic and marked as such in the findings.
+</footer>
+
+</div>
