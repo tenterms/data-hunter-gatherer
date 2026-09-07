@@ -30,6 +30,16 @@ export interface GscAdapter {
 
 const ROW_LIMIT = 25000;
 
+/** True when a fetch came back with no traffic rows at all. */
+export function isEmptyDataset(data: GscDataset): boolean {
+  return (
+    data.pages.length === 0 &&
+    data.queries.length === 0 &&
+    data.queryPages.length === 0 &&
+    (data.summary === null || (data.summary.clicks === 0 && data.summary.impressions === 0))
+  );
+}
+
 export class LiveGscAdapter implements GscAdapter {
   readonly source = "live" as const;
 
@@ -92,6 +102,23 @@ export class LiveGscAdapter implements GscAdapter {
     const configured = cached ?? client.gsc_property_url;
     try {
       const data = await this.fetchAll(configured, range);
+      // A verified-but-wrong property (say the non-www variant of a www site)
+      // answers successfully with zero rows, which used to render a report
+      // full of zeros. Treat "no data at all" like a miss and look for the
+      // property that actually holds the site's traffic.
+      if (!cached && isEmptyDataset(data)) {
+        const alternative = await this.findAccessibleProperty(client).catch(() => null);
+        if (alternative && alternative !== configured) {
+          const alt = await this.fetchAll(alternative, range).catch(() => null);
+          if (alt && !isEmptyDataset(alt)) {
+            this.log(
+              `GSC: "${configured}" returned no data — using "${alternative}" instead (matched from the account's property list).`,
+            );
+            this.siteUrlCache.set(client.client_key, alternative);
+            return alt;
+          }
+        }
+      }
       this.siteUrlCache.set(client.client_key, configured);
       return data;
     } catch (error) {
