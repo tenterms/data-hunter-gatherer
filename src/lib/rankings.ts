@@ -202,12 +202,13 @@ export class LocalCsvRankingProvider implements RankingProvider {
  *  - search engines are GET /sites/search-engines?site_id=… (query param,
  *    not a path segment) and keyword groups are GET /keywords/groups?site_id=…
  *  - engine display names live in a separate dictionary endpoint
- *    (/v1/system/search-engines), fetched best-effort.
+ *    (/v1/project-management/system/search-engines), fetched best-effort.
  */
 const SERANKING_BASE =
   process.env.SERANKING_API_BASE || "https://api.seranking.com/v1/project-management";
 const SERANKING_SYSTEM_ENGINES =
-  process.env.SERANKING_SYSTEM_ENGINES_URL || "https://api.seranking.com/v1/system/search-engines";
+  process.env.SERANKING_SYSTEM_ENGINES_URL ||
+  "https://api.seranking.com/v1/project-management/system/search-engines";
 
 interface SerSite {
   id: number | string;

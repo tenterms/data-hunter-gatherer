@@ -17,7 +17,8 @@ import type { ClientRow } from "./types";
 
 const BASE = process.env.SERANKING_API_BASE || "https://api.seranking.com/v1/project-management";
 const SYSTEM_ENGINES =
-  process.env.SERANKING_SYSTEM_ENGINES_URL || "https://api.seranking.com/v1/system/search-engines";
+  process.env.SERANKING_SYSTEM_ENGINES_URL ||
+  "https://api.seranking.com/v1/project-management/system/search-engines";
 
 function apiKeyOrThrow(): string {
   const key = getAppConfig().seRankingApiKey;
