@@ -5,7 +5,7 @@ import type {
   GscRow,
   PriorityFlag,
 } from "./types";
-import { calcCtr, weightedAveragePosition } from "./metrics";
+import { calcCtr, normaliseUrl, weightedAveragePosition } from "./metrics";
 
 /**
  * Cannibalisation catcher.
@@ -21,10 +21,6 @@ import { calcCtr, weightedAveragePosition } from "./metrics";
 interface PageMeta {
   pageRole: ClientPageRow["page_role"] | null;
   commercialPriority: ClientPageRow["commercial_priority"] | null;
-}
-
-function normaliseUrl(url: string): string {
-  return url.trim().replace(/\/+$/, "").toLowerCase();
 }
 
 function lookupPageMeta(url: string, pages: ClientPageRow[]): PageMeta {

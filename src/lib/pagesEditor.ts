@@ -3,6 +3,7 @@ import { replaceRowsAnywhere, cell } from "./rowStore";
 import { listSnapshots, readSnapshot } from "./snapshots";
 import type { ActionResult } from "./adminActions";
 import type { ClientPageRow, ClientRow, CommercialPriority, ContentType, PageRole } from "./types";
+import { normaliseUrl } from "./metrics";
 
 /**
  * In-app key-pages editor: assign labels/roles to the pages that drive the
@@ -22,10 +23,6 @@ export interface PagesEditorData {
   configured: ClientPageRow[];
   discovered: DiscoveredPage[];
   previewPeriodLabel: string | null;
-}
-
-function normaliseUrl(url: string): string {
-  return url.trim().replace(/\/+$/, "").toLowerCase();
 }
 
 export async function getPagesEditorData(clientKey: string): Promise<PagesEditorData | null> {

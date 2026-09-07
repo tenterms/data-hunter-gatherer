@@ -6,12 +6,7 @@ import type {
   GscRow,
   UrlMatchType,
 } from "./types";
-import { aggregateRows, classifyGrowth, compareMetricSets } from "./metrics";
-
-/** Normalise URLs enough that trailing-slash differences don't break matching. */
-function normaliseUrl(url: string): string {
-  return url.trim().replace(/\/+$/, "").toLowerCase();
-}
+import { aggregateRows, classifyGrowth, compareMetricSets, normaliseUrl } from "./metrics";
 
 export function urlMatches(pageUrl: string, ruleUrl: string, matchType: UrlMatchType): boolean {
   const page = normaliseUrl(pageUrl);

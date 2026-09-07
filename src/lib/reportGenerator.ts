@@ -14,7 +14,7 @@ import {
   type EngineMovements,
   type RankingProvider,
 } from "./rankings";
-import { aggregateRows, compareMetricSets, EMPTY_METRICS, formatChangePct, formatNumber, formatPct, formatPosition } from "./metrics";
+import { aggregateRows, compareMetricSets, EMPTY_METRICS, formatChangePct, formatNumber, formatPct, formatPosition, normaliseUrl } from "./metrics";
 import { calculateContentGroups, urlMatches } from "./contentGroups";
 import {
   calculateKeywordClusters,
@@ -43,10 +43,6 @@ export interface GenerateReportOptions {
   /** force mock data even if credentials exist (useful for demos) */
   forceMock?: boolean;
   log?: (message: string) => void;
-}
-
-function normaliseUrl(url: string): string {
-  return url.trim().replace(/\/+$/, "").toLowerCase();
 }
 
 function metricsForUrl(rows: GscRow[], url: string): MetricSet {

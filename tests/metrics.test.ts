@@ -104,3 +104,13 @@ describe("growth classification", () => {
     expect(classifyGrowth(cmp, "clicks")).toBe("flat");
   });
 });
+
+describe("normaliseUrl", () => {
+  it("matches across protocol, www and trailing-slash variants", async () => {
+    const { normaliseUrl } = await import("../src/lib/metrics");
+    const canonical = normaliseUrl("https://www.knightsbridgecircle.com/locations/london-concierge-service/");
+    expect(normaliseUrl("https://knightsbridgecircle.com/locations/london-concierge-service")).toBe(canonical);
+    expect(normaliseUrl("http://KnightsbridgeCircle.com/locations/london-concierge-service/")).toBe(canonical);
+    expect(canonical).toBe("knightsbridgecircle.com/locations/london-concierge-service");
+  });
+});

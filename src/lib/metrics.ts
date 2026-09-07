@@ -12,6 +12,22 @@ import type {
  * no LLM is involved in any numeric analysis.
  */
 
+/**
+ * Canonical URL form for matching tracked pages against GSC rows. Protocol,
+ * "www." and trailing slashes are presentation details a client's config and
+ * Search Console routinely disagree on (a site set up as knightsbridgecircle.com
+ * reports in GSC as www.knightsbridgecircle.com), and every such mismatch used
+ * to render a page's traffic as zero.
+ */
+export function normaliseUrl(url: string): string {
+  return url
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/+$/, "");
+}
+
 export function safeDivide(numerator: number, denominator: number): number {
   if (!denominator || !Number.isFinite(denominator)) return 0;
   const result = numerator / denominator;
