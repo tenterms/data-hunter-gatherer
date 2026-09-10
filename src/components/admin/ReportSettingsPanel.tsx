@@ -13,16 +13,84 @@ export default function ReportSettingsPanel({
   clientKey,
   initialEngines,
   initialCannibalisation,
+  initialUrlExclusions,
 }: {
   clientKey: string;
   initialEngines: EngineSetting[];
   initialCannibalisation: CannibalisationSetting[];
+  initialUrlExclusions: string[];
 }) {
   return (
     <>
       <EnginesCard clientKey={clientKey} initialEngines={initialEngines} />
+      <UrlExclusionsCard clientKey={clientKey} initialPatterns={initialUrlExclusions} />
       <CannibalisationCard clientKey={clientKey} initialRows={initialCannibalisation} />
     </>
+  );
+}
+
+function UrlExclusionsCard({
+  clientKey,
+  initialPatterns,
+}: {
+  clientKey: string;
+  initialPatterns: string[];
+}) {
+  const { state, run } = useAction();
+  const [patterns, setPatterns] = useState<string[]>(initialPatterns);
+  const [draft, setDraft] = useState("");
+
+  function add() {
+    const value = draft.trim();
+    if (value === "" || patterns.includes(value)) return;
+    setPatterns([...patterns, value]);
+    setDraft("");
+  }
+
+  async function save(next: string[]) {
+    setPatterns(next);
+    await run("/api/admin/url-exclusions", { clientKey, patterns: next });
+  }
+
+  return (
+    <div className="card">
+      <h3 style={{ marginTop: 0 }}>Excluded URLs (performance data)</h3>
+      <p className="section-desc">
+        Any page whose URL contains one of these phrases is left out of the report&apos;s traffic
+        numbers entirely: the totals, the page tables, content groups and search term data. Handy
+        for pages like a statistics post that pulls in lots of irrelevant search traffic.
+        Regenerate the report after saving to apply.
+      </p>
+      {patterns.length > 0 && (
+        <div style={{ marginBottom: 12 }}>
+          {patterns.map((p) => (
+            <div className="engine-setting-row" key={p}>
+              <code>{p}</code>
+              <button className="row-toggle off" onClick={() => save(patterns.filter((x) => x !== p))}>
+                remove
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+      <div className="btn-row">
+        <input
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") add();
+          }}
+          placeholder="e.g. statistics"
+        />
+        <button className="btn" onClick={add} disabled={draft.trim() === ""}>
+          Add
+        </button>
+        <button className="btn primary" onClick={() => save(patterns)} disabled={state.busy}>
+          {state.busy ? "Saving…" : "Save exclusions"}
+        </button>
+      </div>
+      <ActionMessage state={state} />
+    </div>
   );
 }
 

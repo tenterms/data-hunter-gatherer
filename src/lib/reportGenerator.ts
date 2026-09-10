@@ -14,7 +14,7 @@ import {
   type EngineMovements,
   type RankingProvider,
 } from "./rankings";
-import { aggregateRows, compareMetricSets, EMPTY_METRICS, formatChangePct, formatNumber, formatPct, formatPosition, normaliseUrl } from "./metrics";
+import { aggregateRows, compareMetricSets, EMPTY_METRICS, excludeUrlsFromDataset, formatChangePct, formatNumber, formatPct, formatPosition, normaliseUrl } from "./metrics";
 import { calculateContentGroups, urlMatches } from "./contentGroups";
 import {
   calculateKeywordClusters,
@@ -163,6 +163,20 @@ export async function generateReport(options: GenerateReportOptions): Promise<{ 
       gsc.fetchDataset(client, comparisonRange),
     ]);
   }
+  const exclusionPatterns = config.urlExclusions
+    .filter((e) => e.client_key === client.client_key)
+    .map((e) => e.pattern.trim())
+    .filter((p) => p !== "");
+  if (exclusionPatterns.length > 0) {
+    const before = current.pages.length + comparison.pages.length;
+    current = excludeUrlsFromDataset(current, exclusionPatterns);
+    comparison = excludeUrlsFromDataset(comparison, exclusionPatterns);
+    const removed = before - (current.pages.length + comparison.pages.length);
+    log(
+      `Excluding URLs containing ${exclusionPatterns.map((p) => `"${p}"`).join(", ")} — ${removed} page row(s) removed from the performance data.`,
+    );
+  }
+
   log(
     `Current period: ${current.pages.length} pages, ${current.queries.length} queries. Comparison: ${comparison.pages.length} pages, ${comparison.queries.length} queries.`,
   );

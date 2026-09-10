@@ -7,6 +7,7 @@ import type {
   AiSearchPromptRow,
   CannibalisationExclusionRow,
   CannibalisationVisibleRow,
+  UrlExclusionRow,
   ClientPageRow,
   ClientRow,
   ContentGroupRow,
@@ -111,6 +112,7 @@ export const SHEET_SCHEMA: Record<string, string[]> = {
   RankingEngines: ["client_key", "engine_id", "label", "sort_order", "active"],
   CannibalisationExclusions: ["client_key", "query"],
   CannibalisationVisible: ["client_key", "query"],
+  UrlExclusions: ["client_key", "pattern"],
   FocusNotes: ["client_key", "period_key", "notes"],
   MasterPages: [
     "client_key",
@@ -338,6 +340,10 @@ const parsers = {
     client_key: str(r.client_key),
     query: str(r.query),
   }),
+  UrlExclusions: (r: RawRow): UrlExclusionRow => ({
+    client_key: str(r.client_key),
+    pattern: str(r.pattern),
+  }),
   FocusNotes: (r: RawRow): FocusNoteRow => ({
     client_key: str(r.client_key),
     period_key: str(r.period_key),
@@ -391,6 +397,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     rankingEngines,
     cannibalisationExclusions,
     cannibalisationVisible,
+    urlExclusions,
     focusNotes,
     masterPages,
   ] = await Promise.all([
@@ -410,6 +417,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     readTab(sheets, googleSheetId, "RankingEngines").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "CannibalisationExclusions").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "CannibalisationVisible").catch(() => [] as RawRow[]),
+    readTab(sheets, googleSheetId, "UrlExclusions").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "FocusNotes").catch(() => [] as RawRow[]),
     readTab(sheets, googleSheetId, "MasterPages").catch(() => [] as RawRow[]),
   ]);
@@ -431,6 +439,7 @@ export async function loadAdminConfigFromSheets(): Promise<AdminConfig> {
     rankingEngines: rankingEngines.map(parsers.RankingEngines),
     cannibalisationExclusions: cannibalisationExclusions.map(parsers.CannibalisationExclusions),
     cannibalisationVisible: cannibalisationVisible.map(parsers.CannibalisationVisible),
+    urlExclusions: urlExclusions.map(parsers.UrlExclusions),
     focusNotes: focusNotes.map(parsers.FocusNotes),
     masterPages: masterPages.map(parsers.MasterPages),
   };
@@ -461,6 +470,7 @@ export function loadAdminConfigFromLocal(): AdminConfig {
     rankingEngines: (raw.RankingEngines ?? []).map(parsers.RankingEngines),
     cannibalisationExclusions: (raw.CannibalisationExclusions ?? []).map(parsers.CannibalisationExclusions),
     cannibalisationVisible: (raw.CannibalisationVisible ?? []).map(parsers.CannibalisationVisible),
+    urlExclusions: (raw.UrlExclusions ?? []).map(parsers.UrlExclusions),
     focusNotes: (raw.FocusNotes ?? []).map(parsers.FocusNotes),
     masterPages: (raw.MasterPages ?? []).map(parsers.MasterPages),
   };

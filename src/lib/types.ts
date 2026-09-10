@@ -206,6 +206,17 @@ export interface CannibalisationVisibleRow {
 }
 
 /**
+ * URLs excluded from a client's performance data. Any GSC page whose URL
+ * contains the pattern (case-insensitive) is stripped from the report's
+ * traffic numbers — e.g. a statistics blog post pulling in huge volumes of
+ * irrelevant queries.
+ */
+export interface UrlExclusionRow {
+  client_key: string;
+  pattern: string;
+}
+
+/**
  * Account manager notes for a client/month: the priorities, client concerns
  * and work-in-progress that should steer the report's commentary.
  */
@@ -242,6 +253,7 @@ export interface AdminConfig {
   rankingEngines: RankingEngineRow[];
   cannibalisationExclusions: CannibalisationExclusionRow[];
   cannibalisationVisible: CannibalisationVisibleRow[];
+  urlExclusions: UrlExclusionRow[];
   focusNotes: FocusNoteRow[];
   masterPages: MasterPageRow[];
 }

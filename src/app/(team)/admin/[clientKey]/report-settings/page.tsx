@@ -29,6 +29,7 @@ export default async function ReportSettingsPage({
         clientKey={clientKey}
         initialEngines={data.engines}
         initialCannibalisation={data.cannibalisation}
+        initialUrlExclusions={data.urlExclusions}
       />
       <GoogleGscPanel clientKey={clientKey} />
       <SeRankingSetupPanel clientKey={clientKey} />

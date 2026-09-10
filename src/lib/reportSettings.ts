@@ -80,6 +80,7 @@ export interface ReportSettingsData {
   latestPeriodLabel: string | null;
   engines: EngineSetting[];
   cannibalisation: CannibalisationSetting[];
+  urlExclusions: string[];
 }
 
 export async function getReportSettingsData(clientKey: string): Promise<ReportSettingsData | null> {
@@ -137,6 +138,9 @@ export async function getReportSettingsData(clientKey: string): Promise<ReportSe
     latestPeriodLabel: snapshot?.period.label ?? null,
     engines,
     cannibalisation,
+    urlExclusions: config.urlExclusions
+      .filter((e) => e.client_key === clientKey)
+      .map((e) => e.pattern),
   };
 }
 
@@ -183,6 +187,26 @@ export async function saveRankingEngines(input: {
   return {
     ok: true,
     message: `Saved search engine order${where === "sheet" ? " (synced to the Google Sheet)" : ""}. The report pages update straight away; republish to update client links.`,
+  };
+}
+
+export async function saveUrlExclusions(input: {
+  clientKey: string;
+  patterns: string[];
+}): Promise<ActionResult> {
+  const patterns = [...new Set(input.patterns.map((p) => p.trim()).filter((p) => p !== ""))];
+  const rows = patterns.map((pattern) => ({ client_key: input.clientKey, pattern }));
+  const where = await replaceRowsAnywhere(
+    "UrlExclusions",
+    (r) => cell(r.client_key) === input.clientKey,
+    rows,
+  );
+  return {
+    ok: true,
+    message:
+      patterns.length === 0
+        ? `No URL exclusions set${where === "sheet" ? " (synced to the Google Sheet)" : ""}. Regenerate the report to bring any previously excluded pages back.`
+        : `Pages containing ${patterns.map((p) => `"${p}"`).join(", ")} will be left out of the performance data${where === "sheet" ? " (synced to the Google Sheet)" : ""}. Regenerate the report to apply.`,
   };
 }
 

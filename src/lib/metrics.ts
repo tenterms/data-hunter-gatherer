@@ -3,6 +3,7 @@ import type {
   ComparedMetrics,
   GrowthMetric,
   GrowthStatus,
+  GscDataset,
   GscRow,
   MetricSet,
 } from "./types";
@@ -26,6 +27,66 @@ export function normaliseUrl(url: string): string {
     .replace(/^https?:\/\//, "")
     .replace(/^www\./, "")
     .replace(/\/+$/, "");
+}
+
+/**
+ * Strip every page whose URL contains one of the patterns (case-insensitive)
+ * out of a GSC dataset, so a URL the team excludes (say a statistics post
+ * hoovering up irrelevant queries) disappears from the report's numbers:
+ *  - page rows and query+page rows matching a pattern are dropped
+ *  - each query row loses exactly the clicks/impressions its excluded pages
+ *    contributed (from the query+page rows), and vanishes if nothing is left
+ *  - the summary is reduced by the excluded pages' totals, with the average
+ *    position recomputed from the remaining pages
+ */
+export function excludeUrlsFromDataset(data: GscDataset, patterns: string[]): GscDataset {
+  const needles = patterns.map((p) => p.trim().toLowerCase()).filter((p) => p !== "");
+  if (needles.length === 0) return data;
+  const excluded = (url: string) => {
+    const u = url.toLowerCase();
+    return needles.some((n) => u.includes(n));
+  };
+
+  const pages = data.pages.filter((r) => !excluded(r.keys[0] ?? ""));
+  const removedPages = data.pages.filter((r) => excluded(r.keys[0] ?? ""));
+  const queryPages = data.queryPages.filter((r) => !excluded(r.keys[1] ?? ""));
+
+  const removedPerQuery = new Map<string, { clicks: number; impressions: number }>();
+  for (const row of data.queryPages) {
+    if (!excluded(row.keys[1] ?? "")) continue;
+    const key = row.keys[0] ?? "";
+    const agg = removedPerQuery.get(key) ?? { clicks: 0, impressions: 0 };
+    agg.clicks += row.clicks;
+    agg.impressions += row.impressions;
+    removedPerQuery.set(key, agg);
+  }
+  const queries = data.queries
+    .map((row) => {
+      const removed = removedPerQuery.get(row.keys[0] ?? "");
+      if (!removed) return row;
+      const clicks = Math.max(0, row.clicks - removed.clicks);
+      const impressions = Math.max(0, row.impressions - removed.impressions);
+      return { ...row, clicks, impressions, ctr: calcCtr(clicks, impressions) };
+    })
+    .filter((row) => row.impressions > 0 || row.clicks > 0);
+
+  let summary = data.summary;
+  if (summary && removedPages.length > 0) {
+    const clicks = Math.max(0, summary.clicks - removedPages.reduce((s, r) => s + r.clicks, 0));
+    const impressions = Math.max(
+      0,
+      summary.impressions - removedPages.reduce((s, r) => s + r.impressions, 0),
+    );
+    summary = {
+      ...summary,
+      clicks,
+      impressions,
+      ctr: calcCtr(clicks, impressions),
+      position: weightedAveragePosition(pages) ?? summary.position,
+    };
+  }
+
+  return { summary, pages, queries, queryPages };
 }
 
 export function safeDivide(numerator: number, denominator: number): number {

@@ -114,3 +114,66 @@ describe("normaliseUrl", () => {
     expect(canonical).toBe("knightsbridgecircle.com/locations/london-concierge-service");
   });
 });
+
+describe("excludeUrlsFromDataset", () => {
+  const page = (url: string, clicks: number, impressions: number, position = 5): GscRowT => ({
+    keys: [url],
+    clicks,
+    impressions,
+    ctr: impressions > 0 ? clicks / impressions : 0,
+    position,
+  });
+  const qp = (query: string, url: string, clicks: number, impressions: number): GscRowT => ({
+    keys: [query, url],
+    clicks,
+    impressions,
+    ctr: impressions > 0 ? clicks / impressions : 0,
+    position: 5,
+  });
+  type GscRowT = import("../src/lib/types").GscRow;
+
+  const dataset: import("../src/lib/types").GscDataset = {
+    summary: { keys: [], clicks: 110, impressions: 1100, ctr: 0.1, position: 12 },
+    pages: [
+      page("https://aag-it.com/it-support/", 10, 100, 3),
+      page("https://aag-it.com/cyber-attack-statistics/", 100, 1000, 20),
+    ],
+    queries: [
+      { keys: ["it support"], clicks: 10, impressions: 100, ctr: 0.1, position: 3 },
+      { keys: ["how many cyber attacks per day"], clicks: 100, impressions: 1000, ctr: 0.1, position: 20 },
+      { keys: ["it support statistics"], clicks: 6, impressions: 60, ctr: 0.1, position: 8 },
+    ],
+    queryPages: [
+      qp("it support", "https://aag-it.com/it-support/", 10, 100),
+      qp("how many cyber attacks per day", "https://aag-it.com/cyber-attack-statistics/", 100, 1000),
+      qp("it support statistics", "https://aag-it.com/cyber-attack-statistics/", 4, 40),
+      qp("it support statistics", "https://aag-it.com/it-support/", 2, 20),
+    ],
+  };
+
+  it("drops matching pages and their query+page rows", async () => {
+    const { excludeUrlsFromDataset } = await import("../src/lib/metrics");
+    const out = excludeUrlsFromDataset(dataset, ["statistics"]);
+    expect(out.pages.map((r) => r.keys[0])).toEqual(["https://aag-it.com/it-support/"]);
+    expect(out.queryPages).toHaveLength(2);
+  });
+
+  it("subtracts only the excluded pages' share from each query", async () => {
+    const { excludeUrlsFromDataset } = await import("../src/lib/metrics");
+    const out = excludeUrlsFromDataset(dataset, ["statistics"]);
+    const mixed = out.queries.find((r) => r.keys[0] === "it support statistics");
+    expect(mixed).toMatchObject({ clicks: 2, impressions: 20 });
+    expect(out.queries.some((r) => r.keys[0] === "how many cyber attacks per day")).toBe(false);
+  });
+
+  it("reduces the summary by the excluded totals and recomputes position", async () => {
+    const { excludeUrlsFromDataset } = await import("../src/lib/metrics");
+    const out = excludeUrlsFromDataset(dataset, ["statistics"]);
+    expect(out.summary).toMatchObject({ clicks: 10, impressions: 100, position: 3 });
+  });
+
+  it("returns the dataset untouched when no patterns are set", async () => {
+    const { excludeUrlsFromDataset } = await import("../src/lib/metrics");
+    expect(excludeUrlsFromDataset(dataset, [" ", ""])).toBe(dataset);
+  });
+});
