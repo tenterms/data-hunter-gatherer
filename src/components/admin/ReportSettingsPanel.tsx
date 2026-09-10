@@ -40,16 +40,16 @@ function UrlExclusionsCard({
   const [patterns, setPatterns] = useState<string[]>(initialPatterns);
   const [draft, setDraft] = useState("");
 
-  function add() {
-    const value = draft.trim();
-    if (value === "" || patterns.includes(value)) return;
-    setPatterns([...patterns, value]);
-    setDraft("");
-  }
-
   async function save(next: string[]) {
     setPatterns(next);
     await run("/api/admin/url-exclusions", { clientKey, patterns: next });
+  }
+
+  async function add() {
+    const value = draft.trim();
+    if (value === "" || patterns.includes(value)) return;
+    setDraft("");
+    await save([...patterns, value]);
   }
 
   return (
@@ -82,11 +82,8 @@ function UrlExclusionsCard({
           }}
           placeholder="e.g. statistics"
         />
-        <button className="btn" onClick={add} disabled={draft.trim() === ""}>
-          Add
-        </button>
-        <button className="btn primary" onClick={() => save(patterns)} disabled={state.busy}>
-          {state.busy ? "Saving…" : "Save exclusions"}
+        <button className="btn primary" onClick={add} disabled={draft.trim() === "" || state.busy}>
+          {state.busy ? "Saving…" : "Add exclusion"}
         </button>
       </div>
       <ActionMessage state={state} />
